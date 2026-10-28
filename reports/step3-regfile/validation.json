@@ -1,0 +1,41 @@
+{
+  "baseline_exit_code": 0,
+  "contract": "regfile32-rv32i-v1",
+  "cycles": 1610,
+  "generated_at_utc": "2026-10-27T11:59:27.291801+00:00",
+  "gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/regfile32/baseline/run_regfile_gui.do",
+  "hardware_programming": "not_run",
+  "language": "VHDL-93",
+  "negative_controls": [
+    {
+      "exit_code": 1,
+      "expected_failure_phase": "before",
+      "killed": true,
+      "name": "write_on_falling_edge"
+    },
+    {
+      "exit_code": 1,
+      "expected_failure_phase": "after",
+      "killed": true,
+      "name": "reset_loses_write_priority"
+    }
+  ],
+  "scope": "register-file RTL functional simulation",
+  "simulator": "Model Technology ModelSim ALTERA STARTER EDITION vsim 10.5b Simulator 2016.10 Oct  5 2016",
+  "source_sha256": {
+    "model/regfile.py": "33b071d736326e859ae49c1c49748a0ad30fd966fac9a01eb35044dd8d4cebc9",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "sim/modelsim/compile_regfile.do": "654d5bb9352da8eafae8f841ffa0d04bd31f49b6717a355ff3fd733f21be2174",
+    "sim/modelsim/run_regfile_batch.do": "531421d3c33d26b19b27cee02781b969aaa5d1c3991d5b91369d0c74c5373c2d",
+    "sim/modelsim/run_regfile_gui.do": "0a5df16ab21c4296e754937111baf3fdd70d34d389d1c8388e2f2ea8a251463a",
+    "sim/tb/tb_regfile32.vhd": "08b9f5d7ae5e09b27910bcf24b9f39dab072ec293d16eff556c9dc4f2b6bb458",
+    "tools/generate_regfile_vectors.py": "6686c5197a54b8c1abb11f43be740957b01992b197608ca1717f578eb073ec2c",
+    "tools/run_regfile.py": "ed49858413194655cc37c45468c50b02b24517856366c2d4237a135e420744a8"
+  },
+  "status": "pass",
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "value_checks": 6440,
+  "vector_seed": 3338526,
+  "vector_sha256": "30e853e9c0d2555fbd51187be1d593687474b67d129ca2b701a9f5d6430dc2ac"
+}

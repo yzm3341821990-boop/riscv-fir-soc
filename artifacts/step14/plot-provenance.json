@@ -1,0 +1,52 @@
+{
+  "artifacts_sha256": {
+    "fir-cycle-comparison.png": "e22e3922bb9ebe17f42995ccba3c9d8bd8bca9fded2a947020129df9bb766ced",
+    "fir-cycle-comparison.svg": "2ebaa0fbeb1a1596fb72ebb0aec21bddd057dde7d59938bd4b13ba6db56e9fb4"
+  },
+  "backend": "Agg",
+  "base_accelerator_task_cycles": {
+    "none": 297,
+    "periodic": 307
+  },
+  "base_input": {
+    "case": "base",
+    "cold_cycle_ratio": 2.2241566920565834,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.214285714285714,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2044,
+    "wait_policy": "none"
+  },
+  "chart": "audited full-invocation and accelerator-task clock cycles",
+  "comparison_rows": 14,
+  "datasets": [
+    "base",
+    "base_impulse",
+    "base_ties",
+    "base_positive_extreme",
+    "base_negative_extreme",
+    "base_zero",
+    "base_zero_coefficients"
+  ],
+  "figure_size_inches": [
+    12.8,
+    7.6
+  ],
+  "inputs": {
+    "reports/step14-fir-benchmark/comparison.json": "410fd61f9cce5f95b48ec1fcfa28779890a82cdf195117fa91aef07ea037a7fb",
+    "reports/step14-fir-benchmark/measurements.json": "6402517e1fd9ded62d378b4170ed7ee0e0d50574ae1b63c128c56cabc2252b4d"
+  },
+  "matplotlib_version": "3.10.8",
+  "periodic_full_calls_identical": true,
+  "png_dpi": 300,
+  "primary_panel_wait_policy": "none",
+  "python_version": "3.12.8",
+  "rendering_note": "Existing Matplotlib runtime used; no packages installed or network accessed",
+  "scope": "ModelSim functional simulation; no physical latency, Fmax or FPGA resource claims",
+  "source_sha256": {
+    "tools/plot_fir_benchmark.py": "5a88ac8d799e9db86d48f74f72aa203a72ec983d31110bc5c95c1f2c7ed051b0"
+  },
+  "status": "rendered"
+}

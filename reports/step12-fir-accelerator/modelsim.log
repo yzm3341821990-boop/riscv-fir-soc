@@ -1,0 +1,409 @@
+# do run_fir_accel_batch.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:15:04 on Oct 28,2026
+# vcom -93 -work work fir_serial.vhd tb_fir_serial.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity fir_serial
+# -- Compiling architecture rtl of fir_serial
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_fir_serial
+# -- Compiling architecture test of tb_fir_serial
+# -- Loading entity fir_serial
+# End time: 09:15:04 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+#     {zero 64 false true}
+#     {impulse 64 false true}
+#     {step 64 false true}
+#     {positive_ties 4 false true}
+#     {negative_ties 4 false true}
+#     {positive_saturation 64 false true}
+#     {negative_saturation 64 false true}
+#     {accumulator_extreme 32 false true}
+#     {alternating_extrema 64 false true}
+#     {short_block 7 false true}
+#     {empty_block 0 false true}
+#     {random_256 256 false true}
+#     {random_1024 1024 false true}
+#     {software_fir 8 false true}
+#     {software_fir_impulse 8 false true}
+#     {software_fir_ties 8 false true}
+#     {software_fir_positive_extreme 8 false true}
+#     {software_fir_negative_extreme 8 false true}
+#     {software_fir_zero 8 false true}
+#     {software_fir_zero_coefficients 8 false true}
+#     {last_tap 64 false true}
+#     {round_boundaries 8 false true}
+#     {protocol 8 true true}
+#     {sustained 8 false false}
+# 
+# FIR_CASE_BEGIN name=zero
+# vsim -voptargs="+acc" -wlf fir-zero-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/zero/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/zero/accumulators.hex -gCOEFF_FILE=cases/zero/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/zero/input.hex 
+# Start time: 09:15:04 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=64 stalls=96 protocol_outputs=0
+#    Time: 24046 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=zero samples=64
+# End time: 09:15:04 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=impulse
+# vsim -voptargs="+acc" -wlf fir-impulse-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/impulse/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/impulse/accumulators.hex -gCOEFF_FILE=cases/impulse/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/impulse/input.hex 
+# Start time: 09:15:04 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=64 stalls=96 protocol_outputs=0
+#    Time: 24046 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=impulse samples=64
+# End time: 09:15:04 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=step
+# vsim -voptargs="+acc" -wlf fir-step-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/step/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/step/accumulators.hex -gCOEFF_FILE=cases/step/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/step/input.hex 
+# Start time: 09:15:04 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=64 stalls=96 protocol_outputs=0
+#    Time: 24046 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=step samples=64
+# End time: 09:15:05 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=positive_ties
+# vsim -voptargs="+acc" -wlf fir-positive_ties-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/positive_ties/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=4 -gACC_FILE=cases/positive_ties/accumulators.hex -gCOEFF_FILE=cases/positive_ties/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/positive_ties/input.hex 
+# Start time: 09:15:05 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=4 stalls=6 protocol_outputs=0
+#    Time: 2146 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=positive_ties samples=4
+# End time: 09:15:05 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=negative_ties
+# vsim -voptargs="+acc" -wlf fir-negative_ties-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/negative_ties/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=4 -gACC_FILE=cases/negative_ties/accumulators.hex -gCOEFF_FILE=cases/negative_ties/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/negative_ties/input.hex 
+# Start time: 09:15:05 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=4 stalls=6 protocol_outputs=0
+#    Time: 2146 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=negative_ties samples=4
+# End time: 09:15:05 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=positive_saturation
+# vsim -voptargs="+acc" -wlf fir-positive_saturation-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/positive_saturation/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/positive_saturation/accumulators.hex -gCOEFF_FILE=cases/positive_saturation/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/positive_saturation/input.hex 
+# Start time: 09:15:05 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=64 stalls=96 protocol_outputs=0
+#    Time: 24046 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=positive_saturation samples=64
+# End time: 09:15:05 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=negative_saturation
+# vsim -voptargs="+acc" -wlf fir-negative_saturation-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/negative_saturation/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/negative_saturation/accumulators.hex -gCOEFF_FILE=cases/negative_saturation/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/negative_saturation/input.hex 
+# Start time: 09:15:05 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=64 stalls=96 protocol_outputs=0
+#    Time: 24046 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=negative_saturation samples=64
+# End time: 09:15:06 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=accumulator_extreme
+# vsim -voptargs="+acc" -wlf fir-accumulator_extreme-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/accumulator_extreme/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=32 -gACC_FILE=cases/accumulator_extreme/accumulators.hex -gCOEFF_FILE=cases/accumulator_extreme/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/accumulator_extreme/input.hex 
+# Start time: 09:15:06 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=32 stalls=48 protocol_outputs=0
+#    Time: 12366 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=accumulator_extreme samples=32
+# End time: 09:15:06 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=alternating_extrema
+# vsim -voptargs="+acc" -wlf fir-alternating_extrema-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/alternating_extrema/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/alternating_extrema/accumulators.hex -gCOEFF_FILE=cases/alternating_extrema/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/alternating_extrema/input.hex 
+# Start time: 09:15:06 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=64 stalls=96 protocol_outputs=0
+#    Time: 24046 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=alternating_extrema samples=64
+# End time: 09:15:06 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=short_block
+# vsim -voptargs="+acc" -wlf fir-short_block-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/short_block/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=7 -gACC_FILE=cases/short_block/accumulators.hex -gCOEFF_FILE=cases/short_block/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/short_block/input.hex 
+# Start time: 09:15:06 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=7 stalls=9 protocol_outputs=0
+#    Time: 3226 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=short_block samples=7
+# End time: 09:15:06 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=empty_block
+# vsim -voptargs="+acc" -wlf fir-empty_block-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/empty_block/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=0 -gACC_FILE=cases/empty_block/accumulators.hex -gCOEFF_FILE=cases/empty_block/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/empty_block/input.hex 
+# Start time: 09:15:06 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=0 stalls=0 protocol_outputs=0
+#    Time: 696 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=empty_block samples=0
+# End time: 09:15:07 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=random_256
+# vsim -voptargs="+acc" -wlf fir-random_256-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/random_256/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=256 -gACC_FILE=cases/random_256/accumulators.hex -gCOEFF_FILE=cases/random_256/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/random_256/input.hex 
+# Start time: 09:15:07 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=256 stalls=384 protocol_outputs=0
+#    Time: 94126 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=random_256 samples=256
+# End time: 09:15:07 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=random_1024
+# vsim -voptargs="+acc" -wlf fir-random_1024-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/random_1024/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=1024 -gACC_FILE=cases/random_1024/accumulators.hex -gCOEFF_FILE=cases/random_1024/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/random_1024/input.hex 
+# Start time: 09:15:07 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=1024 stalls=1536 protocol_outputs=0
+#    Time: 374446 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=random_1024 samples=1024
+# End time: 09:15:07 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=software_fir
+# vsim -voptargs="+acc" -wlf fir-software_fir-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/software_fir/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/software_fir/accumulators.hex -gCOEFF_FILE=cases/software_fir/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/software_fir/input.hex 
+# Start time: 09:15:07 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=software_fir samples=8
+# End time: 09:15:07 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=software_fir_impulse
+# vsim -voptargs="+acc" -wlf fir-software_fir_impulse-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/software_fir_impulse/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/software_fir_impulse/accumulators.hex -gCOEFF_FILE=cases/software_fir_impulse/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/software_fir_impulse/input.hex 
+# Start time: 09:15:07 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=software_fir_impulse samples=8
+# End time: 09:15:08 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=software_fir_ties
+# vsim -voptargs="+acc" -wlf fir-software_fir_ties-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/software_fir_ties/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/software_fir_ties/accumulators.hex -gCOEFF_FILE=cases/software_fir_ties/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/software_fir_ties/input.hex 
+# Start time: 09:15:08 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=software_fir_ties samples=8
+# End time: 09:15:08 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=software_fir_positive_extreme
+# vsim -voptargs="+acc" -wlf fir-software_fir_positive_extreme-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/software_fir_positive_extreme/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/software_fir_positive_extreme/accumulators.hex -gCOEFF_FILE=cases/software_fir_positive_extreme/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/software_fir_positive_extreme/input.hex 
+# Start time: 09:15:08 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=software_fir_positive_extreme samples=8
+# End time: 09:15:08 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=software_fir_negative_extreme
+# vsim -voptargs="+acc" -wlf fir-software_fir_negative_extreme-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/software_fir_negative_extreme/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/software_fir_negative_extreme/accumulators.hex -gCOEFF_FILE=cases/software_fir_negative_extreme/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/software_fir_negative_extreme/input.hex 
+# Start time: 09:15:08 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=software_fir_negative_extreme samples=8
+# End time: 09:15:08 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=software_fir_zero
+# vsim -voptargs="+acc" -wlf fir-software_fir_zero-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/software_fir_zero/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/software_fir_zero/accumulators.hex -gCOEFF_FILE=cases/software_fir_zero/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/software_fir_zero/input.hex 
+# Start time: 09:15:08 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=software_fir_zero samples=8
+# End time: 09:15:09 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=software_fir_zero_coefficients
+# vsim -voptargs="+acc" -wlf fir-software_fir_zero_coefficients-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/software_fir_zero_coefficients/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/software_fir_zero_coefficients/accumulators.hex -gCOEFF_FILE=cases/software_fir_zero_coefficients/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/software_fir_zero_coefficients/input.hex 
+# Start time: 09:15:09 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=software_fir_zero_coefficients samples=8
+# End time: 09:15:09 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=last_tap
+# vsim -voptargs="+acc" -wlf fir-last_tap-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/last_tap/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/last_tap/accumulators.hex -gCOEFF_FILE=cases/last_tap/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/last_tap/input.hex 
+# Start time: 09:15:09 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=64 stalls=96 protocol_outputs=0
+#    Time: 24046 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=last_tap samples=64
+# End time: 09:15:09 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=round_boundaries
+# vsim -voptargs="+acc" -wlf fir-round_boundaries-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/round_boundaries/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/round_boundaries/accumulators.hex -gCOEFF_FILE=cases/round_boundaries/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/round_boundaries/input.hex 
+# Start time: 09:15:09 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=12 protocol_outputs=0
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=round_boundaries samples=8
+# End time: 09:15:09 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=protocol
+# vsim -voptargs="+acc" -wlf fir-protocol-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/protocol/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/protocol/accumulators.hex -gCOEFF_FILE=cases/protocol/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=true -gINPUT_FILE=cases/protocol/input.hex 
+# Start time: 09:15:09 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_PROTOCOL_PASS reset_points=5 priority=2 clear_preserves_coefficients=1 pending_requests=2
+#    Time: 18157 ns  Iteration: 0  Instance: /tb_fir_serial
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=15 protocol_outputs=44
+#    Time: 21746 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=protocol samples=8
+# End time: 09:15:09 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# FIR_CASE_BEGIN name=sustained
+# vsim -voptargs="+acc" -wlf fir-sustained-42720.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/sustained/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=8 -gACC_FILE=cases/sustained/accumulators.hex -gCOEFF_FILE=cases/sustained/coefficients.hex -gUSE_STALLS=false -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/sustained/input.hex 
+# Start time: 09:15:09 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_SERIAL_PASS samples=8 stalls=0 protocol_outputs=0
+#    Time: 3416 ns  Iteration: 0  Instance: /tb_fir_serial
+# FIR_CASE_PASS name=sustained samples=8
+# End time: 09:15:10 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# FIR_SERIAL_SUITE_PASS cases=24

@@ -1,0 +1,34 @@
+{
+  "cli_help_checks": {
+    "tools.collect_de2_display": "help options match documented commands",
+    "tools.prepare_de2_display": "help options match documented commands",
+    "tools.run_de2_display": "help options match documented commands",
+    "tools.run_step1": "help options match documented commands"
+  },
+  "code_license_selected": false,
+  "eight_display_words_match_firmware": true,
+  "external_links_checked": false,
+  "fpga_programming_run": false,
+  "local_links_checked": 267,
+  "markdown_files_checked": 35,
+  "quartus_compile_run": false,
+  "recorded_at_utc": "2026-10-28T15:53:58.658308+00:00",
+  "report_source_hash_checks": {
+    "step1/validation.json": 61,
+    "step11-software-fir/validation.json": 53,
+    "step12-fir-accelerator/validation.json": 20,
+    "step13-fir-soc/validation.json": 43,
+    "step14-fir-benchmark/validation.json": 53,
+    "step15-quartus/boot-validation.json": 28,
+    "step16-display/quartus-validation.json": 36,
+    "step16-display/simulation-validation.json": 35
+  },
+  "rtl_simulation_run": false,
+  "scope": "documentation and source snapshot checks only",
+  "status": "pass",
+  "temporary_project_generation": {
+    "pins": 66,
+    "status": "pass"
+  },
+  "video_received": false
+}

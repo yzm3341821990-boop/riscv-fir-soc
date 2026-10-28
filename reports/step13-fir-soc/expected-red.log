@@ -1,0 +1,33 @@
+# do red.do
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:23:23 on Oct 28,2026
+# vcom -93 fir_serial.vhd fir_mmio.vhd tb_fir_mmio.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity fir_serial
+# -- Compiling architecture rtl of fir_serial
+# -- Compiling entity fir_mmio
+# -- Compiling architecture rtl of fir_mmio
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_fir_mmio
+# -- Compiling architecture test of tb_fir_mmio
+# -- Loading entity fir_mmio
+# End time: 09:23:23 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio 
+# Start time: 09:23:23 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# 3
+# ** Failure: MMIO_BAD_FINAL_STATUS
+#    Time: 766 ns  Iteration: 0  Process: /tb_fir_mmio/stimulus File: tb_fir_mmio.vhd
+# Break in Subprogram wait_done at tb_fir_mmio.vhd line 100
+# End time: 09:23:24 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

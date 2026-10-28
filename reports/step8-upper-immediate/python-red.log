@@ -1,0 +1,38 @@
+EFFF
+======================================================================
+ERROR: test_upper_encoders_match_independent_literal_words (tests.test_tiny_cpu_model.TinyCPUModelTests.test_upper_encoders_match_independent_literal_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_tiny_cpu_model.py", line 25, in test_upper_encoders_match_independent_literal_words
+    self.assertEqual(self.cpu.encode_lui(1, 0x12345), 0x123450B7)
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_lui'. Did you mean: 'encode_lw'?
+
+======================================================================
+FAIL: test_lui_literal_boundaries_and_all_immediate_fields_are_legal (tests.test_tiny_cpu_model.TinyCPUModelTests.test_lui_literal_boundaries_and_all_immediate_fields_are_legal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_tiny_cpu_model.py", line 46, in test_lui_literal_boundaries_and_all_immediate_fields_are_legal
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_auipc_uses_current_pc_and_ignores_encoded_rs1_bits (tests.test_tiny_cpu_model.TinyCPUModelTests.test_auipc_uses_current_pc_and_ignores_encoded_rs1_bits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_tiny_cpu_model.py", line 60, in test_auipc_uses_current_pc_and_ignores_encoded_rs1_bits
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_upper_demo_constructs_constant_and_skips_destructive_store (tests.test_tiny_cpu_model.TinyCPUModelTests.test_upper_demo_constructs_constant_and_skips_destructive_store)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_tiny_cpu_model.py", line 87, in test_upper_demo_constructs_constant_and_skips_destructive_store
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.006s
+
+FAILED (failures=3, errors=1)

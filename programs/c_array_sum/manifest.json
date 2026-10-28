@@ -1,0 +1,101 @@
+{
+  "abi": "ilp32",
+  "artifact_sha256": {
+    "initial_memory.txt": "3bc2fe07f4e0c77ff107f107e8845927e924e2caee3eda74d02b18eb066687dc",
+    "main.s": "bc0db2b1cefb341c1681ec20f232f5bb995c8459f854377ec80aab0590a6a9e2",
+    "program.elf": "32dc851d8d3757d2b8b8f558378709fc1c79e76a954afd136a1eb6bc7c014650",
+    "program.hex": "12a7dedba88ad8fffb373cd45130433af199fe949475193d72595dafeff18817"
+  },
+  "clang_version": "clang version 18.1.6 (https://github.com/ziglang/zig-bootstrap 98bc6bf4fc4009888d33941daf6b600d20a42a56)",
+  "commands": [
+    [
+      "zig",
+      "cc",
+      "-target",
+      "riscv32-freestanding",
+      "-mcpu=generic_rv32",
+      "-mabi=ilp32",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-fno-pic",
+      "-msmall-data-limit=0",
+      "-mno-relax",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables",
+      "-O1",
+      "-g0",
+      "-fno-unroll-loops",
+      "-nostdlib",
+      "-Wl,-T,link.ld",
+      "-Wl,--build-id=none",
+      "start.S",
+      "main.c",
+      "-o",
+      "program.elf"
+    ],
+    [
+      "zig",
+      "cc",
+      "-target",
+      "riscv32-freestanding",
+      "-mcpu=generic_rv32",
+      "-mabi=ilp32",
+      "-ffreestanding",
+      "-fno-builtin",
+      "-fno-stack-protector",
+      "-fno-pic",
+      "-msmall-data-limit=0",
+      "-mno-relax",
+      "-fno-unwind-tables",
+      "-fno-asynchronous-unwind-tables",
+      "-O1",
+      "-g0",
+      "-fno-unroll-loops",
+      "-S",
+      "main.c",
+      "-o",
+      "main.s"
+    ]
+  ],
+  "compiler_sha256": "2e44af5bbf7a72ef8cbdae370284687c95d65a19affa469d2ad0364d905b8e84",
+  "contract": "c-array-sum-rv32i-ilp32-v1",
+  "cpu_features": [
+    "32bit"
+  ],
+  "dynamic_commits": 64,
+  "expected_done": 1,
+  "expected_result": 55,
+  "input_sha256": {
+    "firmware/c_array_sum/link.ld": "e637c803535f7d1a018808c3ab0e9fc7d165609818df08f1a6d0be3325194a83",
+    "firmware/c_array_sum/main.c": "cca58a61cbe56708f7f5294c8a105511e07677683c18b6859ad2b92dd00fc44e",
+    "firmware/c_array_sum/start.S": "358ad1b86e831f18710936523b166b44c14c3a0dde5057290d809841bbfa2c94",
+    "tools/build_c_demo.py": "2b2a1a844fc1a820434a36bafc55af6b72838a401d3144feaf082fd36460d3a7",
+    "tools/elf32.py": "e7fcaba22eaf32ebfe73628bce7a5f3f27c63dacaa3d74194a0b75006cc6d9ca"
+  },
+  "memory_requests": 13,
+  "program_words": 29,
+  "scope": "freestanding C and assembly startup; initialized RAM supplied by testbench loader",
+  "signed_samples": [
+    12,
+    -3,
+    25,
+    -10,
+    7,
+    -2,
+    30,
+    -4
+  ],
+  "symbols": {
+    "_program_end": 116,
+    "_stack_top": 1024,
+    "_start": 0,
+    "done": 532,
+    "main": 52,
+    "result": 528,
+    "samples": 512,
+    "sum_samples": 16
+  },
+  "target": "riscv32-freestanding",
+  "zig_version": "0.13.0"
+}

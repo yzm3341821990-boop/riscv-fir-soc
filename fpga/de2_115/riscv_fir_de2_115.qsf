@@ -1,0 +1,35 @@
+# Reference compile only: verify actual part and JP7 before programming.
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY de2_115_top
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_1993
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 2
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name SDC_FILE board.sdc
+set_global_assignment -name VHDL_FILE board_images_pkg.vhd
+set_global_assignment -name VHDL_FILE alu_pkg.vhd
+set_global_assignment -name VHDL_FILE alu32.vhd
+set_global_assignment -name VHDL_FILE regfile32.vhd
+set_global_assignment -name VHDL_FILE mul32.vhd
+set_global_assignment -name VHDL_FILE imm_i.vhd
+set_global_assignment -name VHDL_FILE imm_s.vhd
+set_global_assignment -name VHDL_FILE imm_b.vhd
+set_global_assignment -name VHDL_FILE imm_j.vhd
+set_global_assignment -name VHDL_FILE imm_u.vhd
+set_global_assignment -name VHDL_FILE decode_tiny.vhd
+set_global_assignment -name VHDL_FILE tiny_cpu.vhd
+set_global_assignment -name VHDL_FILE fir_serial.vhd
+set_global_assignment -name VHDL_FILE fir_mmio.vhd
+set_global_assignment -name VHDL_FILE shared_ram.vhd
+set_global_assignment -name VHDL_FILE fir_soc.vhd
+set_global_assignment -name VHDL_FILE de2_115_top.vhd
+set_location_assignment PIN_Y2 -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_location_assignment PIN_M23 -to RESET_N
+set_instance_assignment -name IO_STANDARD "2.5 V" -to RESET_N
+set_location_assignment PIN_G19 -to LEDR[0]
+set_location_assignment PIN_F19 -to LEDR[1]
+set_location_assignment PIN_E19 -to LEDR[2]
+set_location_assignment PIN_F21 -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LEDR[*]

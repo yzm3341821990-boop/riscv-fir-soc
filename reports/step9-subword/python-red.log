@@ -1,0 +1,266 @@
+EFFFFFFEEEEEEEFFFFFFFFFFFFEEEEE
+======================================================================
+ERROR: test_alignment_is_specific_to_the_access_width (tests.test_subword_cpu.SubwordCPUTests.test_alignment_is_specific_to_the_access_width)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 69, in test_alignment_is_specific_to_the_access_width
+    result = cpu.run_program([cpu.encode_load(name, 1, 0, address)])
+                              ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_last_byte_and_last_halfword_are_legal (tests.test_subword_cpu.SubwordCPUTests.test_last_byte_and_last_halfword_are_legal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 82, in test_last_byte_and_last_halfword_are_legal
+    result = cpu.run_program([cpu.encode_load(name, 1, 0, address)], initial_memory=memory)
+                              ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_load_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_load_encodings_are_literal_machine_words) (name='LB')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 13, in test_load_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_load(name, 3, 1, 1), word)
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_load_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_load_encodings_are_literal_machine_words) (name='LH')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 13, in test_load_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_load(name, 3, 1, 1), word)
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_load_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_load_encodings_are_literal_machine_words) (name='LW')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 13, in test_load_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_load(name, 3, 1, 1), word)
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_load_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_load_encodings_are_literal_machine_words) (name='LBU')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 13, in test_load_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_load(name, 3, 1, 1), word)
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_load_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_load_encodings_are_literal_machine_words) (name='LHU')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 13, in test_load_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_load(name, 3, 1, 1), word)
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_random_mixed_accesses_match_an_independent_byte_array (tests.test_subword_cpu.SubwordCPUTests.test_random_mixed_accesses_match_an_independent_byte_array)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 128, in test_random_mixed_accesses_match_an_independent_byte_array
+    program.append(cpu.encode_store({1:'SB', 2:'SH', 4:'SW'}[width], 2, 0, address))
+                   ^^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_store'. Did you mean: 'encode_or'?
+
+======================================================================
+ERROR: test_store_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_store_encodings_are_literal_machine_words) (name='SB')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 18, in test_store_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_store(name, 2, 1, -1), word)
+                     ^^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_store'. Did you mean: 'encode_or'?
+
+======================================================================
+ERROR: test_store_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_store_encodings_are_literal_machine_words) (name='SH')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 18, in test_store_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_store(name, 2, 1, -1), word)
+                     ^^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_store'. Did you mean: 'encode_or'?
+
+======================================================================
+ERROR: test_store_encodings_are_literal_machine_words (tests.test_subword_cpu.SubwordCPUTests.test_store_encodings_are_literal_machine_words) (name='SW')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 18, in test_store_encodings_are_literal_machine_words
+    self.assertEqual(cpu.encode_store(name, 2, 1, -1), word)
+                     ^^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_store'. Did you mean: 'encode_or'?
+
+======================================================================
+ERROR: test_subword_encoder_validation_and_legacy_wrappers (tests.test_subword_cpu.SubwordCPUTests.test_subword_encoder_validation_and_legacy_wrappers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 102, in test_subword_encoder_validation_and_legacy_wrappers
+    self.assertEqual(cpu.encode_load('lw', 1, 2, -4), cpu.encode_lw(1, 2, -4))
+                     ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+ERROR: test_x0_loads_still_access_memory_and_check_range (tests.test_subword_cpu.SubwordCPUTests.test_x0_loads_still_access_memory_and_check_range)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 92, in test_x0_loads_still_access_memory_and_check_range
+    result = cpu.run_program([cpu.encode_load(name, 0, 0, 0)], initial_memory=[0xFFFFFFFF])
+                              ^^^^^^^^^^^^^^^
+AttributeError: module 'model.tiny_cpu' has no attribute 'encode_load'. Did you mean: 'encode_add'?
+
+======================================================================
+FAIL: test_byte_stores_preserve_every_other_byte (tests.test_subword_cpu.SubwordCPUTests.test_byte_stores_preserve_every_other_byte) (word='00200023')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 52, in test_byte_stores_preserve_every_other_byte
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_byte_stores_preserve_every_other_byte (tests.test_subword_cpu.SubwordCPUTests.test_byte_stores_preserve_every_other_byte) (word='002000A3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 52, in test_byte_stores_preserve_every_other_byte
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_byte_stores_preserve_every_other_byte (tests.test_subword_cpu.SubwordCPUTests.test_byte_stores_preserve_every_other_byte) (word='00200123')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 52, in test_byte_stores_preserve_every_other_byte
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_byte_stores_preserve_every_other_byte (tests.test_subword_cpu.SubwordCPUTests.test_byte_stores_preserve_every_other_byte) (word='002001A3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 52, in test_byte_stores_preserve_every_other_byte
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_halfword_stores_preserve_the_other_half (tests.test_subword_cpu.SubwordCPUTests.test_halfword_stores_preserve_the_other_half) (word='00201023')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 62, in test_halfword_stores_preserve_the_other_half
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_halfword_stores_preserve_the_other_half (tests.test_subword_cpu.SubwordCPUTests.test_halfword_stores_preserve_the_other_half) (word='00201123')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 62, in test_halfword_stores_preserve_the_other_half
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00000083')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00100083')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00200083')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00300083')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00004103')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00104103')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00204103')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_byte_loads_cover_all_four_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_byte_loads_cover_all_four_lanes) (word='00304103')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 28, in test_signed_and_unsigned_byte_loads_cover_all_four_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_halfword_loads_cover_both_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_halfword_loads_cover_both_lanes) (word='00001183')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 41, in test_signed_and_unsigned_halfword_loads_cover_both_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_halfword_loads_cover_both_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_halfword_loads_cover_both_lanes) (word='00201183')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 41, in test_signed_and_unsigned_halfword_loads_cover_both_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_halfword_loads_cover_both_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_halfword_loads_cover_both_lanes) (word='00005203')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 41, in test_signed_and_unsigned_halfword_loads_cover_both_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_signed_and_unsigned_halfword_loads_cover_both_lanes (tests.test_subword_cpu.SubwordCPUTests.test_signed_and_unsigned_halfword_loads_cover_both_lanes) (word='00205203')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 41, in test_signed_and_unsigned_halfword_loads_cover_both_lanes
+    self.assertFalse(result.fault)
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.009s
+
+FAILED (failures=18, errors=13)

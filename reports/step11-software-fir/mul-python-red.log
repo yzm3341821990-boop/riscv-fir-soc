@@ -1,0 +1,99 @@
+EEFFFFFFFFF.
+======================================================================
+ERROR: test_destination_alias_x0_and_dependency (tests.test_mul_cpu.MultiplyTests.test_destination_alias_x0_and_dependency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 38, in test_destination_alias_x0_and_dependency
+    words=[cpu.encode_addi(1,0,-7),cpu.encode_addi(2,0,9),cpu.encode_op('MUL',rd,1,2)]
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\������Ŀ��������\riscv-fir-soc\model\tiny_cpu.py", line 47, in encode_op
+    raise ValueError(f"unsupported register operation: {operation}")
+ValueError: unsupported register operation: MUL
+
+======================================================================
+ERROR: test_encoding_is_the_standard_mul_word (tests.test_mul_cpu.MultiplyTests.test_encoding_is_the_standard_mul_word)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 15, in test_encoding_is_the_standard_mul_word
+    self.assertEqual(cpu.encode_op('MUL',3,1,2),0x022081B3)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\������Ŀ��������\riscv-fir-soc\model\tiny_cpu.py", line 47, in encode_op
+    raise ValueError(f"unsupported register operation: {operation}")
+ValueError: unsupported register operation: MUL
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=0, b=4294967295)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=7, b=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=4294967289, b=9)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=4294967295, b=4294967295)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=2147483648, b=4294967295)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=2147483647, b=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=65537, b=65537)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_literal_sign_overflow_and_high_input_bits (tests.test_mul_cpu.MultiplyTests.test_literal_sign_overflow_and_high_input_bits) (a=32768, b=32768)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 24, in test_literal_sign_overflow_and_high_input_bits
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_random_products_match_shift_add_oracle (tests.test_mul_cpu.MultiplyTests.test_random_products_match_shift_add_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_mul_cpu.py", line 33, in test_random_products_match_shift_add_oracle
+    self.assertFalse(r.fault)
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (failures=9, errors=2)

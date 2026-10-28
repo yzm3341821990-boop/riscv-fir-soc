@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "independent_build_directories": 2,
+  "modes": [
+    "software",
+    "hardware_cold",
+    "hardware_resident"
+  ],
+  "artifacts_per_mode": 5,
+  "identical_to_checked_in": true,
+  "artifact_sha256": {
+    "software": {
+      "program.elf": "f802677ce6a1f63ca5bb0e0e8656e026b71516c1cec408ab0c9e16754f5997b1",
+      "main.s": "a4d574341150ff845143be7dbcaa43695efa69a196575377d210ac956524ae47",
+      "program.hex": "d44e3ae8d3c17950e8ad6ecf85fcaf1393c9d30a69c46f911f6416d719f1dad2",
+      "initial_memory.txt": "bd58d8c9f20441d602833b9672f455532f19fb80dd42a20b62d220fe886ae118",
+      "manifest.json": "5af056e0c492492ebea2da8cdede1b9e1fa219de6eab6786f1453638150df080"
+    },
+    "hardware_cold": {
+      "program.elf": "7b2a804bf207f76f4c3d00340efb6545554cb27128ed32a5712cfb701a0007c3",
+      "main.s": "54a8410b6727b53d38f84e42c98d728976d3f3eb36de9c89ad43b82f79f137ff",
+      "program.hex": "16835a3945142d2f7c88b2b28dbd183166fd91a1fe64cf27bf47f20b59995927",
+      "initial_memory.txt": "bd58d8c9f20441d602833b9672f455532f19fb80dd42a20b62d220fe886ae118",
+      "manifest.json": "0823b86d4ddba49fcbe5b5f025ea1e43184e11fe4404b2406a1ef9ed0b1ed49b"
+    },
+    "hardware_resident": {
+      "program.elf": "17f8b7a37aa49e4e78075d9d4ab9779da3da986f4e9b68c72bfd1e695c12828f",
+      "main.s": "ed3baec226ec133cc4793108ebf9888d8756e82d0ca9e6f7c76ec847200a43a3",
+      "program.hex": "53c1ad8420e67d28f2a30f453a65e475e2a826a324f7871d177db0bbec5eb05e",
+      "initial_memory.txt": "bd58d8c9f20441d602833b9672f455532f19fb80dd42a20b62d220fe886ae118",
+      "manifest.json": "cb1271fcc92ea7bf2d7258126025446f4b095e778d9066794532c30e9e26d543"
+    }
+  }
+}

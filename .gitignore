@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+build/
+dist/
+# Generated FPGA/simulator work areas; archived reports/ remain tracked.
+**/db/
+**/incremental_db/
+**/output_files/
+*.qws
+*.wlf
+*.vcd

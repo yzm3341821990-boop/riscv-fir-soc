@@ -1,0 +1,14 @@
+E
+======================================================================
+ERROR: test_subword_demo_has_literal_memory_bus_trace (tests.test_subword_cpu.SubwordCPUTests.test_subword_demo_has_literal_memory_bus_trace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "F:\������Ŀ��������\riscv-fir-soc\tests\test_subword_cpu.py", line 16, in test_subword_demo_has_literal_memory_bus_trace
+    case = next(c for c in report['cases'] if c['name'] == 'subword_demo')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+----------------------------------------------------------------------
+Ran 1 test in 0.215s
+
+FAILED (errors=1)

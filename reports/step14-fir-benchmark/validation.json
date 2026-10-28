@@ -1,0 +1,287 @@
+{
+  "comparison": [
+    {
+      "case": "base",
+      "cold_cycle_ratio": 2.2241566920565834,
+      "cold_kernel_cycles": 297,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.214285714285714,
+      "resident_kernel_cycles": 297,
+      "software_cycles": 2044,
+      "wait_policy": "none"
+    },
+    {
+      "case": "base",
+      "cold_cycle_ratio": 2.2241566920565834,
+      "cold_kernel_cycles": 307,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.214285714285714,
+      "resident_kernel_cycles": 307,
+      "software_cycles": 2044,
+      "wait_policy": "periodic"
+    },
+    {
+      "case": "base_impulse",
+      "cold_cycle_ratio": 2.194776931447225,
+      "cold_kernel_cycles": 297,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.145408163265306,
+      "resident_kernel_cycles": 297,
+      "software_cycles": 2017,
+      "wait_policy": "none"
+    },
+    {
+      "case": "base_impulse",
+      "cold_cycle_ratio": 2.194776931447225,
+      "cold_kernel_cycles": 307,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.145408163265306,
+      "resident_kernel_cycles": 307,
+      "software_cycles": 2017,
+      "wait_policy": "periodic"
+    },
+    {
+      "case": "base_negative_extreme",
+      "cold_cycle_ratio": 2.3318824809575625,
+      "cold_kernel_cycles": 297,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.466836734693878,
+      "resident_kernel_cycles": 297,
+      "software_cycles": 2143,
+      "wait_policy": "none"
+    },
+    {
+      "case": "base_negative_extreme",
+      "cold_cycle_ratio": 2.3318824809575625,
+      "cold_kernel_cycles": 307,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.466836734693878,
+      "resident_kernel_cycles": 307,
+      "software_cycles": 2143,
+      "wait_policy": "periodic"
+    },
+    {
+      "case": "base_positive_extreme",
+      "cold_cycle_ratio": 2.2110990206746464,
+      "cold_kernel_cycles": 297,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.183673469387755,
+      "resident_kernel_cycles": 297,
+      "software_cycles": 2032,
+      "wait_policy": "none"
+    },
+    {
+      "case": "base_positive_extreme",
+      "cold_cycle_ratio": 2.2110990206746464,
+      "cold_kernel_cycles": 307,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.183673469387755,
+      "resident_kernel_cycles": 307,
+      "software_cycles": 2032,
+      "wait_policy": "periodic"
+    },
+    {
+      "case": "base_ties",
+      "cold_cycle_ratio": 2.2143634385201305,
+      "cold_kernel_cycles": 297,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.191326530612245,
+      "resident_kernel_cycles": 297,
+      "software_cycles": 2035,
+      "wait_policy": "none"
+    },
+    {
+      "case": "base_ties",
+      "cold_cycle_ratio": 2.2143634385201305,
+      "cold_kernel_cycles": 307,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.191326530612245,
+      "resident_kernel_cycles": 307,
+      "software_cycles": 2035,
+      "wait_policy": "periodic"
+    },
+    {
+      "case": "base_zero",
+      "cold_cycle_ratio": 2.1849836779107727,
+      "cold_kernel_cycles": 297,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.122448979591836,
+      "resident_kernel_cycles": 297,
+      "software_cycles": 2008,
+      "wait_policy": "none"
+    },
+    {
+      "case": "base_zero",
+      "cold_cycle_ratio": 2.1849836779107727,
+      "cold_kernel_cycles": 307,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.122448979591836,
+      "resident_kernel_cycles": 307,
+      "software_cycles": 2008,
+      "wait_policy": "periodic"
+    },
+    {
+      "case": "base_zero_coefficients",
+      "cold_cycle_ratio": 2.1849836779107727,
+      "cold_kernel_cycles": 297,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.122448979591836,
+      "resident_kernel_cycles": 297,
+      "software_cycles": 2008,
+      "wait_policy": "none"
+    },
+    {
+      "case": "base_zero_coefficients",
+      "cold_cycle_ratio": 2.1849836779107727,
+      "cold_kernel_cycles": 307,
+      "hardware_cold_cycles": 919,
+      "hardware_resident_cycles": 392,
+      "resident_cycle_ratio": 5.122448979591836,
+      "resident_kernel_cycles": 307,
+      "software_cycles": 2008,
+      "wait_policy": "periodic"
+    }
+  ],
+  "contract": "fir-benchmark-cycles-v1",
+  "datasets": 7,
+  "generated_at_utc": "2026-10-28T05:35:41.893411+00:00",
+  "gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/benchmark/baseline/run_benchmark_gui.do",
+  "hardware_programming": "not_run",
+  "language": "VHDL-93",
+  "measurements": 42,
+  "modes": [
+    "software",
+    "hardware_cold",
+    "hardware_resident"
+  ],
+  "negative_controls": [
+    {
+      "diagnostic": "benchmark requires exactly two marker writes",
+      "name": "missing_begin",
+      "rejected": true,
+      "scope": "accepted-event measurement integrity"
+    },
+    {
+      "diagnostic": "benchmark requires exactly two marker writes",
+      "name": "duplicate_begin",
+      "rejected": true,
+      "scope": "accepted-event measurement integrity"
+    },
+    {
+      "diagnostic": "benchmark marker payload/order/cycles are invalid",
+      "name": "wrong_end_value",
+      "rejected": true,
+      "scope": "accepted-event measurement integrity"
+    },
+    {
+      "diagnostic": "accepted event cycles are not monotonic within one benchmark run",
+      "name": "end_before_start",
+      "rejected": true,
+      "scope": "accepted-event measurement integrity"
+    },
+    {
+      "diagnostic": "accepted event cycles are not monotonic within one benchmark run",
+      "name": "cold_load_outside_interval",
+      "rejected": true,
+      "scope": "accepted-event measurement integrity"
+    },
+    {
+      "diagnostic": "accepted event cycles are not monotonic within one benchmark run",
+      "name": "stop_before_result",
+      "rejected": true,
+      "scope": "accepted-event measurement integrity"
+    },
+    {
+      "diagnostic": "a completion STATUS poll after the last accepted DMA write is required",
+      "name": "completion_poll_missing",
+      "rejected": true,
+      "scope": "accepted-event measurement integrity"
+    },
+    {
+      "diagnostic": "DMA output differs from original Q15 reference",
+      "name": "corrupt_dma_output",
+      "rejected": true,
+      "scope": "independent numerical replay"
+    }
+  ],
+  "numeric_contract": "fir-q15-block-v1",
+  "paired_cases": 14,
+  "scope": "matched complete-call simulated clock-cycle comparison; no physical speedup claim",
+  "simulator": "Model Technology ModelSim ALTERA STARTER EDITION vsim 10.5b Simulator 2016.10 Oct  5 2016",
+  "source_sha256": {
+    "docs/fir-benchmark-contract.md": "5a167618f939c979b6f36c4d9f92a258259f579f91a3021733d45eafc7548418",
+    "firmware/c_array_sum/start.S": "358ad1b86e831f18710936523b166b44c14c3a0dde5057290d809841bbfa2c94",
+    "firmware/fir_benchmark/link.ld": "567dc55dc90cc7446fa5aed6fbe9f30d07d44676d7151876392d716b289e61b6",
+    "firmware/fir_benchmark/main.c": "55ca9d3d35195d319253cd8897d36836a37350072fa1c66fc755d52e9acd12d4",
+    "model/fixed_fir.py": "80b2d323608d81b7be07b921dcc089b963e41b60ae0660ab030d99ed15a8d4b4",
+    "model/tiny_cpu.py": "8ccaf4a67d903a11741215a065ba059bc875af1969fe3111c8bda3a008f21b6e",
+    "programs/fir_benchmark/hardware_cold/initial_memory.txt": "bd58d8c9f20441d602833b9672f455532f19fb80dd42a20b62d220fe886ae118",
+    "programs/fir_benchmark/hardware_cold/main.s": "54a8410b6727b53d38f84e42c98d728976d3f3eb36de9c89ad43b82f79f137ff",
+    "programs/fir_benchmark/hardware_cold/manifest.json": "0823b86d4ddba49fcbe5b5f025ea1e43184e11fe4404b2406a1ef9ed0b1ed49b",
+    "programs/fir_benchmark/hardware_cold/program.elf": "7b2a804bf207f76f4c3d00340efb6545554cb27128ed32a5712cfb701a0007c3",
+    "programs/fir_benchmark/hardware_cold/program.hex": "16835a3945142d2f7c88b2b28dbd183166fd91a1fe64cf27bf47f20b59995927",
+    "programs/fir_benchmark/hardware_resident/initial_memory.txt": "bd58d8c9f20441d602833b9672f455532f19fb80dd42a20b62d220fe886ae118",
+    "programs/fir_benchmark/hardware_resident/main.s": "ed3baec226ec133cc4793108ebf9888d8756e82d0ca9e6f7c76ec847200a43a3",
+    "programs/fir_benchmark/hardware_resident/manifest.json": "cb1271fcc92ea7bf2d7258126025446f4b095e778d9066794532c30e9e26d543",
+    "programs/fir_benchmark/hardware_resident/program.elf": "17f8b7a37aa49e4e78075d9d4ab9779da3da986f4e9b68c72bfd1e695c12828f",
+    "programs/fir_benchmark/hardware_resident/program.hex": "53c1ad8420e67d28f2a30f453a65e475e2a826a324f7871d177db0bbec5eb05e",
+    "programs/fir_benchmark/software/initial_memory.txt": "bd58d8c9f20441d602833b9672f455532f19fb80dd42a20b62d220fe886ae118",
+    "programs/fir_benchmark/software/main.s": "a4d574341150ff845143be7dbcaa43695efa69a196575377d210ac956524ae47",
+    "programs/fir_benchmark/software/manifest.json": "5af056e0c492492ebea2da8cdede1b9e1fa219de6eab6786f1453638150df080",
+    "programs/fir_benchmark/software/program.elf": "f802677ce6a1f63ca5bb0e0e8656e026b71516c1cec408ab0c9e16754f5997b1",
+    "programs/fir_benchmark/software/program.hex": "d44e3ae8d3c17950e8ad6ecf85fcaf1393c9d30a69c46f911f6416d719f1dad2",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/tiny_cpu.vhd": "7014e760c39922faa55118d2e99c90d0abc1660f2dc0b23aef1b732cc5779822",
+    "rtl/fir/fir_mmio.vhd": "5411ebd009a02c2d6f098b03d6614a31e4c872997a2dcef160016237fe2a6ccd",
+    "rtl/fir/fir_serial.vhd": "3e175a465d8efc56a9d619a9b525694598776c24b7695149d7f6cc59d6203a97",
+    "rtl/soc/fir_soc.vhd": "7ce3fe8030704279ad65f1b72cdedab9021cbc76fbd7a04ffefa036457fa62a4",
+    "rtl/soc/shared_ram.vhd": "683213b85c4bfe4a05a65d140dd5c16b59f1ca5803e460f3e9eec4cd9f595bb1",
+    "sim/modelsim/benchmark_helpers.do": "556bf6976bc7b0470a7a2a5552dd63df4b6c806c9f6e9001886a3042fe319b65",
+    "sim/modelsim/compile_benchmark.do": "a4a28d8967a07b2bb8a4c716b2c582973aac2150f5b89141d1861947aa331dd6",
+    "sim/modelsim/run_benchmark_batch.do": "91371c02dd3ff7c7f7605ac98bade1bac049d0effa3adc7bbdce71d7c3f08b80",
+    "sim/modelsim/run_benchmark_gui.do": "26e89548bd6d19516e589d93fb47bc9dd7079be24a56038584b0eea67355a59d",
+    "sim/tb/tb_fir_benchmark.vhd": "db2c3eee7de2f90a27ecc83b5392e532cf93454abb3d776a25b58768971d7fe3",
+    "tests/test_benchmark_firmware.py": "d9f3d569e46adee63109159f94211adda1a98c09bdcd27874356f34309076c95",
+    "tests/test_benchmark_measurement.py": "462016ea7324e8c04d0ad1ccfb9ce9a6cd9c607ce267a54004af0fba79064a43",
+    "tests/test_benchmark_pairing.py": "34bf2dd6de4ff4938dee4e1b77e7254cdce4f458150927ff8a527272607ade2e",
+    "tools/audit_fir_benchmark.py": "b021897e08971991b46abe8f8010e11ba37df8df6e7e4a2c5b8bb5c22a60ff06",
+    "tools/audit_soc_trace.py": "d1eabf5ff7755579ec40a2c37800b80073f4b843c20a9e9d739c135c7adda33e",
+    "tools/build_fir_benchmark.py": "c23ef0517b1cb39fa417c9698fcdf11833799338e5704faa2de1f3b7dc79f178",
+    "tools/c_demo.py": "e9a1793a202930362ff53f6b74f20d310dc0b35033ca4729673926a3385b16e8",
+    "tools/elf32.py": "e7fcaba22eaf32ebfe73628bce7a5f3f27c63dacaa3d74194a0b75006cc6d9ca",
+    "tools/fir_benchmark.py": "d38355c20fa6afaae9e06833ddb6bfd552e0289c599c55d64849d2c2428c7cc0",
+    "tools/run_fir_benchmark.py": "6d92fee67d13001369830f0f1a6b0b84fde02da5b29c7794cd619f3d5b7bb634",
+    "tools/software_fir.py": "0daa636168dbdb2928ae7e9828fdade80700d2376b6f9740146871eb0fcbc133"
+  },
+  "staged_cases_sha256": "06d25695b58b7ff61c56a90dfc78d408df42e3379d4048873cc223e91d658449",
+  "status": "pass",
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "wait_policies": [
+    "none",
+    "periodic"
+  ]
+}

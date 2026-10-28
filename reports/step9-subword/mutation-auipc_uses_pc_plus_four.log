@@ -1,0 +1,81 @@
+# do run_cpu_batch.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap -c 
+# Copying E:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:17:31 on Oct 28,2026
+# vcom -93 -work work alu_pkg.vhd alu32.vhd regfile32.vhd imm_i.vhd imm_s.vhd imm_b.vhd imm_j.vhd imm_u.vhd decode_tiny.vhd tiny_cpu.vhd data_ram.vhd tb_tiny_cpu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package alu_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package alu_pkg
+# -- Compiling entity alu32
+# -- Compiling architecture rtl of alu32
+# -- Compiling entity regfile32
+# -- Compiling architecture rtl of regfile32
+# -- Compiling entity imm_i
+# -- Compiling architecture rtl of imm_i
+# -- Compiling entity imm_s
+# -- Compiling architecture rtl of imm_s
+# -- Compiling entity imm_b
+# -- Compiling architecture rtl of imm_b
+# -- Compiling entity imm_j
+# -- Compiling architecture rtl of imm_j
+# -- Compiling entity imm_u
+# -- Compiling architecture rtl of imm_u
+# -- Compiling entity decode_tiny
+# -- Compiling architecture rtl of decode_tiny
+# -- Compiling entity tiny_cpu
+# -- Compiling architecture rtl of tiny_cpu
+# -- Loading entity decode_tiny
+# -- Loading entity imm_i
+# -- Loading entity imm_s
+# -- Loading entity imm_b
+# -- Loading entity imm_j
+# -- Loading entity imm_u
+# -- Loading entity regfile32
+# -- Loading entity alu32
+# -- Compiling entity data_ram
+# -- Compiling architecture rtl of data_ram
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_tiny_cpu
+# -- Compiling architecture test of tb_tiny_cpu
+# -- Loading entity tiny_cpu
+# -- Loading entity data_ram
+# End time: 08:17:31 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# auipc_nonzero_pc cases/auipc_nonzero_pc/program.hex cases/auipc_nonzero_pc/expected_trace.txt cases/auipc_nonzero_pc/expected_registers.txt 4 false 0 false cases/auipc_nonzero_pc/expected_memory.txt cases/auipc_nonzero_pc/expected_memory_trace.txt false
+# 0
+# TINYCPU_CASE_BEGIN name=auipc_nonzero_pc
+# vsim -voptargs="+acc" -wlf cpu-auipc_nonzero_pc-40760.wlf work.tb_tiny_cpu -gEXPECT_FAULT=false -gRESET_DURING_LOAD=false -gMEMORY_TRACE_FILE=cases/auipc_nonzero_pc/expected_memory_trace.txt -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gTRACE_FILE=cases/auipc_nonzero_pc/expected_trace.txt -gINJECT_RESET=false -gPROGRAM_FILE=cases/auipc_nonzero_pc/program.hex 
+# Start time: 08:17:31 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_tiny_cpu(test)
+# Loading work.alu_pkg
+# Loading work.tiny_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.alu32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: TINYCPU_COMMIT pc=00000000 rd=8 value=00000063 next_pc=00000004
+#    Time: 46 ns  Iteration: 0  Instance: /tb_tiny_cpu
+# ** Failure: TINYCPU_MISMATCH commit=2 pc_expected=00000004 pc_actual=00000004 value_expected=12345004 value_actual=12345008
+#    Time: 76 ns  Iteration: 0  Process: /tb_tiny_cpu/stimulus File: tb_tiny_cpu.vhd
+# Break in Subprogram check_commit at tb_tiny_cpu.vhd line 267
+# End time: 08:17:32 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

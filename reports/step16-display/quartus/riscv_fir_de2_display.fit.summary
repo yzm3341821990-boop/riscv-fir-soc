@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Oct 28 22:54:48 2026
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : riscv_fir_de2_display
+Top-level Entity Name : de2_115_display_top
+Family : Cyclone IV E
+Device : EP4CE115F29C7
+Timing Models : Final
+Total logic elements : 27,451 / 114,480 ( 24 % )
+    Total combinational functions : 26,540 / 114,480 ( 23 % )
+    Dedicated logic registers : 11,567 / 114,480 ( 10 % )
+Total registers : 11567
+Total pins : 66 / 529 ( 12 % )
+Total virtual pins : 0
+Total memory bits : 9,216 / 3,981,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 8 / 532 ( 2 % )
+Total PLLs : 0 / 4 ( 0 % )

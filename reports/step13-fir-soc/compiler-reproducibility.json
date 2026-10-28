@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "separate_build_directories": 2,
+  "matches_checked_in_artifacts": true,
+  "artifact_sha256": {
+    "program.elf": "bb794e5aabe2340ede4b48659c1e2097b51b8aab22e1ea0742de604c721e0157",
+    "main.s": "738b73b9352d153352c7277ee43c2da6f8e5577bc1d07895ba59533006638c77",
+    "program.hex": "9645f526ad646e14e27cb6fa6d3c8916fb730bbca37255b08ad7af83f0f90680",
+    "initial_memory.txt": "66ed1bd29814e5ab9150e570fdb1873df88d288f801fddcd34470e662115917b",
+    "manifest.json": "860c6d7bb3aef6fa83f2179cfcf2cc389dbf537894ae4757e44aa4a5e1411e08"
+  },
+  "toolchain": "Zig 0.13.0 / Clang 18.1.6, RV32I/ILP32"
+}

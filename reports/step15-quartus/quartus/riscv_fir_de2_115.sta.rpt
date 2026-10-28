@@ -1,0 +1,1273 @@
+TimeQuest Timing Analyzer report for riscv_fir_de2_115
+Wed Oct 28 20:52:48 2026
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1200mV 85C Model Setup Summary
+  9. Slow 1200mV 85C Model Hold Summary
+ 10. Slow 1200mV 85C Model Recovery Summary
+ 11. Slow 1200mV 85C Model Removal Summary
+ 12. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 13. Slow 1200mV 85C Model Setup: 'CORE_25'
+ 14. Slow 1200mV 85C Model Setup: 'CLOCK_50'
+ 15. Slow 1200mV 85C Model Hold: 'CORE_25'
+ 16. Slow 1200mV 85C Model Hold: 'CLOCK_50'
+ 17. Slow 1200mV 85C Model Metastability Summary
+ 18. Slow 1200mV 0C Model Fmax Summary
+ 19. Slow 1200mV 0C Model Setup Summary
+ 20. Slow 1200mV 0C Model Hold Summary
+ 21. Slow 1200mV 0C Model Recovery Summary
+ 22. Slow 1200mV 0C Model Removal Summary
+ 23. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 24. Slow 1200mV 0C Model Setup: 'CORE_25'
+ 25. Slow 1200mV 0C Model Setup: 'CLOCK_50'
+ 26. Slow 1200mV 0C Model Hold: 'CORE_25'
+ 27. Slow 1200mV 0C Model Hold: 'CLOCK_50'
+ 28. Slow 1200mV 0C Model Metastability Summary
+ 29. Fast 1200mV 0C Model Setup Summary
+ 30. Fast 1200mV 0C Model Hold Summary
+ 31. Fast 1200mV 0C Model Recovery Summary
+ 32. Fast 1200mV 0C Model Removal Summary
+ 33. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 34. Fast 1200mV 0C Model Setup: 'CLOCK_50'
+ 35. Fast 1200mV 0C Model Setup: 'CORE_25'
+ 36. Fast 1200mV 0C Model Hold: 'CORE_25'
+ 37. Fast 1200mV 0C Model Hold: 'CLOCK_50'
+ 38. Fast 1200mV 0C Model Metastability Summary
+ 39. Multicorner Timing Analysis Summary
+ 40. Board Trace Model Assignments
+ 41. Input Transition Times
+ 42. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 43. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 44. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Report TCCS
+ 48. Report RSKM
+ 49. Unconstrained Paths Summary
+ 50. Clock Status Summary
+ 51. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; riscv_fir_de2_115                                   ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.42        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  41.7%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; board.sdc     ; OK     ; Wed Oct 28 20:52:43 2026 ;
++---------------+--------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                          ;
++------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+----------+----------------+
+; Clock Name ; Type      ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master   ; Source   ; Targets        ;
++------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+----------+----------------+
+; CLOCK_50   ; Base      ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;          ;          ; { CLOCK_50 }   ;
+; CORE_25    ; Generated ; 40.000 ; 25.0 MHz  ; 0.000 ; 20.000 ;            ; 2         ; 1           ;       ;        ;           ;            ; false    ; CLOCK_50 ; CLOCK_50 ; { core_clock } ;
++------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+----------+----------+----------------+
+
+
++-------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary              ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 30.42 MHz ; 30.42 MHz       ; CORE_25    ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------+
+; Slow 1200mV 85C Model Setup Summary ;
++----------+--------+-----------------+
+; Clock    ; Slack  ; End Point TNS   ;
++----------+--------+-----------------+
+; CORE_25  ; 7.131  ; 0.000           ;
+; CLOCK_50 ; 19.200 ; 0.000           ;
++----------+--------+-----------------+
+
+
++------------------------------------+
+; Slow 1200mV 85C Model Hold Summary ;
++----------+-------+-----------------+
+; Clock    ; Slack ; End Point TNS   ;
++----------+-------+-----------------+
+; CORE_25  ; 0.401 ; 0.000           ;
+; CLOCK_50 ; 0.435 ; 0.000           ;
++----------+-------+-----------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++----------+--------+-------------------------------+
+; Clock    ; Slack  ; End Point TNS                 ;
++----------+--------+-------------------------------+
+; CLOCK_50 ; 9.645  ; 0.000                         ;
+; CORE_25  ; 19.669 ; 0.000                         ;
++----------+--------+-------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CORE_25'                                                                                                                                                                  ;
++-------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                          ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 7.131 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.049     ; 32.818     ;
+; 7.185 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.049     ; 32.764     ;
+; 7.227 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 32.677     ;
+; 7.300 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 32.604     ;
+; 7.351 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.049     ; 32.598     ;
+; 7.447 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 32.457     ;
+; 7.474 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.049     ; 32.475     ;
+; 7.570 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 32.334     ;
+; 7.662 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 32.207     ;
+; 7.673 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.049     ; 32.276     ;
+; 7.676 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.055     ; 32.267     ;
+; 7.712 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.049     ; 32.237     ;
+; 7.716 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 32.153     ;
+; 7.769 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 32.135     ;
+; 7.772 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.100     ; 32.126     ;
+; 7.786 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 32.159     ;
+; 7.808 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 32.096     ;
+; 7.869 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[28] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.051     ; 32.078     ;
+; 7.877 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[26] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.051     ; 32.070     ;
+; 7.882 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.098     ; 32.018     ;
+; 7.882 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 31.987     ;
+; 7.882 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[25] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 32.063     ;
+; 7.965 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[28] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.096     ; 31.937     ;
+; 7.973 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[26] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.096     ; 31.929     ;
+; 7.997 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[25] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.098     ; 31.903     ;
+; 8.003 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[9][5]        ; CORE_25      ; CORE_25     ; 40.000       ; -0.088     ; 31.907     ;
+; 8.005 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 31.864     ;
+; 8.007 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[6]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.049     ; 31.942     ;
+; 8.011 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 31.858     ;
+; 8.058 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[27] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.051     ; 31.889     ;
+; 8.065 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 31.804     ;
+; 8.091 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.079     ; 31.828     ;
+; 8.096 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][13]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 31.822     ;
+; 8.102 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.090     ; 31.806     ;
+; 8.103 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[6]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 31.801     ;
+; 8.106 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 31.835     ;
+; 8.114 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; halted                                                               ; CORE_25      ; CORE_25     ; 40.000       ; -0.052     ; 31.832     ;
+; 8.114 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; complete_latch                                                       ; CORE_25      ; CORE_25     ; 40.000       ; -0.052     ; 31.832     ;
+; 8.135 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[9][5]        ; CORE_25      ; CORE_25     ; 40.000       ; -0.088     ; 31.775     ;
+; 8.154 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[27] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.096     ; 31.748     ;
+; 8.159 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[29] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.051     ; 31.788     ;
+; 8.164 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.079     ; 31.755     ;
+; 8.168 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; halted                                                               ; CORE_25      ; CORE_25     ; 40.000       ; -0.052     ; 31.778     ;
+; 8.168 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; complete_latch                                                       ; CORE_25      ; CORE_25     ; 40.000       ; -0.052     ; 31.778     ;
+; 8.172 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[126][18]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.721     ;
+; 8.172 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[126][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.721     ;
+; 8.175 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.090     ; 31.733     ;
+; 8.193 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[234][24]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.087     ; 31.718     ;
+; 8.193 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[234][25]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.087     ; 31.718     ;
+; 8.196 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 31.745     ;
+; 8.197 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[15][5] ; CORE_25      ; CORE_25     ; 40.000       ; -0.104     ; 31.697     ;
+; 8.204 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 31.665     ;
+; 8.207 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.135     ; 31.656     ;
+; 8.211 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 31.693     ;
+; 8.222 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[45][26]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.671     ;
+; 8.222 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[45][29]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.671     ;
+; 8.223 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[9][5]        ; CORE_25      ; CORE_25     ; 40.000       ; -0.088     ; 31.687     ;
+; 8.226 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[126][18]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.667     ;
+; 8.226 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[126][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.667     ;
+; 8.228 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[121][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.119     ; 31.651     ;
+; 8.228 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][13]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 31.690     ;
+; 8.231 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 31.638     ;
+; 8.243 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.129     ; 31.626     ;
+; 8.251 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[15][5] ; CORE_25      ; CORE_25     ; 40.000       ; -0.104     ; 31.643     ;
+; 8.253 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][31]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.073     ; 31.672     ;
+; 8.253 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][21]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.073     ; 31.672     ;
+; 8.253 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][15]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.073     ; 31.672     ;
+; 8.253 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][24]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.073     ; 31.672     ;
+; 8.253 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][25]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.073     ; 31.672     ;
+; 8.255 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[29] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.096     ; 31.647     ;
+; 8.266 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[31] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.051     ; 31.681     ;
+; 8.266 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[234][24]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.087     ; 31.645     ;
+; 8.266 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[234][25]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.087     ; 31.645     ;
+; 8.271 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[142][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.106     ; 31.621     ;
+; 8.271 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[142][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.106     ; 31.621     ;
+; 8.282 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[121][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.119     ; 31.597     ;
+; 8.284 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.094     ; 31.620     ;
+; 8.285 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][9]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 31.667     ;
+; 8.285 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][7]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 31.667     ;
+; 8.285 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][5]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 31.667     ;
+; 8.285 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][4]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 31.667     ;
+; 8.285 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][3]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 31.667     ;
+; 8.285 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][2]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 31.667     ;
+; 8.285 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][1]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 31.667     ;
+; 8.294 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[121][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.141     ; 31.563     ;
+; 8.295 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[45][26]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.598     ;
+; 8.295 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[45][29]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.105     ; 31.598     ;
+; 8.297 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[233][24]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.106     ; 31.595     ;
+; 8.311 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.079     ; 31.608     ;
+; 8.316 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][13]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 31.602     ;
+; 8.317 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.133     ; 31.548     ;
+; 8.321 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[29][4]       ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 31.586     ;
+; 8.321 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[29][3]       ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 31.586     ;
+; 8.321 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[29][1]       ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 31.586     ;
+; 8.321 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[29][0]       ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 31.586     ;
+; 8.322 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.090     ; 31.586     ;
+; 8.325 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[142][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.106     ; 31.567     ;
+; 8.325 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[142][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.106     ; 31.567     ;
+; 8.326 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 31.615     ;
+; 8.327 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[9][1]        ; CORE_25      ; CORE_25     ; 40.000       ; -0.086     ; 31.585     ;
++-------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'CLOCK_50'                                                                ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 19.200 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 20.000       ; -0.275     ; 0.765      ;
+; 19.239 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 20.000       ; -0.275     ; 0.726      ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CORE_25'                                                                                                                                                                                 ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.401 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.082      ; 0.669      ;
+; 0.401 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[9]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[9]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.082      ; 0.669      ;
+; 0.401 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[4]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[4]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.082      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[30]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[30]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[25]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[25]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[26]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[26]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[15]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[15]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[29]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[29]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[10]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[10]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[13]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[13]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[12]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[12]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[14]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[14]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[20]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[20]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[2]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[2]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; fir_soc:soc|response_mmio                                          ; fir_soc:soc|response_mmio                                          ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[24]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[24]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[19]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[19]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; pass_latch                                                         ; pass_latch                                                         ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; error_latch                                                        ; error_latch                                                        ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.MAC         ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.MAC         ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.HOLD_OUTPUT ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.HOLD_OUTPUT ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.IDLE        ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.IDLE        ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; result_count[1]                                                    ; result_count[1]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; result_count[2]                                                    ; result_count[2]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; result_count[3]                                                    ; result_count[3]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; result_count[0]                                                    ; result_count[0]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|output_data[15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|output_data[15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|state.READ_WAIT                   ; fir_soc:soc|fir_mmio:accelerator|state.READ_WAIT                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[31]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[31]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[30]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[30]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[28]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[28]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[29]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[29]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[21]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[21]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[22]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[22]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[23]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[23]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[20]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[20]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[16]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[16]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[18]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[18]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[19]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[19]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[17]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[17]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[8]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[8]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[10]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[10]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[9]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[9]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[11]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[11]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[0]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[0]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[3]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[3]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[2]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[2]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[1]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[1]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[5]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[5]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[6]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[6]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[4]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[4]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[7]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[7]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[14]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[14]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[15]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[15]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[13]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[13]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[12]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[12]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[24]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[24]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[26]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[26]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[25]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[25]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[27]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[27]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[8]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[8]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|tiny_cpu:processor|fault_reg                           ; fir_soc:soc|tiny_cpu:processor|fault_reg                           ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|fir_mmio:accelerator|bus_rdata[2]                      ; fir_soc:soc|fir_mmio:accelerator|bus_rdata[2]                      ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[5]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[5]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[6]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[6]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[3]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[3]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; c_done_seen                                                        ; c_done_seen                                                        ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[19]                 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[19]                 ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]                  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]                  ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.669      ;
+; 0.404 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[31]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[31]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[27]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[27]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[22]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[22]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[17]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[17]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|fir_mmio:accelerator|state.CLEAR_CORE                  ; fir_soc:soc|fir_mmio:accelerator|state.CLEAR_CORE                  ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|fir_mmio:accelerator|state.FEED_CORE                   ; fir_soc:soc|fir_mmio:accelerator|state.FEED_CORE                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|fir_mmio:accelerator|state.WRITE_REQUEST               ; fir_soc:soc|fir_mmio:accelerator|state.WRITE_REQUEST               ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|fir_mmio:accelerator|state.WAIT_RESULT                 ; fir_soc:soc|fir_mmio:accelerator|state.WAIT_RESULT                 ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[1]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[1]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.079      ; 0.669      ;
+; 0.405 ; boot_done                                                          ; boot_done                                                          ; CORE_25      ; CORE_25     ; 0.000        ; 0.078      ; 0.669      ;
+; 0.405 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[16]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[16]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.078      ; 0.669      ;
+; 0.427 ; watchdog[19]                                                       ; watchdog[19]                                                       ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.694      ;
+; 0.434 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[28][3]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[29][3]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.701      ;
+; 0.434 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[29][7]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[30][7]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.082      ; 0.702      ;
+; 0.434 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[24][7]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[25][7]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.082      ; 0.702      ;
+; 0.434 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[16][8]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[17][8]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.701      ;
+; 0.434 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[0][10]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][10]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.082      ; 0.702      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][15]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[2][15]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.080      ; 0.701      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[16][15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[17][15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.702      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[24][15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[25][15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.702      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[27][15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[28][15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.702      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[27][14]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[28][14]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.702      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[13][11]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[14][11]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.702      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[12][11]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[13][11]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.702      ;
+; 0.435 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[26][9]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[27][9]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.081      ; 0.702      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'CLOCK_50'                                                                ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 0.435 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 0.000        ; -0.189     ; 0.674      ;
+; 0.459 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 0.000        ; -0.189     ; 0.698      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 59.467 ns
+
+
+
+
++-------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary               ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 32.87 MHz ; 32.87 MHz       ; CORE_25    ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------+
+; Slow 1200mV 0C Model Setup Summary ;
++----------+--------+----------------+
+; Clock    ; Slack  ; End Point TNS  ;
++----------+--------+----------------+
+; CORE_25  ; 9.573  ; 0.000          ;
+; CLOCK_50 ; 19.287 ; 0.000          ;
++----------+--------+----------------+
+
+
++-----------------------------------+
+; Slow 1200mV 0C Model Hold Summary ;
++----------+-------+----------------+
+; Clock    ; Slack ; End Point TNS  ;
++----------+-------+----------------+
+; CORE_25  ; 0.352 ; 0.000          ;
+; CLOCK_50 ; 0.388 ; 0.000          ;
++----------+-------+----------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; CLOCK_50 ; 9.636  ; 0.000                        ;
+; CORE_25  ; 19.689 ; 0.000                        ;
++----------+--------+------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CORE_25'                                                                                                                                                                    ;
++--------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 9.573  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 30.389     ;
+; 9.574  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 30.343     ;
+; 9.681  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 30.281     ;
+; 9.682  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 30.235     ;
+; 9.769  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 30.193     ;
+; 9.770  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 30.147     ;
+; 9.882  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 30.080     ;
+; 9.883  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 30.034     ;
+; 10.109 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.043     ; 29.847     ;
+; 10.110 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.088     ; 29.801     ;
+; 10.117 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 29.845     ;
+; 10.118 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 29.799     ;
+; 10.132 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.118     ; 29.749     ;
+; 10.152 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 29.810     ;
+; 10.153 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 29.764     ;
+; 10.169 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.041     ; 29.789     ;
+; 10.170 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.086     ; 29.743     ;
+; 10.240 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.118     ; 29.641     ;
+; 10.270 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[28] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.039     ; 29.690     ;
+; 10.271 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[28] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.084     ; 29.644     ;
+; 10.276 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[26] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.039     ; 29.684     ;
+; 10.277 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[26] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.084     ; 29.638     ;
+; 10.323 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[25] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.041     ; 29.635     ;
+; 10.324 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[25] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.086     ; 29.589     ;
+; 10.328 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.118     ; 29.553     ;
+; 10.361 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.117     ; 29.521     ;
+; 10.411 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[6]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 29.551     ;
+; 10.412 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[6]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 29.505     ;
+; 10.423 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.044     ; 29.532     ;
+; 10.430 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[27] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.039     ; 29.530     ;
+; 10.431 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[27] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.084     ; 29.484     ;
+; 10.441 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.118     ; 29.440     ;
+; 10.469 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.117     ; 29.413     ;
+; 10.473 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 29.446     ;
+; 10.487 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[9][5]        ; CORE_25      ; CORE_25     ; 40.000       ; -0.078     ; 29.434     ;
+; 10.525 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[29] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.039     ; 29.435     ;
+; 10.526 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[29] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.084     ; 29.389     ;
+; 10.531 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.044     ; 29.424     ;
+; 10.545 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[15][5] ; CORE_25      ; CORE_25     ; 40.000       ; -0.090     ; 29.364     ;
+; 10.557 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.117     ; 29.325     ;
+; 10.559 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.067     ; 29.373     ;
+; 10.567 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][13]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.071     ; 29.361     ;
+; 10.567 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[121][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.108     ; 29.324     ;
+; 10.581 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 29.338     ;
+; 10.592 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 29.327     ;
+; 10.592 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; halted                                                               ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 29.370     ;
+; 10.592 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; complete_latch                                                       ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 29.370     ;
+; 10.595 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[9][5]        ; CORE_25      ; CORE_25     ; 40.000       ; -0.078     ; 29.326     ;
+; 10.619 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.044     ; 29.336     ;
+; 10.629 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[126][18]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.093     ; 29.277     ;
+; 10.629 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[126][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.093     ; 29.277     ;
+; 10.634 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[31] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.039     ; 29.326     ;
+; 10.635 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[31] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.084     ; 29.280     ;
+; 10.648 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][9]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.315     ;
+; 10.648 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][7]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.315     ;
+; 10.648 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][5]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.315     ;
+; 10.648 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][4]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.315     ;
+; 10.648 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][3]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.315     ;
+; 10.648 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][2]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.315     ;
+; 10.648 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][1]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.315     ;
+; 10.650 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[142][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.093     ; 29.256     ;
+; 10.650 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[142][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.093     ; 29.256     ;
+; 10.653 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[15][5] ; CORE_25      ; CORE_25     ; 40.000       ; -0.090     ; 29.256     ;
+; 10.667 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.067     ; 29.265     ;
+; 10.668 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.124     ; 29.207     ;
+; 10.669 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 29.250     ;
+; 10.670 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.117     ; 29.212     ;
+; 10.672 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[156][1]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 29.236     ;
+; 10.672 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[156][0]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 29.236     ;
+; 10.675 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[121][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.128     ; 29.196     ;
+; 10.675 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][13]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.071     ; 29.253     ;
+; 10.675 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[121][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.108     ; 29.216     ;
+; 10.676 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.118     ; 29.205     ;
+; 10.683 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[9][5]        ; CORE_25      ; CORE_25     ; 40.000       ; -0.078     ; 29.238     ;
+; 10.684 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.058     ; 29.257     ;
+; 10.698 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][31]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.064     ; 29.237     ;
+; 10.698 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][21]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.064     ; 29.237     ;
+; 10.698 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][15]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.064     ; 29.237     ;
+; 10.698 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][24]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.064     ; 29.237     ;
+; 10.698 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|tiny_cpu:processor|regfile32:registers|bank[13][25]      ; CORE_25      ; CORE_25     ; 40.000       ; -0.064     ; 29.237     ;
+; 10.700 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.080     ; 29.219     ;
+; 10.700 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; halted                                                               ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 29.262     ;
+; 10.700 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; complete_latch                                                       ; CORE_25      ; CORE_25     ; 40.000       ; -0.037     ; 29.262     ;
+; 10.704 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[45][26]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 29.204     ;
+; 10.704 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[45][29]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.091     ; 29.204     ;
+; 10.711 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.118     ; 29.170     ;
+; 10.725 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[179][13]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.033     ; 29.241     ;
+; 10.728 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.122     ; 29.149     ;
+; 10.732 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.044     ; 29.223     ;
+; 10.737 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[126][18]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.093     ; 29.169     ;
+; 10.737 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[126][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.093     ; 29.169     ;
+; 10.741 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[15][5] ; CORE_25      ; CORE_25     ; 40.000       ; -0.090     ; 29.168     ;
+; 10.742 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[116][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.099     ; 29.158     ;
+; 10.742 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[234][24]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.072     ; 29.185     ;
+; 10.742 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[234][25]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.072     ; 29.185     ;
+; 10.755 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.067     ; 29.177     ;
+; 10.756 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][9]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.207     ;
+; 10.756 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][7]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.207     ;
+; 10.756 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][5]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.207     ;
+; 10.756 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[6][4]  ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 29.207     ;
++--------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'CLOCK_50'                                                                 ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 19.287 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 20.000       ; -0.252     ; 0.683      ;
+; 19.315 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 20.000       ; -0.252     ; 0.655      ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CORE_25'                                                                                                                                                                                  ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.352 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[9]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[9]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.074      ; 0.597      ;
+; 0.352 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[4]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[4]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.074      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[15]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[15]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[29]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[29]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[13]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[13]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[12]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[12]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[14]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[14]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[20]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[20]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.353 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[6]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[6]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[30]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[30]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[25]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[25]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[26]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[26]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[19]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[19]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; pass_latch                                                         ; pass_latch                                                         ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; error_latch                                                        ; error_latch                                                        ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|output_data[15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|output_data[15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|fir_mmio:accelerator|state.READ_WAIT                   ; fir_soc:soc|fir_mmio:accelerator|state.READ_WAIT                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[8]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[8]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|fir_mmio:accelerator|bus_rdata[2]                      ; fir_soc:soc|fir_mmio:accelerator|bus_rdata[2]                      ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[2]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[2]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; fir_soc:soc|response_mmio                                          ; fir_soc:soc|response_mmio                                          ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; c_done_seen                                                        ; c_done_seen                                                        ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[31]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[31]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[27]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[27]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[24]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[24]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[22]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[22]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[17]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[17]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.MAC         ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.MAC         ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.HOLD_OUTPUT ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.HOLD_OUTPUT ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.IDLE        ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.IDLE        ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; result_count[1]                                                    ; result_count[1]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; result_count[2]                                                    ; result_count[2]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; result_count[3]                                                    ; result_count[3]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; result_count[0]                                                    ; result_count[0]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[31]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[31]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[30]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[30]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[28]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[28]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[29]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[29]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[21]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[21]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[22]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[22]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[23]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[23]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[20]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[20]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[16]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[16]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[18]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[18]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[19]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[19]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[17]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[17]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[8]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[8]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[10]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[10]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[9]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[9]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[11]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[11]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[0]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[0]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[3]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[3]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[2]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[2]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[1]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[1]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[5]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[5]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[6]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[6]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[4]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[4]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[7]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[7]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[14]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[14]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[15]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[15]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[13]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[13]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[12]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[12]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[24]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[24]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[26]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[26]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[25]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[25]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[27]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[27]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[10]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[10]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|tiny_cpu:processor|fault_reg                           ; fir_soc:soc|tiny_cpu:processor|fault_reg                           ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[5]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[5]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[3]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[3]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[1]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[1]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[19]                 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[19]                 ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.355 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]                  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]                  ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.597      ;
+; 0.356 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; boot_done                                                          ; boot_done                                                          ; CORE_25      ; CORE_25     ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[16]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[16]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; fir_soc:soc|fir_mmio:accelerator|state.CLEAR_CORE                  ; fir_soc:soc|fir_mmio:accelerator|state.CLEAR_CORE                  ; CORE_25      ; CORE_25     ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; fir_soc:soc|fir_mmio:accelerator|state.FEED_CORE                   ; fir_soc:soc|fir_mmio:accelerator|state.FEED_CORE                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; fir_soc:soc|fir_mmio:accelerator|state.WRITE_REQUEST               ; fir_soc:soc|fir_mmio:accelerator|state.WRITE_REQUEST               ; CORE_25      ; CORE_25     ; 0.000        ; 0.070      ; 0.597      ;
+; 0.356 ; fir_soc:soc|fir_mmio:accelerator|state.WAIT_RESULT                 ; fir_soc:soc|fir_mmio:accelerator|state.WAIT_RESULT                 ; CORE_25      ; CORE_25     ; 0.000        ; 0.070      ; 0.597      ;
+; 0.386 ; watchdog[19]                                                       ; watchdog[19]                                                       ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.630      ;
+; 0.400 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[4][3]     ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[5][3]     ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.643      ;
+; 0.400 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[16][8]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[17][8]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.644      ;
+; 0.401 ; heartbeat[24]                                                      ; heartbeat[24]                                                      ; CORE_25      ; CORE_25     ; 0.000        ; 0.071      ; 0.643      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[3][14]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[4][14]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.644      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[9][12]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[10][12]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.644      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[13][11]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[14][11]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.644      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[5][2]     ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[6][2]     ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.644      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[0][2]     ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][2]     ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.644      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|state.READ_REQUEST                ; fir_soc:soc|fir_mmio:accelerator|state.READ_WAIT                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.072      ; 0.644      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[0][10]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][10]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.645      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[4][12]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[5][12]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.645      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][12]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[2][12]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.645      ;
+; 0.401 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[0][12]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][12]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.073      ; 0.645      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'CLOCK_50'                                                                 ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 0.388 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 0.000        ; -0.174     ; 0.608      ;
+; 0.405 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 0.000        ; -0.174     ; 0.625      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 60.816 ns
+
+
+
+
++------------------------------------+
+; Fast 1200mV 0C Model Setup Summary ;
++----------+--------+----------------+
+; Clock    ; Slack  ; End Point TNS  ;
++----------+--------+----------------+
+; CLOCK_50 ; 19.616 ; 0.000          ;
+; CORE_25  ; 22.978 ; 0.000          ;
++----------+--------+----------------+
+
+
++-----------------------------------+
+; Fast 1200mV 0C Model Hold Summary ;
++----------+-------+----------------+
+; Clock    ; Slack ; End Point TNS  ;
++----------+-------+----------------+
+; CORE_25  ; 0.180 ; 0.000          ;
+; CLOCK_50 ; 0.198 ; 0.000          ;
++----------+-------+----------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++----------+--------+------------------------------+
+; Clock    ; Slack  ; End Point TNS                ;
++----------+--------+------------------------------+
+; CLOCK_50 ; 9.285  ; 0.000                        ;
+; CORE_25  ; 19.708 ; 0.000                        ;
++----------+--------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CLOCK_50'                                                                 ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 19.616 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 20.000       ; -0.127     ; 0.359      ;
+; 19.637 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 20.000       ; -0.127     ; 0.338      ;
++--------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'CORE_25'                                                                                                                                                                    ;
++--------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                          ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 22.978 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.045     ; 16.964     ;
+; 23.013 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.045     ; 16.929     ;
+; 23.030 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.003     ; 16.954     ;
+; 23.065 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.003     ; 16.919     ;
+; 23.116 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.045     ; 16.826     ;
+; 23.168 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.003     ; 16.816     ;
+; 23.173 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.045     ; 16.769     ;
+; 23.225 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.003     ; 16.759     ;
+; 23.251 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.081     ; 16.655     ;
+; 23.286 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.081     ; 16.620     ;
+; 23.302 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.052     ; 16.633     ;
+; 23.305 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.045     ; 16.637     ;
+; 23.328 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.048     ; 16.611     ;
+; 23.328 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.045     ; 16.614     ;
+; 23.339 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[25] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.048     ; 16.600     ;
+; 23.354 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.010     ; 16.623     ;
+; 23.357 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.003     ; 16.627     ;
+; 23.380 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.006     ; 16.601     ;
+; 23.380 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.003     ; 16.604     ;
+; 23.382 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[26] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 16.559     ;
+; 23.383 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[28] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 16.558     ;
+; 23.389 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.081     ; 16.517     ;
+; 23.391 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[25] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.006     ; 16.590     ;
+; 23.434 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[26] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.004     ; 16.549     ;
+; 23.435 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[28] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.004     ; 16.548     ;
+; 23.446 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.081     ; 16.460     ;
+; 23.449 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.077     ; 16.461     ;
+; 23.469 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[27] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 16.472     ;
+; 23.470 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[6]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.045     ; 16.472     ;
+; 23.476 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.008     ; 16.503     ;
+; 23.480 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.033     ; 16.474     ;
+; 23.484 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.077     ; 16.426     ;
+; 23.511 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.008     ; 16.468     ;
+; 23.515 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.033     ; 16.439     ;
+; 23.520 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[29] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 16.421     ;
+; 23.521 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[27] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.004     ; 16.462     ;
+; 23.522 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[6]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.003     ; 16.462     ;
+; 23.526 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[121][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.072     ; 16.389     ;
+; 23.542 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[126][18]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 16.392     ;
+; 23.542 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[126][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 16.392     ;
+; 23.546 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[121][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.089     ; 16.352     ;
+; 23.558 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[142][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.372     ;
+; 23.558 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[142][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.372     ;
+; 23.561 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[121][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.072     ; 16.354     ;
+; 23.572 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[29] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.004     ; 16.411     ;
+; 23.574 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[31] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 16.367     ;
+; 23.575 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.088     ; 16.324     ;
+; 23.576 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.048     ; 16.363     ;
+; 23.577 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[126][18]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 16.357     ;
+; 23.577 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[126][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 16.357     ;
+; 23.578 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[2]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.081     ; 16.328     ;
+; 23.581 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[121][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.089     ; 16.317     ;
+; 23.587 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.077     ; 16.323     ;
+; 23.593 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[142][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.337     ;
+; 23.593 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[142][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.337     ;
+; 23.601 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[30] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.084     ; 16.302     ;
+; 23.601 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[3]  ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.081     ; 16.305     ;
+; 23.605 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[156][1]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.326     ;
+; 23.605 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[156][0]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.326     ;
+; 23.611 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.048     ; 16.328     ;
+; 23.612 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[25] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.084     ; 16.291     ;
+; 23.614 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.008     ; 16.365     ;
+; 23.618 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.033     ; 16.336     ;
+; 23.626 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[31] ; fir_soc:soc|shared_ram:shared_memory|bank[116][15]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.004     ; 16.357     ;
+; 23.628 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.302     ;
+; 23.638 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[116][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.064     ; 16.285     ;
+; 23.638 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 16.313     ;
+; 23.640 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[156][1]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.291     ;
+; 23.640 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[156][0]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.291     ;
+; 23.644 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[223][0]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 16.297     ;
+; 23.644 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|bank[173][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.077     ; 16.266     ;
+; 23.655 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[26] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 16.250     ;
+; 23.656 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[28] ; fir_soc:soc|shared_ram:shared_memory|bank[173][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.082     ; 16.249     ;
+; 23.660 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.022     ; 16.305     ;
+; 23.663 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.267     ;
+; 23.664 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[121][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.072     ; 16.251     ;
+; 23.670 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[15][5] ; CORE_25      ; CORE_25     ; 40.000       ; -0.048     ; 16.269     ;
+; 23.671 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.008     ; 16.308     ;
+; 23.673 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[116][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.064     ; 16.250     ;
+; 23.673 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 16.278     ;
+; 23.675 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[12] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                      ; CORE_25      ; CORE_25     ; 40.000       ; -0.033     ; 16.279     ;
+; 23.679 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|bank[223][0]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.046     ; 16.262     ;
+; 23.680 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[126][18]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 16.254     ;
+; 23.680 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[126][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.053     ; 16.254     ;
+; 23.684 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[121][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.089     ; 16.214     ;
+; 23.693 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[171][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.081     ; 16.213     ;
+; 23.695 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][6]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.071     ; 16.221     ;
+; 23.695 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                     ; CORE_25      ; CORE_25     ; 40.000       ; -0.022     ; 16.270     ;
+; 23.696 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[142][16]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.234     ;
+; 23.696 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[14] ; fir_soc:soc|shared_ram:shared_memory|bank[142][17]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.057     ; 16.234     ;
+; 23.699 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][7]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.232     ;
+; 23.699 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][5]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.232     ;
+; 23.699 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][4]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.232     ;
+; 23.699 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][3]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.232     ;
+; 23.699 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][2]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.232     ;
+; 23.699 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][1]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.232     ;
+; 23.699 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[228][0]                    ; CORE_25      ; CORE_25     ; 40.000       ; -0.056     ; 16.232     ;
+; 23.703 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[234][24]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 16.248     ;
+; 23.703 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[5]  ; fir_soc:soc|shared_ram:shared_memory|bank[234][25]                   ; CORE_25      ; CORE_25     ; 40.000       ; -0.036     ; 16.248     ;
+; 23.705 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[13] ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|coefficients[15][5] ; CORE_25      ; CORE_25     ; 40.000       ; -0.048     ; 16.234     ;
++--------+----------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CORE_25'                                                                                                                                                                                  ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.180 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[9]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[9]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.043      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[30]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[30]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[26]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[26]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[15]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[15]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[23]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[18]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[29]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[29]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[0]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[4]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[4]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[10]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[10]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[13]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[13]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[8]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[8]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[14]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[14]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[20]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[20]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[2]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[2]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[6]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[6]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.181 ; fir_soc:soc|response_mmio                                          ; fir_soc:soc|response_mmio                                          ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[25]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[25]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[24]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[24]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[19]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[19]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[22]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[22]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; pass_latch                                                         ; pass_latch                                                         ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; error_latch                                                        ; error_latch                                                        ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|output_data[15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|output_data[15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|fir_mmio:accelerator|state.READ_WAIT                   ; fir_soc:soc|fir_mmio:accelerator|state.READ_WAIT                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[11]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[12]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[12]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|tiny_cpu:processor|fault_reg                           ; fir_soc:soc|tiny_cpu:processor|fault_reg                           ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|fir_mmio:accelerator|bus_rdata[2]                      ; fir_soc:soc|fir_mmio:accelerator|bus_rdata[2]                      ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[5]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[5]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[3]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[3]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; c_done_seen                                                        ; c_done_seen                                                        ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]                  ; fir_soc:soc|tiny_cpu:processor|instruction_reg[4]                  ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.307      ;
+; 0.183 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[31]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[31]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[28]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[27]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[27]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[21]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[17]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[17]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.MAC         ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.MAC         ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.HOLD_OUTPUT ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.HOLD_OUTPUT ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.IDLE        ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|state.IDLE        ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; result_count[1]                                                    ; result_count[1]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; result_count[2]                                                    ; result_count[2]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; result_count[3]                                                    ; result_count[3]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; result_count[0]                                                    ; result_count[0]                                                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|state.CLEAR_CORE                  ; fir_soc:soc|fir_mmio:accelerator|state.CLEAR_CORE                  ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|state.FEED_CORE                   ; fir_soc:soc|fir_mmio:accelerator|state.FEED_CORE                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|state.WRITE_REQUEST               ; fir_soc:soc|fir_mmio:accelerator|state.WRITE_REQUEST               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|state.WAIT_RESULT                 ; fir_soc:soc|fir_mmio:accelerator|state.WAIT_RESULT                 ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[31]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[31]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[30]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[30]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[28]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[28]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[29]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[29]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[21]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[21]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[22]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[22]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[23]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[23]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[20]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[20]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[16]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[16]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[18]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[18]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[19]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[19]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[17]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[17]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[8]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[8]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[10]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[10]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[9]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[9]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[11]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[11]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[0]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[0]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[3]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[3]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[2]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[2]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[1]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[1]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[5]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[5]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[6]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[6]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[4]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[4]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[7]               ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[7]               ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[14]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[14]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[15]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[15]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[13]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[13]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[12]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[12]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[24]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[24]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[26]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[26]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[25]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[25]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[27]              ; fir_soc:soc|fir_mmio:accelerator|coefficient_mask[27]              ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[7]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.183 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[19]                 ; fir_soc:soc|tiny_cpu:processor|instruction_reg[19]                 ; CORE_25      ; CORE_25     ; 0.000        ; 0.040      ; 0.307      ;
+; 0.184 ; boot_done                                                          ; boot_done                                                          ; CORE_25      ; CORE_25     ; 0.000        ; 0.039      ; 0.307      ;
+; 0.184 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[16]                   ; fir_soc:soc|shared_ram:shared_memory|a_rdata[16]                   ; CORE_25      ; CORE_25     ; 0.000        ; 0.039      ; 0.307      ;
+; 0.184 ; fir_soc:soc|shared_ram:shared_memory|a_rdata[1]                    ; fir_soc:soc|shared_ram:shared_memory|a_rdata[1]                    ; CORE_25      ; CORE_25     ; 0.000        ; 0.039      ; 0.307      ;
+; 0.190 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[16][8]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[17][8]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.316      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[16][15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[17][15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[27][15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[28][15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[12][11]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[13][11]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[2][4]     ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[3][4]     ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[28][3]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[29][3]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[0][10]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][10]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[4][12]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[5][12]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.191 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[0][12]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][12]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.317      ;
+; 0.192 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][15]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[2][15]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.317      ;
+; 0.192 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[0][15]    ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[1][15]    ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.317      ;
+; 0.192 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[12][15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[13][15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.318      ;
+; 0.192 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[24][15]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[25][15]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.042      ; 0.318      ;
+; 0.192 ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[13][14]   ; fir_soc:soc|fir_mmio:accelerator|fir_serial:core|history[14][14]   ; CORE_25      ; CORE_25     ; 0.000        ; 0.041      ; 0.317      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'CLOCK_50'                                                                 ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+; 0.198 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 0.000        ; -0.083     ; 0.314      ;
+; 0.207 ; core_clock ; core_clock ; CORE_25      ; CLOCK_50    ; 0.000        ; -0.083     ; 0.323      ;
++-------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+The design MTBF is not calculated because there are no specified synchronizers in the design.
+Number of Synchronizer Chains Found: 1
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+Worst Case Available Settling Time: 68.708 ns
+
+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 7.131  ; 0.180 ; N/A      ; N/A     ; 9.285               ;
+;  CLOCK_50        ; 19.200 ; 0.198 ; N/A      ; N/A     ; 9.285               ;
+;  CORE_25         ; 7.131  ; 0.180 ; N/A      ; N/A     ; 19.669              ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  CLOCK_50        ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  CORE_25         ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; LEDR[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; RESET_N                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; CLOCK_50                ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; LEDR[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; CORE_25    ; CLOCK_50 ; 1            ; 1        ; 0        ; 0        ;
+; CORE_25    ; CORE_25  ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; CORE_25    ; CLOCK_50 ; 1            ; 1        ; 0        ; 0        ;
+; CORE_25    ; CORE_25  ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 0     ; 0    ;
+; Unconstrained Output Port Paths ; 0     ; 0    ;
++---------------------------------+-------+------+
+
+
++-------------------------------------------------+
+; Clock Status Summary                            ;
++------------+----------+-----------+-------------+
+; Target     ; Clock    ; Type      ; Status      ;
++------------+----------+-----------+-------------+
+; CLOCK_50   ; CLOCK_50 ; Base      ; Constrained ;
+; core_clock ; CORE_25  ; Generated ; Constrained ;
++------------+----------+-----------+-------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Wed Oct 28 20:52:41 2026
+Info: Command: quartus_sta riscv_fir_de2_115 -c riscv_fir_de2_115
+Info: qsta_default_script.tcl version: #1
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (332104): Reading SDC File: 'board.sdc'
+Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info (332146): Worst-case setup slack is 7.131
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     7.131               0.000 CORE_25 
+    Info (332119):    19.200               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.401
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.401               0.000 CORE_25 
+    Info (332119):     0.435               0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.645
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.645               0.000 CLOCK_50 
+    Info (332119):    19.669               0.000 CORE_25 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 59.467 ns
+    Info (332114): 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332146): Worst-case setup slack is 9.573
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.573               0.000 CORE_25 
+    Info (332119):    19.287               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.352
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.352               0.000 CORE_25 
+    Info (332119):     0.388               0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.636
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.636               0.000 CLOCK_50 
+    Info (332119):    19.689               0.000 CORE_25 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 60.816 ns
+    Info (332114): 
+Info: Analyzing Fast 1200mV 0C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info (332146): Worst-case setup slack is 19.616
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    19.616               0.000 CLOCK_50 
+    Info (332119):    22.978               0.000 CORE_25 
+Info (332146): Worst-case hold slack is 0.180
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.180               0.000 CORE_25 
+    Info (332119):     0.198               0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.285
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.285               0.000 CLOCK_50 
+    Info (332119):    19.708               0.000 CORE_25 
+Info (332114): Report Metastability: Found 1 synchronizer chains.
+    Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
+    Info (332114): Number of Synchronizer Chains Found: 1
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
+    Info (332114): Worst Case Available Settling Time: 68.708 ns
+    Info (332114): 
+Info (332101): Design is fully constrained for setup requirements
+Info (332101): Design is fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 5092 megabytes
+    Info: Processing ended: Wed Oct 28 20:52:48 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:05
+
+

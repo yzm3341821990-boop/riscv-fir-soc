@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "independent_build_directory": true,
+  "byte_identical_artifacts": [
+    "initial_memory.txt",
+    "main.s",
+    "program.elf",
+    "program.hex"
+  ],
+  "compiler": "clang version 18.1.6 (https://github.com/ziglang/zig-bootstrap 98bc6bf4fc4009888d33941daf6b600d20a42a56)",
+  "artifact_sha256": {
+    "initial_memory.txt": "3bc2fe07f4e0c77ff107f107e8845927e924e2caee3eda74d02b18eb066687dc",
+    "main.s": "bc0db2b1cefb341c1681ec20f232f5bb995c8459f854377ec80aab0590a6a9e2",
+    "program.elf": "32dc851d8d3757d2b8b8f558378709fc1c79e76a954afd136a1eb6bc7c014650",
+    "program.hex": "12a7dedba88ad8fffb373cd45130433af199fe949475193d72595dafeff18817"
+  },
+  "manifest_sha256": "bcba2a4a500beecc39ebae7a0004400f2411f563a61a77790d03d00363169516"
+}

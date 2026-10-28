@@ -1,0 +1,1106 @@
+{
+  "baseline_exit_code": 0,
+  "c_firmware": {
+    "abi": "ilp32",
+    "artifact_sha256": {
+      "initial_memory.txt": "3bc2fe07f4e0c77ff107f107e8845927e924e2caee3eda74d02b18eb066687dc",
+      "main.s": "bc0db2b1cefb341c1681ec20f232f5bb995c8459f854377ec80aab0590a6a9e2",
+      "program.elf": "32dc851d8d3757d2b8b8f558378709fc1c79e76a954afd136a1eb6bc7c014650",
+      "program.hex": "12a7dedba88ad8fffb373cd45130433af199fe949475193d72595dafeff18817"
+    },
+    "clang_version": "clang version 18.1.6 (https://github.com/ziglang/zig-bootstrap 98bc6bf4fc4009888d33941daf6b600d20a42a56)",
+    "commands": [
+      [
+        "zig",
+        "cc",
+        "-target",
+        "riscv32-freestanding",
+        "-mcpu=generic_rv32",
+        "-mabi=ilp32",
+        "-ffreestanding",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-fno-pic",
+        "-msmall-data-limit=0",
+        "-mno-relax",
+        "-fno-unwind-tables",
+        "-fno-asynchronous-unwind-tables",
+        "-O1",
+        "-g0",
+        "-fno-unroll-loops",
+        "-nostdlib",
+        "-Wl,-T,link.ld",
+        "-Wl,--build-id=none",
+        "start.S",
+        "main.c",
+        "-o",
+        "program.elf"
+      ],
+      [
+        "zig",
+        "cc",
+        "-target",
+        "riscv32-freestanding",
+        "-mcpu=generic_rv32",
+        "-mabi=ilp32",
+        "-ffreestanding",
+        "-fno-builtin",
+        "-fno-stack-protector",
+        "-fno-pic",
+        "-msmall-data-limit=0",
+        "-mno-relax",
+        "-fno-unwind-tables",
+        "-fno-asynchronous-unwind-tables",
+        "-O1",
+        "-g0",
+        "-fno-unroll-loops",
+        "-S",
+        "main.c",
+        "-o",
+        "main.s"
+      ]
+    ],
+    "compiler_sha256": "2e44af5bbf7a72ef8cbdae370284687c95d65a19affa469d2ad0364d905b8e84",
+    "contract": "c-array-sum-rv32i-ilp32-v1",
+    "cpu_features": [
+      "32bit"
+    ],
+    "dynamic_commits": 64,
+    "expected_done": 1,
+    "expected_result": 55,
+    "input_sha256": {
+      "firmware/c_array_sum/link.ld": "e637c803535f7d1a018808c3ab0e9fc7d165609818df08f1a6d0be3325194a83",
+      "firmware/c_array_sum/main.c": "cca58a61cbe56708f7f5294c8a105511e07677683c18b6859ad2b92dd00fc44e",
+      "firmware/c_array_sum/start.S": "358ad1b86e831f18710936523b166b44c14c3a0dde5057290d809841bbfa2c94",
+      "tools/build_c_demo.py": "2b2a1a844fc1a820434a36bafc55af6b72838a401d3144feaf082fd36460d3a7",
+      "tools/elf32.py": "e7fcaba22eaf32ebfe73628bce7a5f3f27c63dacaa3d74194a0b75006cc6d9ca"
+    },
+    "memory_requests": 13,
+    "program_words": 29,
+    "scope": "freestanding C and assembly startup; initialized RAM supplied by testbench loader",
+    "signed_samples": [
+      12,
+      -3,
+      25,
+      -10,
+      7,
+      -2,
+      30,
+      -4
+    ],
+    "symbols": {
+      "_program_end": 116,
+      "_stack_top": 1024,
+      "_start": 0,
+      "done": 532,
+      "main": 52,
+      "result": 528,
+      "samples": 512,
+      "sum_samples": 16
+    },
+    "target": "riscv32-freestanding",
+    "zig_version": "0.13.0"
+  },
+  "c_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_c_gui.do",
+  "case_count": 165,
+  "cases": [
+    {
+      "commits": 3,
+      "name": "demo"
+    },
+    {
+      "commits": 7,
+      "name": "alu_demo"
+    },
+    {
+      "commits": 11,
+      "name": "shift_immediate"
+    },
+    {
+      "commits": 5,
+      "name": "negative_immediates"
+    },
+    {
+      "commits": 6,
+      "name": "immediate_limits"
+    },
+    {
+      "commits": 38,
+      "name": "add_wrap"
+    },
+    {
+      "commits": 6,
+      "name": "sub_wrap"
+    },
+    {
+      "commits": 8,
+      "name": "dependencies"
+    },
+    {
+      "commits": 21,
+      "name": "x0_writes"
+    },
+    {
+      "commits": 21,
+      "name": "x31"
+    },
+    {
+      "commits": 9,
+      "name": "register_shifts"
+    },
+    {
+      "commits": 11,
+      "name": "compare_signed_unsigned"
+    },
+    {
+      "commits": 9,
+      "name": "logic_register"
+    },
+    {
+      "commits": 8,
+      "name": "logic_immediate"
+    },
+    {
+      "commits": 8,
+      "name": "sltiu_negative_immediate"
+    },
+    {
+      "commits": 8,
+      "name": "shift_positive"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_opcode"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_slli_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_system"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_slli_bit30"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_srli_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_srai_reserved"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_reserved_shift"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_reserved_logic"
+    },
+    {
+      "commits": 3,
+      "name": "prefix_then_fault"
+    },
+    {
+      "commits": 48,
+      "name": "random_legal"
+    },
+    {
+      "commits": 3,
+      "name": "reset_during_fetch"
+    },
+    {
+      "commits": 3,
+      "name": "reset_after_write"
+    },
+    {
+      "commits": 8,
+      "name": "memory_demo"
+    },
+    {
+      "commits": 4,
+      "name": "memory_negative_offset"
+    },
+    {
+      "commits": 5,
+      "name": "memory_s_imm_min"
+    },
+    {
+      "commits": 4,
+      "name": "memory_s_imm_max_wrap"
+    },
+    {
+      "commits": 4,
+      "name": "memory_wrap_to_zero"
+    },
+    {
+      "commits": 6,
+      "name": "memory_boundary"
+    },
+    {
+      "commits": 4,
+      "name": "memory_load_base_alias"
+    },
+    {
+      "commits": 3,
+      "name": "memory_store_base_alias"
+    },
+    {
+      "commits": 6,
+      "name": "memory_overwrite"
+    },
+    {
+      "commits": 5,
+      "name": "memory_x0"
+    },
+    {
+      "commits": 4,
+      "name": "memory_x31"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_alignment_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_sw_alignment_fault"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_range_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_sw_range_fault"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_negative_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_sw_negative_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_offset_max_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_offset_min_fault"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_x0_fault"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_load_funct3_3"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_store_funct3_3"
+    },
+    {
+      "commits": 3,
+      "name": "memory_prefix_then_fault"
+    },
+    {
+      "commits": 64,
+      "name": "memory_random_legal"
+    },
+    {
+      "commits": 4,
+      "name": "reset_pending_load"
+    },
+    {
+      "commits": 35,
+      "name": "loop_demo"
+    },
+    {
+      "commits": 4,
+      "name": "branch_beq_taken"
+    },
+    {
+      "commits": 5,
+      "name": "branch_beq_untaken"
+    },
+    {
+      "commits": 4,
+      "name": "branch_bne_taken"
+    },
+    {
+      "commits": 5,
+      "name": "branch_bne_untaken"
+    },
+    {
+      "commits": 4,
+      "name": "branch_blt_taken"
+    },
+    {
+      "commits": 5,
+      "name": "branch_blt_untaken"
+    },
+    {
+      "commits": 4,
+      "name": "branch_bge_taken"
+    },
+    {
+      "commits": 5,
+      "name": "branch_bge_untaken"
+    },
+    {
+      "commits": 4,
+      "name": "branch_bltu_taken"
+    },
+    {
+      "commits": 5,
+      "name": "branch_bltu_untaken"
+    },
+    {
+      "commits": 4,
+      "name": "branch_bgeu_taken"
+    },
+    {
+      "commits": 5,
+      "name": "branch_bgeu_untaken"
+    },
+    {
+      "commits": 5,
+      "name": "branch_signed_min"
+    },
+    {
+      "commits": 9,
+      "name": "branch_equal_edges"
+    },
+    {
+      "commits": 3,
+      "name": "branch_skip_store"
+    },
+    {
+      "commits": 2,
+      "name": "branch_untaken_halfword"
+    },
+    {
+      "commits": 0,
+      "name": "branch_taken_halfword_fault"
+    },
+    {
+      "commits": 0,
+      "name": "branch_target_range_fault"
+    },
+    {
+      "commits": 0,
+      "name": "branch_target_negative_fault"
+    },
+    {
+      "commits": 2,
+      "name": "branch_rom_boundary"
+    },
+    {
+      "commits": 2,
+      "name": "jal_link_skip_illegal"
+    },
+    {
+      "commits": 3,
+      "name": "jal_skip_store"
+    },
+    {
+      "commits": 4,
+      "name": "jal_negative_offset"
+    },
+    {
+      "commits": 2,
+      "name": "jal_x0_link"
+    },
+    {
+      "commits": 0,
+      "name": "jal_halfword_fault"
+    },
+    {
+      "commits": 0,
+      "name": "jal_range_fault"
+    },
+    {
+      "commits": 0,
+      "name": "jal_negative_fault"
+    },
+    {
+      "commits": 2,
+      "name": "jal_rom_boundary"
+    },
+    {
+      "commits": 3,
+      "name": "jalr_clear_bit_zero"
+    },
+    {
+      "commits": 3,
+      "name": "jalr_base_alias"
+    },
+    {
+      "commits": 3,
+      "name": "jalr_x0_link"
+    },
+    {
+      "commits": 3,
+      "name": "jalr_negative_offset"
+    },
+    {
+      "commits": 3,
+      "name": "jalr_target_wrap"
+    },
+    {
+      "commits": 1,
+      "name": "jalr_bit_one_fault"
+    },
+    {
+      "commits": 1,
+      "name": "jalr_range_fault"
+    },
+    {
+      "commits": 0,
+      "name": "jalr_negative_fault"
+    },
+    {
+      "commits": 3,
+      "name": "jalr_rom_boundary"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_branch_funct3_2"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_branch_funct3_3"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_jalr_funct3"
+    },
+    {
+      "commits": 1,
+      "name": "control_fault_pc_after_jump"
+    },
+    {
+      "commits": 91,
+      "name": "control_random_legal"
+    },
+    {
+      "commits": 8,
+      "name": "upper_demo"
+    },
+    {
+      "commits": 3,
+      "name": "lui_boundaries"
+    },
+    {
+      "commits": 2,
+      "name": "lui_dirty_pseudo_rs1"
+    },
+    {
+      "commits": 4,
+      "name": "auipc_nonzero_pc"
+    },
+    {
+      "commits": 3,
+      "name": "auipc_after_jump"
+    },
+    {
+      "commits": 3,
+      "name": "upper_x0"
+    },
+    {
+      "commits": 3,
+      "name": "upper_rd31"
+    },
+    {
+      "commits": 2,
+      "name": "upper_negative_addi_constant"
+    },
+    {
+      "commits": 3,
+      "name": "upper_arithmetic_wrap"
+    },
+    {
+      "commits": 5,
+      "name": "upper_address_to_ram"
+    },
+    {
+      "commits": 3,
+      "name": "upper_auipc_jalr_alias"
+    },
+    {
+      "commits": 1,
+      "name": "upper_target_fault"
+    },
+    {
+      "commits": 16,
+      "name": "upper_all_low_fields"
+    },
+    {
+      "commits": 80,
+      "name": "upper_random_legal"
+    },
+    {
+      "commits": 16,
+      "name": "subword_demo"
+    },
+    {
+      "commits": 8,
+      "name": "subword_byte_lane_0"
+    },
+    {
+      "commits": 8,
+      "name": "subword_byte_lane_1"
+    },
+    {
+      "commits": 8,
+      "name": "subword_byte_lane_2"
+    },
+    {
+      "commits": 8,
+      "name": "subword_byte_lane_3"
+    },
+    {
+      "commits": 8,
+      "name": "subword_half_lane_0"
+    },
+    {
+      "commits": 8,
+      "name": "subword_half_lane_2"
+    },
+    {
+      "commits": 7,
+      "name": "subword_sign_edges_00000000"
+    },
+    {
+      "commits": 7,
+      "name": "subword_sign_edges_7fff7f7f"
+    },
+    {
+      "commits": 7,
+      "name": "subword_sign_edges_80008080"
+    },
+    {
+      "commits": 7,
+      "name": "subword_sign_edges_ffffffff"
+    },
+    {
+      "commits": 3,
+      "name": "subword_boundary_lb"
+    },
+    {
+      "commits": 4,
+      "name": "subword_x0_lb"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lb_negative_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lb_range_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_boundary_lbu"
+    },
+    {
+      "commits": 4,
+      "name": "subword_x0_lbu"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lbu_negative_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lbu_range_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_boundary_lh"
+    },
+    {
+      "commits": 4,
+      "name": "subword_x0_lh"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lh_negative_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lh_range_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_boundary_lhu"
+    },
+    {
+      "commits": 4,
+      "name": "subword_x0_lhu"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lhu_negative_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lhu_range_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_sb_negative_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_sb_range_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_sh_negative_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_sh_range_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lh_odd_1_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lh_odd_3_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lh_odd_1023_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lhu_odd_1_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lhu_odd_3_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_lhu_odd_1023_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_sh_odd_1_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_sh_odd_3_fault"
+    },
+    {
+      "commits": 3,
+      "name": "subword_sh_odd_1023_fault"
+    },
+    {
+      "commits": 0,
+      "name": "subword_reserved_load_6"
+    },
+    {
+      "commits": 0,
+      "name": "subword_reserved_load_7"
+    },
+    {
+      "commits": 0,
+      "name": "subword_reserved_store_4"
+    },
+    {
+      "commits": 0,
+      "name": "subword_reserved_store_5"
+    },
+    {
+      "commits": 0,
+      "name": "subword_reserved_store_6"
+    },
+    {
+      "commits": 0,
+      "name": "subword_reserved_store_7"
+    },
+    {
+      "commits": 4,
+      "name": "subword_negative_offset"
+    },
+    {
+      "commits": 4,
+      "name": "subword_wrap_to_zero"
+    },
+    {
+      "commits": 4,
+      "name": "subword_load_base_alias"
+    },
+    {
+      "commits": 3,
+      "name": "subword_store_base_alias"
+    },
+    {
+      "commits": 4,
+      "name": "reset_pending_lb"
+    },
+    {
+      "commits": 4,
+      "name": "reset_pending_lh"
+    },
+    {
+      "commits": 128,
+      "name": "subword_random_legal"
+    },
+    {
+      "commits": 64,
+      "name": "c_array_sum"
+    }
+  ],
+  "checked_commits": 1102,
+  "checked_memory_requests": 270,
+  "contract": "tiny-cpu-rv32i-subword-v6",
+  "fault_reset_checks": 63,
+  "final_and_postreset_ram_word_checks": 84480,
+  "generated_at_utc": "2026-10-28T00:44:51.341044+00:00",
+  "gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_cpu_gui.do",
+  "hardware_programming": "not_run",
+  "initial_memory_loader_writes": 256,
+  "language": "VHDL-93",
+  "loop_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_loop_gui.do",
+  "memory_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_memory_gui.do",
+  "memory_requests": 264,
+  "negative_controls": [
+    {
+      "case": "demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "pc_step_eight"
+    },
+    {
+      "case": "alu_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "addi_zero_extension"
+    },
+    {
+      "case": "shift_immediate",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "srai_as_srli"
+    },
+    {
+      "case": "memory_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "store_uses_immediate"
+    },
+    {
+      "case": "memory_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "load_returns_address"
+    },
+    {
+      "case": "memory_negative_offset",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "store_zero_extension"
+    },
+    {
+      "case": "reset_pending_load",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "reset_during_load_ignored"
+    },
+    {
+      "case": "loop_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "branch_falls_through"
+    },
+    {
+      "case": "jal_link_skip_illegal",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "jal_link_uses_target"
+    },
+    {
+      "case": "jalr_clear_bit_zero",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "jalr_keeps_bit_zero"
+    },
+    {
+      "case": "jal_halfword_fault",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_REGISTER_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "invalid_jump_writes_link"
+    },
+    {
+      "case": "branch_blt_taken",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "blt_compares_unsigned"
+    },
+    {
+      "case": "upper_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "lui_missing_shift"
+    },
+    {
+      "case": "auipc_nonzero_pc",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "auipc_uses_pc_plus_four"
+    },
+    {
+      "case": "lui_dirty_pseudo_rs1",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "lui_reads_immediate_as_rs1"
+    },
+    {
+      "case": "subword_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "lb_zero_extends"
+    },
+    {
+      "case": "subword_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "lh_zero_extends"
+    },
+    {
+      "case": "subword_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "ram_ignores_byte_enable"
+    },
+    {
+      "case": "subword_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "load_ignores_lane"
+    },
+    {
+      "case": "subword_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "halfword_requires_word_alignment"
+    },
+    {
+      "case": "subword_demo",
+      "category": "rtl",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "store_reverses_byte_lane"
+    },
+    {
+      "case": "c_array_sum",
+      "category": "firmware_initialization",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "c_initializer_corrupted"
+    },
+    {
+      "case": "c_array_sum",
+      "category": "firmware_initialization",
+      "detected_assertions": [
+        "TINYCPU_MISMATCH"
+      ],
+      "exit_code": 1,
+      "killed": true,
+      "name": "c_stack_not_initialized"
+    }
+  ],
+  "ops_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_ops_gui.do",
+  "program_commits": 1092,
+  "reset_preserves_memory_checks": 165,
+  "scope": "connected CPU RTL for 37 instructions and 1 KiB little-endian byte-enabled synchronous RAM",
+  "simulator": "Model Technology ModelSim ALTERA STARTER EDITION vsim 10.5b Simulator 2016.10 Oct  5 2016",
+  "source_sha256": {
+    "firmware/c_array_sum/link.ld": "e637c803535f7d1a018808c3ab0e9fc7d165609818df08f1a6d0be3325194a83",
+    "firmware/c_array_sum/main.c": "cca58a61cbe56708f7f5294c8a105511e07677683c18b6859ad2b92dd00fc44e",
+    "firmware/c_array_sum/start.S": "358ad1b86e831f18710936523b166b44c14c3a0dde5057290d809841bbfa2c94",
+    "model/tiny_cpu.py": "08ce85b08c7caf4a8b0ccaa33f7bdea7c2167a96f45ba90662fe2ed3f017da25",
+    "programs/c_array_sum/initial_memory.txt": "3bc2fe07f4e0c77ff107f107e8845927e924e2caee3eda74d02b18eb066687dc",
+    "programs/c_array_sum/main.s": "bc0db2b1cefb341c1681ec20f232f5bb995c8459f854377ec80aab0590a6a9e2",
+    "programs/c_array_sum/manifest.json": "bcba2a4a500beecc39ebae7a0004400f2411f563a61a77790d03d00363169516",
+    "programs/c_array_sum/program.elf": "32dc851d8d3757d2b8b8f558378709fc1c79e76a954afd136a1eb6bc7c014650",
+    "programs/c_array_sum/program.hex": "12a7dedba88ad8fffb373cd45130433af199fe949475193d72595dafeff18817",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/decode_tiny.vhd": "e38798191d98a78b867839e1be44f736cb76cb08f656f1b526f6cdac1c0c9018",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/tiny_cpu.vhd": "cf57fa7dc8d9657be3d2468387dee3e23b4d6b55e193f8c700cb87fe3aaecf32",
+    "sim/modelsim/compile_cpu.do": "301fe7674db854acdc5f841c7242a0c45fa8cdb6413cc9b57f4fd9adcc1a4a2b",
+    "sim/modelsim/cpu_helpers.do": "74c17c74b18c410970d2a69b36b6036ad3db649f6af06ca834b00661577b9bd9",
+    "sim/modelsim/run_c_gui.do": "c380fb7961d68c73307827ce5d2b4ec59c74a13f93576e3c1508ee290202c316",
+    "sim/modelsim/run_cpu_batch.do": "4bca972a4c4d5b9a8c71473d4024ae7e1e4f22ee3384fa6accec9c124ea52c91",
+    "sim/modelsim/run_cpu_gui.do": "5cf98cc7119aa39f2f7534cafcbf690388e7fe2e1eef541267064f588fc654a7",
+    "sim/modelsim/run_loop_gui.do": "4aad431de4ad0cffcdeab6247d028166741cde50f7a41e0d5fe15128e32fb15c",
+    "sim/modelsim/run_memory_gui.do": "16fa61e159a785f6bac72d23ded7df82a532bcd0821e2a03f0b0e4b7d9fdd9b8",
+    "sim/modelsim/run_ops_gui.do": "62ac4942732e34c88d747a64452c55377addf0906282b261763465706173b505",
+    "sim/modelsim/run_subword_gui.do": "84018dfe76a4f563359896cb700badca1450cb587ba60ea60a0a9baf2dc023b7",
+    "sim/modelsim/run_upper_gui.do": "9246780421420ec98fd67728a725aa021c02783a4b7e925186b9bb2534b5b892",
+    "sim/tb/tb_tiny_cpu.vhd": "fb52ff73f15b4361f2f78165c75e65f10d3c0bbd45edebcb6a7a47a52bc19d0f",
+    "tests/test_c_demo.py": "48f03fe8a64637e63e0c71431c5864cb9f4b457afbefbc412213a677913b93e5",
+    "tests/test_elf32.py": "6b369b153d86fd97d902d3b9811267f9ef23c4a0194c26e98885aa40f497ee46",
+    "tests/test_subword_cpu.py": "9946e13e82515b3e6348a04d8d924f8ccea51094276436cda97a7c668b4de316",
+    "tests/test_tiny_cpu_model.py": "c2d8cd586973053836a5a6ac75dacda70eae5d105daacc8cf3abd28d4c91e673",
+    "tools/build_c_demo.py": "2b2a1a844fc1a820434a36bafc55af6b72838a401d3144feaf082fd36460d3a7",
+    "tools/c_demo.py": "7ddcae957d65523893c22c1fb72ff0d164dc50c4df4a9285bb686d5117b9b65f",
+    "tools/elf32.py": "e7fcaba22eaf32ebfe73628bce7a5f3f27c63dacaa3d74194a0b75006cc6d9ca",
+    "tools/generate_cpu_vectors.py": "4481cdf44ff8e2f806e3e36c2c547f8607c3e6f304838d1794ab833bf042fa69",
+    "tools/run_cpu.py": "ce3124e0440e92e7358b619ff9c0f4d5524ea38f936729053eedc8f2e73d0a8a"
+  },
+  "status": "pass",
+  "subword_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_subword_gui.do",
+  "supported_instructions": [
+    "ADD",
+    "SUB",
+    "SLL",
+    "SLT",
+    "SLTU",
+    "XOR",
+    "SRL",
+    "SRA",
+    "OR",
+    "AND",
+    "ADDI",
+    "SLTI",
+    "SLTIU",
+    "XORI",
+    "ORI",
+    "ANDI",
+    "SLLI",
+    "SRLI",
+    "SRAI",
+    "LW",
+    "SW",
+    "BEQ",
+    "BNE",
+    "BLT",
+    "BGE",
+    "BLTU",
+    "BGEU",
+    "JAL",
+    "JALR",
+    "LUI",
+    "AUIPC",
+    "LB",
+    "LH",
+    "LBU",
+    "LHU",
+    "SB",
+    "SH"
+  ],
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "upper_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_upper_gui.do",
+  "warmup_commits": 10,
+  "warmup_memory_requests": 6
+}

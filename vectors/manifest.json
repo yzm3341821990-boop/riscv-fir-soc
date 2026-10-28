@@ -1,0 +1,389 @@
+{
+  "base_seed": 49374,
+  "cases": [
+    {
+      "description": "Zero input with nonzero coefficients.",
+      "files": {
+        "accumulators": {
+          "path": "zero/accumulators.hex",
+          "sha256": "3d261ec98ddd2fa2454669a4cc78833d8ac1da04bda2c0bc10a4a466c2e44597"
+        },
+        "coefficients": {
+          "path": "zero/coefficients.hex",
+          "sha256": "b7226c28e646a3afeb4b2b95f97476f476ed306600c0fab0f680412c3d4cadd9"
+        },
+        "inputs": {
+          "path": "zero/input.hex",
+          "sha256": "d6de11fe58a507be05713acc8f1da41c5782a5c461be9d58589c4d01f8ed225c"
+        },
+        "outputs": {
+          "path": "zero/expected.hex",
+          "sha256": "d6de11fe58a507be05713acc8f1da41c5782a5c461be9d58589c4d01f8ed225c"
+        },
+        "trace": {
+          "path": "zero/trace.csv",
+          "sha256": "52cf71446801bd6916b294afa9c11eaf2070df408d45dad8b489ed4fcaa087fa"
+        }
+      },
+      "name": "zero",
+      "sample_count": 64,
+      "seed": null
+    },
+    {
+      "description": "Half-scale impulse, not unrepresentable Q15 +1.",
+      "files": {
+        "accumulators": {
+          "path": "impulse/accumulators.hex",
+          "sha256": "c216e41cf9a43ba05843bbab207783b72af198032dd01b70f916a2dceec873dd"
+        },
+        "coefficients": {
+          "path": "impulse/coefficients.hex",
+          "sha256": "2a0d2b4b2a0cbd36bfc1265f29c9a6f3abdf02a6008168bb4a9d835c36ffa2b2"
+        },
+        "inputs": {
+          "path": "impulse/input.hex",
+          "sha256": "81f76682b284ceeefc28c8a80ab17d7403e63c10242c0f8654c2cc882b4a84d8"
+        },
+        "outputs": {
+          "path": "impulse/expected.hex",
+          "sha256": "acddb26f718d4375eb925dc9fd3ca4a1e960ec487241269213649c4e8388fe8b"
+        },
+        "trace": {
+          "path": "impulse/trace.csv",
+          "sha256": "6eeb2e5615d5170a2f76f83e2b3130c4f26363a0abb860181bb917bf8a05d843"
+        }
+      },
+      "name": "impulse",
+      "sample_count": 64,
+      "seed": null
+    },
+    {
+      "description": "Half-scale step and zero-initialized history.",
+      "files": {
+        "accumulators": {
+          "path": "step/accumulators.hex",
+          "sha256": "3605d404bfc4d4a3589a8607b83e9b73403c0c5728f4d1aac893d4eff2183c27"
+        },
+        "coefficients": {
+          "path": "step/coefficients.hex",
+          "sha256": "6bafa4b3fcc61462d8b0bf768aafc89cc8c77c69815b817db6617f18d8fe2e08"
+        },
+        "inputs": {
+          "path": "step/input.hex",
+          "sha256": "f5aa2104aca96a4171491a0b463d528766738602ddf9faf7698c70eed861ea10"
+        },
+        "outputs": {
+          "path": "step/expected.hex",
+          "sha256": "a100d8138a3d13e20a9b677671a8f0baf9b09346568b3f19ad07d436e9497c29"
+        },
+        "trace": {
+          "path": "step/trace.csv",
+          "sha256": "15a4e03fdd23e0dc8ba557edec840558e0dd1376dccd0aa0605fdc6ac275b82d"
+        }
+      },
+      "name": "step",
+      "sample_count": 64,
+      "seed": null
+    },
+    {
+      "description": "Positive half-LSB ties round away from zero.",
+      "files": {
+        "accumulators": {
+          "path": "positive_ties/accumulators.hex",
+          "sha256": "dc77357b11bb36561eed01d87d49a170bb98a6b20a8f4d6cef2e2a1d591f54fc"
+        },
+        "coefficients": {
+          "path": "positive_ties/coefficients.hex",
+          "sha256": "e4e4b252f152724ad815db812114323f7d5d2fe36c29d7bfc5837b478b6561b9"
+        },
+        "inputs": {
+          "path": "positive_ties/input.hex",
+          "sha256": "683d149b9cfa9997f4b84e62e504a3dac43c1f1232b85f638628fca20aa465b5"
+        },
+        "outputs": {
+          "path": "positive_ties/expected.hex",
+          "sha256": "be5effc295ec0e4fde4977000f9d75268b38dca2a1262e986016f070100cc171"
+        },
+        "trace": {
+          "path": "positive_ties/trace.csv",
+          "sha256": "22ebb6acfc78fa0184fdcbe709cb6d593d20fd076dafc2545e6bf8fc214918c2"
+        }
+      },
+      "name": "positive_ties",
+      "sample_count": 4,
+      "seed": null
+    },
+    {
+      "description": "Negative half-LSB ties round away from zero.",
+      "files": {
+        "accumulators": {
+          "path": "negative_ties/accumulators.hex",
+          "sha256": "52838ad3bd1a2160f7f5e4c215813e5e98d34baf3d9cbf9176fbe5c680a236ae"
+        },
+        "coefficients": {
+          "path": "negative_ties/coefficients.hex",
+          "sha256": "e4e4b252f152724ad815db812114323f7d5d2fe36c29d7bfc5837b478b6561b9"
+        },
+        "inputs": {
+          "path": "negative_ties/input.hex",
+          "sha256": "2a169db29f1160f6a94fcdaa26af649e72dbd752e8ee1ce9a3eb9313e006f7c4"
+        },
+        "outputs": {
+          "path": "negative_ties/expected.hex",
+          "sha256": "174d5eae95ecde6c849d6949be40a240cdd9085e38f377f22535c52af14b6f2f"
+        },
+        "trace": {
+          "path": "negative_ties/trace.csv",
+          "sha256": "0784912b2e5bf47002effc21869b2862d46bb23912da51a2e0ff0d9835a9948d"
+        }
+      },
+      "name": "negative_ties",
+      "sample_count": 4,
+      "seed": null
+    },
+    {
+      "description": "Positive output saturation.",
+      "files": {
+        "accumulators": {
+          "path": "positive_saturation/accumulators.hex",
+          "sha256": "ee91c3b88bcb416ad83d2557ab8baa77be39b3e198b8714e9597e65368aa70b9"
+        },
+        "coefficients": {
+          "path": "positive_saturation/coefficients.hex",
+          "sha256": "b7226c28e646a3afeb4b2b95f97476f476ed306600c0fab0f680412c3d4cadd9"
+        },
+        "inputs": {
+          "path": "positive_saturation/input.hex",
+          "sha256": "f318192a9bac6a3c15589f1331d02f8392d6d4ede27276a8805288468d8474ec"
+        },
+        "outputs": {
+          "path": "positive_saturation/expected.hex",
+          "sha256": "3c359f6c030acd0cfefdee792b930e8054941530c8d2cc7f3327916767bb64ad"
+        },
+        "trace": {
+          "path": "positive_saturation/trace.csv",
+          "sha256": "b50f6d851ed821ef01af919679480fdbe523fa11e5e02357d3d0dadad8720aac"
+        }
+      },
+      "name": "positive_saturation",
+      "sample_count": 64,
+      "seed": null
+    },
+    {
+      "description": "Negative output saturation.",
+      "files": {
+        "accumulators": {
+          "path": "negative_saturation/accumulators.hex",
+          "sha256": "badf421c9818a9d163152001ce079f3fa62598b9473b058b9235db2e9719d18b"
+        },
+        "coefficients": {
+          "path": "negative_saturation/coefficients.hex",
+          "sha256": "b7226c28e646a3afeb4b2b95f97476f476ed306600c0fab0f680412c3d4cadd9"
+        },
+        "inputs": {
+          "path": "negative_saturation/input.hex",
+          "sha256": "5572dade4a4453bb9dce5dc22d8bdcc58a1878c150e953093b8c56c5d97c3f93"
+        },
+        "outputs": {
+          "path": "negative_saturation/expected.hex",
+          "sha256": "5d83e882576d8cef9b1d39adadbacc0da8cbdcf64afbf517d87fe5ec56b54973"
+        },
+        "trace": {
+          "path": "negative_saturation/trace.csv",
+          "sha256": "1b6e0aaf2a278448a21509197e0a974a656e0da2e79c5b60c47172bec78cbead"
+        }
+      },
+      "name": "negative_saturation",
+      "sample_count": 64,
+      "seed": null
+    },
+    {
+      "description": "32*(-32768)*(-32768) = 2**35.",
+      "files": {
+        "accumulators": {
+          "path": "accumulator_extreme/accumulators.hex",
+          "sha256": "4f542b1f5d701cc974884bb09728b9221f7d75ad74c473a6a1f60d60b331c88d"
+        },
+        "coefficients": {
+          "path": "accumulator_extreme/coefficients.hex",
+          "sha256": "03ca871484af54d235fd57a5a9ee2259271ef29e5947417e1cd746f78ec5e4ce"
+        },
+        "inputs": {
+          "path": "accumulator_extreme/input.hex",
+          "sha256": "03ca871484af54d235fd57a5a9ee2259271ef29e5947417e1cd746f78ec5e4ce"
+        },
+        "outputs": {
+          "path": "accumulator_extreme/expected.hex",
+          "sha256": "b7226c28e646a3afeb4b2b95f97476f476ed306600c0fab0f680412c3d4cadd9"
+        },
+        "trace": {
+          "path": "accumulator_extreme/trace.csv",
+          "sha256": "6ff899105b5255a5797e80d49999e45c65112d5917747bce9e2e0802b6c51061"
+        }
+      },
+      "name": "accumulator_extreme",
+      "sample_count": 32,
+      "seed": null
+    },
+    {
+      "description": "Alternating full-scale signs.",
+      "files": {
+        "accumulators": {
+          "path": "alternating_extrema/accumulators.hex",
+          "sha256": "decb2c5e3041ed17bbfabfd3fde38154461cd76bc3f697694b2dca088a4ef88c"
+        },
+        "coefficients": {
+          "path": "alternating_extrema/coefficients.hex",
+          "sha256": "fb0ffe7b2e985d3ce764a7f8a8568c7d85a74a12bf92392b028e6bb170bb5c8c"
+        },
+        "inputs": {
+          "path": "alternating_extrema/input.hex",
+          "sha256": "34075fa36ded3e86b7d35cc0afaea7cb58d30040d75fd89cadf98f9c818f2e55"
+        },
+        "outputs": {
+          "path": "alternating_extrema/expected.hex",
+          "sha256": "a3e0b6089f54a8b65bac7c6ba0e5b26a06f06beda86d4497349f09db17e0c98c"
+        },
+        "trace": {
+          "path": "alternating_extrema/trace.csv",
+          "sha256": "eed1ff17412b9a768bf457c487841dd00d6e9155d00ea47ea40faa7b08639a3d"
+        }
+      },
+      "name": "alternating_extrema",
+      "sample_count": 64,
+      "seed": null
+    },
+    {
+      "description": "Seven samples, shorter than the impulse response.",
+      "files": {
+        "accumulators": {
+          "path": "short_block/accumulators.hex",
+          "sha256": "39f49836e02053bdc9b4b9fadedcc9988ea7fd80a1708849458a777720b069e0"
+        },
+        "coefficients": {
+          "path": "short_block/coefficients.hex",
+          "sha256": "1cdcd2ec32555f7ca9445eccc9cbb89b787415ab24982b96f8f86f9050ddb78d"
+        },
+        "inputs": {
+          "path": "short_block/input.hex",
+          "sha256": "a9bbbddfa424b660755aa26d3ecd8bcdd7fd291a2795e4c9c55296e6078183ab"
+        },
+        "outputs": {
+          "path": "short_block/expected.hex",
+          "sha256": "e185c3c718dc412499576af0a25966467589414b4a1c6ad603a4697a585cf115"
+        },
+        "trace": {
+          "path": "short_block/trace.csv",
+          "sha256": "544dd27c44a0cd42cfb92484b5d39a93bb508bbc2be068b01efabc123264afb8"
+        }
+      },
+      "name": "short_block",
+      "sample_count": 7,
+      "seed": null
+    },
+    {
+      "description": "Numerical empty-block behavior; not an MMIO command.",
+      "files": {
+        "accumulators": {
+          "path": "empty_block/accumulators.hex",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "coefficients": {
+          "path": "empty_block/coefficients.hex",
+          "sha256": "0ab7c77e6cd264dd869454ae1c9fd842ce1c3cc88d5053cdc6344a1f10cc2f2a"
+        },
+        "inputs": {
+          "path": "empty_block/input.hex",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "outputs": {
+          "path": "empty_block/expected.hex",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "trace": {
+          "path": "empty_block/trace.csv",
+          "sha256": "3f80bcd60ecaec7f95f535348668a43f01b9fbe9f816aa031ad52156936c5ebb"
+        }
+      },
+      "name": "empty_block",
+      "sample_count": 0,
+      "seed": null
+    },
+    {
+      "description": "Fixed-seed full-range input and bounded coefficients.",
+      "files": {
+        "accumulators": {
+          "path": "random_256/accumulators.hex",
+          "sha256": "d69f0935d0bd419ce7b63cb34db07026fd0e848a06fe3963ab7833ba31523655"
+        },
+        "coefficients": {
+          "path": "random_256/coefficients.hex",
+          "sha256": "6e962e86e6f51015b8345185a8ebcd3f5f704e608f89e3f194f57f956538a258"
+        },
+        "inputs": {
+          "path": "random_256/input.hex",
+          "sha256": "3d8a82dedd7f2273f30f1a1d3614d414230ee0f5b3fe9449963e34977d118ad3"
+        },
+        "outputs": {
+          "path": "random_256/expected.hex",
+          "sha256": "4a95f7e1b914958a8a77d39dd2fb0e617625b9e7f75a2be7f295bd3d1a1649bc"
+        },
+        "trace": {
+          "path": "random_256/trace.csv",
+          "sha256": "c6b0840fabf5acfcd31eb095da67a556b0337c56e4bf994ff0f1e1d194584845"
+        }
+      },
+      "name": "random_256",
+      "sample_count": 256,
+      "seed": 49630
+    },
+    {
+      "description": "Fixed-seed full-range input and bounded coefficients.",
+      "files": {
+        "accumulators": {
+          "path": "random_1024/accumulators.hex",
+          "sha256": "15c7c1c84831897c9bbbb83192e23991204bde9f61661a26501a0de5ffd8157d"
+        },
+        "coefficients": {
+          "path": "random_1024/coefficients.hex",
+          "sha256": "2b9fe69b23b9b429206d5b1caebbc754a8f984545d3ebb148c179eb4d8e3bf5d"
+        },
+        "inputs": {
+          "path": "random_1024/input.hex",
+          "sha256": "482cd850d4cdd57e5cf540dbc6ffe7b3d55547f8433741f94b41b204837a368c"
+        },
+        "outputs": {
+          "path": "random_1024/expected.hex",
+          "sha256": "ca62875f7f7bde9ae112324e0ac2f1de7b732e49203a7955b1280eb261cfa15b"
+        },
+        "trace": {
+          "path": "random_1024/trace.csv",
+          "sha256": "56c92405c41aeaefc4eeb0f035d6ec82fdab72ceca2f880eba10202a6683333a"
+        }
+      },
+      "name": "random_1024",
+      "sample_count": 1024,
+      "seed": 50398
+    }
+  ],
+  "contract": {
+    "accumulator_bits": 40,
+    "byte_order_when_loaded_into_memory": "little_endian",
+    "coefficient_order": "h[0] multiplies x[n]",
+    "fraction_bits": 15,
+    "history": "zero_each_block",
+    "id": "fir-q15-block-v1",
+    "memory_word_bits": 32,
+    "output": "saturate_signed_16",
+    "output_length": "same_as_input",
+    "rounding": "nearest_ties_away_from_zero",
+    "sample_bits": 16,
+    "sample_encoding": "sign_extend_16_to_32",
+    "taps": 32
+  },
+  "schema": "riscv-fir-vectors-v1",
+  "source_sha256": {
+    "model/fixed_fir.py": "80b2d323608d81b7be07b921dcc089b963e41b60ae0660ab030d99ed15a8d4b4",
+    "tools/generate_vectors.py": "a78137d3331dade92001b479e3ff4c7a87e3909473f9f79ac823f8755e22c7d4"
+  }
+}

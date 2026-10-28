@@ -1,0 +1,71 @@
+# do run_cpu_batch.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap -c 
+# Copying E:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:35:31 on Oct 27,2026
+# vcom -93 -work work alu_pkg.vhd alu32.vhd regfile32.vhd imm_i.vhd imm_s.vhd decode_tiny.vhd tiny_cpu.vhd data_ram.vhd tb_tiny_cpu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package alu_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package alu_pkg
+# -- Compiling entity alu32
+# -- Compiling architecture rtl of alu32
+# -- Compiling entity regfile32
+# -- Compiling architecture rtl of regfile32
+# -- Compiling entity imm_i
+# -- Compiling architecture rtl of imm_i
+# -- Compiling entity imm_s
+# -- Compiling architecture rtl of imm_s
+# -- Compiling entity decode_tiny
+# -- Compiling architecture rtl of decode_tiny
+# -- Compiling entity tiny_cpu
+# -- Compiling architecture rtl of tiny_cpu
+# -- Loading entity decode_tiny
+# -- Loading entity imm_i
+# -- Loading entity imm_s
+# -- Loading entity regfile32
+# -- Loading entity alu32
+# -- Compiling entity data_ram
+# -- Compiling architecture rtl of data_ram
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_tiny_cpu
+# -- Compiling architecture test of tb_tiny_cpu
+# -- Loading entity tiny_cpu
+# -- Loading entity data_ram
+# End time: 20:35:31 on Oct 27,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# control_red program.hex expected_trace.txt expected_registers.txt 3 false 0 false expected_memory.txt expected_memory_trace.txt false
+# 0
+# TINYCPU_CASE_BEGIN name=control_red
+# vsim -voptargs="+acc" -wlf cpu-control_red-39424.wlf work.tb_tiny_cpu -gEXPECT_FAULT=false -gRESET_DURING_LOAD=false -gMEMORY_TRACE_FILE=expected_memory_trace.txt -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gTRACE_FILE=expected_trace.txt -gINJECT_RESET=false -gPROGRAM_FILE=program.hex 
+# Start time: 20:35:31 on Oct 27,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_tiny_cpu(test)
+# Loading work.alu_pkg
+# Loading work.tiny_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.alu32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: TINYCPU_COMMIT pc=00000000 rd=1 value=00000001
+#    Time: 46 ns  Iteration: 0  Instance: /tb_tiny_cpu
+# ** Note: TINYCPU_COMMIT pc=00000004 rd=2 value=00000001
+#    Time: 76 ns  Iteration: 0  Instance: /tb_tiny_cpu
+# ** Failure: TINYCPU_MISMATCH missing_commit
+#    Time: 106 ns  Iteration: 0  Process: /tb_tiny_cpu/stimulus File: tb_tiny_cpu.vhd
+# Break in ForLoop loop at tb_tiny_cpu.vhd line 326
+# End time: 20:35:32 on Oct 27,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

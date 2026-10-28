@@ -1,0 +1,14 @@
+{
+  "recorded_at_utc": "2026-10-28T15:48:17.751548+00:00",
+  "client_timezone": "Asia/Shanghai",
+  "feedback_date_local": "2026-10-28",
+  "evidence_type": "user_report_in_conversation",
+  "previous_led_selftest_and_key0": "reported_matches_expected",
+  "display_feedback_quote": "可以了，但以后编译的流程我来搞，你来搞太慢了，你给我文件就行了",
+  "display_basic_operation": "user_reported_working",
+  "all_eight_values_individually_recorded": false,
+  "cycle_value_explicitly_confirmed": false,
+  "independently_reviewed_video": false,
+  "video_status": "user_will_record",
+  "note": "No individual physical readings are inferred from the brief acceptance message."
+}

@@ -1,0 +1,2 @@
+# Optional: the model, vector tools and tests need only Python's standard library.
+matplotlib==3.11.2

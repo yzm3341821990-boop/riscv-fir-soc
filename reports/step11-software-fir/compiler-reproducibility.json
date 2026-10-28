@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "independent_build_directory": true,
+  "byte_identical_artifacts": [
+    "initial_memory.txt",
+    "main.s",
+    "program.elf",
+    "program.hex"
+  ],
+  "artifact_sha256": {
+    "initial_memory.txt": "f7a59ebc894b0e8f3c46ff3129181cec6c0491338563fccfc4f68756d18fa8bf",
+    "main.s": "9a16d184126e8d6be28f0fe7b9c1c01234e7458c097d9ca56be577d112448cab",
+    "program.elf": "64960475e90f43521cb795f6edc8022d60dda292d4f1b23726e31f95e88d4874",
+    "program.hex": "bf28b053211db1760184f4d775de4b2d23a8430cbc4535bd361fe800d26e339e"
+  },
+  "manifest_sha256": "0a22d080557f12c5bb0102766120e8472e36604744625e1bd658ea11717872e7"
+}

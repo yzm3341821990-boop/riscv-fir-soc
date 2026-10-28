@@ -1,0 +1,353 @@
+{
+  "contract": "de2-display-v1",
+  "expected_outputs": [
+    8192,
+    12288,
+    -22528,
+    17408,
+    -12288,
+    15360,
+    -7680,
+    -2048
+  ],
+  "firmware_artifact_sha256": {
+    "initial_memory.txt": "66ed1bd29814e5ab9150e570fdb1873df88d288f801fddcd34470e662115917b",
+    "main.s": "738b73b9352d153352c7277ee43c2da6f8e5577bc1d07895ba59533006638c77",
+    "program.elf": "bb794e5aabe2340ede4b48659c1e2097b51b8aab22e1ea0742de604c721e0157",
+    "program.hex": "9645f526ad646e14e27cb6fa6d3c8916fb730bbca37255b08ad7af83f0f90680"
+  },
+  "firmware_symbols": {
+    "_program_end": 300,
+    "_stack_top": 1024,
+    "_start": 0,
+    "coefficients": 544,
+    "done": 744,
+    "errors": 740,
+    "expected": 672,
+    "hw_cycles": 748,
+    "hw_written": 752,
+    "main": 16,
+    "outputs": 704,
+    "polls": 736,
+    "samples": 512
+  },
+  "generated_sha256": {
+    "board_images_pkg.vhd": "0992e18c409ccc02990a19eee9c98a97995a8802ac52fa7c0ad4af99e7fc491e",
+    "program.mif": "c9997708ec994bd2650dfbfb9af323a08b73e8e18c39cb4bf332a8a6220d753d",
+    "ram_seed.mif": "1d9876adbecc9295fec1e0b9fb3215f4a624fb04c73fa6ee64e7bbc48534f6f5",
+    "riscv_fir_de2_display.qpf": "39ff5c226385a7f26c35e7a51bdd5218d6ab3b6847906926a6671b9673f7117c",
+    "riscv_fir_de2_display.qsf": "1e7dad3d7b26a7d53776ffae062b6b81d7387abf20b53cb6359c61da5ba9a120"
+  },
+  "physical_board_verified": false,
+  "pins": {
+    "CLOCK_50": {
+      "pin": "Y2",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX0[0]": {
+      "pin": "G18",
+      "standard": "2.5 V"
+    },
+    "HEX0[1]": {
+      "pin": "F22",
+      "standard": "2.5 V"
+    },
+    "HEX0[2]": {
+      "pin": "E17",
+      "standard": "2.5 V"
+    },
+    "HEX0[3]": {
+      "pin": "L26",
+      "standard": "2.5 V"
+    },
+    "HEX0[4]": {
+      "pin": "L25",
+      "standard": "2.5 V"
+    },
+    "HEX0[5]": {
+      "pin": "J22",
+      "standard": "2.5 V"
+    },
+    "HEX0[6]": {
+      "pin": "H22",
+      "standard": "2.5 V"
+    },
+    "HEX1[0]": {
+      "pin": "M24",
+      "standard": "2.5 V"
+    },
+    "HEX1[1]": {
+      "pin": "Y22",
+      "standard": "2.5 V"
+    },
+    "HEX1[2]": {
+      "pin": "W21",
+      "standard": "2.5 V"
+    },
+    "HEX1[3]": {
+      "pin": "W22",
+      "standard": "2.5 V"
+    },
+    "HEX1[4]": {
+      "pin": "W25",
+      "standard": "2.5 V"
+    },
+    "HEX1[5]": {
+      "pin": "U23",
+      "standard": "2.5 V"
+    },
+    "HEX1[6]": {
+      "pin": "U24",
+      "standard": "2.5 V"
+    },
+    "HEX2[0]": {
+      "pin": "AA25",
+      "standard": "2.5 V"
+    },
+    "HEX2[1]": {
+      "pin": "AA26",
+      "standard": "2.5 V"
+    },
+    "HEX2[2]": {
+      "pin": "Y25",
+      "standard": "2.5 V"
+    },
+    "HEX2[3]": {
+      "pin": "W26",
+      "standard": "2.5 V"
+    },
+    "HEX2[4]": {
+      "pin": "Y26",
+      "standard": "2.5 V"
+    },
+    "HEX2[5]": {
+      "pin": "W27",
+      "standard": "2.5 V"
+    },
+    "HEX2[6]": {
+      "pin": "W28",
+      "standard": "2.5 V"
+    },
+    "HEX3[0]": {
+      "pin": "V21",
+      "standard": "2.5 V"
+    },
+    "HEX3[1]": {
+      "pin": "U21",
+      "standard": "2.5 V"
+    },
+    "HEX3[2]": {
+      "pin": "AB20",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[3]": {
+      "pin": "AA21",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[4]": {
+      "pin": "AD24",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[5]": {
+      "pin": "AF23",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[6]": {
+      "pin": "Y19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[0]": {
+      "pin": "AB19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[1]": {
+      "pin": "AA19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[2]": {
+      "pin": "AG21",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[3]": {
+      "pin": "AH21",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[4]": {
+      "pin": "AE19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[5]": {
+      "pin": "AF19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[6]": {
+      "pin": "AE18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[0]": {
+      "pin": "AD18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[1]": {
+      "pin": "AC18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[2]": {
+      "pin": "AB18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[3]": {
+      "pin": "AH19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[4]": {
+      "pin": "AG19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[5]": {
+      "pin": "AF18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[6]": {
+      "pin": "AH18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[0]": {
+      "pin": "AA17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[1]": {
+      "pin": "AB16",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[2]": {
+      "pin": "AA16",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[3]": {
+      "pin": "AB17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[4]": {
+      "pin": "AB15",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[5]": {
+      "pin": "AA15",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[6]": {
+      "pin": "AC17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[0]": {
+      "pin": "AD17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[1]": {
+      "pin": "AE17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[2]": {
+      "pin": "AG17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[3]": {
+      "pin": "AH17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[4]": {
+      "pin": "AF17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[5]": {
+      "pin": "AG18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[6]": {
+      "pin": "AA14",
+      "standard": "3.3-V LVTTL"
+    },
+    "LEDR[0]": {
+      "pin": "G19",
+      "standard": "2.5 V"
+    },
+    "LEDR[1]": {
+      "pin": "F19",
+      "standard": "2.5 V"
+    },
+    "LEDR[2]": {
+      "pin": "E19",
+      "standard": "2.5 V"
+    },
+    "LEDR[3]": {
+      "pin": "F21",
+      "standard": "2.5 V"
+    },
+    "RESET_N": {
+      "pin": "M23",
+      "standard": "2.5 V"
+    },
+    "SW[0]": {
+      "pin": "AB28",
+      "standard": "2.5 V"
+    },
+    "SW[1]": {
+      "pin": "AC28",
+      "standard": "2.5 V"
+    },
+    "SW[2]": {
+      "pin": "AC27",
+      "standard": "2.5 V"
+    },
+    "SW[3]": {
+      "pin": "AD27",
+      "standard": "2.5 V"
+    }
+  },
+  "program_words": 75,
+  "project": "riscv_fir_de2_display",
+  "ram_seed_words": 256,
+  "reference_clock_mhz": 50,
+  "reference_device": "EP4CE115F29C7",
+  "reference_jp6_vccio": 3.3,
+  "reference_jp7_vccio": 2.5,
+  "scope": "reference project preparation only; simulation, compilation and programming recorded separately",
+  "source_sha256": {
+    "docs/de2-display-contract.md": "0f2866d109ec14bddd7db1ddb2fab5a3fb45c3051b50b6c46fbeb376dd83d3ea",
+    "fpga/de2_115/board.sdc": "fcdb82c6a1219093d2c48b133b08ff286fcab6390bee0dc101328045180aac88",
+    "fpga/de2_115/riscv_fir_de2_115.qpf": "fa75e4c94c1976ee9dbd80d17d7ebb42b34982385fd1f1d3daf3b41732c568ef",
+    "fpga/de2_115/riscv_fir_de2_115.qsf": "42a91a165a65fc5126ecaff01e2e99f933031ca23beadee92d737717410e8fce",
+    "fpga/de2_display/display.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "fpga/de2_display/pins.json": "403a7f7e82f826a583d90562a9ba3315eaca684b85a243ca0b05025cbebe5a3a",
+    "programs/c_fir_accel/manifest.json": "860c6d7bb3aef6fa83f2179cfcf2cc389dbf537894ae4757e44aa4a5e1411e08",
+    "programs/c_fir_accel/program.elf": "bb794e5aabe2340ede4b48659c1e2097b51b8aab22e1ea0742de604c721e0157",
+    "rtl/board/de2_115_display_top.vhd": "ae65621a9089e16eb3324fb0cb4f82efc9100c196ae7e63d8c9ffcd7541c3e2b",
+    "rtl/board/de2_115_top.vhd": "ee720f225c76fdd9844b2b1031ec1d66cd84c60f85ddfb3c8b967213a69786d7",
+    "rtl/board/hex7seg.vhd": "d7840a36cff1fd17b7a24d42f11a043dd6f4ca71f6cbfc443dd7e1790611cc07",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/tiny_cpu.vhd": "7014e760c39922faa55118d2e99c90d0abc1660f2dc0b23aef1b732cc5779822",
+    "rtl/fir/fir_mmio.vhd": "5411ebd009a02c2d6f098b03d6614a31e4c872997a2dcef160016237fe2a6ccd",
+    "rtl/fir/fir_serial.vhd": "3e175a465d8efc56a9d619a9b525694598776c24b7695149d7f6cc59d6203a97",
+    "rtl/soc/fir_soc.vhd": "7ce3fe8030704279ad65f1b72cdedab9021cbc76fbd7a04ffefa036457fa62a4",
+    "rtl/soc/shared_ram.vhd": "683213b85c4bfe4a05a65d140dd5c16b59f1ca5803e460f3e9eec4cd9f595bb1",
+    "sim/modelsim/run_de2_boot_batch.do": "be87379c6aa32fe8add9c74e9180f084725494b0b6bd65df9758003b3cdcbafb",
+    "sim/modelsim/run_de2_display_batch.do": "4b2c4a2bb0f20a2fe13bf098e6d655dcbfc1652ae37eff4db5085462f02de3f5",
+    "sim/tb/tb_de2_boot.vhd": "a7e32f114f53c0d897ea09f0f9f3db7826f4ca329709016869edb955cb06f339",
+    "sim/tb/tb_de2_display.vhd": "bca85986788162aaac7c2ca6c8f5e1a14dc186a5e10e97b09f89d95e0ef35c82",
+    "tests/test_de2_display.py": "ac4d05584870a20c8307e98a56fa176d2736be650f77556c048a3d9f7dd0d245",
+    "tools/prepare_de2_display.py": "5751b66ebb4643e59ee453f908ef37de2a6a2e88481c34132a4554082e2ffc24",
+    "tools/prepare_de2_project.py": "c5595c698df96b5ac976520c6c9a1387ea62924ee38f7aa5fb8333ac80cadac9"
+  },
+  "system_clock_mhz": 25
+}

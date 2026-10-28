@@ -1,0 +1,192 @@
+{
+  "baseline_exit_code": 0,
+  "case_count": 29,
+  "cases": [
+    {
+      "commits": 3,
+      "name": "demo"
+    },
+    {
+      "commits": 7,
+      "name": "alu_demo"
+    },
+    {
+      "commits": 11,
+      "name": "shift_immediate"
+    },
+    {
+      "commits": 5,
+      "name": "negative_immediates"
+    },
+    {
+      "commits": 6,
+      "name": "immediate_limits"
+    },
+    {
+      "commits": 38,
+      "name": "add_wrap"
+    },
+    {
+      "commits": 6,
+      "name": "sub_wrap"
+    },
+    {
+      "commits": 8,
+      "name": "dependencies"
+    },
+    {
+      "commits": 21,
+      "name": "x0_writes"
+    },
+    {
+      "commits": 21,
+      "name": "x31"
+    },
+    {
+      "commits": 9,
+      "name": "register_shifts"
+    },
+    {
+      "commits": 11,
+      "name": "compare_signed_unsigned"
+    },
+    {
+      "commits": 9,
+      "name": "logic_register"
+    },
+    {
+      "commits": 8,
+      "name": "logic_immediate"
+    },
+    {
+      "commits": 8,
+      "name": "sltiu_negative_immediate"
+    },
+    {
+      "commits": 8,
+      "name": "shift_positive"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_opcode"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_slli_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_system"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_slli_bit30"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_srli_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_srai_reserved"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_reserved_shift"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_reserved_logic"
+    },
+    {
+      "commits": 3,
+      "name": "prefix_then_fault"
+    },
+    {
+      "commits": 48,
+      "name": "random_legal"
+    },
+    {
+      "commits": 3,
+      "name": "reset_during_fetch"
+    },
+    {
+      "commits": 3,
+      "name": "reset_after_write"
+    }
+  ],
+  "checked_commits": 240,
+  "contract": "tiny-cpu-rv32i-alu-v2",
+  "fault_reset_checks": 10,
+  "generated_at_utc": "2026-10-27T12:14:59.935983+00:00",
+  "gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_cpu_gui.do",
+  "hardware_programming": "not_run",
+  "language": "VHDL-93",
+  "negative_controls": [
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "pc_step_eight"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "addi_zero_extension"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "srai_as_srli"
+    }
+  ],
+  "ops_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_ops_gui.do",
+  "program_commits": 236,
+  "scope": "connected CPU RTL for 19 RV32I register/immediate ALU instructions",
+  "simulator": "Model Technology ModelSim ALTERA STARTER EDITION vsim 10.5b Simulator 2016.10 Oct  5 2016",
+  "source_sha256": {
+    "model/tiny_cpu.py": "902a4777913a6cb6a3276dc4bdee0a7afe8d4713ae6aca41a97c292903287389",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/decode_tiny.vhd": "2fb9fa5e89e097e37acc947e51d4974dcbe98f493abff3103aa466f80fbfe700",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/tiny_cpu.vhd": "5e4f37be2ff1fae851e1b03a87cf648e8224b78a3726948090f5162330ea3895",
+    "sim/modelsim/compile_cpu.do": "47d60f63f4384a6fe109a1d7d94e97f79c21e4c0c3c53598de573be0e347474f",
+    "sim/modelsim/cpu_helpers.do": "3b3f5f566206027ae1c6058c1dafa77233fbb31bfe15cc7aa31df6e507c5013a",
+    "sim/modelsim/run_cpu_batch.do": "7b76e07938a9fdd134d61743b70ffa34333d592431e37acbab2aed8f5ee46373",
+    "sim/modelsim/run_cpu_gui.do": "0c7265798c642767fd9170842c398968152b64464c5d0895befc98af6469ec86",
+    "sim/modelsim/run_ops_gui.do": "4082b8daa1c5b076aa700d6e2d8b7a058598dc8fb2e43320ab6aa9ba28403f2a",
+    "sim/tb/tb_tiny_cpu.vhd": "d9ed6e38dafd0d45a2bb6939b48fe365b1cf4eb1a390744857fbbb36e3e11812",
+    "tools/generate_cpu_vectors.py": "850c4a321f93255c030af3e33f1374c6d5d323641b8b4475d406f27a2ba46115",
+    "tools/run_cpu.py": "fac5b04a613f8ee3835e1b5eb553075caa393f66854f91641f7d4bce78273412"
+  },
+  "status": "pass",
+  "supported_instructions": [
+    "ADD",
+    "SUB",
+    "SLL",
+    "SLT",
+    "SLTU",
+    "XOR",
+    "SRL",
+    "SRA",
+    "OR",
+    "AND",
+    "ADDI",
+    "SLTI",
+    "SLTIU",
+    "XORI",
+    "ORI",
+    "ANDI",
+    "SLLI",
+    "SRLI",
+    "SRAI"
+  ],
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "warmup_commits": 4
+}

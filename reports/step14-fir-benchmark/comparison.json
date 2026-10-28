@@ -1,0 +1,156 @@
+[
+  {
+    "case": "base",
+    "cold_cycle_ratio": 2.2241566920565834,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.214285714285714,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2044,
+    "wait_policy": "none"
+  },
+  {
+    "case": "base",
+    "cold_cycle_ratio": 2.2241566920565834,
+    "cold_kernel_cycles": 307,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.214285714285714,
+    "resident_kernel_cycles": 307,
+    "software_cycles": 2044,
+    "wait_policy": "periodic"
+  },
+  {
+    "case": "base_impulse",
+    "cold_cycle_ratio": 2.194776931447225,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.145408163265306,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2017,
+    "wait_policy": "none"
+  },
+  {
+    "case": "base_impulse",
+    "cold_cycle_ratio": 2.194776931447225,
+    "cold_kernel_cycles": 307,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.145408163265306,
+    "resident_kernel_cycles": 307,
+    "software_cycles": 2017,
+    "wait_policy": "periodic"
+  },
+  {
+    "case": "base_negative_extreme",
+    "cold_cycle_ratio": 2.3318824809575625,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.466836734693878,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2143,
+    "wait_policy": "none"
+  },
+  {
+    "case": "base_negative_extreme",
+    "cold_cycle_ratio": 2.3318824809575625,
+    "cold_kernel_cycles": 307,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.466836734693878,
+    "resident_kernel_cycles": 307,
+    "software_cycles": 2143,
+    "wait_policy": "periodic"
+  },
+  {
+    "case": "base_positive_extreme",
+    "cold_cycle_ratio": 2.2110990206746464,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.183673469387755,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2032,
+    "wait_policy": "none"
+  },
+  {
+    "case": "base_positive_extreme",
+    "cold_cycle_ratio": 2.2110990206746464,
+    "cold_kernel_cycles": 307,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.183673469387755,
+    "resident_kernel_cycles": 307,
+    "software_cycles": 2032,
+    "wait_policy": "periodic"
+  },
+  {
+    "case": "base_ties",
+    "cold_cycle_ratio": 2.2143634385201305,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.191326530612245,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2035,
+    "wait_policy": "none"
+  },
+  {
+    "case": "base_ties",
+    "cold_cycle_ratio": 2.2143634385201305,
+    "cold_kernel_cycles": 307,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.191326530612245,
+    "resident_kernel_cycles": 307,
+    "software_cycles": 2035,
+    "wait_policy": "periodic"
+  },
+  {
+    "case": "base_zero",
+    "cold_cycle_ratio": 2.1849836779107727,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.122448979591836,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2008,
+    "wait_policy": "none"
+  },
+  {
+    "case": "base_zero",
+    "cold_cycle_ratio": 2.1849836779107727,
+    "cold_kernel_cycles": 307,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.122448979591836,
+    "resident_kernel_cycles": 307,
+    "software_cycles": 2008,
+    "wait_policy": "periodic"
+  },
+  {
+    "case": "base_zero_coefficients",
+    "cold_cycle_ratio": 2.1849836779107727,
+    "cold_kernel_cycles": 297,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.122448979591836,
+    "resident_kernel_cycles": 297,
+    "software_cycles": 2008,
+    "wait_policy": "none"
+  },
+  {
+    "case": "base_zero_coefficients",
+    "cold_cycle_ratio": 2.1849836779107727,
+    "cold_kernel_cycles": 307,
+    "hardware_cold_cycles": 919,
+    "hardware_resident_cycles": 392,
+    "resident_cycle_ratio": 5.122448979591836,
+    "resident_kernel_cycles": 307,
+    "software_cycles": 2008,
+    "wait_policy": "periodic"
+  }
+]

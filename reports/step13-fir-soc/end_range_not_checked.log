@@ -1,0 +1,85 @@
+# do run_soc_batch.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap -c 
+# Copying E:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 13:23:33 on Oct 28,2026
+# vcom -93 alu_pkg.vhd alu32.vhd regfile32.vhd mul32.vhd imm_i.vhd imm_s.vhd imm_b.vhd imm_j.vhd imm_u.vhd decode_tiny.vhd tiny_cpu.vhd fir_serial.vhd fir_mmio.vhd shared_ram.vhd fir_soc.vhd tb_fir_mmio.vhd tb_fir_soc.vhd tb_cpu_mmio_guard.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package alu_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package alu_pkg
+# -- Compiling entity alu32
+# -- Compiling architecture rtl of alu32
+# -- Compiling entity regfile32
+# -- Compiling architecture rtl of regfile32
+# -- Compiling entity mul32
+# -- Compiling architecture rtl of mul32
+# -- Compiling entity imm_i
+# -- Compiling architecture rtl of imm_i
+# -- Compiling entity imm_s
+# -- Compiling architecture rtl of imm_s
+# -- Compiling entity imm_b
+# -- Compiling architecture rtl of imm_b
+# -- Compiling entity imm_j
+# -- Compiling architecture rtl of imm_j
+# -- Compiling entity imm_u
+# -- Compiling architecture rtl of imm_u
+# -- Compiling entity decode_tiny
+# -- Compiling architecture rtl of decode_tiny
+# -- Compiling entity tiny_cpu
+# -- Compiling architecture rtl of tiny_cpu
+# -- Loading entity decode_tiny
+# -- Loading entity imm_i
+# -- Loading entity imm_s
+# -- Loading entity imm_b
+# -- Loading entity imm_j
+# -- Loading entity imm_u
+# -- Loading entity regfile32
+# -- Loading entity alu32
+# -- Loading entity mul32
+# -- Compiling entity fir_serial
+# -- Compiling architecture rtl of fir_serial
+# -- Compiling entity fir_mmio
+# -- Compiling architecture rtl of fir_mmio
+# -- Loading entity fir_serial
+# -- Compiling entity shared_ram
+# -- Compiling architecture rtl of shared_ram
+# -- Compiling entity fir_soc
+# -- Compiling architecture rtl of fir_soc
+# -- Loading entity tiny_cpu
+# -- Loading entity shared_ram
+# -- Loading entity fir_mmio
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_fir_mmio
+# -- Compiling architecture test of tb_fir_mmio
+# -- Compiling entity tb_fir_soc
+# -- Compiling architecture test of tb_fir_soc
+# -- Loading entity fir_soc
+# -- Compiling entity tb_cpu_mmio_guard
+# -- Compiling architecture test of tb_cpu_mmio_guard
+# End time: 13:23:33 on Oct 28,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# protocol 8 true
+# MMIO_CASE_BEGIN name=protocol
+# vsim -voptargs="+acc" -wlf mmio-protocol-18220.wlf work.tb_fir_mmio -gOUTPUT_FILE=mmio/protocol/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/protocol/coefficients.hex -gCHECK_PROTOCOL=true -gINPUT_FILE=mmio/protocol/input.hex 
+# Start time: 13:23:33 on Oct 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Failure: MMIO_REGISTER_MISMATCH offset=28
+#    Time: 626 ns  Iteration: 0  Process: /tb_fir_mmio/stimulus File: tb_fir_mmio.vhd
+# Break in Subprogram expect_reg at tb_fir_mmio.vhd line 90
+# End time: 13:23:34 on Oct 28,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

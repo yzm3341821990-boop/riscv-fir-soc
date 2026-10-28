@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-10-28T15:08:12.490480+00:00",
+  "evidence_type": "user_report_in_conversation",
+  "user_reply": "一样，符合预期",
+  "scope": "previous LED-only bitstream, completion/pass/error/heartbeat and KEY0 restart",
+  "user_reported_download": true,
+  "led_states": {
+    "LEDR0": "steady_on",
+    "LEDR1": "steady_on",
+    "LEDR2": "off",
+    "LEDR3": "blinking"
+  },
+  "reset_restart": "user_reported_matches_expected",
+  "exact_reset_repetitions_recorded": false,
+  "independent_video_available": false,
+  "new_display_observed": false
+}

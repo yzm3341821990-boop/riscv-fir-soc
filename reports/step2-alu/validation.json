@@ -1,0 +1,32 @@
+{
+  "baseline_exit_code": 0,
+  "contract": "alu32-rv32i-v1",
+  "generated_at_utc": "2026-10-27T11:33:05.497366+00:00",
+  "gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/alu32/baseline/run_alu_gui.do",
+  "hardware_programming": "not_run",
+  "language": "VHDL-93",
+  "negative_control": {
+    "exit_code": 1,
+    "killed": true,
+    "name": "SRA changed to logical right shift"
+  },
+  "scope": "ALU RTL functional simulation",
+  "simulator": "Model Technology ModelSim ALTERA STARTER EDITION vsim 10.5b Simulator 2016.10 Oct  5 2016",
+  "source_sha256": {
+    "model/alu.py": "00164c9c71d8be0a649e533839e40578a3f8c00c19d8d375b6126e0459bcb48a",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "sim/modelsim/compile_alu.do": "5d55e83f0a19cab58ee7fd9a382fd7b14af1c4e8469f353d416464055862141e",
+    "sim/modelsim/run_alu_batch.do": "af1f61c44297fa6628ee7f89e1a8eb24b785d8978808d946dafdb46972c3aefc",
+    "sim/modelsim/run_alu_gui.do": "36f5ea0f4405f191fe65e122d112822c135cff987e41ae56967cd24f26778075",
+    "sim/tb/tb_alu32.vhd": "d0071ca65e46bddcb45c63e9f69518a2f8cadf6ba2121e0f24182d6c1f01ef06",
+    "tools/generate_alu_vectors.py": "f29719b5c4c43c3c3cc3a5feb93110c4d2de25a3858c621a91c3624a578783fc",
+    "tools/run_alu.py": "514424cb791680d9fe82cd2c7d4cfd6dc0a6531aa6746ae4f46da9b29913edad"
+  },
+  "status": "pass",
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "vector_count": 4880,
+  "vector_seed": 10551346,
+  "vector_sha256": "6061c3433b3f7107b43bf70ff35e4f319cfb9285164922a14e1388210b7d3d3b"
+}

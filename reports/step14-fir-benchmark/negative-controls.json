@@ -1,0 +1,50 @@
+[
+  {
+    "diagnostic": "benchmark requires exactly two marker writes",
+    "name": "missing_begin",
+    "rejected": true,
+    "scope": "accepted-event measurement integrity"
+  },
+  {
+    "diagnostic": "benchmark requires exactly two marker writes",
+    "name": "duplicate_begin",
+    "rejected": true,
+    "scope": "accepted-event measurement integrity"
+  },
+  {
+    "diagnostic": "benchmark marker payload/order/cycles are invalid",
+    "name": "wrong_end_value",
+    "rejected": true,
+    "scope": "accepted-event measurement integrity"
+  },
+  {
+    "diagnostic": "accepted event cycles are not monotonic within one benchmark run",
+    "name": "end_before_start",
+    "rejected": true,
+    "scope": "accepted-event measurement integrity"
+  },
+  {
+    "diagnostic": "accepted event cycles are not monotonic within one benchmark run",
+    "name": "cold_load_outside_interval",
+    "rejected": true,
+    "scope": "accepted-event measurement integrity"
+  },
+  {
+    "diagnostic": "accepted event cycles are not monotonic within one benchmark run",
+    "name": "stop_before_result",
+    "rejected": true,
+    "scope": "accepted-event measurement integrity"
+  },
+  {
+    "diagnostic": "a completion STATUS poll after the last accepted DMA write is required",
+    "name": "completion_poll_missing",
+    "rejected": true,
+    "scope": "accepted-event measurement integrity"
+  },
+  {
+    "diagnostic": "DMA output differs from original Q15 reference",
+    "name": "corrupt_dma_output",
+    "rejected": true,
+    "scope": "independent numerical replay"
+  }
+]

@@ -1,0 +1,323 @@
+{
+  "baseline_exit_code": 0,
+  "case_count": 54,
+  "cases": [
+    {
+      "commits": 3,
+      "name": "demo"
+    },
+    {
+      "commits": 7,
+      "name": "alu_demo"
+    },
+    {
+      "commits": 11,
+      "name": "shift_immediate"
+    },
+    {
+      "commits": 5,
+      "name": "negative_immediates"
+    },
+    {
+      "commits": 6,
+      "name": "immediate_limits"
+    },
+    {
+      "commits": 38,
+      "name": "add_wrap"
+    },
+    {
+      "commits": 6,
+      "name": "sub_wrap"
+    },
+    {
+      "commits": 8,
+      "name": "dependencies"
+    },
+    {
+      "commits": 21,
+      "name": "x0_writes"
+    },
+    {
+      "commits": 21,
+      "name": "x31"
+    },
+    {
+      "commits": 9,
+      "name": "register_shifts"
+    },
+    {
+      "commits": 11,
+      "name": "compare_signed_unsigned"
+    },
+    {
+      "commits": 9,
+      "name": "logic_register"
+    },
+    {
+      "commits": 8,
+      "name": "logic_immediate"
+    },
+    {
+      "commits": 8,
+      "name": "sltiu_negative_immediate"
+    },
+    {
+      "commits": 8,
+      "name": "shift_positive"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_opcode"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_slli_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_system"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_slli_bit30"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_srli_funct7"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_srai_reserved"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_reserved_shift"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_r_reserved_logic"
+    },
+    {
+      "commits": 3,
+      "name": "prefix_then_fault"
+    },
+    {
+      "commits": 48,
+      "name": "random_legal"
+    },
+    {
+      "commits": 3,
+      "name": "reset_during_fetch"
+    },
+    {
+      "commits": 3,
+      "name": "reset_after_write"
+    },
+    {
+      "commits": 8,
+      "name": "memory_demo"
+    },
+    {
+      "commits": 4,
+      "name": "memory_negative_offset"
+    },
+    {
+      "commits": 5,
+      "name": "memory_s_imm_min"
+    },
+    {
+      "commits": 4,
+      "name": "memory_s_imm_max_wrap"
+    },
+    {
+      "commits": 4,
+      "name": "memory_wrap_to_zero"
+    },
+    {
+      "commits": 6,
+      "name": "memory_boundary"
+    },
+    {
+      "commits": 4,
+      "name": "memory_load_base_alias"
+    },
+    {
+      "commits": 3,
+      "name": "memory_store_base_alias"
+    },
+    {
+      "commits": 6,
+      "name": "memory_overwrite"
+    },
+    {
+      "commits": 5,
+      "name": "memory_x0"
+    },
+    {
+      "commits": 4,
+      "name": "memory_x31"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_alignment_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_sw_alignment_fault"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_range_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_sw_range_fault"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_negative_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_sw_negative_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_offset_max_fault"
+    },
+    {
+      "commits": 1,
+      "name": "memory_offset_min_fault"
+    },
+    {
+      "commits": 0,
+      "name": "memory_lw_x0_fault"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_load_byte"
+    },
+    {
+      "commits": 0,
+      "name": "illegal_store_halfword"
+    },
+    {
+      "commits": 3,
+      "name": "memory_prefix_then_fault"
+    },
+    {
+      "commits": 64,
+      "name": "memory_random_legal"
+    },
+    {
+      "commits": 4,
+      "name": "reset_pending_load"
+    }
+  ],
+  "checked_commits": 371,
+  "checked_memory_requests": 43,
+  "contract": "tiny-cpu-rv32i-lw-sw-v3",
+  "fault_reset_checks": 22,
+  "final_and_postreset_ram_word_checks": 27648,
+  "generated_at_utc": "2026-10-27T12:30:16.412610+00:00",
+  "gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_cpu_gui.do",
+  "hardware_programming": "not_run",
+  "language": "VHDL-93",
+  "memory_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_memory_gui.do",
+  "memory_requests": 41,
+  "negative_controls": [
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "pc_step_eight"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "addi_zero_extension"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "srai_as_srli"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "store_uses_immediate"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "load_returns_address"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "store_zero_extension"
+    },
+    {
+      "exit_code": 1,
+      "killed": true,
+      "name": "reset_during_load_ignored"
+    }
+  ],
+  "ops_gui_script": "F:/CodexWorkspace/outputs/riscv-fir-soc/tiny_cpu/baseline/run_ops_gui.do",
+  "program_commits": 365,
+  "reset_preserves_memory_checks": 54,
+  "scope": "connected CPU RTL for 19 ALU instructions plus LW/SW and 1 KiB synchronous RAM",
+  "simulator": "Model Technology ModelSim ALTERA STARTER EDITION vsim 10.5b Simulator 2016.10 Oct  5 2016",
+  "source_sha256": {
+    "model/tiny_cpu.py": "6f20d62d56af27f9efc746ee7fe370bff6fd32fa08cd0c9fa6536c63e401b36c",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/data_ram.vhd": "e4b48dbadb55f9f6104c560d99601262ce5aac92ccecd5455db1df6e3e4aa1c7",
+    "rtl/cpu/decode_tiny.vhd": "10c51ac0934372ce50bdf905b7a9de6624f0edb7a186df98dc4ae77f02694ac9",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/tiny_cpu.vhd": "03b430c8e43b35f4de7004a63251acddc9f8024c787479a167b1077431a3507d",
+    "sim/modelsim/compile_cpu.do": "ced86645382540f2df16546c233500b82a9c2e6e14b7a3852e45a695e1a47840",
+    "sim/modelsim/cpu_helpers.do": "9ba9ad4a3e09753fb0566ca1185101e053fe82eb5468a642b2656b3c23eeba39",
+    "sim/modelsim/run_cpu_batch.do": "4bca972a4c4d5b9a8c71473d4024ae7e1e4f22ee3384fa6accec9c124ea52c91",
+    "sim/modelsim/run_cpu_gui.do": "5cf98cc7119aa39f2f7534cafcbf690388e7fe2e1eef541267064f588fc654a7",
+    "sim/modelsim/run_memory_gui.do": "16fa61e159a785f6bac72d23ded7df82a532bcd0821e2a03f0b0e4b7d9fdd9b8",
+    "sim/modelsim/run_ops_gui.do": "62ac4942732e34c88d747a64452c55377addf0906282b261763465706173b505",
+    "sim/tb/tb_tiny_cpu.vhd": "13939b760f847f44e028351fa515f9326138e463d0cb48e879276baeff234269",
+    "tools/generate_cpu_vectors.py": "765d0c7d269759bee40c72e5b145691768eeba9af0fb96164b4bd25a0234cda6",
+    "tools/run_cpu.py": "a752448b2942af23e992d622c9a67717185f905ade2ac2c5640d1eb604b5c24d"
+  },
+  "status": "pass",
+  "supported_instructions": [
+    "ADD",
+    "SUB",
+    "SLL",
+    "SLT",
+    "SLTU",
+    "XOR",
+    "SRL",
+    "SRA",
+    "OR",
+    "AND",
+    "ADDI",
+    "SLTI",
+    "SLTIU",
+    "XORI",
+    "ORI",
+    "ANDI",
+    "SLLI",
+    "SRLI",
+    "SRAI",
+    "LW",
+    "SW"
+  ],
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "warmup_commits": 6,
+  "warmup_memory_requests": 2
+}
