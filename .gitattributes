@@ -2,3 +2,7 @@
 *.elf binary
 *.png binary
 *.pdf binary
+
+# Preserve original evidence bytes so recorded SHA256 values remain reproducible.
+reports/** -text
+*.svg -text
