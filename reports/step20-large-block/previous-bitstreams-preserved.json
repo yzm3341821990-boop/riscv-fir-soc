@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "bitstreams": [
+    {
+      "path": "de2_115_pipeline/output_files/riscv_fir_de2_pipeline.sof",
+      "sha256": "26014351c56578bf3e36895764db8cf9860d0fd6034e67876f1f5c6318cb6496",
+      "unchanged": true
+    },
+    {
+      "path": "de2_115_parallel/p1/output_files/riscv_fir_de2_p1.sof",
+      "sha256": "d8bdd6964a7640739acda9cbaf225006d4068b23d98f3a4f9cee25cd14d8d65a",
+      "unchanged": true
+    },
+    {
+      "path": "de2_115_parallel/p2/output_files/riscv_fir_de2_p2.sof",
+      "sha256": "5e26f8982e620655ab9bfcd116a625dc5d32df90f21aa892b9cae6f2fcf3ece1",
+      "unchanged": true
+    },
+    {
+      "path": "de2_115_parallel/p4/output_files/riscv_fir_de2_p4.sof",
+      "sha256": "c0efccc055cbd7df08efb14a10806ee11ee663522825047e7b0e32dcffd309c8",
+      "unchanged": true
+    }
+  ]
+}

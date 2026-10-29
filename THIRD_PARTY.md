@@ -12,6 +12,7 @@
 | [Zig 0.13.0](https://ziglang.org/download/0.13.0/release-notes.html) / Clang 18.1.6 | 本项目 C 与启动汇编的交叉编译工具；不在仓库中复制工具源码或链接其运行库。版本、特性、命令与产物哈希见编译清单 | 工具依赖 |
 | [RISC-V psABI](https://riscv-non-isa.github.io/riscv-elf-psabi-doc/) | ILP32、ra/sp/a0 调用约定、栈对齐与 ELF 机器类型参考；2026-10-28 核对整数调用约定 | ABI 参考 |
 | [Terasic DE2-115 官方用户手册](https://www.terasic.com.tw/attachment/archive/502/DE2_115_User_manual.pdf) | 板级时钟、LED、按键、拨码和数码管引脚/电压依据；引脚表及手册哈希见 fpga/de2_display/pins.json | 硬件资料参考 |
+| Intel/Altera `altera_mf.altsyncram` | step20 显式实例化 Cyclone IV M9K 存储原语，使用用户 Quartus/ModelSim 安装中的 IP/预编译模型，没有复制厂家实现或库文件。[官方手册](https://cdrdv2-public.intel.com/654744/cyiv-51003.pdf)为配置/冲突语义依据 | 厂家存储 IP 依赖；CPU/FIR 运算核由项目实现 |
 | Spike / riscv-arch-test | 后续 CPU 验证候选，当前未集成、未运行 | 验证工具候选 |
 | actions/checkout、actions/setup-python | GitHub Actions 工作流工具，当前只提供配置 | CI 工具依赖 |
 

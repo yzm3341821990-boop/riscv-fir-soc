@@ -1,47 +1,15 @@
-# GitHub 发布准备
+# GitHub 发布状态
 
-当前是本地整理好的 v0.1 文档与源码快照，未创建远端仓库、提交、推送或发布 Release。
+本次提交更新自设计五级 CPU、1/2/4 路 FIR、32 KiB M9K 与同一镜像九组计时。发布来源为用户已审阅并明确授权的 step22 源码快照，见[来源与差异](publication-note.md)。第一版多周期历史及原始证据保留。
 
-## 可用介绍
+## 已发布的第一版记录
 
-标题：**RISC-V CPU + Fixed-point FIR Accelerator on DE2-115**
+原公开仓库为 [yzm3341821990-boop/riscv-fir-soc](https://github.com/yzm3341821990-boop/riscv-fir-soc)。第一版提交 `75b34a2269f7f33e99fa38d10d37d7824fdc1cf7` 的 [Actions 记录](https://github.com/yzm3341821990-boop/riscv-fir-soc/actions/runs/40790245986)通过 Python 3.10/3.12 检查，该状态仅属于历史提交。
 
-英文短描述：
+## 本次更新与验证范围
 
-> An educational VHDL RISC-V CPU and fixed-point FIR accelerator on DE2-115, with bare-metal C, reproducible tests, cycle comparisons, and board result displays.
+当前 README、[结果分析](project-results.md)、[运行说明](quickstart.md)和[审阅清单](release-review.md)包含本版展示入口。功能源码、C/ELF/初始镜像、仿真与检查工具、数据/图表、原始报告和用户上板原话一并保留。独立数字抄录、Programmer 日志及视频尚未收到；本次没有虚构媒体或板上加速比。
 
-中文短描述：
+本版实际 CI 需以[当前 Actions](https://github.com/yzm3341821990-boop/riscv-fir-soc/actions)为准。工作流检查 Python 模型、向量、导出与工具，不宣称运行了 Quartus、厂商 RTL 仿真或物理板卡。上传后核对本次实际提交身份、文件树及 CI，并把发布回读记录保存在本地交付目录。
 
-> 基于 DE2-115 的自设计多周期 RISC-V CPU 与 32 抽头定点 FIR 加速器，包含裸机 C 驱动、独立数值参考、系统仿真、周期对照、Quartus 实现记录和数码管演示。
-
-建议 topics：`risc-v`、`fpga`、`vhdl`、`fir-filter`、`cyclone-iv`、`hardware-software-codesign`。
-
-## 当前可展示的内容
-
-- CPU 支持 37 种 RV32I 指令加 MUL，能够运行项目裸机 C 固件。
-- 32 抽头 signed16 Q15 FIR，40 位累加、明确舍入与饱和规则。
-- CPU 配置 MMIO、硬件读写共享 RAM、C 与板级监测器检查结果。
-- 在参考器件上通过 25 MHz 时序；保存资源、警告、源码与 SOF 哈希。
-- 八个结果的数码管选择、完整自检程序周期计数、KEY0 重跑。
-- 同一 CPU 条件下的软件/硬件仿真周期比较。
-
-五级流水线、完整 RV32IM、标准异常环境、实时音频和板上实测加速比尚未实现或验证，发布介绍保留这些边界。
-
-## 视频回来后补齐
-
-1. 按[录制指南](demo-recording.md)核对视频中的开关、数值、周期和复位行为。
-2. 保存实际观察表，标明测过的项目和未拍到的项目，不用期望值代填。
-3. 在 artifacts/demo/ 中整理封面或演示媒体，README 再加入真实可用的展示链接。
-4. 如录屏含 Programmer 页面，保留 SOF 文件名、目标和成功信息，和当前哈希清单一起记录。
-
-## 发布前仍需确定
-
-- **代码许可证**：当前没有 LICENSE 文件，项目尚未指定许可证；本次未代选。外部来源见 [THIRD_PARTY.md](../THIRD_PARTY.md)。
-- **仓库名称和可见性**：创建远端仓库时由项目拥有者确定。
-- **媒体与实测表**：原始视频收到后再补，不放假封面或空视频链接。
-
-源码快照应包含 model/、rtl/、firmware/、programs/、fpga/、sim/、tests/、tools/、vectors/、docs/、reports/、artifacts/ 和 .github/。programs/ 中的 ELF 和镜像是首次复现所需的小型固件产物，保留它们。
-
-Quartus 安装、ModelSim 安装、工作库、db/incremental_db/output_files 和 Python 缓存不作为源码上传。历史原始日志保留本地路径，这是工具运行证据的一部分，上传前可按需要查看；本次未重写或伪造日志。
-
-发布后再取得真实 GitHub Actions 结果、仓库 URL 和提交/标签身份，更新到验证页。目前 README 的 CI 状态只描述已有配置。
+未创建重复仓库、未强推或创建 Release 标签。未选择或添加 LICENSE，来源边界见 [THIRD_PARTY.md](../THIRD_PARTY.md)。Quartus/ModelSim 安装、厂商库、工作数据库和 SOF 二进制不属于本源码树；已核对的本地 SOF 单独保留。

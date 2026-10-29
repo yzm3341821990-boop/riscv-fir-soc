@@ -1,0 +1,41 @@
+{
+  "status": "pass",
+  "contract": "pipeline-fixed-memory-v1",
+  "generated_at_utc": "2026-10-28T23:35:14.927209+00:00",
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "hardware": "not_run",
+  "baseline_exit_code": 0,
+  "case_count": 1,
+  "legacy_cases": -26,
+  "measurements": [
+    {
+      "name": "subword_byte_lane_1",
+      "retired": 8,
+      "cycles": 12,
+      "requests": 5,
+      "stalls": 0,
+      "flushes": 0
+    }
+  ],
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_cpu.vhd": "16ede9eed2781adaac20af90e561836cdad6c5bfcf4db8aa750874b7a344b224",
+    "sim/tb/tb_pipeline_cpu.vhd": "a260acfaae9c01c1acf97e4bff4424810534c14af90fb7dffcbd4096437005c2",
+    "sim/modelsim/pipeline_helpers.do": "17f29efdf2420015e8593d480978523210a8b9e08bfd885b4766524b224f8255",
+    "tools/run_pipeline_cpu.py": "fcdc3110abcf93d2d65917a288bbaa1ecd80e884abd75b964c259e6f8ea065ee",
+    "tools/generate_cpu_vectors.py": "fc0502a613e5a941abbf62f56067f86f6f558bd23dd5c86521bfb1375216d463",
+    "model/tiny_cpu.py": "8ccaf4a67d903a11741215a065ba059bc875af1969fe3111c8bda3a008f21b6e",
+    "docs/pipeline-cpu-contract.md": "df75685f4f3e4952ae1db78df382bff6d1ec57e738bfddfacfad7af208a5f4e9"
+  }
+}

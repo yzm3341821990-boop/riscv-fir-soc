@@ -1,0 +1,40 @@
+{
+  "status": "pass",
+  "scope": "User-compiled step21 image reviewed, physical observations pending",
+  "resources": {
+    "logic_elements": 14171,
+    "registers": 3778,
+    "pins": 66,
+    "memory_bits": 262144,
+    "multiplier_9bit_elements": 14,
+    "m9k_blocks": 32,
+    "data_ram_m9k_blocks": 32,
+    "separately_reported_rom_m9k_blocks": 0
+  },
+  "worst_setup_slack_ns": 10.184,
+  "worst_hold_slack_ns": 0.181,
+  "quartus_report_sha256": "168dac282e999902c1500ab3a5f7f9e69067ce8703d69d12acb799500832905a",
+  "source_code_changed": false,
+  "verified_sof_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\step21-verified\\riscv_fir_de2_benchmark.sof",
+  "sof_sha256": "fbff1eba713bb10db223ce81766b1e236fc4dcede977f0b84009c25a4ec6bbf3",
+  "previous_bitstreams_preserved": 5,
+  "local_document_links_checked": 383,
+  "physical_measurements": "not_received",
+  "github": "not_uploaded",
+  "reports_sha256": {
+    "quartus/riscv_fir_de2_benchmark.asm.rpt": "4008118fe54627e5a8ac28311330d52ca55a6a8e97094730753ccc961ea426f3",
+    "quartus/riscv_fir_de2_benchmark.fit.rpt": "26dea23c32753306f0e550b2dfd7e850f68e6aaf0105bb76e152d06b69e31ca7",
+    "quartus/riscv_fir_de2_benchmark.fit.summary": "43b5f7824378a0419f67c8578598b9f341da4b6f64a99c91b36880d10f594ae0",
+    "quartus/riscv_fir_de2_benchmark.flow.rpt": "031c9966d7399b94d8f24c017698caf66d95ea9ddb285212a1e4ebaf2e449039",
+    "quartus/riscv_fir_de2_benchmark.map.rpt": "fdf0d418e995e608baa445194b37e37b17777daf7b10fc268a124c2a746a3800",
+    "quartus/riscv_fir_de2_benchmark.map.summary": "87562db1eae49bdd2fcfa963238b295e943e88ef01b42bee837b74a422d68638",
+    "quartus/riscv_fir_de2_benchmark.pin": "3c3ae6e4577f79cc3e170d1ba2a0c75d5d7cbbef540d99e03b39b89863f9ea3b",
+    "quartus/riscv_fir_de2_benchmark.sta.rpt": "0d07887903e1d81893ce779767422cb0c741c93039bf0447a8e90019f4c2491c",
+    "quartus/riscv_fir_de2_benchmark.sta.summary": "d072062e9eb783b8e462e850dce876e7df699db094c0bd8acf5d4e15785a416d",
+    "quartus/riscv_fir_de2_benchmark.qsf": "aacf7d8ee66500b72e33e81a283f924aca2ee04386d0589e3fbc70fefb2cb565",
+    "quartus/riscv_fir_de2_benchmark.qpf": "97534f563aa80951135127d37eaae827747c3a18320f58716a9f7571c25fed4c",
+    "quartus/benchmark.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "quartus/project-manifest.json": "69f21e0acfcba4d96314890e9b610b6e61b16b52d3f59dba4d6acc1af871e650",
+    "quartus/benchmark-qsf-before-build.txt": "5c13d2add62f01c8415e951e4706b8d998489f083be343707b36331eeeba25aa"
+  }
+}

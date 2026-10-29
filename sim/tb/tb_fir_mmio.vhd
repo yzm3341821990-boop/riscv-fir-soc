@@ -9,7 +9,7 @@ entity tb_fir_mmio is
              COEFF_FILE : string := "cases/demo/coefficients.hex";
              OUTPUT_FILE : string := "cases/demo/expected.hex";
              SAMPLE_COUNT : positive := 8;
-             CHECK_PROTOCOL : boolean := false);
+             CHECK_PROTOCOL : boolean := false; MAC_LANES : positive := 1);
 end entity;
 architecture test of tb_fir_mmio is
     subtype word is std_logic_vector(31 downto 0);
@@ -36,7 +36,8 @@ architecture test of tb_fir_mmio is
 begin
     clk <= not clk after 5 ns when not finished else '0';
     dma_ready <= '0' when force_wait or (hold_writes and dma_we='1') or phase mod 5=0 else '1';
-    dut : entity work.fir_mmio port map(clk,rst,req,we,be,addr,wdata,rdata,
+    dut : entity work.fir_mmio generic map(MAC_LANES=>MAC_LANES)
+        port map(clk,rst,req,we,be,addr,wdata,rdata,
         dma_req,dma_we,dma_addr,dma_wdata,dma_ready,dma_rvalid,dma_rdata);
     ram : process(clk)
         variable previous_wait : boolean := false;

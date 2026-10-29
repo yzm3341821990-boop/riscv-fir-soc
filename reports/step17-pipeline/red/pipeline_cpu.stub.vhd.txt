@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity pipeline_cpu is
+    port (
+        clk, rst : in std_logic;
+        imem_en : out std_logic;
+        imem_addr : out std_logic_vector(31 downto 0);
+        imem_rdata : in std_logic_vector(31 downto 0);
+        dmem_req, dmem_we : out std_logic;
+        dmem_be : out std_logic_vector(3 downto 0);
+        dmem_addr, dmem_wdata : out std_logic_vector(31 downto 0);
+        dmem_rdata : in std_logic_vector(31 downto 0);
+        commit_valid : out std_logic;
+        commit_pc, commit_instruction, commit_value, commit_next_pc : out std_logic_vector(31 downto 0);
+        commit_rd : out std_logic_vector(4 downto 0);
+        fault : out std_logic;
+        fault_pc : out std_logic_vector(31 downto 0);
+        debug_stall, debug_flush : out std_logic;
+        debug_valid : out std_logic_vector(3 downto 0)
+    );
+end entity;
+
+architecture rtl of pipeline_cpu is
+begin
+    imem_en <= '0'; imem_addr <= (others => '0');
+    dmem_req <= '0'; dmem_we <= '0'; dmem_be <= (others => '0');
+    dmem_addr <= (others => '0'); dmem_wdata <= (others => '0');
+    commit_valid <= '0'; commit_pc <= (others => '0'); commit_instruction <= (others => '0');
+    commit_value <= (others => '0'); commit_next_pc <= (others => '0'); commit_rd <= (others => '0');
+    fault <= '0'; fault_pc <= (others => '0'); debug_stall <= '0'; debug_flush <= '0';
+    debug_valid <= (others => '0');
+end architecture;

@@ -1,0 +1,196 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T10:45:49.227486+00:00",
+  "completed_runs": 4,
+  "profiles_per_run": 9,
+  "display_measurements_checked": 36,
+  "independent_external_clock_stopwatch": true,
+  "baseline_measurements": [
+    {
+      "index": 0,
+      "cycles": 24045,
+      "hex": "00005DED"
+    },
+    {
+      "index": 1,
+      "cycles": 1126,
+      "hex": "00000466"
+    },
+    {
+      "index": 2,
+      "cycles": 867,
+      "hex": "00000363"
+    },
+    {
+      "index": 3,
+      "cycles": 116856,
+      "hex": "0001C878"
+    },
+    {
+      "index": 4,
+      "cycles": 3622,
+      "hex": "00000E26"
+    },
+    {
+      "index": 5,
+      "cycles": 3363,
+      "hex": "00000D23"
+    },
+    {
+      "index": 6,
+      "cycles": 489233,
+      "hex": "00077711"
+    },
+    {
+      "index": 7,
+      "cycles": 13608,
+      "hex": "00003528"
+    },
+    {
+      "index": 8,
+      "cycles": 13349,
+      "hex": "00003425"
+    }
+  ],
+  "latency_sensitivity": {
+    "extra_initial_dma_wait_edges": 31,
+    "measurements": [
+      {
+        "index": 0,
+        "cycles": 24045
+      },
+      {
+        "index": 1,
+        "cycles": 1158
+      },
+      {
+        "index": 2,
+        "cycles": 899
+      },
+      {
+        "index": 3,
+        "cycles": 116856
+      },
+      {
+        "index": 4,
+        "cycles": 3654
+      },
+      {
+        "index": 5,
+        "cycles": 3395
+      },
+      {
+        "index": 6,
+        "cycles": 489233
+      },
+      {
+        "index": 7,
+        "cycles": 13640
+      },
+      {
+        "index": 8,
+        "cycles": 13381
+      }
+    ],
+    "software_unchanged": true,
+    "all_hardware_calls_increased": true
+  },
+  "fake_cycle_table_rejected": true,
+  "timer_negative_controls": [
+    {
+      "name": "double_increment",
+      "killed": true
+    },
+    {
+      "name": "end_off_by_one",
+      "killed": true
+    },
+    {
+      "name": "not_frozen",
+      "killed": true
+    },
+    {
+      "name": "reset_retains_count",
+      "killed": true
+    }
+  ],
+  "board_negative_controls": [
+    {
+      "name": "counter_double",
+      "killed": true,
+      "assertions": [
+        "BOARD_BENCH_EXTERNAL_STOPWATCH_DIFFERS"
+      ]
+    },
+    {
+      "name": "wrong_rom_bank",
+      "killed": true,
+      "assertions": [
+        "BOARD_BENCH_TERMINAL_WITHOUT_INTERVAL"
+      ]
+    },
+    {
+      "name": "finish_first",
+      "killed": true,
+      "assertions": [
+        "BOARD_BENCH_NOT_ALL_PASSED"
+      ]
+    },
+    {
+      "name": "wrong_seed_bank",
+      "killed": true,
+      "assertions": [
+        "BOARD_BENCH_SELFTEST_ERROR"
+      ]
+    },
+    {
+      "name": "fake_lookup_stalled",
+      "killed": true,
+      "assertions": [
+        "BOARD_BENCH_EXTERNAL_STOPWATCH_DIFFERS"
+      ]
+    }
+  ],
+  "reset_cases": [
+    "power-up",
+    "KEY0 full restart",
+    "KEY0 during loader",
+    "KEY0 during profile7 DMA"
+  ],
+  "c_last_output_error_detected": {
+    "profile": 7,
+    "sample": 1023,
+    "display": "EEEEEEEE"
+  },
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_large_cpu.vhd": "9ea35264d5f94b80f9184a860bcedbbb3cbb53152c2d6252c1bcd2bb57f6ac3c",
+    "rtl/fir/fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "rtl/fir/fir_mmio_large.vhd": "7759142b908eb41deeeabd6e7f8a95b70e8f1f9f0ab7a34657d84062503acd48",
+    "rtl/soc/shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "rtl/soc/pipeline_large_soc.vhd": "67a412c8d19e7cd4d54fef2c52a154d6b53eeddee3c1eceedc442344e1c83780",
+    "rtl/board/hex7seg.vhd": "d7840a36cff1fd17b7a24d42f11a043dd6f4ca71f6cbfc443dd7e1790611cc07",
+    "rtl/board/call_cycle_timer.vhd": "f9d71b11f595bb1c8715279ed1543a9b64c8ed0582665d40e79bc62c1d94f860",
+    "rtl/board/de2_115_benchmark_top.vhd": "3170ff4afd7f990af7b8855a76d9acb12561812d5c60c1b024d0c71a4d4335d0",
+    "sim/tb/tb_de2_benchmark.vhd": "dcba9c22cda0018ab2189bf9965de652e73227ea80a2ac7b17879172b8cbd432",
+    "tools/prepare_de2_benchmark.py": "0b388e7db5db76dd5169ca3ca4ef208b9c749681ae938a29f0a4131a9a26a2fa",
+    "docs/board-benchmark-contract.md": "dd1277e6af1636533cea888a11f6fe6bc6b662d45dc9856f8ead8557e953d0a3",
+    "fpga/de2_display/display.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "fpga/de2_display/pins.json": "403a7f7e82f826a583d90562a9ba3315eaca684b85a243ca0b05025cbebe5a3a",
+    "tools/run_board_benchmark.py": "f0e75fcd954c3327efda319b30af2b5452a64ddc94d13605997a33415f28f3c2",
+    "sim/tb/tb_call_cycle_timer.vhd": "b1559d7483ac84aba6e249733887ab79318fe2613d49422de5d95fca964179dd"
+  },
+  "quartus": "not_run",
+  "hardware": "not_run",
+  "github": "not_uploaded"
+}

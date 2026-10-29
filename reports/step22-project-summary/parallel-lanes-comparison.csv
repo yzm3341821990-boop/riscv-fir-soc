@@ -1,0 +1,4 @@
+lanes,sample_count,software_cycles,cold_cycles,resident_cycles,logic_elements,multiplier_9bit_elements,setup_slack_ns,hold_slack_ns
+1,8,769,590,331,28122,8,11.572,0.145
+2,8,769,462,203,28130,10,10.152,0.152
+4,8,769,398,139,28130,14,11.166,0.119

@@ -1,0 +1,165 @@
+{
+  "status": "pass",
+  "contract": "fir-parallel-lanes-v1",
+  "quartus": "not_run",
+  "hardware": "not_run",
+  "phase": "core",
+  "core": {
+    "cases": 72,
+    "samples_per_lane": 1855,
+    "checked_stream_samples": 5565,
+    "mac_edges_per_sample": {
+      "1": 32,
+      "2": 16,
+      "4": 8
+    },
+    "negative_controls": [
+      {
+        "lanes": 2,
+        "name": "omit_lane",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=1 expected=-7680 actual=0"
+        ]
+      },
+      {
+        "lanes": 2,
+        "name": "reuse_coefficient",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=1 expected=-7680 actual=-8192"
+        ]
+      },
+      {
+        "lanes": 2,
+        "name": "zero_extend",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=0 expected=-1 actual=32767"
+        ]
+      },
+      {
+        "lanes": 2,
+        "name": "narrow_sum",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=1 expected=32767 actual=0"
+        ]
+      },
+      {
+        "lanes": 2,
+        "name": "omit_last_group",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=31 expected=16384 actual=0"
+        ]
+      },
+      {
+        "lanes": 2,
+        "name": "ignore_backpressure",
+        "killed": true,
+        "assertions": [
+          "FIR_STALLED_OUTPUT_CHANGED"
+        ]
+      },
+      {
+        "lanes": 2,
+        "name": "ignore_reset_in_mac",
+        "killed": true,
+        "assertions": [
+          "FIR_RESET_STATE"
+        ]
+      },
+      {
+        "lanes": 4,
+        "name": "omit_lane",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=3 expected=-6656 actual=0"
+        ]
+      },
+      {
+        "lanes": 4,
+        "name": "reuse_coefficient",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=1 expected=-7680 actual=-8192"
+        ]
+      },
+      {
+        "lanes": 4,
+        "name": "zero_extend",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=0 expected=-1 actual=32767"
+        ]
+      },
+      {
+        "lanes": 4,
+        "name": "narrow_sum",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=1 expected=32767 actual=0"
+        ]
+      },
+      {
+        "lanes": 4,
+        "name": "omit_last_group",
+        "killed": true,
+        "assertions": [
+          "FIR_OUTPUT_MISMATCH index=31 expected=16384 actual=0"
+        ]
+      },
+      {
+        "lanes": 4,
+        "name": "ignore_backpressure",
+        "killed": true,
+        "assertions": [
+          "FIR_STALLED_OUTPUT_CHANGED"
+        ]
+      },
+      {
+        "lanes": 4,
+        "name": "ignore_reset_in_mac",
+        "killed": true,
+        "assertions": [
+          "FIR_RESET_STATE"
+        ]
+      }
+    ],
+    "invalid_lanes_rejected": [
+      3,
+      8
+    ]
+  },
+  "generated_at_utc": "2026-10-29T06:58:07.311489+00:00",
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_cpu.vhd": "dc450faa671510d86c484d19c15f0377b8e79a85c8d93a62f840291d84af70c6",
+    "rtl/fir/fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "rtl/fir/fir_mmio.vhd": "d7cf58abeb7d7a423f6b442f05c96831aaff43ac190bd62fe1dfc3c3197a0180",
+    "rtl/soc/shared_ram.vhd": "683213b85c4bfe4a05a65d140dd5c16b59f1ca5803e460f3e9eec4cd9f595bb1",
+    "rtl/soc/pipeline_fir_soc.vhd": "1f209b53d5a781305919c0522daf1c79ef2a93b6eaeab29978faf8e5e5709c23",
+    "sim/tb/tb_pipeline_fir_soc.vhd": "cb369ce90b71114d6ba20f8d569af240ed9fdf094ec32eaa62706abd343f8ad8",
+    "sim/tb/tb_pipeline_fir_benchmark.vhd": "74881499d0957eb2723bbeb1b485cf5c705251030cdf1b423cb2e0e42c3eecee",
+    "sim/tb/tb_pipeline_mmio_guard.vhd": "387c489427f2e2764dbe67cebe59eb4b98f1b5078a2cce3cd05653807292e8a3",
+    "sim/tb/tb_pipeline_bus_order.vhd": "d0ad225b6403a49854a3c6ff1c01ce15d47c0df574bb31b0e1fea702630bb13b",
+    "rtl/board/de2_115_pipeline_top.vhd": "c1c7550d61c2c4d7defb9e9fc088cea9bca660df29c05a79c9ff2daf498ce200",
+    "sim/tb/tb_fir_parallel.vhd": "306d295bbc8b2c6937e416ea43de48ea7af77e8a720f3883e86f1a0248cedcc9",
+    "sim/tb/tb_de2_pipeline.vhd": "1829a949d93c1c83fc522f36b8db1cadeb16c0fdc95abd74e3fb4bdefef8442a",
+    "tools/run_parallel_fir.py": "72eb2fad74e91656276b1c9a68b9409574ca67ba0b7c607eb486069daca5b738",
+    "tools/parallel_comparison.py": "7639f82af4744ecc8267cb70f3e9364c76f972d49e2dc9982a7111d2092300cc",
+    "tools/prepare_de2_parallel.py": "56e62d6929cbaa046522c24c50de35f1be92dbec73a7d8baa3ce95a6fa3fd2fa",
+    "docs/parallel-fir-contract.md": "7d677f955ed524242372a1fc77cf77561b1288f3c4aae6e48c3400b31bc29b08"
+  }
+}

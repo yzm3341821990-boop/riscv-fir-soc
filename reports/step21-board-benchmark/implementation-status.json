@@ -1,0 +1,25 @@
+{
+  "status": "board_user_accepted",
+  "updated_at_utc": "2026-10-29T14:42:52.539434+00:00",
+  "quartus_review": "pass",
+  "quartus_invoked_by_agent": false,
+  "verified_sof_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\step21-verified\\riscv_fir_de2_benchmark.sof",
+  "sof_sha256": "fbff1eba713bb10db223ce81766b1e236fc4dcede977f0b84009c25a4ec6bbf3",
+  "resources": {
+    "logic_elements": 14171,
+    "registers": 3778,
+    "pins": 66,
+    "memory_bits": 262144,
+    "multiplier_9bit_elements": 14,
+    "m9k_blocks": 32,
+    "data_ram_m9k_blocks": 32,
+    "separately_reported_rom_m9k_blocks": 0
+  },
+  "worst_setup_slack_ns": 10.184,
+  "worst_hold_slack_ns": 0.181,
+  "user_operations": [],
+  "physical_measurements": "general_user_reported_match; numeric readbacks not separately transcribed",
+  "video": "not_received",
+  "github": "not_uploaded",
+  "board_feedback": "reports/step21-board-benchmark/board-observation.json"
+}

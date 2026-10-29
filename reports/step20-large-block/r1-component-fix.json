@@ -1,0 +1,19 @@
+{
+  "status": "source_repair_and_functional_regression_pass",
+  "revision": "step20-r1-component-binding",
+  "root_cause": "Direct entity reference exists in simulator library but is not available in Quartus 17 synthesis library",
+  "changes": [
+    "import altera_mf.altera_mf_components.all",
+    "instantiate altsyncram component"
+  ],
+  "ram_sha256": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+  "old_ram_sha256": "14a17e5025d181293fb85f168e8bc101cff6e56ca381e916f575859a8acfd943",
+  "matched_c_runs": 45,
+  "all_measurements_identical": true,
+  "all_45_trace_sha256_identical": true,
+  "new_board_cycles": 24917,
+  "negative_controls_retained": true,
+  "physical_operations": "none by agent",
+  "quartus": "awaiting_user_recompile",
+  "first_failure": "quartus-first-failure-10481/failure.json"
+}

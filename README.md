@@ -1,121 +1,66 @@
-# RISC-V FIR SoC
+# RISC-V CPU + Q15 FIR SoC on DE2-115
 
-基于 **Terasic DE2-115** 的自设计多周期 RISC-V CPU 与 32 抽头定点 FIR 加速器。CPU 运行裸机 C，通过 MMIO 配置 FIR；硬件读取共享 RAM、完成滤波并写回，软件与板级监测器检查结果，数码管显示实际输出和程序周期。
+自设计五级流水线 CPU 运行裸机 C，通过 MMIO 驱动 32 抽头 FIR 加速器。CPU 和加速器共享 32 KiB 真双口 M9K RAM；同一镜像自动运行三种长度、三种软硬件模式，并在数码管上显示由实际标记写入驱动的周期计数。
 
-当前 CPU 实现 **37 种 RV32I 指令 + MUL**。五级流水线和完整 M 扩展属于后续目标，当前版本不标称完整 RV32IM。
+当前 CPU 支持 **37 种 RV32I 指令与 MUL**，包含旁路、load-use 暂停、控制转移清空和访存等待。精确范围见[CPU 契约](docs/pipeline-cpu-contract.md)。完整 M 扩展、标准异常/CSR、中断与实时音频属于后续扩展。
 
-## 从这里开始
+## 当前验证状态
 
-| 你要做的事 | 文档 |
+| 项目 | 已有证据 |
 | --- | --- |
-| 生成工程、编译、下载、使用开关 | [运行指南](docs/quickstart.md) |
-| 录实物演示视频 | [拍摄顺序与解说](docs/demo-recording.md) |
-| 理解 CPU、RAM、FIR、显示之间的连接 | [系统结构](docs/architecture.md) |
-| 查看测试、资源、时序和计时边界 | [验证记录](docs/verification.md) |
-| 整理视频并准备 GitHub 发布 | [发布准备](docs/github-publishing.md) |
-| 回看 ALU 到系统集成的开发顺序 | [分阶段开发记录](docs/development-history.md) |
+| 数值语义 | signed16 Q15 输入/系数、40 位累加、最近舍入（半格远离零）、signed16 饱和 |
+| CPU 与系统 | 独立 ISA 提交/访存/RF/RAM 检查，C 软件与 FIR 硬件逐样本比较 |
+| 板级功能仿真 | step21 四次完整扫描、36 项显示检查，独立外部时钟秒表和故障控制 |
+| 实际 Quartus 实现 | EP4CE115F29C7，25 MHz，14,171 LE、3,778 寄存器、32 M9K、14 个 9 位乘法器元素 |
+| 静态时序 | 最差 setup/hold +10.184/+0.181 ns，18 项检查通过，未约束摘要全零 |
+| 实物反馈 | 用户对 step21 下载后行为回复“ok，符合预期，继续吧”；[原话及范围](reports/step21-board-benchmark/board-observation.json) |
 
-**当前实物状态：** 用户已反馈初版 LED 自检与 KEY0 重跑符合预期，数码管新版也反馈可用。完整八个输出、周期和复位的逐项视频正在录制；尚无视频核验记录，见[观察记录](reports/documentation/board-observation.json)。
+逐项数字抄录、Programmer 日志与视频尚未提供。下面的精确周期和比值来自可回放的 RTL 仿真；上板反馈按用户概括确认记录。
 
-## 系统结构
+## 软件与四路 FIR 的完整调用比较
 
-```mermaid
-flowchart LR
-    ROM[程序 ROM] --> CPU[多周期 RISC-V CPU]
-    CPU --> MMIO[MMIO 地址译码]
-    MMIO --> FIR[32 抽头定点 FIR]
-    MMIO <--> RAM[双端口共享 RAM]
-    FIR <--> RAM
-    FIR --> VIEW[实际写回快照与结果检查]
-    CPU --> TIMER[程序周期计数]
-    VIEW --> IO[LED 与数码管]
-    TIMER --> IO
+固定同一 CPU/MUL 能力、时钟、输入、初始 RAM 与定点规则。冷调用包含系数配置；驻留模式在计时前装好系数。启动与结果检查在该计时区间外。
+
+| 点数 | 软件周期 | 四路冷调用周期 | 四路驻留周期 | 软件/冷调用 | 软件/驻留 |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 64 | 24,045 | 1,126 | 867 | 21.35× | 27.73× |
+| 256 | 116,856 | 3,622 | 3,363 | 32.26× | 34.75× |
+| 1024 | 489,233 | 13,608 | 13,349 | 35.95× | 36.65× |
+
+![Complete-call simulation comparison](artifacts/step22/complete-call-comparison.png)
+
+[完整分析与计时范围](docs/project-results.md) · [原始数据与输入哈希](reports/step22-project-summary/summary.json) · [CSV](reports/step22-project-summary/complete-call-comparison.csv)
+
+## 快速复现
+
+Python 3.10+；数值模型、工具和检查使用标准库。在仓库根目录执行：
+
+```sh
+python -m tools.run_step1 --report-dir build/check
+python -m tools.build_project_summary
 ```
 
-## 已实现的内容
-
-- 自行编写的 CPU 数据通路、寄存器组、译码/立即数、控制、字节/半字/字访存和 MUL。
-- signed16 Q15 输入/系数、signed40 累加、最近舍入且半格远离零、signed16 饱和的串行 FIR 核。
-- 运行时系数配置、MMIO 状态与错误码、双端口共享 RAM、裸机 C 驱动和有限轮询超时。
-- 同步程序 ROM、完整 RAM 初值装载、KEY0 重启、实际 DMA 写回检查及输出快照。
-- Python 定点参考、独立向量审计、CPU/系统轨迹检查、RTL 故障注入和固定条件下的周期比较。
-
-## 快速运行当前板级版本
-
-Python 3.10+，在仓库根目录执行；生成目录使用英文路径：
+生成独立 Quartus 工程，以 Windows 英文路径为例：
 
 ```powershell
-python -m tools.prepare_de2_display --output C:/fpga/riscv_fir_display
+python -m tools.prepare_de2_benchmark --output C:/fpga/riscv_fir_benchmark
 ```
 
-随后由使用者在 Quartus 打开生成目录中的 `riscv_fir_de2_display.qpf`，选择 **Processing → Start Compilation**。编译生成的 `output_files/riscv_fir_de2_display.sof` 通过 USB-Blaster / JTAG 下载。生成脚本本身不编译或编程硬件。
+在 Quartus Prime Lite 17.0 打开生成的 `riscv_fir_de2_benchmark.qpf`，用户执行编译、检查报告并下载。ModelSim 功能验证、详细环境和引脚条件见[运行指南](docs/quickstart.md)。
 
-参考编译目标为 **EP4CE115F29C7**，输入 50 MHz、实际二分频系统时钟 25 MHz。引脚按 DE2-115 官方手册及参考 JP7=2.5 V、JP6=3.3 V 配置；实际器件及电压应匹配工程，详见[运行指南](docs/quickstart.md)。
+## 文档与展示
 
-| 操作 | 预期数码管内容 | 说明 |
-| --- | --- | --- |
-| SW3=0，SW2..SW0=000 | 00002000 | 第 0 个输出：8192 |
-| SW3=0，SW2..SW0=001 | 00003000 | 第 1 个输出：12288 |
-| SW3=0，SW2..SW0=010 | FFFFA800 | 第 2 个输出：-22528，补码显示 |
-| SW3=1 | 0000046B | 当前整段自检程序 1131 拍的仿真预期 |
-| 按住 / 松开 KEY0 | 空白 / 重跑后恢复显示 | 同时重新装载初始数据 |
-
-正常 LED 状态为 LEDR0/1 亮、LEDR2 灭、LEDR3 闪。完整八个输出见[对照表](docs/quickstart.md#5-操作与预期显示)。演示视频收到后在这里加入真实媒体链接。
-
-## 验证与参考实现
-
-| 层次 | 已有证据 |
+| 内容 | 入口 |
 | --- | --- |
-| 模型/工具 | [213 项 Python 测试、向量审计与重现检查](reports/step1/validation.json) |
-| CPU RTL | [188 个程序与受控故障检查](reports/step11-software-fir/validation.json) |
-| FIR 核与协同系统 | [核验证](reports/step12-fir-accelerator/validation.json)、[系统验证](reports/step13-fir-soc/validation.json) |
-| 数码管版本 | [四次启动/复位、32 项输出选择、六项错误注入](reports/step16-display/simulation-validation.json) |
-| Quartus | [实现报告与 SOF 哈希](reports/step16-display/quartus-validation.json) |
-| 实物 | 用户反馈已收到；逐项视频与板上性能测量待补 |
+| 当前系统结构与内存布局 | [Architecture](docs/architecture.md) |
+| 九组计时、SW3..SW0、KEY0 与 LED | [板上操作指南](docs/step21-board-benchmark-guide.md) |
+| 长块与 1/2/4 路实验 | [性能与资源分析](docs/project-results.md) |
+| 发布范围、证据与保留事项 | [审阅清单](docs/release-review.md) |
+| 最新视频拍摄顺序 | [Demo](docs/demo-recording-step21.md) |
+| 原始编译和时序报告 | [Quartus review](reports/step21-board-benchmark/quartus-validation.json) |
+| 历史多周期版本与逐步开发 | [历史入口](docs/quickstart-v0.1.md)、[开发顺序](docs/development-history.md) |
+| 发布状态与来源 | [GitHub 状态](docs/github-publishing.md)、[THIRD_PARTY](THIRD_PARTY.md) |
 
-数码管版在 Quartus Lite 17.0.0 Build 595 的参考目标上占 **27,451 LE、11,567 寄存器、9,216 逻辑存储位、8 个 9 位乘法器元素**。25 MHz 最差 setup/hold slack 为 **+7.710 / +0.180 ns**，未约束时钟/输入/输出端口计数均为零；15 条普通警告完整保留。这是所声明约束下的参考实现证据，实物与计时结论见[验证说明](docs/verification.md)。
+`rtl/` 为可综合 VHDL-93；`firmware/` 和 `programs/` 保存 C、ELF、初始镜像及编译清单；`sim/`、`model/`、`tests/`、`tools/` 保存检查器；`reports/` 保存证据；`artifacts/` 保存由数据生成的图表。保留原多周期和旧五级版本。
 
-核心 Python 检查只需要标准库，可独立运行：
-
-```powershell
-python -m tools.run_step1 --report-dir build/local-check
-```
-
-[GitHub Actions 工作流](.github/workflows/reference-model.yml)已配置 Python 3.10/3.12 检查，远端运行结果待实际发布后取得。
-
-## 软件 / 硬件周期对照
-
-以下来自同一 CPU、相同编译器/MUL 能力、相同数据布局和完整调用标记下的 **N=8 功能仿真**：
-
-| 模式 | 完整调用周期 | 软件周期 / 该模式 |
-| --- | ---: | ---: |
-| 软件 FIR | 2044 | 1.000× |
-| 硬件冷调用，含系数配置 | 919 | 2.224× |
-| 硬件调用，系数预先驻留 | 392 | 5.214× |
-
-驻留模式的预装成本在区间外另行记录。以上数据与数码管的 1131 拍自检程序属于不同固件/区间，不能直接混算；板上实测加速比尚未取得。完整条件见[计时契约](docs/fir-benchmark-contract.md)和[逐次 CSV](reports/step14-fir-benchmark/comparison.csv)。
-
-![固定条件下的模拟完整调用周期对照](artifacts/step14/fir-cycle-comparison.png)
-
-## 仓库结构
-
-| 目录 | 内容 |
-| --- | --- |
-| model/、vectors/ | 无第三方依赖的参考模型、数值向量与清单 |
-| rtl/cpu/、rtl/fir/、rtl/soc/ | CPU、FIR、MMIO 和共享 RAM |
-| rtl/board/、fpga/ | 板级启动、结果显示、引脚与时钟约束 |
-| firmware/、programs/ | C/汇编/链接脚本，以及已编译固件与编译清单 |
-| sim/、tests/、tools/ | Testbench、Python 检查与工程生成/收集工具 |
-| docs/ | 当前指南、设计契约、开发记录和发布材料 |
-| reports/ | 各阶段原始日志、测量与哈希记录 |
-| artifacts/ | 数值/周期图表及待整理的演示媒体 |
-
-## 当前边界与后续方向
-
-当前为多周期 CPU，没有五级流水线、完整 M 扩展、CSR/标准异常处理、Cache 或实时音频链。共享 RAM 当前推导为寄存器与选择逻辑，进一步优化存储推导和流水线都需要重新验证。
-
-下一阶段先补齐本版实物视频和逐项观察记录，再推进 CPU 流水线及更长数据块的成组性能实验。[项目规格](docs/project-spec.md)中的五级流水线、更大存储及扩展接口为目标设计。
-
-## 来源与许可证
-
-实现、规范与工具依赖的边界见 [THIRD_PARTY.md](THIRD_PARTY.md)。当前没有 LICENSE 文件，项目许可证尚未选定；发布准备项见[说明](docs/github-publishing.md)。
+当前未指定代码许可证。公开源码与第三方依赖的来源边界见 THIRD_PARTY.md。

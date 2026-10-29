@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Oct 29 21:26:47 2026
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+Revision Name : riscv_fir_de2_benchmark
+Top-level Entity Name : de2_115_benchmark_top
+Family : Cyclone IV E
+Total logic elements : 15,787
+    Total combinational functions : 13,479
+    Dedicated logic registers : 3,778
+Total registers : 3778
+Total pins : 66
+Total virtual pins : 0
+Total memory bits : 262,144
+Embedded Multiplier 9-bit elements : 14
+Total PLLs : 0

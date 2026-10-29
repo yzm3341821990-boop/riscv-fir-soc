@@ -1,0 +1,117 @@
+# do run_benchmark_batch.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap -c 
+# Copying E:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:42:08 on Oct 29,2026
+# vcom -93 benchmark_images_pkg.vhd alu_pkg.vhd alu32.vhd regfile32.vhd mul32.vhd imm_i.vhd imm_s.vhd imm_b.vhd imm_j.vhd imm_u.vhd decode_tiny.vhd data_ram.vhd pipeline_large_cpu.vhd fir_serial.vhd fir_mmio_large.vhd shared_ram_m9k.vhd pipeline_large_soc.vhd hex7seg.vhd call_cycle_timer.vhd de2_115_benchmark_top.vhd tb_de2_benchmark.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package benchmark_images_pkg
+# -- Compiling package alu_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package alu_pkg
+# -- Compiling entity alu32
+# -- Compiling architecture rtl of alu32
+# -- Compiling entity regfile32
+# -- Compiling architecture rtl of regfile32
+# -- Compiling entity mul32
+# -- Compiling architecture rtl of mul32
+# -- Compiling entity imm_i
+# -- Compiling architecture rtl of imm_i
+# -- Compiling entity imm_s
+# -- Compiling architecture rtl of imm_s
+# -- Compiling entity imm_b
+# -- Compiling architecture rtl of imm_b
+# -- Compiling entity imm_j
+# -- Compiling architecture rtl of imm_j
+# -- Compiling entity imm_u
+# -- Compiling architecture rtl of imm_u
+# -- Compiling entity decode_tiny
+# -- Compiling architecture rtl of decode_tiny
+# -- Compiling entity data_ram
+# -- Compiling architecture rtl of data_ram
+# -- Compiling entity pipeline_large_cpu
+# -- Compiling architecture rtl of pipeline_large_cpu
+# -- Loading entity decode_tiny
+# -- Loading entity regfile32
+# -- Loading entity imm_i
+# -- Loading entity imm_s
+# -- Loading entity imm_b
+# -- Loading entity imm_j
+# -- Loading entity imm_u
+# -- Loading entity alu32
+# -- Loading entity mul32
+# -- Compiling entity fir_serial
+# -- Compiling architecture rtl of fir_serial
+# -- Compiling entity fir_mmio_large
+# -- Compiling architecture rtl of fir_mmio_large
+# -- Loading entity fir_serial
+# -- Loading package altera_mf_components
+# -- Compiling entity shared_ram_m9k
+# -- Compiling architecture rtl of shared_ram_m9k
+# -- Compiling entity pipeline_large_soc
+# -- Compiling architecture rtl of pipeline_large_soc
+# -- Loading entity pipeline_large_cpu
+# -- Loading entity shared_ram_m9k
+# -- Loading entity fir_mmio_large
+# -- Compiling entity hex7seg
+# -- Compiling architecture rtl of hex7seg
+# -- Compiling entity call_cycle_timer
+# -- Compiling architecture rtl of call_cycle_timer
+# -- Loading package benchmark_images_pkg
+# -- Compiling entity de2_115_benchmark_top
+# -- Compiling architecture rtl of de2_115_benchmark_top
+# -- Loading entity call_cycle_timer
+# -- Loading entity pipeline_large_soc
+# -- Loading entity hex7seg
+# -- Loading package util
+# -- Compiling entity tb_de2_benchmark
+# -- Compiling architecture test of tb_de2_benchmark
+# -- Loading entity de2_115_benchmark_top
+# End time: 18:42:15 on Oct 29,2026, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" -L altera_mf work.tb_de2_benchmark -gSINGLE_RUN=true 
+# Start time: 18:42:15 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading modelsim_lib.util(body)
+# Loading work.benchmark_images_pkg
+# Loading work.tb_de2_benchmark(test)
+# Loading work.de2_115_benchmark_top(rtl)
+# Loading work.call_cycle_timer(rtl)
+# Loading altera_mf.altera_mf_components
+# Loading work.pipeline_large_soc(rtl)
+# Loading work.alu_pkg
+# Loading work.pipeline_large_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.shared_ram_m9k(rtl)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.fir_mmio_large(rtl)
+# Loading work.fir_serial(rtl)
+# Loading work.hex7seg(rtl)
+# 3
+# ** Failure: BOARD_BENCH_TERMINAL_WITHOUT_INTERVAL
+#    Time: 2299730 ns  Iteration: 0  Process: /tb_de2_benchmark/monitor File: tb_de2_benchmark.vhd
+# Break in Process monitor at tb_de2_benchmark.vhd line 123
+# End time: 18:42:18 on Oct 29,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

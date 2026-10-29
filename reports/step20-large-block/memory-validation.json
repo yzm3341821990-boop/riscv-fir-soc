@@ -1,0 +1,230 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T09:49:23.634482+00:00",
+  "ram_words_checked": 8192,
+  "cpu_address_cases": [
+    {
+      "name": "LW_00000400_2048",
+      "instruction": 41219,
+      "base": 1024,
+      "address": 1024,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": true
+    },
+    {
+      "name": "LW_00001000_2048",
+      "instruction": 41219,
+      "base": 4096,
+      "address": 4096,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": true
+    },
+    {
+      "name": "SW_00008000_2044",
+      "instruction": 4263554595,
+      "base": 32768,
+      "address": 32764,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": true
+    },
+    {
+      "name": "LW_00008000_2044",
+      "instruction": 4290814211,
+      "base": 32768,
+      "address": 32764,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": true
+    },
+    {
+      "name": "LBU_00008000_2047",
+      "instruction": 4293968131,
+      "base": 32768,
+      "address": 32767,
+      "byte_enable": 8,
+      "value": 18,
+      "valid": true
+    },
+    {
+      "name": "LH_00008000_2046",
+      "instruction": 4292907267,
+      "base": 32768,
+      "address": 32766,
+      "byte_enable": 12,
+      "value": 4660,
+      "valid": true
+    },
+    {
+      "name": "SB_00008000_2047",
+      "instruction": 4263546787,
+      "base": 32768,
+      "address": 32767,
+      "byte_enable": 8,
+      "value": 18,
+      "valid": true
+    },
+    {
+      "name": "SH_00008000_2046",
+      "instruction": 4263550755,
+      "base": 32768,
+      "address": 32766,
+      "byte_enable": 12,
+      "value": 4660,
+      "valid": true
+    },
+    {
+      "name": "LW_00008000_2048",
+      "instruction": 41219,
+      "base": 32768,
+      "address": 0,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": false
+    },
+    {
+      "name": "SW_00008000_2048",
+      "instruction": 2138147,
+      "base": 32768,
+      "address": 0,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": false
+    },
+    {
+      "name": "LW_00008000_2046",
+      "instruction": 4292911363,
+      "base": 32768,
+      "address": 0,
+      "byte_enable": 15,
+      "value": 4660,
+      "valid": false
+    },
+    {
+      "name": "LH_00008000_2047",
+      "instruction": 4293955843,
+      "base": 32768,
+      "address": 0,
+      "byte_enable": 15,
+      "value": 18,
+      "valid": false
+    },
+    {
+      "name": "LW_80000000_2048",
+      "instruction": 41219,
+      "base": 2147483648,
+      "address": 0,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": false
+    },
+    {
+      "name": "LW_40003000_2048",
+      "instruction": 41219,
+      "base": 1073754112,
+      "address": 1073754112,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": true
+    },
+    {
+      "name": "SW_40003000_2048",
+      "instruction": 2138147,
+      "base": 1073754112,
+      "address": 1073754112,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": true
+    },
+    {
+      "name": "LB_40003000_2048",
+      "instruction": 33027,
+      "base": 1073754112,
+      "address": 0,
+      "byte_enable": 15,
+      "value": 120,
+      "valid": false
+    },
+    {
+      "name": "LW_40002000_2048",
+      "instruction": 41219,
+      "base": 1073750016,
+      "address": 0,
+      "byte_enable": 15,
+      "value": 305419896,
+      "valid": false
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "byte_mask_ignored",
+      "killed": true,
+      "assertions": [
+        "M9K_A_READ_OR_ALIAS"
+      ]
+    },
+    {
+      "name": "address_alias",
+      "killed": true,
+      "assertions": [
+        "M9K_B_READ_OR_ALIAS"
+      ]
+    },
+    {
+      "name": "collision_unprotected",
+      "killed": true,
+      "assertions": [
+        "M9K_COLLISION_NOT_STALLED"
+      ]
+    },
+    {
+      "name": "response_without_acceptance",
+      "killed": true,
+      "assertions": [
+        "M9K_COLLISION_EARLY_RESPONSE"
+      ]
+    },
+    {
+      "name": "old_1k_cpu_range",
+      "killed": true,
+      "assertions": [
+        "LARGE_GUARD_UNEXPECTED_FAULT"
+      ]
+    },
+    {
+      "name": "no_upper_cpu_bound",
+      "killed": true,
+      "assertions": [
+        "LARGE_GUARD_BAD_REQUEST"
+      ]
+    }
+  ],
+  "model": "Quartus 17 ModelSim 10.5b altera_mf.altsyncram",
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_large_cpu.vhd": "9ea35264d5f94b80f9184a860bcedbbb3cbb53152c2d6252c1bcd2bb57f6ac3c",
+    "rtl/fir/fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "rtl/fir/fir_mmio_large.vhd": "7759142b908eb41deeeabd6e7f8a95b70e8f1f9f0ab7a34657d84062503acd48",
+    "rtl/soc/shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "rtl/soc/pipeline_large_soc.vhd": "67a412c8d19e7cd4d54fef2c52a154d6b53eeddee3c1eceedc442344e1c83780",
+    "sim/tb/tb_large_soc.vhd": "fcb3359fe224cc03c44956f55cdb9a3a3982e9b0fbd95e1b890701c68c8b7f59",
+    "sim/tb/tb_shared_ram_m9k.vhd": "cd7f3ad9986d525dc60565686fabfd8d8c17d2af0a729e798983b7446218b872",
+    "sim/tb/tb_large_cpu_guard.vhd": "72e8b4bab192446a33de74b6d703ffdf44be7b1c0b8a26ade41a1ebb28e64218",
+    "tools/run_large_memory.py": "3061ee879b69fa32f1893a6f7440b73fcdb11860c624a0fb5b62ea056d0b2f15",
+    "docs/large-block-contract.md": "ab3aafa9122a9d7af78b1dc4277e7d411e2f95e5d5249d98b395d2b3305b43c4"
+  },
+  "quartus": "not_run",
+  "hardware": "not_run"
+}

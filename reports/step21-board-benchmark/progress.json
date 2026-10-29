@@ -1,0 +1,42 @@
+{
+  "status": "board_user_accepted",
+  "objective": "One bitstream sequentially runs 3 lengths x 3 modes and displays actual accepted-marker cycle intervals",
+  "frozen_baseline": "step20 r1 verified SOF 1dcf5141800c418da3a6b9a4881fe586b0ef18d8c9483e9cdee6cdabe053d5b4",
+  "design_choices": [
+    "Existing CPU/FIR/M9K remain unchanged",
+    "Nine program ROM banks and three shared initial RAM images",
+    "Reload RAM and reset CPU/FIR between profiles",
+    "No cycle expectation constants in synthesizable logic",
+    "Nine computed measurements selected with existing SW[3:0]",
+    "C verifies all samples before overall PASS"
+  ],
+  "remaining": [],
+  "user_operations": [],
+  "github": "not_authorized_for_new_versions",
+  "completed": [
+    "expected-red interval check",
+    "timer protocol/overflow tests",
+    "nine-bank matched firmware and initial RAM provenance",
+    "four full board sweeps with external-clock stopwatch",
+    "9 controlled faults rejected",
+    "latency sensitivity and fake-cycle-table rejection",
+    "250 Python tests",
+    "66-pin/staged-file identity checks",
+    "User Quartus compile and read-only source/66-pin/M9K/DSP/timing/SOF review",
+    "User general board acceptance: ok，符合预期，继续吧"
+  ],
+  "updated_at_utc": "2026-10-29T14:42:52.539434+00:00",
+  "project": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2_115_benchmark\\riscv_fir_de2_benchmark.qpf",
+  "guide": "docs/step21-board-benchmark-guide.md",
+  "delivery_packages": {
+    "source": "github-ready/riscv-fir-soc-step21-source.zip",
+    "project": "github-ready/riscv-fir-de2-benchmark-step21-project.zip",
+    "manifest": "github-ready/step21-delivery-manifest.json"
+  },
+  "quartus_review": "reports/step21-board-benchmark/quartus-validation.json",
+  "verified_sof_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\step21-verified\\riscv_fir_de2_benchmark.sof",
+  "sof_sha256": "fbff1eba713bb10db223ce81766b1e236fc4dcede977f0b84009c25a4ec6bbf3",
+  "implementation_source_package": "github-ready/riscv-fir-soc-step21-implemented-source.zip",
+  "board_feedback": "reports/step21-board-benchmark/board-observation.json",
+  "next_action": "Local step22 project summary and review package; newer GitHub publication requires explicit authorization"
+}

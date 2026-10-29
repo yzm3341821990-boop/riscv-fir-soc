@@ -1,0 +1,21 @@
+{
+  "status": "awaiting_publication_authorization",
+  "objective": "Consolidate accepted step21 results, derived comparisons and reproducible local publication material",
+  "hardware_status": "step21_user_general_acceptance",
+  "functional_hdl_changed": false,
+  "quartus_run_by_agent": false,
+  "programming_by_agent": false,
+  "user_board_quote": "ok，符合预期，继续吧",
+  "remaining": [
+    "Explicit authorization before uploading newer source to GitHub"
+  ],
+  "optional_evidence": [
+    "individual numeric readbacks",
+    "video",
+    "programmer and physical reset logs"
+  ],
+  "github": "not_uploaded",
+  "license": "not_selected",
+  "source_package": "github-ready/riscv-fir-soc-step22-review-source.zip",
+  "user_hardware_action_required": false
+}

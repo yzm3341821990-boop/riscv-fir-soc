@@ -1,0 +1,2 @@
+QUARTUS_VERSION = "17.0"
+PROJECT_REVISION = "riscv_fir_de2_p2"

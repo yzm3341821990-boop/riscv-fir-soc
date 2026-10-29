@@ -1,0 +1,3015 @@
+# do run_pipeline_batch.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap -c 
+# Copying E:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 07:33:30 on Oct 29,2026
+# vcom -93 alu_pkg.vhd alu32.vhd regfile32.vhd mul32.vhd imm_i.vhd imm_s.vhd imm_b.vhd imm_j.vhd imm_u.vhd decode_tiny.vhd data_ram.vhd pipeline_cpu.vhd tb_pipeline_cpu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package alu_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package alu_pkg
+# -- Compiling entity alu32
+# -- Compiling architecture rtl of alu32
+# -- Compiling entity regfile32
+# -- Compiling architecture rtl of regfile32
+# -- Compiling entity mul32
+# -- Compiling architecture rtl of mul32
+# -- Compiling entity imm_i
+# -- Compiling architecture rtl of imm_i
+# -- Compiling entity imm_s
+# -- Compiling architecture rtl of imm_s
+# -- Compiling entity imm_b
+# -- Compiling architecture rtl of imm_b
+# -- Compiling entity imm_j
+# -- Compiling architecture rtl of imm_j
+# -- Compiling entity imm_u
+# -- Compiling architecture rtl of imm_u
+# -- Compiling entity decode_tiny
+# -- Compiling architecture rtl of decode_tiny
+# -- Compiling entity data_ram
+# -- Compiling architecture rtl of data_ram
+# -- Compiling entity pipeline_cpu
+# -- Compiling architecture rtl of pipeline_cpu
+# -- Loading entity decode_tiny
+# -- Loading entity regfile32
+# -- Loading entity imm_i
+# -- Loading entity imm_s
+# -- Loading entity imm_b
+# -- Loading entity imm_j
+# -- Loading entity imm_u
+# -- Loading entity alu32
+# -- Loading entity mul32
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_pipeline_cpu
+# -- Compiling architecture test of tb_pipeline_cpu
+# -- Loading entity pipeline_cpu
+# -- Loading entity data_ram
+# End time: 07:33:30 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=demo
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/demo/expected_memory_trace.txt -gTRACE_FILE=cases/demo/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/demo/program.hex 
+# Start time: 07:33:30 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=0 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=demo
+# End time: 07:33:31 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=alu_demo
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=7 -gMEMORY_TRACE_FILE=cases/alu_demo/expected_memory_trace.txt -gTRACE_FILE=cases/alu_demo/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/alu_demo/program.hex 
+# Start time: 07:33:31 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=7 cycles=11 requests=0 stalls=0 flushes=0
+#    Time: 2690 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=alu_demo
+# End time: 07:33:31 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=shift_immediate
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=11 -gMEMORY_TRACE_FILE=cases/shift_immediate/expected_memory_trace.txt -gTRACE_FILE=cases/shift_immediate/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/shift_immediate/program.hex 
+# Start time: 07:33:31 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=11 cycles=15 requests=0 stalls=0 flushes=0
+#    Time: 2730 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=shift_immediate
+# End time: 07:33:32 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=negative_immediates
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/negative_immediates/expected_memory_trace.txt -gTRACE_FILE=cases/negative_immediates/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/negative_immediates/program.hex 
+# Start time: 07:33:32 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=0 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=negative_immediates
+# End time: 07:33:32 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=immediate_limits
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=6 -gMEMORY_TRACE_FILE=cases/immediate_limits/expected_memory_trace.txt -gTRACE_FILE=cases/immediate_limits/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/immediate_limits/program.hex 
+# Start time: 07:33:32 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=6 cycles=10 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=immediate_limits
+# End time: 07:33:33 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=add_wrap
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=38 -gMEMORY_TRACE_FILE=cases/add_wrap/expected_memory_trace.txt -gTRACE_FILE=cases/add_wrap/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/add_wrap/program.hex 
+# Start time: 07:33:33 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=38 cycles=42 requests=0 stalls=0 flushes=0
+#    Time: 3 us  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=add_wrap
+# End time: 07:33:33 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=sub_wrap
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=6 -gMEMORY_TRACE_FILE=cases/sub_wrap/expected_memory_trace.txt -gTRACE_FILE=cases/sub_wrap/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/sub_wrap/program.hex 
+# Start time: 07:33:33 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=6 cycles=10 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=sub_wrap
+# End time: 07:33:34 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=dependencies
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/dependencies/expected_memory_trace.txt -gTRACE_FILE=cases/dependencies/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/dependencies/program.hex 
+# Start time: 07:33:34 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=8 cycles=12 requests=0 stalls=0 flushes=0
+#    Time: 2700 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=dependencies
+# End time: 07:33:34 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=x0_writes
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=21 -gMEMORY_TRACE_FILE=cases/x0_writes/expected_memory_trace.txt -gTRACE_FILE=cases/x0_writes/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/x0_writes/program.hex 
+# Start time: 07:33:34 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=21 cycles=25 requests=0 stalls=0 flushes=0
+#    Time: 2830 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=x0_writes
+# End time: 07:33:34 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=x31
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=21 -gMEMORY_TRACE_FILE=cases/x31/expected_memory_trace.txt -gTRACE_FILE=cases/x31/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/x31/program.hex 
+# Start time: 07:33:35 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=21 cycles=25 requests=0 stalls=0 flushes=0
+#    Time: 2830 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=x31
+# End time: 07:33:35 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=register_shifts
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=9 -gMEMORY_TRACE_FILE=cases/register_shifts/expected_memory_trace.txt -gTRACE_FILE=cases/register_shifts/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/register_shifts/program.hex 
+# Start time: 07:33:35 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=9 cycles=13 requests=0 stalls=0 flushes=0
+#    Time: 2710 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=register_shifts
+# End time: 07:33:35 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=compare_signed_unsigned
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=11 -gMEMORY_TRACE_FILE=cases/compare_signed_unsigned/expected_memory_trace.txt -gTRACE_FILE=cases/compare_signed_unsigned/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/compare_signed_unsigned/program.hex 
+# Start time: 07:33:35 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=11 cycles=15 requests=0 stalls=0 flushes=0
+#    Time: 2730 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=compare_signed_unsigned
+# End time: 07:33:36 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=logic_register
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=9 -gMEMORY_TRACE_FILE=cases/logic_register/expected_memory_trace.txt -gTRACE_FILE=cases/logic_register/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/logic_register/program.hex 
+# Start time: 07:33:36 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=9 cycles=13 requests=0 stalls=0 flushes=0
+#    Time: 2710 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=logic_register
+# End time: 07:33:36 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=logic_immediate
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/logic_immediate/expected_memory_trace.txt -gTRACE_FILE=cases/logic_immediate/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/logic_immediate/program.hex 
+# Start time: 07:33:36 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=8 cycles=12 requests=0 stalls=0 flushes=0
+#    Time: 2700 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=logic_immediate
+# End time: 07:33:37 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=sltiu_negative_immediate
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/sltiu_negative_immediate/expected_memory_trace.txt -gTRACE_FILE=cases/sltiu_negative_immediate/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/sltiu_negative_immediate/program.hex 
+# Start time: 07:33:37 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=8 cycles=12 requests=0 stalls=0 flushes=0
+#    Time: 2700 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=sltiu_negative_immediate
+# End time: 07:33:37 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=shift_positive
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/shift_positive/expected_memory_trace.txt -gTRACE_FILE=cases/shift_positive/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/shift_positive/program.hex 
+# Start time: 07:33:37 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=8 cycles=12 requests=0 stalls=0 flushes=0
+#    Time: 2700 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=shift_positive
+# End time: 07:33:38 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_opcode
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_opcode/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_opcode/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_opcode/program.hex 
+# Start time: 07:33:38 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_opcode
+# End time: 07:33:38 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_slli_funct7
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_slli_funct7/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_slli_funct7/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_slli_funct7/program.hex 
+# Start time: 07:33:38 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_slli_funct7
+# End time: 07:33:39 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_r_funct7
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_r_funct7/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_r_funct7/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_r_funct7/program.hex 
+# Start time: 07:33:39 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_r_funct7
+# End time: 07:33:39 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_system
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_system/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_system/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_system/program.hex 
+# Start time: 07:33:39 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_system
+# End time: 07:33:40 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_slli_bit30
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_slli_bit30/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_slli_bit30/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_slli_bit30/program.hex 
+# Start time: 07:33:40 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_slli_bit30
+# End time: 07:33:40 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_srli_funct7
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_srli_funct7/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_srli_funct7/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_srli_funct7/program.hex 
+# Start time: 07:33:40 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_srli_funct7
+# End time: 07:33:41 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_srai_reserved
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_srai_reserved/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_srai_reserved/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_srai_reserved/program.hex 
+# Start time: 07:33:41 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_srai_reserved
+# End time: 07:33:41 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_r_reserved_shift
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_r_reserved_shift/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_r_reserved_shift/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_r_reserved_shift/program.hex 
+# Start time: 07:33:41 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_r_reserved_shift
+# End time: 07:33:42 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_r_reserved_logic
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_r_reserved_logic/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_r_reserved_logic/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_r_reserved_logic/program.hex 
+# Start time: 07:33:42 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_r_reserved_logic
+# End time: 07:33:42 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=prefix_then_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=12 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/prefix_then_fault/expected_memory_trace.txt -gTRACE_FILE=cases/prefix_then_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/prefix_then_fault/program.hex 
+# Start time: 07:33:42 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=8 requests=0 stalls=0 flushes=0
+#    Time: 2700 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=prefix_then_fault
+# End time: 07:33:42 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=random_legal
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=48 -gMEMORY_TRACE_FILE=cases/random_legal/expected_memory_trace.txt -gTRACE_FILE=cases/random_legal/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/random_legal/program.hex 
+# Start time: 07:33:43 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=48 cycles=52 requests=0 stalls=0 flushes=0
+#    Time: 3100 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=random_legal
+# End time: 07:33:43 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=reset_during_fetch
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/reset_during_fetch/expected_memory_trace.txt -gTRACE_FILE=cases/reset_during_fetch/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/reset_during_fetch/program.hex 
+# Start time: 07:33:43 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=0 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=reset_during_fetch
+# End time: 07:33:43 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=reset_after_write
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/reset_after_write/expected_memory_trace.txt -gTRACE_FILE=cases/reset_after_write/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/reset_after_write/program.hex 
+# Start time: 07:33:43 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=0 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=reset_after_write
+# End time: 07:33:44 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_demo
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/memory_demo/expected_memory_trace.txt -gTRACE_FILE=cases/memory_demo/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_demo/program.hex 
+# Start time: 07:33:44 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=8 cycles=14 requests=4 stalls=2 flushes=0
+#    Time: 2720 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_demo
+# End time: 07:33:44 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_negative_offset
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/memory_negative_offset/expected_memory_trace.txt -gTRACE_FILE=cases/memory_negative_offset/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_negative_offset/program.hex 
+# Start time: 07:33:44 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=8 requests=2 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_negative_offset
+# End time: 07:33:45 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_s_imm_min
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/memory_s_imm_min/expected_memory_trace.txt -gTRACE_FILE=cases/memory_s_imm_min/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_s_imm_min/program.hex 
+# Start time: 07:33:45 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=2 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_s_imm_min
+# End time: 07:33:45 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_s_imm_max_wrap
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/memory_s_imm_max_wrap/expected_memory_trace.txt -gTRACE_FILE=cases/memory_s_imm_max_wrap/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_s_imm_max_wrap/program.hex 
+# Start time: 07:33:45 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=8 requests=2 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_s_imm_max_wrap
+# End time: 07:33:46 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_wrap_to_zero
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/memory_wrap_to_zero/expected_memory_trace.txt -gTRACE_FILE=cases/memory_wrap_to_zero/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_wrap_to_zero/program.hex 
+# Start time: 07:33:46 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=8 requests=2 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_wrap_to_zero
+# End time: 07:33:46 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_boundary
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=6 -gMEMORY_TRACE_FILE=cases/memory_boundary/expected_memory_trace.txt -gTRACE_FILE=cases/memory_boundary/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_boundary/program.hex 
+# Start time: 07:33:46 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=6 cycles=11 requests=4 stalls=1 flushes=0
+#    Time: 2690 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_boundary
+# End time: 07:33:47 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_load_base_alias
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/memory_load_base_alias/expected_memory_trace.txt -gTRACE_FILE=cases/memory_load_base_alias/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_load_base_alias/program.hex 
+# Start time: 07:33:47 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=8 requests=2 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_load_base_alias
+# End time: 07:33:47 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_store_base_alias
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/memory_store_base_alias/expected_memory_trace.txt -gTRACE_FILE=cases/memory_store_base_alias/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_store_base_alias/program.hex 
+# Start time: 07:33:47 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=2 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_store_base_alias
+# End time: 07:33:48 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_overwrite
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=6 -gMEMORY_TRACE_FILE=cases/memory_overwrite/expected_memory_trace.txt -gTRACE_FILE=cases/memory_overwrite/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_overwrite/program.hex 
+# Start time: 07:33:48 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=6 cycles=10 requests=3 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_overwrite
+# End time: 07:33:48 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_x0
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/memory_x0/expected_memory_trace.txt -gTRACE_FILE=cases/memory_x0/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_x0/program.hex 
+# Start time: 07:33:48 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=4 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_x0
+# End time: 07:33:48 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_x31
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/memory_x31/expected_memory_trace.txt -gTRACE_FILE=cases/memory_x31/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_x31/program.hex 
+# Start time: 07:33:48 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=8 requests=2 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_x31
+# End time: 07:33:49 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_lw_alignment_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/memory_lw_alignment_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_lw_alignment_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_lw_alignment_fault/program.hex 
+# Start time: 07:33:49 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_lw_alignment_fault
+# End time: 07:33:49 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_sw_alignment_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/memory_sw_alignment_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_sw_alignment_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_sw_alignment_fault/program.hex 
+# Start time: 07:33:49 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_sw_alignment_fault
+# End time: 07:33:50 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_lw_range_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/memory_lw_range_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_lw_range_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_lw_range_fault/program.hex 
+# Start time: 07:33:50 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_lw_range_fault
+# End time: 07:33:50 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_sw_range_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/memory_sw_range_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_sw_range_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_sw_range_fault/program.hex 
+# Start time: 07:33:50 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_sw_range_fault
+# End time: 07:33:51 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_lw_negative_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/memory_lw_negative_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_lw_negative_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_lw_negative_fault/program.hex 
+# Start time: 07:33:51 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_lw_negative_fault
+# End time: 07:33:51 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_sw_negative_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/memory_sw_negative_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_sw_negative_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_sw_negative_fault/program.hex 
+# Start time: 07:33:51 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_sw_negative_fault
+# End time: 07:33:52 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_offset_max_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/memory_offset_max_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_offset_max_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_offset_max_fault/program.hex 
+# Start time: 07:33:52 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_offset_max_fault
+# End time: 07:33:52 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_offset_min_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/memory_offset_min_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_offset_min_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_offset_min_fault/program.hex 
+# Start time: 07:33:52 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_offset_min_fault
+# End time: 07:33:53 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_lw_x0_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/memory_lw_x0_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_lw_x0_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_lw_x0_fault/program.hex 
+# Start time: 07:33:53 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_lw_x0_fault
+# End time: 07:33:53 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_load_funct3_3
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_load_funct3_3/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_load_funct3_3/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_load_funct3_3/program.hex 
+# Start time: 07:33:53 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_load_funct3_3
+# End time: 07:33:54 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_store_funct3_3
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_store_funct3_3/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_store_funct3_3/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_store_funct3_3/program.hex 
+# Start time: 07:33:54 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_store_funct3_3
+# End time: 07:33:54 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_prefix_then_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=12 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/memory_prefix_then_fault/expected_memory_trace.txt -gTRACE_FILE=cases/memory_prefix_then_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_prefix_then_fault/program.hex 
+# Start time: 07:33:54 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=8 requests=2 stalls=0 flushes=0
+#    Time: 2700 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_prefix_then_fault
+# End time: 07:33:55 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=memory_random_legal
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=64 -gMEMORY_TRACE_FILE=cases/memory_random_legal/expected_memory_trace.txt -gTRACE_FILE=cases/memory_random_legal/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/memory_random_legal/program.hex 
+# Start time: 07:33:55 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=64 cycles=68 requests=8 stalls=0 flushes=0
+#    Time: 3260 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=memory_random_legal
+# End time: 07:33:55 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=reset_pending_load
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/reset_pending_load/expected_memory_trace.txt -gTRACE_FILE=cases/reset_pending_load/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/reset_pending_load/program.hex 
+# Start time: 07:33:55 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=9 requests=2 stalls=1 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=reset_pending_load
+# End time: 07:33:56 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=loop_demo
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=35 -gMEMORY_TRACE_FILE=cases/loop_demo/expected_memory_trace.txt -gTRACE_FILE=cases/loop_demo/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/loop_demo/program.hex 
+# Start time: 07:33:56 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=35 cycles=57 requests=2 stalls=0 flushes=9
+#    Time: 3150 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=loop_demo
+# End time: 07:33:56 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_beq_taken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/branch_beq_taken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_beq_taken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_beq_taken/program.hex 
+# Start time: 07:33:56 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=10 requests=0 stalls=0 flushes=1
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_beq_taken
+# End time: 07:33:57 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_beq_untaken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/branch_beq_untaken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_beq_untaken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_beq_untaken/program.hex 
+# Start time: 07:33:57 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=0 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_beq_untaken
+# End time: 07:33:57 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bne_taken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/branch_bne_taken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bne_taken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bne_taken/program.hex 
+# Start time: 07:33:57 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=10 requests=0 stalls=0 flushes=1
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bne_taken
+# End time: 07:33:57 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bne_untaken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/branch_bne_untaken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bne_untaken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bne_untaken/program.hex 
+# Start time: 07:33:57 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=0 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bne_untaken
+# End time: 07:33:58 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_blt_taken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/branch_blt_taken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_blt_taken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_blt_taken/program.hex 
+# Start time: 07:33:58 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=10 requests=0 stalls=0 flushes=1
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_blt_taken
+# End time: 07:33:58 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_blt_untaken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/branch_blt_untaken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_blt_untaken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_blt_untaken/program.hex 
+# Start time: 07:33:58 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=0 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_blt_untaken
+# End time: 07:33:59 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bge_taken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/branch_bge_taken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bge_taken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bge_taken/program.hex 
+# Start time: 07:33:59 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=10 requests=0 stalls=0 flushes=1
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bge_taken
+# End time: 07:33:59 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bge_untaken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/branch_bge_untaken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bge_untaken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bge_untaken/program.hex 
+# Start time: 07:33:59 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=0 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bge_untaken
+# End time: 07:34:00 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bltu_taken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/branch_bltu_taken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bltu_taken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bltu_taken/program.hex 
+# Start time: 07:34:00 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=10 requests=0 stalls=0 flushes=1
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bltu_taken
+# End time: 07:34:00 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bltu_untaken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/branch_bltu_untaken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bltu_untaken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bltu_untaken/program.hex 
+# Start time: 07:34:00 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=0 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bltu_untaken
+# End time: 07:34:01 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bgeu_taken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/branch_bgeu_taken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bgeu_taken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bgeu_taken/program.hex 
+# Start time: 07:34:01 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=10 requests=0 stalls=0 flushes=1
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bgeu_taken
+# End time: 07:34:01 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_bgeu_untaken
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/branch_bgeu_untaken/expected_memory_trace.txt -gTRACE_FILE=cases/branch_bgeu_untaken/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_bgeu_untaken/program.hex 
+# Start time: 07:34:01 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=0 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_bgeu_untaken
+# End time: 07:34:02 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_signed_min
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/branch_signed_min/expected_memory_trace.txt -gTRACE_FILE=cases/branch_signed_min/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_signed_min/program.hex 
+# Start time: 07:34:02 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=11 requests=0 stalls=0 flushes=1
+#    Time: 2690 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_signed_min
+# End time: 07:34:02 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_equal_edges
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=9 -gMEMORY_TRACE_FILE=cases/branch_equal_edges/expected_memory_trace.txt -gTRACE_FILE=cases/branch_equal_edges/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_equal_edges/program.hex 
+# Start time: 07:34:02 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=9 cycles=17 requests=0 stalls=0 flushes=2
+#    Time: 2750 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_equal_edges
+# End time: 07:34:02 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_skip_store
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/branch_skip_store/expected_memory_trace.txt -gTRACE_FILE=cases/branch_skip_store/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_skip_store/program.hex 
+# Start time: 07:34:03 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=1 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_skip_store
+# End time: 07:34:03 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_untaken_halfword
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=2 -gMEMORY_TRACE_FILE=cases/branch_untaken_halfword/expected_memory_trace.txt -gTRACE_FILE=cases/branch_untaken_halfword/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_untaken_halfword/program.hex 
+# Start time: 07:34:03 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=2 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2640 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_untaken_halfword
+# End time: 07:34:03 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_taken_halfword_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/branch_taken_halfword_fault/expected_memory_trace.txt -gTRACE_FILE=cases/branch_taken_halfword_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_taken_halfword_fault/program.hex 
+# Start time: 07:34:03 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_taken_halfword_fault
+# End time: 07:34:04 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_target_range_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/branch_target_range_fault/expected_memory_trace.txt -gTRACE_FILE=cases/branch_target_range_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_target_range_fault/program.hex 
+# Start time: 07:34:04 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_target_range_fault
+# End time: 07:34:04 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_target_negative_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/branch_target_negative_fault/expected_memory_trace.txt -gTRACE_FILE=cases/branch_target_negative_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_target_negative_fault/program.hex 
+# Start time: 07:34:04 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_target_negative_fault
+# End time: 07:34:05 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=branch_rom_boundary
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=2 -gMEMORY_TRACE_FILE=cases/branch_rom_boundary/expected_memory_trace.txt -gTRACE_FILE=cases/branch_rom_boundary/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/branch_rom_boundary/program.hex 
+# Start time: 07:34:05 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=2 cycles=8 requests=0 stalls=0 flushes=1
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=branch_rom_boundary
+# End time: 07:34:05 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_link_skip_illegal
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=2 -gMEMORY_TRACE_FILE=cases/jal_link_skip_illegal/expected_memory_trace.txt -gTRACE_FILE=cases/jal_link_skip_illegal/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_link_skip_illegal/program.hex 
+# Start time: 07:34:05 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=2 cycles=8 requests=0 stalls=0 flushes=1
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_link_skip_illegal
+# End time: 07:34:06 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_skip_store
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/jal_skip_store/expected_memory_trace.txt -gTRACE_FILE=cases/jal_skip_store/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_skip_store/program.hex 
+# Start time: 07:34:06 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=1 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_skip_store
+# End time: 07:34:06 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_negative_offset
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/jal_negative_offset/expected_memory_trace.txt -gTRACE_FILE=cases/jal_negative_offset/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_negative_offset/program.hex 
+# Start time: 07:34:06 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=14 requests=0 stalls=0 flushes=3
+#    Time: 2720 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_negative_offset
+# End time: 07:34:07 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_x0_link
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=2 -gMEMORY_TRACE_FILE=cases/jal_x0_link/expected_memory_trace.txt -gTRACE_FILE=cases/jal_x0_link/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_x0_link/program.hex 
+# Start time: 07:34:07 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=2 cycles=8 requests=0 stalls=0 flushes=1
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_x0_link
+# End time: 07:34:07 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_halfword_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/jal_halfword_fault/expected_memory_trace.txt -gTRACE_FILE=cases/jal_halfword_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_halfword_fault/program.hex 
+# Start time: 07:34:07 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_halfword_fault
+# End time: 07:34:08 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_range_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/jal_range_fault/expected_memory_trace.txt -gTRACE_FILE=cases/jal_range_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_range_fault/program.hex 
+# Start time: 07:34:08 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_range_fault
+# End time: 07:34:08 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_negative_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/jal_negative_fault/expected_memory_trace.txt -gTRACE_FILE=cases/jal_negative_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_negative_fault/program.hex 
+# Start time: 07:34:08 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_negative_fault
+# End time: 07:34:09 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jal_rom_boundary
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=2 -gMEMORY_TRACE_FILE=cases/jal_rom_boundary/expected_memory_trace.txt -gTRACE_FILE=cases/jal_rom_boundary/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jal_rom_boundary/program.hex 
+# Start time: 07:34:09 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=2 cycles=8 requests=0 stalls=0 flushes=1
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jal_rom_boundary
+# End time: 07:34:09 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_clear_bit_zero
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/jalr_clear_bit_zero/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_clear_bit_zero/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_clear_bit_zero/program.hex 
+# Start time: 07:34:09 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_clear_bit_zero
+# End time: 07:34:10 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_base_alias
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/jalr_base_alias/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_base_alias/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_base_alias/program.hex 
+# Start time: 07:34:10 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_base_alias
+# End time: 07:34:10 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_x0_link
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/jalr_x0_link/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_x0_link/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_x0_link/program.hex 
+# Start time: 07:34:10 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_x0_link
+# End time: 07:34:11 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_negative_offset
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/jalr_negative_offset/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_negative_offset/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_negative_offset/program.hex 
+# Start time: 07:34:11 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_negative_offset
+# End time: 07:34:11 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_target_wrap
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/jalr_target_wrap/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_target_wrap/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_target_wrap/program.hex 
+# Start time: 07:34:11 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_target_wrap
+# End time: 07:34:12 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_bit_one_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/jalr_bit_one_fault/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_bit_one_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_bit_one_fault/program.hex 
+# Start time: 07:34:12 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_bit_one_fault
+# End time: 07:34:12 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_range_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/jalr_range_fault/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_range_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_range_fault/program.hex 
+# Start time: 07:34:12 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_range_fault
+# End time: 07:34:13 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_negative_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/jalr_negative_fault/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_negative_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_negative_fault/program.hex 
+# Start time: 07:34:13 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_negative_fault
+# End time: 07:34:13 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=jalr_rom_boundary
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/jalr_rom_boundary/expected_memory_trace.txt -gTRACE_FILE=cases/jalr_rom_boundary/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/jalr_rom_boundary/program.hex 
+# Start time: 07:34:13 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=jalr_rom_boundary
+# End time: 07:34:13 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_branch_funct3_2
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_branch_funct3_2/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_branch_funct3_2/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_branch_funct3_2/program.hex 
+# Start time: 07:34:13 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_branch_funct3_2
+# End time: 07:34:14 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_branch_funct3_3
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_branch_funct3_3/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_branch_funct3_3/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_branch_funct3_3/program.hex 
+# Start time: 07:34:14 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_branch_funct3_3
+# End time: 07:34:14 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=illegal_jalr_funct3
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=0 -gMEMORY_TRACE_FILE=cases/illegal_jalr_funct3/expected_memory_trace.txt -gTRACE_FILE=cases/illegal_jalr_funct3/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/illegal_jalr_funct3/program.hex 
+# Start time: 07:34:14 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=0 cycles=4 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=illegal_jalr_funct3
+# End time: 07:34:15 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=control_fault_pc_after_jump
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=8 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/control_fault_pc_after_jump/expected_memory_trace.txt -gTRACE_FILE=cases/control_fault_pc_after_jump/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/control_fault_pc_after_jump/program.hex 
+# Start time: 07:34:15 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=7 requests=0 stalls=0 flushes=1
+#    Time: 2690 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=control_fault_pc_after_jump
+# End time: 07:34:15 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=control_random_legal
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=91 -gMEMORY_TRACE_FILE=cases/control_random_legal/expected_memory_trace.txt -gTRACE_FILE=cases/control_random_legal/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/control_random_legal/program.hex 
+# Start time: 07:34:15 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=91 cycles=151 requests=0 stalls=0 flushes=29
+#    Time: 4090 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=control_random_legal
+# End time: 07:34:16 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_demo
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/upper_demo/expected_memory_trace.txt -gTRACE_FILE=cases/upper_demo/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_demo/program.hex 
+# Start time: 07:34:16 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=8 cycles=14 requests=3 stalls=0 flushes=1
+#    Time: 2720 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_demo
+# End time: 07:34:16 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=lui_boundaries
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/lui_boundaries/expected_memory_trace.txt -gTRACE_FILE=cases/lui_boundaries/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/lui_boundaries/program.hex 
+# Start time: 07:34:16 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=0 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=lui_boundaries
+# End time: 07:34:17 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=lui_dirty_pseudo_rs1
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=2 -gMEMORY_TRACE_FILE=cases/lui_dirty_pseudo_rs1/expected_memory_trace.txt -gTRACE_FILE=cases/lui_dirty_pseudo_rs1/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/lui_dirty_pseudo_rs1/program.hex 
+# Start time: 07:34:17 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=2 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2640 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=lui_dirty_pseudo_rs1
+# End time: 07:34:17 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=auipc_nonzero_pc
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=4 -gMEMORY_TRACE_FILE=cases/auipc_nonzero_pc/expected_memory_trace.txt -gTRACE_FILE=cases/auipc_nonzero_pc/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/auipc_nonzero_pc/program.hex 
+# Start time: 07:34:17 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=4 cycles=8 requests=0 stalls=0 flushes=0
+#    Time: 2660 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=auipc_nonzero_pc
+# End time: 07:34:18 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=auipc_after_jump
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/auipc_after_jump/expected_memory_trace.txt -gTRACE_FILE=cases/auipc_after_jump/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/auipc_after_jump/program.hex 
+# Start time: 07:34:18 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=auipc_after_jump
+# End time: 07:34:18 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_x0
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/upper_x0/expected_memory_trace.txt -gTRACE_FILE=cases/upper_x0/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_x0/program.hex 
+# Start time: 07:34:18 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=0 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_x0
+# End time: 07:34:18 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_rd31
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/upper_rd31/expected_memory_trace.txt -gTRACE_FILE=cases/upper_rd31/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_rd31/program.hex 
+# Start time: 07:34:18 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=0 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_rd31
+# End time: 07:34:19 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_negative_addi_constant
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=2 -gMEMORY_TRACE_FILE=cases/upper_negative_addi_constant/expected_memory_trace.txt -gTRACE_FILE=cases/upper_negative_addi_constant/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_negative_addi_constant/program.hex 
+# Start time: 07:34:19 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=2 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2640 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_negative_addi_constant
+# End time: 07:34:19 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_arithmetic_wrap
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/upper_arithmetic_wrap/expected_memory_trace.txt -gTRACE_FILE=cases/upper_arithmetic_wrap/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_arithmetic_wrap/program.hex 
+# Start time: 07:34:19 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=7 requests=0 stalls=0 flushes=0
+#    Time: 2650 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_arithmetic_wrap
+# End time: 07:34:20 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_address_to_ram
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=5 -gMEMORY_TRACE_FILE=cases/upper_address_to_ram/expected_memory_trace.txt -gTRACE_FILE=cases/upper_address_to_ram/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_address_to_ram/program.hex 
+# Start time: 07:34:20 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=5 cycles=9 requests=2 stalls=0 flushes=0
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_address_to_ram
+# End time: 07:34:20 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_auipc_jalr_alias
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=3 -gMEMORY_TRACE_FILE=cases/upper_auipc_jalr_alias/expected_memory_trace.txt -gTRACE_FILE=cases/upper_auipc_jalr_alias/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_auipc_jalr_alias/program.hex 
+# Start time: 07:34:20 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=3 cycles=9 requests=0 stalls=0 flushes=1
+#    Time: 2670 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_auipc_jalr_alias
+# End time: 07:34:21 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_target_fault
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=true -gRESET_AT_CYCLE=0 -gFAULT_PC=4 -gEXPECTED_COUNT=1 -gMEMORY_TRACE_FILE=cases/upper_target_fault/expected_memory_trace.txt -gTRACE_FILE=cases/upper_target_fault/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_target_fault/program.hex 
+# Start time: 07:34:21 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=1 cycles=6 requests=0 stalls=0 flushes=0
+#    Time: 2680 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_target_fault
+# End time: 07:34:21 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_all_low_fields
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=16 -gMEMORY_TRACE_FILE=cases/upper_all_low_fields/expected_memory_trace.txt -gTRACE_FILE=cases/upper_all_low_fields/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_all_low_fields/program.hex 
+# Start time: 07:34:21 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=16 cycles=20 requests=0 stalls=0 flushes=0
+#    Time: 2780 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_all_low_fields
+# End time: 07:34:22 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=upper_random_legal
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=80 -gMEMORY_TRACE_FILE=cases/upper_random_legal/expected_memory_trace.txt -gTRACE_FILE=cases/upper_random_legal/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/upper_random_legal/program.hex 
+# Start time: 07:34:22 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=80 cycles=84 requests=40 stalls=0 flushes=0
+#    Time: 3420 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=upper_random_legal
+# End time: 07:34:22 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=subword_demo
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=16 -gMEMORY_TRACE_FILE=cases/subword_demo/expected_memory_trace.txt -gTRACE_FILE=cases/subword_demo/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/subword_demo/program.hex 
+# Start time: 07:34:22 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=16 cycles=20 requests=10 stalls=0 flushes=0
+#    Time: 2780 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=subword_demo
+# End time: 07:34:23 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=subword_byte_lane_0
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/subword_byte_lane_0/expected_memory_trace.txt -gTRACE_FILE=cases/subword_byte_lane_0/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/subword_byte_lane_0/program.hex 
+# Start time: 07:34:23 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# ** Note: PIPE_PASS retired=8 cycles=12 requests=5 stalls=0 flushes=0
+#    Time: 2700 ns  Iteration: 0  Instance: /tb_pipeline_cpu
+# PIPE_CASE_PASS name=subword_byte_lane_0
+# End time: 07:34:23 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# PIPE_CASE_BEGIN name=subword_byte_lane_1
+# vsim -voptargs="+acc" work.tb_pipeline_cpu -gEXPECT_FAULT=false -gRESET_AT_CYCLE=0 -gFAULT_PC=0 -gEXPECTED_COUNT=8 -gMEMORY_TRACE_FILE=cases/subword_byte_lane_1/expected_memory_trace.txt -gTRACE_FILE=cases/subword_byte_lane_1/expected_trace.txt -gEXPECT_STALLS=-1 -gEXPECT_CYCLES=0 -gPROGRAM_FILE=cases/subword_byte_lane_1/program.hex 
+# Start time: 07:34:23 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_cpu(test)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.data_ram(rtl)
+# End time: 07:34:23 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

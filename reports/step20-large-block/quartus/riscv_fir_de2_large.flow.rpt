@@ -1,0 +1,123 @@
+Flow report for riscv_fir_de2_large
+Thu Oct 29 18:00:49 2026
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Thu Oct 29 18:00:44 2026       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; riscv_fir_de2_large                         ;
+; Top-level Entity Name              ; de2_115_large_top                           ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE115F29C7                               ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 7,464 / 114,480 ( 7 % )                     ;
+;     Total combinational functions  ; 6,575 / 114,480 ( 6 % )                     ;
+;     Dedicated logic registers      ; 3,718 / 114,480 ( 3 % )                     ;
+; Total registers                    ; 3718                                        ;
+; Total pins                         ; 66 / 529 ( 12 % )                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 393,216 / 3,981,312 ( 10 % )                ;
+; Embedded Multiplier 9-bit elements ; 14 / 532 ( 3 % )                            ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 10/29/2026 17:59:34 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; riscv_fir_de2_large ;
++-------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                    ;
++-------------------------------------+----------------------------------------+---------------------+-------------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value       ; Entity Name       ; Section Id ;
++-------------------------------------+----------------------------------------+---------------------+-------------------+------------+
+; COMPILER_SIGNATURE_ID               ; 2546499885548.179326797447208          ; --                  ; --                ; --         ;
+; NUM_PARALLEL_PROCESSORS             ; 2                                      ; --                  ; --                ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                  ; de2_115_large_top ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                  ; de2_115_large_top ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                  ; de2_115_large_top ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                  ; --                ; --         ;
+; TOP_LEVEL_ENTITY                    ; de2_115_large_top                      ; riscv_fir_de2_large ; --                ; --         ;
++-------------------------------------+----------------------------------------+---------------------+-------------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:33     ; 1.0                     ; 4892 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:31     ; 1.0                     ; 5512 MB             ; 00:00:01                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4707 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.4                     ; 4899 MB             ; 00:00:01                           ;
+; Total                     ; 00:01:11     ; --                      ; --                  ; 00:00:04                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                         ;
++---------------------------+------------------+------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++---------------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis      ; ym的rog          ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; ym的rog          ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; ym的rog          ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; ym的rog          ; Windows 10 ; 10.0       ; x86_64         ;
++---------------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off riscv_fir_de2_large -c riscv_fir_de2_large
+quartus_fit --read_settings_files=off --write_settings_files=off riscv_fir_de2_large -c riscv_fir_de2_large
+quartus_asm --read_settings_files=off --write_settings_files=off riscv_fir_de2_large -c riscv_fir_de2_large
+quartus_sta riscv_fir_de2_large -c riscv_fir_de2_large
+
+
+

@@ -1,0 +1,1611 @@
+# do mutant.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 12:27:43 on Oct 29,2026
+# vcom -93 alu_pkg.vhd alu32.vhd regfile32.vhd mul32.vhd imm_i.vhd imm_s.vhd imm_b.vhd imm_j.vhd imm_u.vhd decode_tiny.vhd data_ram.vhd pipeline_cpu.vhd fir_serial.vhd fir_mmio.vhd shared_ram.vhd pipeline_fir_soc.vhd tb_pipeline_fir_soc.vhd tb_pipeline_fir_benchmark.vhd tb_pipeline_mmio_guard.vhd tb_pipeline_bus_order.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package alu_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package alu_pkg
+# -- Compiling entity alu32
+# -- Compiling architecture rtl of alu32
+# -- Compiling entity regfile32
+# -- Compiling architecture rtl of regfile32
+# -- Compiling entity mul32
+# -- Compiling architecture rtl of mul32
+# -- Compiling entity imm_i
+# -- Compiling architecture rtl of imm_i
+# -- Compiling entity imm_s
+# -- Compiling architecture rtl of imm_s
+# -- Compiling entity imm_b
+# -- Compiling architecture rtl of imm_b
+# -- Compiling entity imm_j
+# -- Compiling architecture rtl of imm_j
+# -- Compiling entity imm_u
+# -- Compiling architecture rtl of imm_u
+# -- Compiling entity decode_tiny
+# -- Compiling architecture rtl of decode_tiny
+# -- Compiling entity data_ram
+# -- Compiling architecture rtl of data_ram
+# -- Compiling entity pipeline_cpu
+# -- Compiling architecture rtl of pipeline_cpu
+# -- Loading entity decode_tiny
+# -- Loading entity regfile32
+# -- Loading entity imm_i
+# -- Loading entity imm_s
+# -- Loading entity imm_b
+# -- Loading entity imm_j
+# -- Loading entity imm_u
+# -- Loading entity alu32
+# -- Loading entity mul32
+# -- Compiling entity fir_serial
+# -- Compiling architecture rtl of fir_serial
+# -- Compiling entity fir_mmio
+# -- Compiling architecture rtl of fir_mmio
+# -- Loading entity fir_serial
+# -- Compiling entity shared_ram
+# -- Compiling architecture rtl of shared_ram
+# -- Compiling entity pipeline_fir_soc
+# -- Compiling architecture rtl of pipeline_fir_soc
+# -- Loading entity pipeline_cpu
+# -- Loading entity shared_ram
+# -- Loading entity fir_mmio
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_pipeline_fir_soc
+# -- Compiling architecture test of tb_pipeline_fir_soc
+# -- Loading entity pipeline_fir_soc
+# -- Compiling entity tb_pipeline_fir_benchmark
+# -- Compiling architecture test of tb_pipeline_fir_benchmark
+# -- Compiling entity tb_pipeline_mmio_guard
+# -- Compiling architecture test of tb_pipeline_mmio_guard
+# -- Compiling entity tb_pipeline_bus_order
+# -- Compiling architecture test of tb_pipeline_bus_order
+# End time: 12:27:43 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 300
+# 704
+# _program_end 300 _stack_top 1024 _start 0 coefficients 544 done 744 errors 740 expected 672 hw_cycles 748 hw_written 752 main 16 outputs 704 polls 736 samples 512
+# 
+#     {hardware_fir true false 0}
+#     {hardware_fir_impulse true false 0}
+#     {hardware_fir_ties true false 0}
+#     {hardware_fir_positive_extreme true false 0}
+#     {hardware_fir_negative_extreme true false 0}
+#     {hardware_fir_zero true false 0}
+#     {hardware_fir_zero_coefficients true false 0}
+#     {hardware_fir_no_stall false false 0}
+#     {hardware_fir_timeout true true 1}
+# 
+# 
+#     {hardware_fir 8 false}
+#     {hardware_fir_impulse 8 false}
+#     {hardware_fir_ties 8 false}
+#     {hardware_fir_positive_extreme 8 false}
+#     {hardware_fir_negative_extreme 8 false}
+#     {hardware_fir_zero 8 false}
+#     {hardware_fir_zero_coefficients 8 false}
+#     {zero 64 false}
+#     {impulse 64 false}
+#     {step 64 false}
+#     {positive_ties 4 false}
+#     {negative_ties 4 false}
+#     {positive_saturation 64 false}
+#     {negative_saturation 64 false}
+#     {accumulator_extreme 32 false}
+#     {alternating_extrema 64 false}
+#     {short_block 7 false}
+#     {random_256 128 false}
+#     {random_1024 128 false}
+#     {protocol 8 true}
+# 
+# 
+#     {LB 33027 1073754295 true true}
+#     {LBU 49411 1073754295 true true}
+#     {LH 37123 1073754295 true true}
+#     {LHU 53507 1073754295 true true}
+#     {LW 41219 1073754295 true false}
+#     {SB 32803 1073754295 true true}
+#     {SH 36899 1073754295 true true}
+#     {SW 40995 1073754295 true false}
+#     {disabled 41219 1073754295 false true}
+#     {misaligned 1089795 1073754295 true true}
+#     {other_page 41219 1073758391 true true}
+# 
+# SOC_CASE_BEGIN name=hardware_fir
+# vsim -voptargs="+acc" -wlf soc-hardware_fir-16140.wlf work.tb_pipeline_fir_soc -gNEVER_READY=false -gSTALL_DMA=true -gEND_PC=300 -gINITIAL_FILE=cases/hardware_fir/initial_memory.txt -gOUTPUT_ADDR=704 
+# Start time: 12:27:44 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_pipeline_fir_soc(test)
+# Loading work.pipeline_fir_soc(rtl)
+# Loading work.alu_pkg
+# Loading work.pipeline_cpu(rtl)
+# Loading work.decode_tiny(rtl)
+# Loading work.regfile32(rtl)
+# Loading work.imm_i(rtl)
+# Loading work.imm_s(rtl)
+# Loading work.imm_b(rtl)
+# Loading work.imm_j(rtl)
+# Loading work.imm_u(rtl)
+# Loading work.alu32(rtl)
+# Loading work.mul32(rtl)
+# Loading work.shared_ram(rtl)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# 3
+# ** Note: SOC_COMMIT pc=00000000 insn=00000137 rd=2 value=00000000 next=00000004
+#    Time: 2616 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000004 insn=40010113 rd=2 value=00000400 next=00000008
+#    Time: 2626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000008 insn=008000EF rd=1 value=0000000C next=00000010
+#    Time: 2636 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000010 insn=400035B7 rd=11 value=40003000 next=00000014
+#    Time: 2666 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003000 data=00000002 be=0000000F cycle=268
+#    Time: 2676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000014 insn=00200513 rd=10 value=00000002 next=00000018
+#    Time: 2676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000018 insn=00A5A023 rd=0 value=00000000 next=0000001C
+#    Time: 2686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000001C insn=00000537 rd=10 value=00000000 next=00000020
+#    Time: 2696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000020 insn=22050513 rd=10 value=00000220 next=00000024
+#    Time: 2706 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000024 insn=10058593 rd=11 value=40003100 next=00000028
+#    Time: 2716 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000220 data=00004000 be=0000000F cycle=273
+#    Time: 2726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000028 insn=08050613 rd=12 value=000002A0 next=0000002C
+#    Time: 2726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00004000 next=00000030
+#    Time: 2736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003100 data=00004000 be=0000000F cycle=275
+#    Time: 2746 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 2756 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000224 next=00000038
+#    Time: 2766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003104 next=0000003C
+#    Time: 2776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 2786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000224 data=FFFFE000 be=0000000F cycle=281
+#    Time: 2806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=FFFFE000 next=00000030
+#    Time: 2816 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003104 data=FFFFE000 be=0000000F cycle=283
+#    Time: 2826 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 2836 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000228 next=00000038
+#    Time: 2846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003108 next=0000003C
+#    Time: 2856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 2866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000228 data=00001000 be=0000000F cycle=289
+#    Time: 2886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00001000 next=00000030
+#    Time: 2896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003108 data=00001000 be=0000000F cycle=291
+#    Time: 2906 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 2916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000022C next=00000038
+#    Time: 2926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000310C next=0000003C
+#    Time: 2936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 2946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000022C data=00000800 be=0000000F cycle=297
+#    Time: 2966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000800 next=00000030
+#    Time: 2976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000310C data=00000800 be=0000000F cycle=299
+#    Time: 2986 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 2996 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000230 next=00000038
+#    Time: 3006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003110 next=0000003C
+#    Time: 3016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3026 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000230 data=00000000 be=0000000F cycle=305
+#    Time: 3046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3056 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003110 data=00000000 be=0000000F cycle=307
+#    Time: 3066 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3076 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000234 next=00000038
+#    Time: 3086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003114 next=0000003C
+#    Time: 3096 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3106 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000234 data=00000000 be=0000000F cycle=313
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003114 data=00000000 be=0000000F cycle=315
+#    Time: 3146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3156 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000238 next=00000038
+#    Time: 3166 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003118 next=0000003C
+#    Time: 3176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3186 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000238 data=00000000 be=0000000F cycle=321
+#    Time: 3206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3216 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003118 data=00000000 be=0000000F cycle=323
+#    Time: 3226 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3236 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000023C next=00000038
+#    Time: 3246 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000311C next=0000003C
+#    Time: 3256 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3266 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000023C data=00000000 be=0000000F cycle=329
+#    Time: 3286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000311C data=00000000 be=0000000F cycle=331
+#    Time: 3306 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000240 next=00000038
+#    Time: 3326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003120 next=0000003C
+#    Time: 3336 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000240 data=00000000 be=0000000F cycle=337
+#    Time: 3366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3376 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003120 data=00000000 be=0000000F cycle=339
+#    Time: 3386 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3396 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000244 next=00000038
+#    Time: 3406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003124 next=0000003C
+#    Time: 3416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3426 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000244 data=00000000 be=0000000F cycle=345
+#    Time: 3446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003124 data=00000000 be=0000000F cycle=347
+#    Time: 3466 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3476 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000248 next=00000038
+#    Time: 3486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003128 next=0000003C
+#    Time: 3496 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3506 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000248 data=00000000 be=0000000F cycle=353
+#    Time: 3526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3536 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003128 data=00000000 be=0000000F cycle=355
+#    Time: 3546 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000024C next=00000038
+#    Time: 3566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000312C next=0000003C
+#    Time: 3576 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3586 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000024C data=00000000 be=0000000F cycle=361
+#    Time: 3606 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3616 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000312C data=00000000 be=0000000F cycle=363
+#    Time: 3626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3636 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000250 next=00000038
+#    Time: 3646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003130 next=0000003C
+#    Time: 3656 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3666 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000250 data=00000000 be=0000000F cycle=369
+#    Time: 3686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003130 data=00000000 be=0000000F cycle=371
+#    Time: 3706 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3716 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000254 next=00000038
+#    Time: 3726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003134 next=0000003C
+#    Time: 3736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3746 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000254 data=00000000 be=0000000F cycle=377
+#    Time: 3766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003134 data=00000000 be=0000000F cycle=379
+#    Time: 3786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3796 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000258 next=00000038
+#    Time: 3806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003138 next=0000003C
+#    Time: 3816 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3826 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000258 data=00000000 be=0000000F cycle=385
+#    Time: 3846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003138 data=00000000 be=0000000F cycle=387
+#    Time: 3866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3876 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000025C next=00000038
+#    Time: 3886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000313C next=0000003C
+#    Time: 3896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3906 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000025C data=00000000 be=0000000F cycle=393
+#    Time: 3926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 3936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000313C data=00000000 be=0000000F cycle=395
+#    Time: 3946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 3956 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000260 next=00000038
+#    Time: 3966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003140 next=0000003C
+#    Time: 3976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 3986 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000260 data=00000000 be=0000000F cycle=401
+#    Time: 4006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003140 data=00000000 be=0000000F cycle=403
+#    Time: 4026 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4036 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000264 next=00000038
+#    Time: 4046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003144 next=0000003C
+#    Time: 4056 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4066 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000264 data=00000000 be=0000000F cycle=409
+#    Time: 4086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4096 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003144 data=00000000 be=0000000F cycle=411
+#    Time: 4106 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4116 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000268 next=00000038
+#    Time: 4126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003148 next=0000003C
+#    Time: 4136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000268 data=00000000 be=0000000F cycle=417
+#    Time: 4166 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003148 data=00000000 be=0000000F cycle=419
+#    Time: 4186 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4196 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000026C next=00000038
+#    Time: 4206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000314C next=0000003C
+#    Time: 4216 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4226 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000026C data=00000000 be=0000000F cycle=425
+#    Time: 4246 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4256 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000314C data=00000000 be=0000000F cycle=427
+#    Time: 4266 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4276 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000270 next=00000038
+#    Time: 4286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003150 next=0000003C
+#    Time: 4296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4306 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000270 data=00000000 be=0000000F cycle=433
+#    Time: 4326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4336 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003150 data=00000000 be=0000000F cycle=435
+#    Time: 4346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4356 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000274 next=00000038
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003154 next=0000003C
+#    Time: 4376 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4386 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000274 data=00000000 be=0000000F cycle=441
+#    Time: 4406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003154 data=00000000 be=0000000F cycle=443
+#    Time: 4426 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4436 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000278 next=00000038
+#    Time: 4446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003158 next=0000003C
+#    Time: 4456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4466 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000278 data=00000000 be=0000000F cycle=449
+#    Time: 4486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4496 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003158 data=00000000 be=0000000F cycle=451
+#    Time: 4506 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4516 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000027C next=00000038
+#    Time: 4526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000315C next=0000003C
+#    Time: 4536 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4546 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000027C data=00000000 be=0000000F cycle=457
+#    Time: 4566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4576 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000315C data=00000000 be=0000000F cycle=459
+#    Time: 4586 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4596 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000280 next=00000038
+#    Time: 4606 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003160 next=0000003C
+#    Time: 4616 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000280 data=00000000 be=0000000F cycle=465
+#    Time: 4646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4656 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003160 data=00000000 be=0000000F cycle=467
+#    Time: 4666 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000284 next=00000038
+#    Time: 4686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003164 next=0000003C
+#    Time: 4696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4706 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000284 data=00000000 be=0000000F cycle=473
+#    Time: 4726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003164 data=00000000 be=0000000F cycle=475
+#    Time: 4746 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4756 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000288 next=00000038
+#    Time: 4766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003168 next=0000003C
+#    Time: 4776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000288 data=00000000 be=0000000F cycle=481
+#    Time: 4806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4816 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003168 data=00000000 be=0000000F cycle=483
+#    Time: 4826 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4836 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000028C next=00000038
+#    Time: 4846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000316C next=0000003C
+#    Time: 4856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000028C data=00000000 be=0000000F cycle=489
+#    Time: 4886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000316C data=00000000 be=0000000F cycle=491
+#    Time: 4906 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000290 next=00000038
+#    Time: 4926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003170 next=0000003C
+#    Time: 4936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 4946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000290 data=00000000 be=0000000F cycle=497
+#    Time: 4966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 4976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003170 data=00000000 be=0000000F cycle=499
+#    Time: 4986 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 4996 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000294 next=00000038
+#    Time: 5006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003174 next=0000003C
+#    Time: 5016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 5026 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000294 data=00000000 be=0000000F cycle=505
+#    Time: 5046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 5056 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003174 data=00000000 be=0000000F cycle=507
+#    Time: 5066 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 5076 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=00000298 next=00000038
+#    Time: 5086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003178 next=0000003C
+#    Time: 5096 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 5106 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=00000298 data=00000000 be=0000000F cycle=513
+#    Time: 5126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 5136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003178 data=00000000 be=0000000F cycle=515
+#    Time: 5146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 5156 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=0000029C next=00000038
+#    Time: 5166 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=4000317C next=0000003C
+#    Time: 5176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=0000002C
+#    Time: 5186 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=0000029C data=00000000 be=0000000F cycle=521
+#    Time: 5206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000002C insn=00052683 rd=13 value=00000000 next=00000030
+#    Time: 5216 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000317C data=00000000 be=0000000F cycle=523
+#    Time: 5226 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000030 insn=00D5A023 rd=0 value=00000000 next=00000034
+#    Time: 5236 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000034 insn=00450513 rd=10 value=000002A0 next=00000038
+#    Time: 5246 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000038 insn=00458593 rd=11 value=40003180 next=0000003C
+#    Time: 5256 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000003C insn=FEC518E3 rd=0 value=00000000 next=00000040
+#    Time: 5266 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000040 insn=00000537 rd=10 value=00000000 next=00000044
+#    Time: 5276 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000044 insn=20050593 rd=11 value=00000200 next=00000048
+#    Time: 5286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003008 data=00000200 be=0000000F cycle=530
+#    Time: 5296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000048 insn=40003537 rd=10 value=40003000 next=0000004C
+#    Time: 5296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000004C insn=00B52423 rd=0 value=00000000 next=00000050
+#    Time: 5306 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000050 insn=000005B7 rd=11 value=00000000 next=00000054
+#    Time: 5316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=4000300C data=000002C0 be=0000000F cycle=533
+#    Time: 5326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000054 insn=2C058593 rd=11 value=000002C0 next=00000058
+#    Time: 5326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000058 insn=00B52623 rd=0 value=00000000 next=0000005C
+#    Time: 5336 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003010 data=00000008 be=0000000F cycle=535
+#    Time: 5346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000005C insn=00800593 rd=11 value=00000008 next=00000060
+#    Time: 5346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000060 insn=00B52823 rd=0 value=00000000 next=00000064
+#    Time: 5356 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=40003000 data=00000001 be=0000000F cycle=537
+#    Time: 5366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000064 insn=00100593 rd=11 value=00000001 next=00000068
+#    Time: 5366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000068 insn=00B52023 rd=0 value=00000000 next=0000006C
+#    Time: 5376 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=00000200 data=00004000 cycle=539
+#    Time: 5386 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000006C insn=000005B7 rd=11 value=00000000 next=00000070
+#    Time: 5386 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=540
+#    Time: 5396 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000070 insn=04000613 rd=12 value=00000040 next=00000074
+#    Time: 5396 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000000 be=0000000F cycle=541
+#    Time: 5406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 5406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000000 next=0000007C
+#    Time: 5416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000001 next=00000080
+#    Time: 5436 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000001 be=0000000F cycle=545
+#    Time: 5446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 5446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 5456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000001 be=0000000F cycle=547
+#    Time: 5466 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 5466 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000001 next=00000090
+#    Time: 5476 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 5496 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=552
+#    Time: 5516 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000001 be=0000000F cycle=553
+#    Time: 5526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 5526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000001 next=0000007C
+#    Time: 5536 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000002 next=00000080
+#    Time: 5556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000002 be=0000000F cycle=557
+#    Time: 5566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 5566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 5576 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000002 be=0000000F cycle=559
+#    Time: 5586 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 5586 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000002 next=00000090
+#    Time: 5596 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 5616 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=564
+#    Time: 5636 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000002 be=0000000F cycle=565
+#    Time: 5646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 5646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000002 next=0000007C
+#    Time: 5656 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000003 next=00000080
+#    Time: 5676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000003 be=0000000F cycle=569
+#    Time: 5686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 5686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 5696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000003 be=0000000F cycle=571
+#    Time: 5706 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 5706 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000003 next=00000090
+#    Time: 5716 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 5736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=576
+#    Time: 5756 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000003 be=0000000F cycle=577
+#    Time: 5766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 5766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002C0 data=00002001 cycle=578
+#    Time: 5776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000003 next=0000007C
+#    Time: 5776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=00000204 data=00007FFF cycle=579
+#    Time: 5786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000004 next=00000080
+#    Time: 5796 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000004 be=0000000F cycle=581
+#    Time: 5806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 5806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 5816 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000004 be=0000000F cycle=583
+#    Time: 5826 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 5826 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000004 next=00000090
+#    Time: 5836 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 5856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=588
+#    Time: 5876 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000004 be=0000000F cycle=589
+#    Time: 5886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 5886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000004 next=0000007C
+#    Time: 5896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000005 next=00000080
+#    Time: 5916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000005 be=0000000F cycle=593
+#    Time: 5926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 5926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 5936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000005 be=0000000F cycle=595
+#    Time: 5946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 5946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000005 next=00000090
+#    Time: 5956 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 5976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=600
+#    Time: 5996 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000005 be=0000000F cycle=601
+#    Time: 6006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000005 next=0000007C
+#    Time: 6016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000006 next=00000080
+#    Time: 6036 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000006 be=0000000F cycle=605
+#    Time: 6046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6056 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000006 be=0000000F cycle=607
+#    Time: 6066 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6066 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000006 next=00000090
+#    Time: 6076 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6096 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=612
+#    Time: 6116 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000006 be=0000000F cycle=613
+#    Time: 6126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000006 next=0000007C
+#    Time: 6136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002C4 data=00003001 cycle=615
+#    Time: 6146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=00000208 data=FFFF8000 cycle=616
+#    Time: 6156 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000007 next=00000080
+#    Time: 6156 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000007 be=0000000F cycle=617
+#    Time: 6166 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6166 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000007 be=0000000F cycle=619
+#    Time: 6186 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6186 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000007 next=00000090
+#    Time: 6196 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6216 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=624
+#    Time: 6236 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000007 be=0000000F cycle=625
+#    Time: 6246 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6246 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000007 next=0000007C
+#    Time: 6256 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000008 next=00000080
+#    Time: 6276 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000008 be=0000000F cycle=629
+#    Time: 6286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000008 be=0000000F cycle=631
+#    Time: 6306 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6306 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000008 next=00000090
+#    Time: 6316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6336 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=636
+#    Time: 6356 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000008 be=0000000F cycle=637
+#    Time: 6366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000008 next=0000007C
+#    Time: 6376 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000009 next=00000080
+#    Time: 6396 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000009 be=0000000F cycle=641
+#    Time: 6406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000009 be=0000000F cycle=643
+#    Time: 6426 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6426 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000009 next=00000090
+#    Time: 6436 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=648
+#    Time: 6476 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000009 be=0000000F cycle=649
+#    Time: 6486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000009 next=0000007C
+#    Time: 6496 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000000A next=00000080
+#    Time: 6516 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000000A be=0000000F cycle=653
+#    Time: 6526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6536 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000A be=0000000F cycle=655
+#    Time: 6546 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002C8 data=FFFFA801 cycle=655
+#    Time: 6546 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6546 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=0000020C data=00002000 cycle=656
+#    Time: 6556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=0000000A next=00000090
+#    Time: 6556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6576 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=660
+#    Time: 6596 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000A be=0000000F cycle=661
+#    Time: 6606 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6606 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=0000000A next=0000007C
+#    Time: 6616 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000000B next=00000080
+#    Time: 6636 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000000B be=0000000F cycle=665
+#    Time: 6646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6656 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000B be=0000000F cycle=667
+#    Time: 6666 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6666 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=0000000B next=00000090
+#    Time: 6676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=672
+#    Time: 6716 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000B be=0000000F cycle=673
+#    Time: 6726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=0000000B next=0000007C
+#    Time: 6736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000000C next=00000080
+#    Time: 6756 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000000C be=0000000F cycle=677
+#    Time: 6766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000C be=0000000F cycle=679
+#    Time: 6786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=0000000C next=00000090
+#    Time: 6796 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6816 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=684
+#    Time: 6836 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000C be=0000000F cycle=685
+#    Time: 6846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=0000000C next=0000007C
+#    Time: 6856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000000D next=00000080
+#    Time: 6876 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000000D be=0000000F cycle=689
+#    Time: 6886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 6886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 6896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000D be=0000000F cycle=691
+#    Time: 6906 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 6906 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002CC data=00004401 cycle=692
+#    Time: 6916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=0000000D next=00000090
+#    Time: 6916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=00000210 data=FFFFC000 cycle=693
+#    Time: 6926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 6936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=696
+#    Time: 6956 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000D be=0000000F cycle=697
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=0000000D next=0000007C
+#    Time: 6976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000000E next=00000080
+#    Time: 6996 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000000E be=0000000F cycle=701
+#    Time: 7006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000E be=0000000F cycle=703
+#    Time: 7026 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7026 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=0000000E next=00000090
+#    Time: 7036 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7056 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=708
+#    Time: 7076 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000E be=0000000F cycle=709
+#    Time: 7086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=0000000E next=0000007C
+#    Time: 7096 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000000F next=00000080
+#    Time: 7116 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000000F be=0000000F cycle=713
+#    Time: 7126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000F be=0000000F cycle=715
+#    Time: 7146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=0000000F next=00000090
+#    Time: 7156 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=720
+#    Time: 7196 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000000F be=0000000F cycle=721
+#    Time: 7206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=0000000F next=0000007C
+#    Time: 7216 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000010 next=00000080
+#    Time: 7236 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000010 be=0000000F cycle=725
+#    Time: 7246 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7246 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7256 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000010 be=0000000F cycle=727
+#    Time: 7266 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7266 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000010 next=00000090
+#    Time: 7276 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=732
+#    Time: 7316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002D0 data=FFFFD001 cycle=732
+#    Time: 7316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000010 be=0000000F cycle=733
+#    Time: 7326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=00000214 data=00006000 cycle=733
+#    Time: 7326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000010 next=0000007C
+#    Time: 7336 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000011 next=00000080
+#    Time: 7356 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000011 be=0000000F cycle=737
+#    Time: 7366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7376 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000011 be=0000000F cycle=739
+#    Time: 7386 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7386 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000011 next=00000090
+#    Time: 7396 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=744
+#    Time: 7436 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000011 be=0000000F cycle=745
+#    Time: 7446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000011 next=0000007C
+#    Time: 7456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000012 next=00000080
+#    Time: 7476 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000012 be=0000000F cycle=749
+#    Time: 7486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7496 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000012 be=0000000F cycle=751
+#    Time: 7506 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7506 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000012 next=00000090
+#    Time: 7516 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7536 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=756
+#    Time: 7556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000012 be=0000000F cycle=757
+#    Time: 7566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000012 next=0000007C
+#    Time: 7576 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000013 next=00000080
+#    Time: 7596 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000013 be=0000000F cycle=761
+#    Time: 7606 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7606 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7616 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000013 be=0000000F cycle=763
+#    Time: 7626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000013 next=00000090
+#    Time: 7636 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7656 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=768
+#    Time: 7676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000013 be=0000000F cycle=769
+#    Time: 7686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002D4 data=00003C01 cycle=769
+#    Time: 7686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=00000218 data=00000000 cycle=770
+#    Time: 7696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000013 next=0000007C
+#    Time: 7696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000014 next=00000080
+#    Time: 7716 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000014 be=0000000F cycle=773
+#    Time: 7726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000014 be=0000000F cycle=775
+#    Time: 7746 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7746 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000014 next=00000090
+#    Time: 7756 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=780
+#    Time: 7796 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000014 be=0000000F cycle=781
+#    Time: 7806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000014 next=0000007C
+#    Time: 7816 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000015 next=00000080
+#    Time: 7836 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000015 be=0000000F cycle=785
+#    Time: 7846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000015 be=0000000F cycle=787
+#    Time: 7866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000015 next=00000090
+#    Time: 7876 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 7896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=792
+#    Time: 7916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000015 be=0000000F cycle=793
+#    Time: 7926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 7926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000015 next=0000007C
+#    Time: 7936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000016 next=00000080
+#    Time: 7956 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000016 be=0000000F cycle=797
+#    Time: 7966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 7966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 7976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000016 be=0000000F cycle=799
+#    Time: 7986 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 7986 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000016 next=00000090
+#    Time: 7996 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 8016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=804
+#    Time: 8036 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000016 be=0000000F cycle=805
+#    Time: 8046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 8046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000016 next=0000007C
+#    Time: 8056 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000017 next=00000080
+#    Time: 8076 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000017 be=0000000F cycle=809
+#    Time: 8086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002D8 data=FFFFE201 cycle=809
+#    Time: 8086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 8086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=R addr=0000021C data=FFFFE000 cycle=810
+#    Time: 8096 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 8096 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000017 be=0000000F cycle=811
+#    Time: 8106 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 8106 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000017 next=00000090
+#    Time: 8116 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 8136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=816
+#    Time: 8156 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000017 be=0000000F cycle=817
+#    Time: 8166 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 8166 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000017 next=0000007C
+#    Time: 8176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000018 next=00000080
+#    Time: 8196 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000018 be=0000000F cycle=821
+#    Time: 8206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 8206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 8216 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000018 be=0000000F cycle=823
+#    Time: 8226 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 8226 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000018 next=00000090
+#    Time: 8236 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 8256 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=828
+#    Time: 8276 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000018 be=0000000F cycle=829
+#    Time: 8286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 8286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000018 next=0000007C
+#    Time: 8296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=00000019 next=00000080
+#    Time: 8316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=00000019 be=0000000F cycle=833
+#    Time: 8326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 8326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 8336 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000019 be=0000000F cycle=835
+#    Time: 8346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 8346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=00000019 next=00000090
+#    Time: 8356 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 8376 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000001 be=0000000F cycle=840
+#    Time: 8396 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=00000019 be=0000000F cycle=841
+#    Time: 8406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000001 next=00000078
+#    Time: 8406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=00000019 next=0000007C
+#    Time: 8416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000001A next=00000080
+#    Time: 8436 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000001A be=0000000F cycle=845
+#    Time: 8446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000001 next=00000084
+#    Time: 8446 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_DMA mode=W addr=000002DC data=FFFFF801 cycle=846
+#    Time: 8456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 8456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000001A be=0000000F cycle=847
+#    Time: 8466 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=0000008C
+#    Time: 8466 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000008C insn=2E05A703 rd=14 value=0000001A next=00000090
+#    Time: 8476 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000090 insn=FEC762E3 rd=0 value=00000000 next=00000074
+#    Time: 8496 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003004 data=00000002 be=0000000F cycle=852
+#    Time: 8516 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E0 data=0000001A be=0000000F cycle=853
+#    Time: 8526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000074 insn=00452683 rd=13 value=00000002 next=00000078
+#    Time: 8526 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000078 insn=2E05A703 rd=14 value=0000001A next=0000007C
+#    Time: 8536 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000007C insn=00170713 rd=14 value=0000001B next=00000080
+#    Time: 8556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E0 data=0000001B be=0000000F cycle=857
+#    Time: 8566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000080 insn=0016F793 rd=15 value=00000000 next=00000084
+#    Time: 8566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000084 insn=2EE5A023 rd=0 value=00000000 next=00000088
+#    Time: 8576 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000088 insn=00078663 rd=0 value=00000000 next=00000094
+#    Time: 8586 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000094 insn=00200513 rd=10 value=00000002 next=00000098
+#    Time: 8616 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000098 insn=04A69463 rd=0 value=00000000 next=0000009C
+#    Time: 8626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000009C insn=00000537 rd=10 value=00000000 next=000000A0
+#    Time: 8636 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000A0 insn=2A050513 rd=10 value=000002A0 next=000000A4
+#    Time: 8646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000A4 insn=000005B7 rd=11 value=00000000 next=000000A8
+#    Time: 8656 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000A8 insn=2C058593 rd=11 value=000002C0 next=000000AC
+#    Time: 8666 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000AC insn=02050613 rd=12 value=000002C0 next=000000B0
+#    Time: 8676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B0 insn=000006B7 rd=13 value=00000000 next=000000B4
+#    Time: 8686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B4 insn=0100006F rd=0 value=00000000 next=000000C4
+#    Time: 8696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002C0 data=00002001 be=0000000F cycle=872
+#    Time: 8716 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002A0 data=00002000 be=0000000F cycle=873
+#    Time: 8726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=00002001 next=000000C8
+#    Time: 8726 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=00002000 next=000000CC
+#    Time: 8736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000000 be=0000000F cycle=876
+#    Time: 8756 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 8756 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000000 next=000000D4
+#    Time: 8766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000001 be=0000000F cycle=879
+#    Time: 8786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000001 next=000000D8
+#    Time: 8786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 8796 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 8806 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002A4 next=000000BC
+#    Time: 8836 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002C4 next=000000C0
+#    Time: 8846 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002C4 data=00003001 be=0000000F cycle=886
+#    Time: 8856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000C4
+#    Time: 8856 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002A4 data=00003000 be=0000000F cycle=887
+#    Time: 8866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=00003001 next=000000C8
+#    Time: 8866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=00003000 next=000000CC
+#    Time: 8876 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000001 be=0000000F cycle=890
+#    Time: 8896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 8896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000001 next=000000D4
+#    Time: 8906 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000002 be=0000000F cycle=893
+#    Time: 8926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000002 next=000000D8
+#    Time: 8926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 8936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 8946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002A8 next=000000BC
+#    Time: 8976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002C8 next=000000C0
+#    Time: 8986 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002C8 data=FFFFA801 be=0000000F cycle=900
+#    Time: 8996 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000C4
+#    Time: 8996 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002A8 data=FFFFA800 be=0000000F cycle=901
+#    Time: 9006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=FFFFA801 next=000000C8
+#    Time: 9006 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=FFFFA800 next=000000CC
+#    Time: 9016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000002 be=0000000F cycle=904
+#    Time: 9036 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 9036 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000002 next=000000D4
+#    Time: 9046 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000003 be=0000000F cycle=907
+#    Time: 9066 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000003 next=000000D8
+#    Time: 9066 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 9076 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 9086 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002AC next=000000BC
+#    Time: 9116 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002CC next=000000C0
+#    Time: 9126 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002CC data=00004401 be=0000000F cycle=914
+#    Time: 9136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000C4
+#    Time: 9136 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002AC data=00004400 be=0000000F cycle=915
+#    Time: 9146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=00004401 next=000000C8
+#    Time: 9146 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=00004400 next=000000CC
+#    Time: 9156 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000003 be=0000000F cycle=918
+#    Time: 9176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 9176 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000003 next=000000D4
+#    Time: 9186 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000004 be=0000000F cycle=921
+#    Time: 9206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000004 next=000000D8
+#    Time: 9206 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 9216 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 9226 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002B0 next=000000BC
+#    Time: 9256 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002D0 next=000000C0
+#    Time: 9266 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002D0 data=FFFFD001 be=0000000F cycle=928
+#    Time: 9276 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000C4
+#    Time: 9276 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002B0 data=FFFFD000 be=0000000F cycle=929
+#    Time: 9286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=FFFFD001 next=000000C8
+#    Time: 9286 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=FFFFD000 next=000000CC
+#    Time: 9296 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000004 be=0000000F cycle=932
+#    Time: 9316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 9316 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000004 next=000000D4
+#    Time: 9326 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000005 be=0000000F cycle=935
+#    Time: 9346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000005 next=000000D8
+#    Time: 9346 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 9356 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 9366 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002B4 next=000000BC
+#    Time: 9396 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002D4 next=000000C0
+#    Time: 9406 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002D4 data=00003C01 be=0000000F cycle=942
+#    Time: 9416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000C4
+#    Time: 9416 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002B4 data=00003C00 be=0000000F cycle=943
+#    Time: 9426 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=00003C01 next=000000C8
+#    Time: 9426 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=00003C00 next=000000CC
+#    Time: 9436 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000005 be=0000000F cycle=946
+#    Time: 9456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 9456 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000005 next=000000D4
+#    Time: 9466 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000006 be=0000000F cycle=949
+#    Time: 9486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000006 next=000000D8
+#    Time: 9486 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 9496 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 9506 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002B8 next=000000BC
+#    Time: 9536 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002D8 next=000000C0
+#    Time: 9546 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002D8 data=FFFFE201 be=0000000F cycle=956
+#    Time: 9556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000C4
+#    Time: 9556 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002B8 data=FFFFE200 be=0000000F cycle=957
+#    Time: 9566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=FFFFE201 next=000000C8
+#    Time: 9566 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=FFFFE200 next=000000CC
+#    Time: 9576 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000006 be=0000000F cycle=960
+#    Time: 9596 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 9596 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000006 next=000000D4
+#    Time: 9606 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000007 be=0000000F cycle=963
+#    Time: 9626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000007 next=000000D8
+#    Time: 9626 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 9636 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 9646 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002BC next=000000BC
+#    Time: 9676 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002DC next=000000C0
+#    Time: 9686 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002DC data=FFFFF801 be=0000000F cycle=970
+#    Time: 9696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000C4
+#    Time: 9696 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002BC data=FFFFF800 be=0000000F cycle=971
+#    Time: 9706 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C4 insn=0005A703 rd=14 value=FFFFF801 next=000000C8
+#    Time: 9706 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C8 insn=00052783 rd=15 value=FFFFF800 next=000000CC
+#    Time: 9716 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000007 be=0000000F cycle=974
+#    Time: 9736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000CC insn=FEF706E3 rd=0 value=00000000 next=000000D0
+#    Time: 9736 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D0 insn=2E46A703 rd=14 value=00000007 next=000000D4
+#    Time: 9746 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E4 data=00000008 be=0000000F cycle=977
+#    Time: 9766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D4 insn=00170713 rd=14 value=00000008 next=000000D8
+#    Time: 9766 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000D8 insn=2EE6A223 rd=0 value=00000000 next=000000DC
+#    Time: 9776 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000DC insn=FDDFF06F rd=0 value=00000000 next=000000B8
+#    Time: 9786 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000B8 insn=00450513 rd=10 value=000002C0 next=000000BC
+#    Time: 9816 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000BC insn=00458593 rd=11 value=000002E0 next=000000C0
+#    Time: 9826 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000C0 insn=02C50C63 rd=0 value=00000000 next=000000F8
+#    Time: 9836 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003014 data=00000135 be=0000000F cycle=987
+#    Time: 9866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000F8 insn=40003537 rd=10 value=40003000 next=000000FC
+#    Time: 9866 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=000000FC insn=01452583 rd=11 value=00000135 next=00000100
+#    Time: 9876 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002EC data=00000135 be=0000000F cycle=989
+#    Time: 9886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000100 insn=00000637 rd=12 value=00000000 next=00000104
+#    Time: 9886 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=40003018 data=00000008 be=0000000F cycle=990
+#    Time: 9896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000104 insn=2EB62623 rd=0 value=00000000 next=00000108
+#    Time: 9896 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000108 insn=01852503 rd=10 value=00000008 next=0000010C
+#    Time: 9906 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002F0 data=00000008 be=0000000F cycle=992
+#    Time: 9916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000010C insn=000005B7 rd=11 value=00000000 next=00000110
+#    Time: 9916 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000110 insn=2EA5A823 rd=0 value=00000000 next=00000114
+#    Time: 9926 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000114 insn=00000537 rd=10 value=00000000 next=00000118
+#    Time: 9936 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=W addr=000002E8 data=00000001 be=0000000F cycle=995
+#    Time: 9946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000118 insn=00100593 rd=11 value=00000001 next=0000011C
+#    Time: 9946 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000011C insn=2EB52423 rd=0 value=00000000 next=00000120
+#    Time: 9956 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_BUS mode=R addr=000002E4 data=00000008 be=0000000F cycle=997
+#    Time: 9966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000120 insn=00000537 rd=10 value=00000000 next=00000124
+#    Time: 9966 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000124 insn=2E452503 rd=10 value=00000008 next=00000128
+#    Time: 9976 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=00000128 insn=00008067 rd=0 value=00000000 next=0000000C
+#    Time: 9986 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: SOC_COMMIT pc=0000000C insn=1200006F rd=0 value=00000000 next=0000012C
+#    Time: 10016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: FIR_SOC_CPU_PASS
+#    Time: 10016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Note: PIPE_EXECUTION_EDGES count=745
+#    Time: 10016 ns  Iteration: 0  Instance: /tb_pipeline_fir_soc
+# ** Error: SOC_CHECK_C_errors
+# Executing ONERROR command at macro ./mutant.do line 8
+# End time: 12:27:44 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0

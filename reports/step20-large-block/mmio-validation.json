@@ -1,0 +1,74 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T09:49:58.426391+00:00",
+  "lanes": [
+    1,
+    2,
+    4
+  ],
+  "full_blocks": {
+    "length": 4096,
+    "jobs_per_lane": 2,
+    "outputs_checked": 24576
+  },
+  "protocol_suites": 3,
+  "checks": [
+    "count 0 and 4097 rejected",
+    "32764 last word read/write",
+    "range overflow and alignment",
+    "buffer overlap",
+    "busy writes rejected",
+    "byte enables and signed input encoding",
+    "reset during read/MAC/blocked write",
+    "done only after final accepted write",
+    "whole 8192-word RAM compared after each full job"
+  ],
+  "negative_controls": [
+    {
+      "name": "old_1k_dma_bound",
+      "killed": true,
+      "assertions": [
+        "LARGE_MMIO_REGISTER_MISMATCH offset=28"
+      ]
+    },
+    {
+      "name": "old_128_count",
+      "killed": true,
+      "assertions": [
+        "LARGE_MMIO_BAD_FINAL_STATUS"
+      ]
+    },
+    {
+      "name": "missing_high_address_guard",
+      "killed": true,
+      "assertions": [
+        "LARGE_MMIO_REGISTER_MISMATCH offset=28"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_large_cpu.vhd": "9ea35264d5f94b80f9184a860bcedbbb3cbb53152c2d6252c1bcd2bb57f6ac3c",
+    "rtl/fir/fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "rtl/fir/fir_mmio_large.vhd": "7759142b908eb41deeeabd6e7f8a95b70e8f1f9f0ab7a34657d84062503acd48",
+    "rtl/soc/shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "rtl/soc/pipeline_large_soc.vhd": "67a412c8d19e7cd4d54fef2c52a154d6b53eeddee3c1eceedc442344e1c83780",
+    "sim/tb/tb_large_soc.vhd": "fcb3359fe224cc03c44956f55cdb9a3a3982e9b0fbd95e1b890701c68c8b7f59",
+    "sim/tb/tb_large_mmio.vhd": "e2e66ebee8aa836a011e4459e7e434702c9a167d7bb5619118432e137198a0f6",
+    "tools/run_large_mmio.py": "3d309d3d5f9f02827770ce80db9be54e647da701bc553e52683d6dea7c40b6fc",
+    "tools/run_large_memory.py": "3061ee879b69fa32f1893a6f7440b73fcdb11860c624a0fb5b62ea056d0b2f15",
+    "tools/build_large_firmware.py": "a16deb29a3df11e69f553142913d62ab53b1c201c54097ffebac6c3e7e7601b3"
+  },
+  "quartus": "not_run",
+  "hardware": "not_run"
+}

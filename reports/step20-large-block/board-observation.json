@@ -1,0 +1,15 @@
+{
+  "status": "user_reported_matches_expectation",
+  "recorded_at_utc": "2026-10-29T10:25:44.568473+00:00",
+  "user_quote": "对的，进行下一步吧",
+  "context": "Reply to instructions to download step20 r1 and check 00006155, first output, LED flags and KEY0 repeat",
+  "user_confirmed_expected_behavior": true,
+  "reviewed_sof_sha256": "1dcf5141800c418da3a6b9a4881fe586b0ef18d8c9483e9cdee6cdabe053d5b4",
+  "expected_program_cycles": 24917,
+  "expected_display_hex": "00006155",
+  "independent_numeric_readback": null,
+  "individual_eight_output_readings": null,
+  "programmer_log_received": false,
+  "video_received": false,
+  "scope": "General user acceptance of step20 r1 board behavior; not a separately instrumented or paired software/hardware benchmark"
+}

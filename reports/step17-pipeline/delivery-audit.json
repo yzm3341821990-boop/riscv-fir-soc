@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-28T23:38:53.412429+00:00",
+  "source_hashes_checked": 320,
+  "vector_hashes_checked": 1088,
+  "local_document_links_checked": 278,
+  "gui_script_cases_checked": 3,
+  "gui_visual_inspection": false,
+  "quartus_compile_run": false,
+  "fpga_programming_run": false,
+  "pipeline_board_integration": false,
+  "user_owns_quartus_compilation": true,
+  "delivery_sha256": {
+    "rtl/cpu/pipeline_cpu.vhd": "16ede9eed2781adaac20af90e561836cdad6c5bfcf4db8aa750874b7a344b224",
+    "sim/tb/tb_pipeline_cpu.vhd": "6a3eed0ac241ea7570fa23768e16f245ce2e1506a045149b6c957c9fe17ec53d",
+    "sim/modelsim/pipeline_helpers.do": "17f29efdf2420015e8593d480978523210a8b9e08bfd885b4766524b224f8255",
+    "sim/modelsim/run_pipeline_gui.do": "d9cfa633ab9308db1529c7d68fbec2763cff4899e04ff38871026fed9fdc9b1d",
+    "tools/run_pipeline_cpu.py": "931d97d21c6a320388db05d3ba4905f89521296cc920561ce7d5e6043d50875f",
+    "docs/pipeline-cpu-contract.md": "df75685f4f3e4952ae1db78df382bff6d1ec57e738bfddfacfad7af208a5f4e9",
+    "docs/step17-pipeline-guide.md": "e168ffc9f76d3a0bef30401f9f6282d13ac882faf1f41a8f96f447ea03d85184"
+  }
+}

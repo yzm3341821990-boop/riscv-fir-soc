@@ -1,64 +1,51 @@
-# 当前系统结构
+# 当前五级 CPU + FIR 系统结构
 
-这里描述第十六步实际实现的多周期 CPU 与 FIR 系统。五级流水线、完整 M 扩展、CSR/标准异常环境和实时音频属于后续工作。
+当前展示版本为 step21 九组计时。CPU、FIR 和 M9K 通路沿用 step20 r1；新增 ROM bank、顺序运行控制、接受沿计数器与九项结果缓存。[旧多周期说明](architecture-v0.1.md)保留作历史参考。
 
 ```mermaid
 flowchart LR
-    ROM[程序 ROM] --> CPU[多周期 RISC-V CPU]
-    CPU --> BUS[地址译码与 MMIO]
-    BUS --> FIR[32 抽头 FIR 控制器和 MAC]
-    BUS <--> RAM[双端口共享数据 RAM]
-    FIR <--> RAM
-    FIR --> MON[实际 DMA 写回监测]
-    CPU --> COUNT[程序周期计数]
-    MON --> SNAP[八个输出快照]
-    SNAP --> HEX[显示选择与七段译码]
-    COUNT --> HEX
-    SW[两级同步后的拨码] --> HEX
-    MON --> CHECK[独立结果检查与状态灯]
+    SEQ[九组顺序控制与复位] --> ROM[9 个程序 bank]
+    ROM --> CPU[五级 CPU: IF ID EX MEM WB]
+    CPU --> BUS[地址译码与 FIR MMIO]
+    BUS --> RAM[32 KiB 真双口共享 M9K RAM]
+    BUS --> FIR[32 抽头 FIR / 4 路 MAC]
+    FIR --> DMA[接受握手的 DMA 读写]
+    DMA --> RAM
+    SEED[3 个长度对应的初始镜像] --> LOAD[全 RAM 重载]
+    LOAD --> RAM
+    SEQ --> LOAD
+    BUS --> MARK[接受的 marker 写入]
+    MARK --> TIMER[完整调用周期计数]
+    TIMER --> CACHE[9 项计算结果缓存]
+    CACHE --> HEX[七段译码与 8 位数码管]
+    SW[SW3..SW0 两级同步] --> HEX
+    CPU --> CHECK[C 逐样本检查与结束监测]
+    DMA --> CHECK
+    CHECK --> LED[全部九组通过状态与心跳]
 ```
 
-## CPU 与 C 固件
+CPU 支持 37 种 RV32I 指令与 MUL。旁路、load-use 暂停、分支/跳转清空与存储等待在[流水线契约](pipeline-cpu-contract.md)中定义。非法指令或访问进入项目的 FAULT 状态；当前没有标准 trap/CSR 环境。
 
-- 32 位寄存器和数据通路，32 个架构寄存器，x0 固定为 0。
-- 当前支持 37 种 RV32I 指令和 MUL，共 38 种；大多数指令三拍、load 四拍。
-- 已支持算术/逻辑、移位比较、条件分支、JAL/JALR、LUI/AUIPC、字/半字/字节访存。
-- MUL 写回乘积低 32 位。未实现除法、高位乘法等完整 M/Zmmul 指令集。
-- 教学用 FAULT 终止无效指令/访问；没有标准 trap handler、CSR 或中断环境。
-- 裸机 C、启动汇编、链接脚本和 ELF 装载遵循当前 ILP32 环境，固件产物和编译命令保存在 programs/ 的清单中。
+## 存储与接口
 
-精确行为以 [CPU 契约](tiny-cpu-contract.md)为准。
+| 通路 | 已实现范围 |
+| --- | --- |
+| 指令 | 每个 bank 为 1 KiB；九个 bank 由板级控制切换，CPU 的可见 PC 地址范围仍为 1 KiB |
+| 数据 | 独立数据地址 0..32767，共 8192 个 32 位字 |
+| FIR MMIO | `0x40003000` 页；START、STATUS、地址、长度、系数、硬件计数 |
+| CPU / FIR RAM 端口 | CPU 为 A、FIR/DMA 为 B；同字冲突有写入时 A 优先，B 等待 |
+| 调用计数 | 板级监听数据 RAM 的 marker=1/2 接受沿；独立计时器 MMIO 页和 `mcycle` CSR 未实现 |
 
-## 存储与 MMIO
+两端口同钟，读延迟按实际 M9K 模型验证。复位取消 DMA；存储阵列由装载器重新初始化，不能将中途复位的半块输出当作完成结果。每个任务的输入、输出和状态布局由对应 ELF 符号表及生成清单确定。
 
-| 区域 | 当前范围 | 用途 |
-| --- | --- | --- |
-| 指令 ROM | 独立地址空间 0～1023 字节 | 256 个 32 位指令字，未用处填 NOP |
-| 共享数据 RAM | 数据地址 0～1023 字节 | CPU A 端口，FIR B 端口 |
-| FIR MMIO | 0x40003000～0x40003FFF | 仅对齐 LW/SW，控制/状态/地址/计数和系数 |
+板载 50 MHz 二分频为 25 MHz，SDC 建立真实主从时钟关系。异步 KEY0/SW 的同步器入口与人机 LED/HEX 输出例外范围单独限定。SW 多位切换不作为业务命令，只选择已经完成的稳定计数；计算顺序与开关位置无关。
 
-RAM 同步读；CPU 端口支持字节使能，FIR 端口整字读写。输入和输出缓冲必须互不重叠且在 RAM 内。每个 Q15 样本或系数用一个符号扩展的 32 位字存放。
+## 一次运行
 
-常用寄存器相对 FIR 基址：CONTROL=0x00、STATUS=0x04、SRC_ADDR=0x08、DST_ADDR=0x0C、SAMPLE_COUNT=0x10、CYCLES=0x14、WRITTEN=0x18，32 个系数位于 0x100～0x17C。详细错误及 BUSY 期间访问规则见 [MMIO 契约](fir-mmio-contract.md)。
+1. 选定长度与软件/冷调用/驻留模式，装载全部 8192 字 RAM，复位 CPU/FIR。
+2. CPU 从当前程序 bank 启动；驻留模式先装好 32 个系数。
+3. 接受 marker=1 后计数；软件执行 C FIR，或由 C 配置并等待硬件完成。
+4. 接受 marker=2 后冻结计数；C 校验该块所有输出，板级监测器检查事务及结束状态。
+5. 成功后缓存本组计数并进入下一组；任一组失败显示 EEEEEEEE。全部九组成功才置完成标志。
 
-当前 Quartus 把共享 RAM 实现为寄存器和选择逻辑；两块 M9K 来自程序及初值 ROM。后续改善 RAM 推导时须重新验证双端口读写、字节使能和冲突语义。
-
-## FIR 数值语义
-
-- 32 抽头串行 MAC，输入和系数为 signed16，15 位小数。
-- 乘积 signed32，累加器 signed40。
-- 最终右移 15 位前按最近整数舍入，半格远离零，再饱和到 signed16。
-- 每次 START 清历史，块前样本视为 0；输出长度等于输入长度，不输出卷积尾部。
-- 只有最后一个输出实际被 RAM 接受后才置 DONE。DMA 等待期间保持请求参数稳定。
-
-数值定义见[定点契约](numeric-contract.md)，核的逐拍行为见 [FIR 核契约](fir-accelerator-contract.md)。
-
-## 启动、计时和显示
-
-板载 50 MHz 经真实二分频产生 25 MHz 系统时钟。KEY0 异步进入两级复位链，按系统时钟释放。装载器每次重载全部 256 个 RAM 字，再释放 CPU 运行已有 C 驱动。
-
-板级监测器对实际接受的八次 DMA 写回检查地址、顺序和完整数据，也检查 C done/errors 与 CPU FAULT。正常结束后保持结果，KEY0 清状态并重新装载。
-
-显示快照来自实际 DMA 写数据。SW2..SW0 选择输出编号，SW3 选择程序计数；机械开关只改变观察选择，不控制计算。两级同步后的各位在切换期间允许短暂出现中间选择。
-
-数码管显示的是 32 位十六进制；HEX0 为最低四位，HEX7 为最高四位。内部完整程序计数包括配置、等待和检查，当前仿真为 1131 拍。它与 FIR 内核计数及基准标记区间分别定义，见[验证记录](verification.md)。
+具体 RTL 见 `rtl/cpu/pipeline_large_cpu.vhd`、`rtl/soc/pipeline_large_soc.vhd`、`rtl/soc/shared_ram_m9k.vhd`、`rtl/fir/fir_mmio_large.vhd`、`rtl/fir/fir_serial.vhd`、`rtl/board/call_cycle_timer.vhd` 和 `rtl/board/de2_115_benchmark_top.vhd`。

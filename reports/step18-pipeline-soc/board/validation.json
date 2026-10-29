@@ -1,0 +1,59 @@
+{
+  "status": "pass",
+  "program_cycles": 694,
+  "completed_runs": 4,
+  "result_selections_checked": 32,
+  "independent_external_clock_stopwatch": true,
+  "error_indication_checked": true,
+  "negative_controls": [
+    {
+      "name": "rom_ignores_enable",
+      "killed": true,
+      "exit_code": 1
+    },
+    {
+      "name": "counter_double_increment",
+      "killed": true,
+      "exit_code": 1
+    },
+    {
+      "name": "capture_wrong_word",
+      "killed": true,
+      "exit_code": 1
+    },
+    {
+      "name": "finish_early",
+      "killed": true,
+      "exit_code": 1
+    }
+  ],
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_cpu.vhd": "dc450faa671510d86c484d19c15f0377b8e79a85c8d93a62f840291d84af70c6",
+    "rtl/fir/fir_serial.vhd": "3e175a465d8efc56a9d619a9b525694598776c24b7695149d7f6cc59d6203a97",
+    "rtl/fir/fir_mmio.vhd": "5411ebd009a02c2d6f098b03d6614a31e4c872997a2dcef160016237fe2a6ccd",
+    "rtl/soc/shared_ram.vhd": "683213b85c4bfe4a05a65d140dd5c16b59f1ca5803e460f3e9eec4cd9f595bb1",
+    "rtl/soc/pipeline_fir_soc.vhd": "3e57a76efa36ad4c799cd765804d36ea856857683e3bea46b3206b62c3aecf36",
+    "rtl/board/hex7seg.vhd": "d7840a36cff1fd17b7a24d42f11a043dd6f4ca71f6cbfc443dd7e1790611cc07",
+    "rtl/board/de2_115_pipeline_top.vhd": "73dddcc9d30b102c60b3e3b3d030aed0078e68db388c23f611ac4d30b8c090e3",
+    "sim/tb/tb_de2_pipeline.vhd": "94cd98249f41640462440d1014973b9036ee3533cb3f9bbe53a817bcbbda84a9",
+    "tools/prepare_de2_pipeline.py": "8ce99f3cebf4684e2b9c623c57d6079f86b7db7511eba20c48da7d2cbd0c2373",
+    "fpga/de2_display/display.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "fpga/de2_display/pins.json": "403a7f7e82f826a583d90562a9ba3315eaca684b85a243ca0b05025cbebe5a3a",
+    "docs/pipeline-soc-contract.md": "c825f25af831e1209d1c750026d867b6b9e9a37398371c0ff3b528e8b3664822",
+    "tools/run_pipeline_board.py": "e9c2c758b6e729dc713f7577a01e03e074a41d798900769e8c41d5286ae01228"
+  },
+  "synthesis": "not_run",
+  "timing": "not_run",
+  "hardware": "not_run"
+}

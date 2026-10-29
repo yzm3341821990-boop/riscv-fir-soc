@@ -1,0 +1,14 @@
+{
+  "generator": "tools/plot_parallel_comparison.py",
+  "generator_sha256": "910acc1f89c05eece78f06780d8f464c4e6006176b92b97b90aa65443a9f1790",
+  "input": "reports/step19-parallel-fir/comparison.csv",
+  "input_sha256": "d08b8534788b4f518b48645c23add91c1a393ea750f8bd0e92764d769cf703ed",
+  "python": "3.12.8",
+  "matplotlib": "3.11.2",
+  "files_sha256": {
+    "parallel-fir-complete-call.pdf": "4cd22768793ffb04b0b2c74cd59713fc2991e756c5de7a64259f3fe7cb15a2a5",
+    "parallel-fir-complete-call.png": "9acb32089dcb230f8048c14c1cff3d1ecd9ce8f321927dd178f2a3cbe7c5be79",
+    "parallel-fir-complete-call.svg": "69b32e783141a34fe1ecaacd73824418618ff253a82d9549f1eec77a19977cb4"
+  },
+  "data": "actual functional-simulation accepted-marker cycle differences; no physical timing claims"
+}

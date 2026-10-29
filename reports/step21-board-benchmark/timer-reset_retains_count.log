@@ -1,0 +1,32 @@
+# do timer.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:42:04 on Oct 29,2026
+# vcom -93 call_cycle_timer.vhd tb_call_cycle_timer.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity call_cycle_timer
+# -- Compiling architecture rtl of call_cycle_timer
+# -- Compiling entity tb_call_cycle_timer
+# -- Compiling architecture test of tb_call_cycle_timer
+# -- Loading entity call_cycle_timer
+# End time: 18:42:04 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.tb_call_cycle_timer 
+# Start time: 18:42:05 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_call_cycle_timer(test)
+# Loading work.call_cycle_timer(rtl)
+# 3
+# ** Failure: CALL_TIMER_RESET
+#    Time: 26 ns  Iteration: 0  Process: /tb_call_cycle_timer/stimulus File: tb_call_cycle_timer.vhd
+# Break in Subprogram reset_unit at tb_call_cycle_timer.vhd line 21
+# End time: 18:42:05 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

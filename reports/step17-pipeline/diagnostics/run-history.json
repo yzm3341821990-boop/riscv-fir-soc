@@ -1,0 +1,16 @@
+{
+  "initial_batch": {
+    "exit_code": 1,
+    "passed_before_exit": 113,
+    "diagnosis": "Batch ended early without an execution assertion in its saved transcript; cause not established."
+  },
+  "single_replay": {
+    "case": "subword_byte_lane_1",
+    "status": "pass"
+  },
+  "final_full_run": {
+    "status": "pass",
+    "cases": 216,
+    "negative_controls_killed": 10
+  }
+}

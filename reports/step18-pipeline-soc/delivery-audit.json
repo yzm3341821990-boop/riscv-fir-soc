@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T04:32:20.390877+00:00",
+  "current_source_hashes_checked": 132,
+  "local_markdown_links_checked": 292,
+  "staged_generated_hashes_checked": 28,
+  "fitted_pins": "not_yet_built",
+  "assigned_pins": 66,
+  "project_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2_115_pipeline\\riscv_fir_de2_pipeline.qpf",
+  "project_package": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2-115-pipeline-step18.zip",
+  "project_package_sha256": "a5dfb34d9d596134b82b90d35e9f62881ed84f9421d469ad9d2142921bdda64e",
+  "quartus_compile_run": false,
+  "fpga_programming_run": false,
+  "remote_upload_run": false,
+  "board_cycle_display": "000002B6",
+  "simulation_program_cycles": 694,
+  "limitation": "Functional simulation and reproducible project only; new timing/resources/hardware observations pending."
+}

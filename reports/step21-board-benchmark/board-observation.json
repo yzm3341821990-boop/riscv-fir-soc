@@ -1,0 +1,28 @@
+{
+  "status": "user_reported_matches_expectation",
+  "recorded_at_utc": "2026-10-29T14:23:45.616652+00:00",
+  "user_quote": "ok，符合预期，继续吧",
+  "context": "Reply after verified step21 SOF download instructions and requests for SW3..SW0 0110/0111/1000 plus all-nine-complete LED status",
+  "user_confirmed_expected_behavior": true,
+  "reviewed_sof_sha256": "fbff1eba713bb10db223ce81766b1e236fc4dcede977f0b84009c25a4ec6bbf3",
+  "reviewed_sof_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\step21-verified\\riscv_fir_de2_benchmark.sof",
+  "requested_checks": {
+    "selectors": [
+      "0110",
+      "0111",
+      "1000"
+    ],
+    "expected_hex": [
+      "00077711",
+      "00003528",
+      "00003425"
+    ],
+    "led_expected": "LEDR0/1 on, LEDR2 off, LEDR3 blinking"
+  },
+  "independent_numeric_readback": null,
+  "individual_nine_profile_readings": null,
+  "programmer_log_received": false,
+  "video_received": false,
+  "physical_speedup_measurement": "not_separately_transcribed",
+  "scope": "General user acceptance of the step21 board behavior. Expected values remain simulation references; this statement does not create nine numeric readbacks or independent instrument measurements."
+}

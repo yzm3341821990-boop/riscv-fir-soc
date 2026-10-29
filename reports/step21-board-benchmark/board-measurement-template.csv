@@ -1,0 +1,10 @@
+index,switch_binary,sample_count,mode,expected_hex,expected_cycles,observed_hex,observed_cycles,evidence_note
+0,0000,64,software,00005DED,24045,,,
+1,0001,64,hardware_cold,00000466,1126,,,
+2,0010,64,hardware_resident,00000363,867,,,
+3,0011,256,software,0001C878,116856,,,
+4,0100,256,hardware_cold,00000E26,3622,,,
+5,0101,256,hardware_resident,00000D23,3363,,,
+6,0110,1024,software,00077711,489233,,,
+7,0111,1024,hardware_cold,00003528,13608,,,
+8,1000,1024,hardware_resident,00003425,13349,,,

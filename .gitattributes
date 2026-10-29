@@ -1,8 +1,5 @@
-* text=auto eol=lf
+# Preserve frozen source, firmware and evidence bytes for SHA256 verification.
+* -text
 *.elf binary
 *.png binary
 *.pdf binary
-
-# Preserve original evidence bytes so recorded SHA256 values remain reproducible.
-reports/** -text
-*.svg -text

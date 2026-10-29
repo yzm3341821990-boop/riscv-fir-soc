@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "interface_package": "E:\\quartus\\quartus\\libraries\\vhdl\\altera_mf\\altera_mf_components.vhd",
+  "interface_sha256": "b6d9f05b87e52b3f83f3a826fdf0bb1144d6af228ca5f0e134ea7ccab9e09bc0",
+  "legacy_direct_entity_rejected": true,
+  "current_component_analyzed": true,
+  "scope": "ModelSim VHDL-93 analysis against the actual installed Quartus synthesis component declarations only. No vendor entity is present in this isolated library. This is not a Quartus synthesis pass.",
+  "source_sha256": {
+    "rtl/soc/shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "tools/check_m9k_binding.py": "ed179f94aa8548ccd58be0da0f3e687c55d2df608ce12c01f1f60d3aea9f5dc6"
+  },
+  "quartus": "awaiting_user_recompile",
+  "hardware": "not_run"
+}

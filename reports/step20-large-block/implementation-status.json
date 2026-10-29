@@ -1,0 +1,27 @@
+{
+  "status": "quartus_review_pass_awaiting_board",
+  "revision": "step20-r1-component-binding",
+  "compiled_by": "user",
+  "agent_ran_quartus": false,
+  "reviewed_sof_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\step20-r1-verified\\riscv_fir_de2_large.sof",
+  "sof_sha256": "1dcf5141800c418da3a6b9a4881fe586b0ef18d8c9483e9cdee6cdabe053d5b4",
+  "source_snapshot": "riscv-fir-soc-step20-r1-source.zip",
+  "source_snapshot_sha256": "6e06a047353a7df5ec3055b94dff5986ba47c2a8b29107ddb7312b22366776c7",
+  "compiled_sources_match_frozen_snapshot": true,
+  "resources": {
+    "logic_elements": 7464,
+    "registers": 3718,
+    "pins": 66,
+    "memory_bits": 393216,
+    "multiplier_9bit_elements": 14,
+    "m9k_blocks": 48,
+    "data_ram_m9k_blocks": 32,
+    "seed_rom_m9k_blocks": 16
+  },
+  "worst_setup_slack_ns": 9.726,
+  "worst_hold_slack_ns": 0.152,
+  "next_action": "User downloads reviewed SOF and observes LED/HEX/KEY0; no step20 hardware feedback received",
+  "review_script_sha256": "ba69f3ea884348327ad5bba0c26f45a6d34ee03d357489da20748be1eb1e3b48",
+  "report": "quartus-validation.json",
+  "hardware": "not_observed"
+}

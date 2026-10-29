@@ -1,0 +1,618 @@
+{
+  "contract": "board-fir-benchmark-v1",
+  "project": "riscv_fir_de2_benchmark",
+  "top": "de2_115_benchmark_top",
+  "profiles": [
+    {
+      "index": 0,
+      "sample_count": 64,
+      "mode": "software",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 296,
+        "_program_end": 416,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 2304,
+        "outputs": 2432,
+        "expected": 2688,
+        "marker": 2944,
+        "done": 2948,
+        "errors": 2952,
+        "polls": 2956,
+        "hw_cycles": 2960,
+        "hw_written": 2964
+      },
+      "initial_memory_sha256": "e39ad1c1d0b048a626818de60ec175ecc2d0514ea99be27fabc12175995741b9",
+      "firmware_artifact_sha256": {
+        "program.elf": "ca596505723d96a49bd6b2cbcec700b61bfadc8733db93f6aa60f0e8a541ff0d",
+        "program.hex": "28ac305c08efee95b8a7d61eb48afb15143080edef235ca4e109c32b90fa10ba",
+        "initial_memory.txt": "1fbbcbc61547f54cc165c08d8ace2ec8a577ebce50298424e69f05ae1fd21a25",
+        "main.s": "170bdfeebc70002bc593fb78626c16bcdd26ede0af6bba6dc209b50ec31633b1",
+        "link.ld": "c34a0ef3d048792bbd0cbd3f12bc550409db8c6425ca97dab76ebceb0ab61e4a"
+      }
+    },
+    {
+      "index": 1,
+      "sample_count": 64,
+      "mode": "hardware_cold",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 160,
+        "_program_end": 296,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 2304,
+        "outputs": 2432,
+        "expected": 2688,
+        "marker": 2944,
+        "done": 2948,
+        "errors": 2952,
+        "polls": 2956,
+        "hw_cycles": 2960,
+        "hw_written": 2964
+      },
+      "initial_memory_sha256": "e39ad1c1d0b048a626818de60ec175ecc2d0514ea99be27fabc12175995741b9",
+      "firmware_artifact_sha256": {
+        "program.elf": "8d8cb5779f83b134d5a07f5997be66fb5736c3233fc15a2e099d897a9eb2573e",
+        "program.hex": "38571f39e6caf27bfd590c4fa4bf08a6da8b1762b0001c633bdc6586071ecabf",
+        "initial_memory.txt": "1fbbcbc61547f54cc165c08d8ace2ec8a577ebce50298424e69f05ae1fd21a25",
+        "main.s": "39b950b08a4df59490503c50468a8f59fc251d0adc924964a91d65995d0ade01",
+        "link.ld": "c34a0ef3d048792bbd0cbd3f12bc550409db8c6425ca97dab76ebceb0ab61e4a"
+      }
+    },
+    {
+      "index": 2,
+      "sample_count": 64,
+      "mode": "hardware_resident",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 120,
+        "_program_end": 296,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 2304,
+        "outputs": 2432,
+        "expected": 2688,
+        "marker": 2944,
+        "done": 2948,
+        "errors": 2952,
+        "polls": 2956,
+        "hw_cycles": 2960,
+        "hw_written": 2964
+      },
+      "initial_memory_sha256": "e39ad1c1d0b048a626818de60ec175ecc2d0514ea99be27fabc12175995741b9",
+      "firmware_artifact_sha256": {
+        "program.elf": "2dd9cbe86a8588ed7d61176509fa58743f4ef2da8493761a14dc8b12a66ae157",
+        "program.hex": "fbd51c3804bffc34930f3b74d69e0f698c4ecef62996e42e8eed78e53c305623",
+        "initial_memory.txt": "1fbbcbc61547f54cc165c08d8ace2ec8a577ebce50298424e69f05ae1fd21a25",
+        "main.s": "a981308203e8b39a2bdfde719b73b675e403b1b4ef24e96d97d579dbaf7ac81a",
+        "link.ld": "c34a0ef3d048792bbd0cbd3f12bc550409db8c6425ca97dab76ebceb0ab61e4a"
+      }
+    },
+    {
+      "index": 3,
+      "sample_count": 256,
+      "mode": "software",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 296,
+        "_program_end": 416,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 3072,
+        "outputs": 3200,
+        "expected": 4224,
+        "marker": 5248,
+        "done": 5252,
+        "errors": 5256,
+        "polls": 5260,
+        "hw_cycles": 5264,
+        "hw_written": 5268
+      },
+      "initial_memory_sha256": "98eb7477165a9e4f1e86f7f26354eb70a29e29afddc16ceaa2ea36acb7282084",
+      "firmware_artifact_sha256": {
+        "program.elf": "f16acb347ea5ac8bbd821943c8fb561388eb12623ee7e1c6d3b1a810739e9fd8",
+        "program.hex": "c9843960d9ef377a13cae109a08de762da569a0bdd40732398daf0f785f89c2f",
+        "initial_memory.txt": "41d2b7a2121db4d190e89e272e050d28eb5b13e9d977ed6250b30cb8613b4903",
+        "main.s": "c52c1fc49036d00ae4bffb750b84173f4737bc93a6f436b169e4a88c75193e42",
+        "link.ld": "ca9c964844524d93c260570bafb2ce6058d87535365a68ce68d3db82944d04f8"
+      }
+    },
+    {
+      "index": 4,
+      "sample_count": 256,
+      "mode": "hardware_cold",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 160,
+        "_program_end": 296,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 3072,
+        "outputs": 3200,
+        "expected": 4224,
+        "marker": 5248,
+        "done": 5252,
+        "errors": 5256,
+        "polls": 5260,
+        "hw_cycles": 5264,
+        "hw_written": 5268
+      },
+      "initial_memory_sha256": "98eb7477165a9e4f1e86f7f26354eb70a29e29afddc16ceaa2ea36acb7282084",
+      "firmware_artifact_sha256": {
+        "program.elf": "4156c3cbf86f34b333c9f962d43438086eac2cf0639ec0c1c75e53cc99f49024",
+        "program.hex": "1e0aad46706c59ba3989944ac658d56f112a4ce82f87f324b319ca108e6d5cb2",
+        "initial_memory.txt": "41d2b7a2121db4d190e89e272e050d28eb5b13e9d977ed6250b30cb8613b4903",
+        "main.s": "a68a4b02a22acefedc4cac16e1cd0189733ee0609604044dd9e2c2fd06dc4dd5",
+        "link.ld": "ca9c964844524d93c260570bafb2ce6058d87535365a68ce68d3db82944d04f8"
+      }
+    },
+    {
+      "index": 5,
+      "sample_count": 256,
+      "mode": "hardware_resident",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 120,
+        "_program_end": 296,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 3072,
+        "outputs": 3200,
+        "expected": 4224,
+        "marker": 5248,
+        "done": 5252,
+        "errors": 5256,
+        "polls": 5260,
+        "hw_cycles": 5264,
+        "hw_written": 5268
+      },
+      "initial_memory_sha256": "98eb7477165a9e4f1e86f7f26354eb70a29e29afddc16ceaa2ea36acb7282084",
+      "firmware_artifact_sha256": {
+        "program.elf": "f4d6e51ba7148766e0b7ef568d4cfe0c2975fc2b3f3ce75dda380c6658522430",
+        "program.hex": "62397e345b968e95ede1d6c45d752c1c1ca9a553214a68c0222037ffe1f1f2db",
+        "initial_memory.txt": "41d2b7a2121db4d190e89e272e050d28eb5b13e9d977ed6250b30cb8613b4903",
+        "main.s": "74d607e01b658e2cac0b1cedcce08155e75c43f24f578dc0e6d20f9634571565",
+        "link.ld": "ca9c964844524d93c260570bafb2ce6058d87535365a68ce68d3db82944d04f8"
+      }
+    },
+    {
+      "index": 6,
+      "sample_count": 1024,
+      "mode": "software",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 312,
+        "_program_end": 472,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 6144,
+        "outputs": 6272,
+        "expected": 10368,
+        "marker": 14464,
+        "done": 14468,
+        "errors": 14472,
+        "polls": 14476,
+        "hw_cycles": 14480,
+        "hw_written": 14484
+      },
+      "initial_memory_sha256": "5554ec40e47f253e220d6d684cb17080d9ca6a12df01ec4803cb7d30f0fd103b",
+      "firmware_artifact_sha256": {
+        "program.elf": "bbe95484a8d631bdaf529832dd5c1a0f89436e573c918415039e91cc8ebac999",
+        "program.hex": "b72d68807a4c69c37533ad6b86d49bbaf175ab2b569d802a463b9b64a266d60e",
+        "initial_memory.txt": "f29c834800e9945b5cff14d76a06a3863ed90489f34845997eb5b1aea6c371a5",
+        "main.s": "ca2d33d5f38cbfd2b40405fe716c5becf13dc42e6d0577a1a37bf36326707ff5",
+        "link.ld": "c5335e01804858674f7103e74129426348807ff27e7cc253abfe608265c1a59b"
+      }
+    },
+    {
+      "index": 7,
+      "sample_count": 1024,
+      "mode": "hardware_cold",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 168,
+        "_program_end": 344,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 6144,
+        "outputs": 6272,
+        "expected": 10368,
+        "marker": 14464,
+        "done": 14468,
+        "errors": 14472,
+        "polls": 14476,
+        "hw_cycles": 14480,
+        "hw_written": 14484
+      },
+      "initial_memory_sha256": "5554ec40e47f253e220d6d684cb17080d9ca6a12df01ec4803cb7d30f0fd103b",
+      "firmware_artifact_sha256": {
+        "program.elf": "37703a6e3ee186df860ab82fda3be03b397a2414c95b54b398e7840eaded243f",
+        "program.hex": "a50087dad909cc7e73ed903055d1950bbc88f003da1ff76169d8120571b7bf4f",
+        "initial_memory.txt": "f29c834800e9945b5cff14d76a06a3863ed90489f34845997eb5b1aea6c371a5",
+        "main.s": "f3aef7adc6f4871777e3545378a779f6d327f80336480786a247629efb35a1d7",
+        "link.ld": "c5335e01804858674f7103e74129426348807ff27e7cc253abfe608265c1a59b"
+      }
+    },
+    {
+      "index": 8,
+      "sample_count": 1024,
+      "mode": "hardware_resident",
+      "symbols": {
+        "_start": 0,
+        "_stack_top": 32768,
+        "main": 128,
+        "_program_end": 344,
+        "run_fir": 16,
+        "bench_data": 2048,
+        "samples": 2048,
+        "coefficients": 6144,
+        "outputs": 6272,
+        "expected": 10368,
+        "marker": 14464,
+        "done": 14468,
+        "errors": 14472,
+        "polls": 14476,
+        "hw_cycles": 14480,
+        "hw_written": 14484
+      },
+      "initial_memory_sha256": "5554ec40e47f253e220d6d684cb17080d9ca6a12df01ec4803cb7d30f0fd103b",
+      "firmware_artifact_sha256": {
+        "program.elf": "5f0ff09ebf92302217aa45bf9ca7229aebc5303cbc468e66697d31424a610212",
+        "program.hex": "8acba0eac5547d2b1f74ed14949f098d760fb168953150228add508c58ac79b7",
+        "initial_memory.txt": "f29c834800e9945b5cff14d76a06a3863ed90489f34845997eb5b1aea6c371a5",
+        "main.s": "408ec41e8134a0f016e8c9ef76db60f1d5914c843eb52d52b9604e0044ef944d",
+        "link.ld": "c5335e01804858674f7103e74129426348807ff27e7cc253abfe608265c1a59b"
+      }
+    }
+  ],
+  "fir_lanes": 4,
+  "reference_device": "EP4CE115F29C7",
+  "system_clock_mhz": 25,
+  "pins": {
+    "CLOCK_50": {
+      "pin": "Y2",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX0[0]": {
+      "pin": "G18",
+      "standard": "2.5 V"
+    },
+    "HEX0[1]": {
+      "pin": "F22",
+      "standard": "2.5 V"
+    },
+    "HEX0[2]": {
+      "pin": "E17",
+      "standard": "2.5 V"
+    },
+    "HEX0[3]": {
+      "pin": "L26",
+      "standard": "2.5 V"
+    },
+    "HEX0[4]": {
+      "pin": "L25",
+      "standard": "2.5 V"
+    },
+    "HEX0[5]": {
+      "pin": "J22",
+      "standard": "2.5 V"
+    },
+    "HEX0[6]": {
+      "pin": "H22",
+      "standard": "2.5 V"
+    },
+    "HEX1[0]": {
+      "pin": "M24",
+      "standard": "2.5 V"
+    },
+    "HEX1[1]": {
+      "pin": "Y22",
+      "standard": "2.5 V"
+    },
+    "HEX1[2]": {
+      "pin": "W21",
+      "standard": "2.5 V"
+    },
+    "HEX1[3]": {
+      "pin": "W22",
+      "standard": "2.5 V"
+    },
+    "HEX1[4]": {
+      "pin": "W25",
+      "standard": "2.5 V"
+    },
+    "HEX1[5]": {
+      "pin": "U23",
+      "standard": "2.5 V"
+    },
+    "HEX1[6]": {
+      "pin": "U24",
+      "standard": "2.5 V"
+    },
+    "HEX2[0]": {
+      "pin": "AA25",
+      "standard": "2.5 V"
+    },
+    "HEX2[1]": {
+      "pin": "AA26",
+      "standard": "2.5 V"
+    },
+    "HEX2[2]": {
+      "pin": "Y25",
+      "standard": "2.5 V"
+    },
+    "HEX2[3]": {
+      "pin": "W26",
+      "standard": "2.5 V"
+    },
+    "HEX2[4]": {
+      "pin": "Y26",
+      "standard": "2.5 V"
+    },
+    "HEX2[5]": {
+      "pin": "W27",
+      "standard": "2.5 V"
+    },
+    "HEX2[6]": {
+      "pin": "W28",
+      "standard": "2.5 V"
+    },
+    "HEX3[0]": {
+      "pin": "V21",
+      "standard": "2.5 V"
+    },
+    "HEX3[1]": {
+      "pin": "U21",
+      "standard": "2.5 V"
+    },
+    "HEX3[2]": {
+      "pin": "AB20",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[3]": {
+      "pin": "AA21",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[4]": {
+      "pin": "AD24",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[5]": {
+      "pin": "AF23",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX3[6]": {
+      "pin": "Y19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[0]": {
+      "pin": "AB19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[1]": {
+      "pin": "AA19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[2]": {
+      "pin": "AG21",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[3]": {
+      "pin": "AH21",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[4]": {
+      "pin": "AE19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[5]": {
+      "pin": "AF19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX4[6]": {
+      "pin": "AE18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[0]": {
+      "pin": "AD18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[1]": {
+      "pin": "AC18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[2]": {
+      "pin": "AB18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[3]": {
+      "pin": "AH19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[4]": {
+      "pin": "AG19",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[5]": {
+      "pin": "AF18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX5[6]": {
+      "pin": "AH18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[0]": {
+      "pin": "AA17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[1]": {
+      "pin": "AB16",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[2]": {
+      "pin": "AA16",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[3]": {
+      "pin": "AB17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[4]": {
+      "pin": "AB15",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[5]": {
+      "pin": "AA15",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX6[6]": {
+      "pin": "AC17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[0]": {
+      "pin": "AD17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[1]": {
+      "pin": "AE17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[2]": {
+      "pin": "AG17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[3]": {
+      "pin": "AH17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[4]": {
+      "pin": "AF17",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[5]": {
+      "pin": "AG18",
+      "standard": "3.3-V LVTTL"
+    },
+    "HEX7[6]": {
+      "pin": "AA14",
+      "standard": "3.3-V LVTTL"
+    },
+    "LEDR[0]": {
+      "pin": "G19",
+      "standard": "2.5 V"
+    },
+    "LEDR[1]": {
+      "pin": "F19",
+      "standard": "2.5 V"
+    },
+    "LEDR[2]": {
+      "pin": "E19",
+      "standard": "2.5 V"
+    },
+    "LEDR[3]": {
+      "pin": "F21",
+      "standard": "2.5 V"
+    },
+    "RESET_N": {
+      "pin": "M23",
+      "standard": "2.5 V"
+    },
+    "SW[0]": {
+      "pin": "AB28",
+      "standard": "2.5 V"
+    },
+    "SW[1]": {
+      "pin": "AC28",
+      "standard": "2.5 V"
+    },
+    "SW[2]": {
+      "pin": "AC27",
+      "standard": "2.5 V"
+    },
+    "SW[3]": {
+      "pin": "AD27",
+      "standard": "2.5 V"
+    }
+  },
+  "reference_jp7_vccio": 2.5,
+  "reference_jp6_vccio": 3.3,
+  "timer": "Accepted marker=1 to marker=2 core-edge interval, computed in hardware; no expected cycle constants in RTL",
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_large_cpu.vhd": "9ea35264d5f94b80f9184a860bcedbbb3cbb53152c2d6252c1bcd2bb57f6ac3c",
+    "rtl/fir/fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "rtl/fir/fir_mmio_large.vhd": "7759142b908eb41deeeabd6e7f8a95b70e8f1f9f0ab7a34657d84062503acd48",
+    "rtl/soc/shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "rtl/soc/pipeline_large_soc.vhd": "67a412c8d19e7cd4d54fef2c52a154d6b53eeddee3c1eceedc442344e1c83780",
+    "rtl/board/hex7seg.vhd": "d7840a36cff1fd17b7a24d42f11a043dd6f4ca71f6cbfc443dd7e1790611cc07",
+    "rtl/board/call_cycle_timer.vhd": "f9d71b11f595bb1c8715279ed1543a9b64c8ed0582665d40e79bc62c1d94f860",
+    "rtl/board/de2_115_benchmark_top.vhd": "3170ff4afd7f990af7b8855a76d9acb12561812d5c60c1b024d0c71a4d4335d0",
+    "sim/tb/tb_de2_benchmark.vhd": "dcba9c22cda0018ab2189bf9965de652e73227ea80a2ac7b17879172b8cbd432",
+    "tools/prepare_de2_benchmark.py": "0b388e7db5db76dd5169ca3ca4ef208b9c749681ae938a29f0a4131a9a26a2fa",
+    "docs/board-benchmark-contract.md": "dd1277e6af1636533cea888a11f6fe6bc6b662d45dc9856f8ead8557e953d0a3",
+    "fpga/de2_display/display.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "fpga/de2_display/pins.json": "403a7f7e82f826a583d90562a9ba3315eaca684b85a243ca0b05025cbebe5a3a"
+  },
+  "generated_sha256": {
+    "alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "pipeline_large_cpu.vhd": "9ea35264d5f94b80f9184a860bcedbbb3cbb53152c2d6252c1bcd2bb57f6ac3c",
+    "fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "fir_mmio_large.vhd": "7759142b908eb41deeeabd6e7f8a95b70e8f1f9f0ab7a34657d84062503acd48",
+    "shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "pipeline_large_soc.vhd": "67a412c8d19e7cd4d54fef2c52a154d6b53eeddee3c1eceedc442344e1c83780",
+    "hex7seg.vhd": "d7840a36cff1fd17b7a24d42f11a043dd6f4ca71f6cbfc443dd7e1790611cc07",
+    "call_cycle_timer.vhd": "f9d71b11f595bb1c8715279ed1543a9b64c8ed0582665d40e79bc62c1d94f860",
+    "de2_115_benchmark_top.vhd": "3170ff4afd7f990af7b8855a76d9acb12561812d5c60c1b024d0c71a4d4335d0",
+    "tb_de2_benchmark.vhd": "dcba9c22cda0018ab2189bf9965de652e73227ea80a2ac7b17879172b8cbd432",
+    "benchmark_images_pkg.vhd": "a11f33a46387ea671a2be5e573e1d29dad0049a8711d9d88c005810f39227567",
+    "program.mif": "32bffbe57d1c925f846b204e8178aea51d4cc9f3d3d0ed72bf1a5f36777cda7b",
+    "ram_seed.mif": "4d1b13349e88360e608699f917f702a31a9c927387a81842539885f49074c377",
+    "benchmark.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "riscv_fir_de2_benchmark.qsf": "5c13d2add62f01c8415e951e4706b8d998489f083be343707b36331eeeba25aa",
+    "riscv_fir_de2_benchmark.qpf": "97534f563aa80951135127d37eaae827747c3a18320f58716a9f7571c25fed4c",
+    "benchmark-qsf-before-build.txt": "5c13d2add62f01c8415e951e4706b8d998489f083be343707b36331eeeba25aa",
+    "compile_benchmark.do": "8b78bb1684a7e1a15abe7224046e44511e5d43123d775de71b0b9fe617e4725a",
+    "run_benchmark_batch.do": "21b9beaca2d637de988a73d0cfe12829f4b373ef2d0b04f2aa8befc6c6c5e511"
+  },
+  "quartus": "not_run",
+  "hardware": "not_run",
+  "github": "not_uploaded"
+}

@@ -1,0 +1,1 @@
+Recorded real ModelSim 10.5b execution: N=64, 4 FIR lanes, cold call, no added DMA wait. Full trace, 32 KiB readback and actual RF snapshot are used to test the independent checker with controlled corruptions. No board result is implied.

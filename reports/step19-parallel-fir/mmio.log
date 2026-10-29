@@ -1,0 +1,1021 @@
+# do parallel-mmio.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:27:37 on Oct 29,2026
+# vcom -93 alu_pkg.vhd alu32.vhd regfile32.vhd mul32.vhd imm_i.vhd imm_s.vhd imm_b.vhd imm_j.vhd imm_u.vhd decode_tiny.vhd tiny_cpu.vhd fir_serial.vhd fir_mmio.vhd shared_ram.vhd fir_soc.vhd tb_fir_mmio.vhd tb_fir_soc.vhd tb_cpu_mmio_guard.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package alu_pkg
+# -- Loading package NUMERIC_STD
+# -- Loading package alu_pkg
+# -- Compiling entity alu32
+# -- Compiling architecture rtl of alu32
+# -- Compiling entity regfile32
+# -- Compiling architecture rtl of regfile32
+# -- Compiling entity mul32
+# -- Compiling architecture rtl of mul32
+# -- Compiling entity imm_i
+# -- Compiling architecture rtl of imm_i
+# -- Compiling entity imm_s
+# -- Compiling architecture rtl of imm_s
+# -- Compiling entity imm_b
+# -- Compiling architecture rtl of imm_b
+# -- Compiling entity imm_j
+# -- Compiling architecture rtl of imm_j
+# -- Compiling entity imm_u
+# -- Compiling architecture rtl of imm_u
+# -- Compiling entity decode_tiny
+# -- Compiling architecture rtl of decode_tiny
+# -- Compiling entity tiny_cpu
+# -- Compiling architecture rtl of tiny_cpu
+# -- Loading entity decode_tiny
+# -- Loading entity imm_i
+# -- Loading entity imm_s
+# -- Loading entity imm_b
+# -- Loading entity imm_j
+# -- Loading entity imm_u
+# -- Loading entity regfile32
+# -- Loading entity alu32
+# -- Loading entity mul32
+# -- Compiling entity fir_serial
+# -- Compiling architecture rtl of fir_serial
+# -- Compiling entity fir_mmio
+# -- Compiling architecture rtl of fir_mmio
+# -- Loading entity fir_serial
+# -- Compiling entity shared_ram
+# -- Compiling architecture rtl of shared_ram
+# -- Compiling entity fir_soc
+# -- Compiling architecture rtl of fir_soc
+# -- Loading entity tiny_cpu
+# -- Loading entity shared_ram
+# -- Loading entity fir_mmio
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_fir_mmio
+# -- Compiling architecture test of tb_fir_mmio
+# -- Compiling entity tb_fir_soc
+# -- Compiling architecture test of tb_fir_soc
+# -- Loading entity fir_soc
+# -- Compiling entity tb_cpu_mmio_guard
+# -- Compiling architecture test of tb_cpu_mmio_guard
+# End time: 15:27:37 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 300
+# 704
+# _program_end 300 _stack_top 1024 _start 0 coefficients 544 done 744 errors 740 expected 672 hw_cycles 748 hw_written 752 main 16 outputs 704 polls 736 samples 512
+# 
+#     {hardware_fir true false 0}
+#     {hardware_fir_impulse true false 0}
+#     {hardware_fir_ties true false 0}
+#     {hardware_fir_positive_extreme true false 0}
+#     {hardware_fir_negative_extreme true false 0}
+#     {hardware_fir_zero true false 0}
+#     {hardware_fir_zero_coefficients true false 0}
+#     {hardware_fir_no_stall false false 0}
+#     {hardware_fir_timeout true true 1}
+# 
+# 
+#     {hardware_fir 8 false}
+#     {hardware_fir_impulse 8 false}
+#     {hardware_fir_ties 8 false}
+#     {hardware_fir_positive_extreme 8 false}
+#     {hardware_fir_negative_extreme 8 false}
+#     {hardware_fir_zero 8 false}
+#     {hardware_fir_zero_coefficients 8 false}
+#     {zero 64 false}
+#     {impulse 64 false}
+#     {step 64 false}
+#     {positive_ties 4 false}
+#     {negative_ties 4 false}
+#     {positive_saturation 64 false}
+#     {negative_saturation 64 false}
+#     {accumulator_extreme 32 false}
+#     {alternating_extrema 64 false}
+#     {short_block 7 false}
+#     {random_256 128 false}
+#     {random_1024 128 false}
+#     {protocol 8 true}
+# 
+# 
+#     {LB 33027 1073754295 true true}
+#     {LBU 49411 1073754295 true true}
+#     {LH 37123 1073754295 true true}
+#     {LHU 53507 1073754295 true true}
+#     {LW 41219 1073754295 true false}
+#     {SB 32803 1073754295 true true}
+#     {SH 36899 1073754295 true true}
+#     {SW 40995 1073754295 true false}
+#     {disabled 41219 1073754295 false true}
+#     {misaligned 1089795 1073754295 true true}
+#     {other_page 41219 1073758391 true true}
+# 
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir/input.hex -gMAC_LANES=1 
+# Start time: 15:27:37 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=hardware_fir
+# End time: 15:27:37 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_impulse/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_impulse/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_impulse/input.hex -gMAC_LANES=1 
+# Start time: 15:27:37 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=hardware_fir_impulse
+# End time: 15:27:37 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_ties/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_ties/input.hex -gMAC_LANES=1 
+# Start time: 15:27:37 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=hardware_fir_ties
+# End time: 15:27:38 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_positive_extreme/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_positive_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_positive_extreme/input.hex -gMAC_LANES=1 
+# Start time: 15:27:38 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=hardware_fir_positive_extreme
+# End time: 15:27:38 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_negative_extreme/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_negative_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_negative_extreme/input.hex -gMAC_LANES=1 
+# Start time: 15:27:38 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=hardware_fir_negative_extreme
+# End time: 15:27:38 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_zero/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_zero/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_zero/input.hex -gMAC_LANES=1 
+# Start time: 15:27:38 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=hardware_fir_zero
+# End time: 15:27:39 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_zero_coefficients/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_zero_coefficients/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_zero_coefficients/input.hex -gMAC_LANES=1 
+# Start time: 15:27:39 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 6966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=hardware_fir_zero_coefficients
+# End time: 15:27:39 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/zero/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/zero/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/zero/input.hex -gMAC_LANES=1 
+# Start time: 15:27:39 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 48966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=zero
+# End time: 15:27:39 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/impulse/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/impulse/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/impulse/input.hex -gMAC_LANES=1 
+# Start time: 15:27:39 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 48966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=impulse
+# End time: 15:27:39 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/step/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/step/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/step/input.hex -gMAC_LANES=1 
+# Start time: 15:27:39 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 48966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=step
+# End time: 15:27:40 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/positive_ties/expected.hex -gSAMPLE_COUNT=4 -gCOEFF_FILE=mmio/positive_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/positive_ties/input.hex -gMAC_LANES=1 
+# Start time: 15:27:40 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=4 jobs=2
+#    Time: 3966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=positive_ties
+# End time: 15:27:40 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/negative_ties/expected.hex -gSAMPLE_COUNT=4 -gCOEFF_FILE=mmio/negative_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/negative_ties/input.hex -gMAC_LANES=1 
+# Start time: 15:27:40 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=4 jobs=2
+#    Time: 3966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=negative_ties
+# End time: 15:27:40 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/positive_saturation/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/positive_saturation/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/positive_saturation/input.hex -gMAC_LANES=1 
+# Start time: 15:27:40 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 48966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=positive_saturation
+# End time: 15:27:40 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/negative_saturation/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/negative_saturation/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/negative_saturation/input.hex -gMAC_LANES=1 
+# Start time: 15:27:40 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 48966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=negative_saturation
+# End time: 15:27:41 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/accumulator_extreme/expected.hex -gSAMPLE_COUNT=32 -gCOEFF_FILE=mmio/accumulator_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/accumulator_extreme/input.hex -gMAC_LANES=1 
+# Start time: 15:27:41 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=32 jobs=2
+#    Time: 24966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=accumulator_extreme
+# End time: 15:27:41 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/alternating_extrema/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/alternating_extrema/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/alternating_extrema/input.hex -gMAC_LANES=1 
+# Start time: 15:27:41 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 48966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=alternating_extrema
+# End time: 15:27:41 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/short_block/expected.hex -gSAMPLE_COUNT=7 -gCOEFF_FILE=mmio/short_block/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/short_block/input.hex -gMAC_LANES=1 
+# Start time: 15:27:41 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=7 jobs=2
+#    Time: 6226 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=short_block
+# End time: 15:27:41 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/random_256/expected.hex -gSAMPLE_COUNT=128 -gCOEFF_FILE=mmio/random_256/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/random_256/input.hex -gMAC_LANES=1 
+# Start time: 15:27:41 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=128 jobs=2
+#    Time: 96966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=random_256
+# End time: 15:27:42 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/random_1024/expected.hex -gSAMPLE_COUNT=128 -gCOEFF_FILE=mmio/random_1024/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/random_1024/input.hex -gMAC_LANES=1 
+# Start time: 15:27:42 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=128 jobs=2
+#    Time: 96966 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=random_1024
+# End time: 15:27:42 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/protocol/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/protocol/coefficients.hex -gCHECK_PROTOCOL=true -gINPUT_FILE=mmio/protocol/input.hex -gMAC_LANES=1 
+# Start time: 15:27:42 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PROTOCOL_PASS
+#    Time: 15616 ns  Iteration: 0  Instance: /tb_fir_mmio
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 15616 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=1 name=protocol
+# End time: 15:27:42 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir/input.hex -gMAC_LANES=2 
+# Start time: 15:27:42 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=hardware_fir
+# End time: 15:27:42 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_impulse/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_impulse/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_impulse/input.hex -gMAC_LANES=2 
+# Start time: 15:27:42 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=hardware_fir_impulse
+# End time: 15:27:43 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_ties/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_ties/input.hex -gMAC_LANES=2 
+# Start time: 15:27:43 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=hardware_fir_ties
+# End time: 15:27:43 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_positive_extreme/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_positive_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_positive_extreme/input.hex -gMAC_LANES=2 
+# Start time: 15:27:43 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=hardware_fir_positive_extreme
+# End time: 15:27:43 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_negative_extreme/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_negative_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_negative_extreme/input.hex -gMAC_LANES=2 
+# Start time: 15:27:43 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=hardware_fir_negative_extreme
+# End time: 15:27:43 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_zero/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_zero/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_zero/input.hex -gMAC_LANES=2 
+# Start time: 15:27:43 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=hardware_fir_zero
+# End time: 15:27:44 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_zero_coefficients/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_zero_coefficients/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_zero_coefficients/input.hex -gMAC_LANES=2 
+# Start time: 15:27:44 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 4366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=hardware_fir_zero_coefficients
+# End time: 15:27:44 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/zero/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/zero/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/zero/input.hex -gMAC_LANES=2 
+# Start time: 15:27:44 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 28166 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=zero
+# End time: 15:27:44 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/impulse/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/impulse/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/impulse/input.hex -gMAC_LANES=2 
+# Start time: 15:27:44 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 28166 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=impulse
+# End time: 15:27:44 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/step/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/step/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/step/input.hex -gMAC_LANES=2 
+# Start time: 15:27:44 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 28166 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=step
+# End time: 15:27:45 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/positive_ties/expected.hex -gSAMPLE_COUNT=4 -gCOEFF_FILE=mmio/positive_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/positive_ties/input.hex -gMAC_LANES=2 
+# Start time: 15:27:45 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=4 jobs=2
+#    Time: 2686 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=positive_ties
+# End time: 15:27:45 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/negative_ties/expected.hex -gSAMPLE_COUNT=4 -gCOEFF_FILE=mmio/negative_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/negative_ties/input.hex -gMAC_LANES=2 
+# Start time: 15:27:45 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=4 jobs=2
+#    Time: 2686 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=negative_ties
+# End time: 15:27:45 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/positive_saturation/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/positive_saturation/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/positive_saturation/input.hex -gMAC_LANES=2 
+# Start time: 15:27:45 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 28166 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=positive_saturation
+# End time: 15:27:46 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/negative_saturation/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/negative_saturation/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/negative_saturation/input.hex -gMAC_LANES=2 
+# Start time: 15:27:46 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 28166 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=negative_saturation
+# End time: 15:27:46 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/accumulator_extreme/expected.hex -gSAMPLE_COUNT=32 -gCOEFF_FILE=mmio/accumulator_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/accumulator_extreme/input.hex -gMAC_LANES=2 
+# Start time: 15:27:46 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=32 jobs=2
+#    Time: 14566 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=accumulator_extreme
+# End time: 15:27:46 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/alternating_extrema/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/alternating_extrema/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/alternating_extrema/input.hex -gMAC_LANES=2 
+# Start time: 15:27:46 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 28166 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=alternating_extrema
+# End time: 15:27:47 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/short_block/expected.hex -gSAMPLE_COUNT=7 -gCOEFF_FILE=mmio/short_block/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/short_block/input.hex -gMAC_LANES=2 
+# Start time: 15:27:47 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=7 jobs=2
+#    Time: 3946 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=short_block
+# End time: 15:27:47 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/random_256/expected.hex -gSAMPLE_COUNT=128 -gCOEFF_FILE=mmio/random_256/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/random_256/input.hex -gMAC_LANES=2 
+# Start time: 15:27:47 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=128 jobs=2
+#    Time: 55366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=random_256
+# End time: 15:27:47 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/random_1024/expected.hex -gSAMPLE_COUNT=128 -gCOEFF_FILE=mmio/random_1024/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/random_1024/input.hex -gMAC_LANES=2 
+# Start time: 15:27:47 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=128 jobs=2
+#    Time: 55366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=random_1024
+# End time: 15:27:48 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/protocol/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/protocol/coefficients.hex -gCHECK_PROTOCOL=true -gINPUT_FILE=mmio/protocol/input.hex -gMAC_LANES=2 
+# Start time: 15:27:48 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PROTOCOL_PASS
+#    Time: 12366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 12366 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=2 name=protocol
+# End time: 15:27:48 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir/input.hex -gMAC_LANES=4 
+# Start time: 15:27:48 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=hardware_fir
+# End time: 15:27:48 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_impulse/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_impulse/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_impulse/input.hex -gMAC_LANES=4 
+# Start time: 15:27:48 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=hardware_fir_impulse
+# End time: 15:27:49 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_ties/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_ties/input.hex -gMAC_LANES=4 
+# Start time: 15:27:49 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=hardware_fir_ties
+# End time: 15:27:49 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_positive_extreme/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_positive_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_positive_extreme/input.hex -gMAC_LANES=4 
+# Start time: 15:27:49 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=hardware_fir_positive_extreme
+# End time: 15:27:49 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_negative_extreme/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_negative_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_negative_extreme/input.hex -gMAC_LANES=4 
+# Start time: 15:27:49 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=hardware_fir_negative_extreme
+# End time: 15:27:50 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_zero/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_zero/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_zero/input.hex -gMAC_LANES=4 
+# Start time: 15:27:50 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=hardware_fir_zero
+# End time: 15:27:50 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/hardware_fir_zero_coefficients/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/hardware_fir_zero_coefficients/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/hardware_fir_zero_coefficients/input.hex -gMAC_LANES=4 
+# Start time: 15:27:50 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 3126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=hardware_fir_zero_coefficients
+# End time: 15:27:50 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/zero/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/zero/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/zero/input.hex -gMAC_LANES=4 
+# Start time: 15:27:50 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 18046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=zero
+# End time: 15:27:51 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/impulse/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/impulse/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/impulse/input.hex -gMAC_LANES=4 
+# Start time: 15:27:51 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 18046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=impulse
+# End time: 15:27:51 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/step/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/step/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/step/input.hex -gMAC_LANES=4 
+# Start time: 15:27:51 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 18046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=step
+# End time: 15:27:51 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/positive_ties/expected.hex -gSAMPLE_COUNT=4 -gCOEFF_FILE=mmio/positive_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/positive_ties/input.hex -gMAC_LANES=4 
+# Start time: 15:27:51 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=4 jobs=2
+#    Time: 2046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=positive_ties
+# End time: 15:27:52 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/negative_ties/expected.hex -gSAMPLE_COUNT=4 -gCOEFF_FILE=mmio/negative_ties/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/negative_ties/input.hex -gMAC_LANES=4 
+# Start time: 15:27:52 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=4 jobs=2
+#    Time: 2046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=negative_ties
+# End time: 15:27:52 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/positive_saturation/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/positive_saturation/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/positive_saturation/input.hex -gMAC_LANES=4 
+# Start time: 15:27:52 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 18046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=positive_saturation
+# End time: 15:27:52 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/negative_saturation/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/negative_saturation/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/negative_saturation/input.hex -gMAC_LANES=4 
+# Start time: 15:27:52 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 18046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=negative_saturation
+# End time: 15:27:53 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/accumulator_extreme/expected.hex -gSAMPLE_COUNT=32 -gCOEFF_FILE=mmio/accumulator_extreme/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/accumulator_extreme/input.hex -gMAC_LANES=4 
+# Start time: 15:27:53 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=32 jobs=2
+#    Time: 9526 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=accumulator_extreme
+# End time: 15:27:53 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/alternating_extrema/expected.hex -gSAMPLE_COUNT=64 -gCOEFF_FILE=mmio/alternating_extrema/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/alternating_extrema/input.hex -gMAC_LANES=4 
+# Start time: 15:27:53 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=64 jobs=2
+#    Time: 18046 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=alternating_extrema
+# End time: 15:27:53 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/short_block/expected.hex -gSAMPLE_COUNT=7 -gCOEFF_FILE=mmio/short_block/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/short_block/input.hex -gMAC_LANES=4 
+# Start time: 15:27:53 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=7 jobs=2
+#    Time: 2846 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=short_block
+# End time: 15:27:54 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/random_256/expected.hex -gSAMPLE_COUNT=128 -gCOEFF_FILE=mmio/random_256/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/random_256/input.hex -gMAC_LANES=4 
+# Start time: 15:27:54 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=128 jobs=2
+#    Time: 35126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=random_256
+# End time: 15:27:54 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/random_1024/expected.hex -gSAMPLE_COUNT=128 -gCOEFF_FILE=mmio/random_1024/coefficients.hex -gCHECK_PROTOCOL=false -gINPUT_FILE=mmio/random_1024/input.hex -gMAC_LANES=4 
+# Start time: 15:27:54 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PASS samples=128 jobs=2
+#    Time: 35126 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=random_1024
+# End time: 15:27:54 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.tb_fir_mmio -gOUTPUT_FILE=mmio/protocol/expected.hex -gSAMPLE_COUNT=8 -gCOEFF_FILE=mmio/protocol/coefficients.hex -gCHECK_PROTOCOL=true -gINPUT_FILE=mmio/protocol/input.hex -gMAC_LANES=4 
+# Start time: 15:27:54 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_mmio(test)
+# Loading work.fir_mmio(rtl)
+# Loading work.fir_serial(rtl)
+# ** Note: FIR_MMIO_PROTOCOL_PASS
+#    Time: 10776 ns  Iteration: 0  Instance: /tb_fir_mmio
+# ** Note: FIR_MMIO_PASS samples=8 jobs=2
+#    Time: 10776 ns  Iteration: 0  Instance: /tb_fir_mmio
+# PARALLEL_MMIO_CASE_PASS lanes=4 name=protocol
+# PARALLEL_MMIO_SUITE_PASS
+# End time: 15:27:55 on Oct 29,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

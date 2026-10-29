@@ -3,6 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity fir_serial is
+    generic (MAC_LANES : positive := 1);
     port (
         clk, rst : in std_logic;
         clear_valid : in std_logic;
@@ -25,6 +26,7 @@ end entity;
 architecture rtl of fir_serial is
     type state_type is (IDLE, MAC, HOLD_OUTPUT);
     type sample_bank is array(0 to 31) of signed(15 downto 0);
+    type partial_bank is array(0 to 3) of signed(39 downto 0);
     signal state : state_type;
     signal coefficients, history : sample_bank;
     signal tap_index : natural range 0 to 31;
@@ -46,6 +48,8 @@ architecture rtl of fir_serial is
         else return resize(rounded,16); end if;
     end function;
 begin
+    assert MAC_LANES = 1 or MAC_LANES = 2 or MAC_LANES = 4
+        report "FIR_MAC_LANES_MUST_BE_1_2_OR_4" severity failure;
     clear_ready <= '1' when state = IDLE and rst = '0' else '0';
     cfg_ready <= '1' when state = IDLE and rst = '0' and clear_valid = '0' else '0';
     s_ready <= '1' when state = IDLE and rst = '0' and clear_valid = '0'
@@ -57,6 +61,7 @@ begin
 
     engine : process(clk)
         variable product : signed(31 downto 0);
+        variable partials : partial_bank;
         variable total : signed(39 downto 0);
     begin
         if rising_edge(clk) then
@@ -82,14 +87,19 @@ begin
                             state <= MAC;
                         end if;
                     when MAC =>
-                        product := history(tap_index) * coefficients(tap_index);
-                        total := accumulator + resize(product,40);
+                        partials := (others => (others => '0'));
+                        for lane in 0 to MAC_LANES-1 loop
+                            product := history(tap_index+lane) * coefficients(tap_index+lane);
+                            partials(lane) := resize(product,40);
+                        end loop;
+                        -- Extend every signed product before the balanced reduction.
+                        total := accumulator + ((partials(0)+partials(1)) + (partials(2)+partials(3)));
                         accumulator <= total;
-                        if tap_index = 31 then
+                        if tap_index = 32-MAC_LANES then
                             output_acc <= total;
                             output_data <= quantize(total);
                             state <= HOLD_OUTPUT;
-                        else tap_index <= tap_index + 1; end if;
+                        else tap_index <= tap_index + MAC_LANES; end if;
                     when HOLD_OUTPUT =>
                         if m_ready = '1' then state <= IDLE; end if;
                 end case;

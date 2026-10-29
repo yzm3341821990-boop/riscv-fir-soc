@@ -1,0 +1,10 @@
+{
+  "system_report_sha256": "b73873e231bd2d762f7c2bfc01adea02544fc00400d9a1a8a6c01ecda9e7f88d",
+  "plot_source_sha256": "5ba24a1fcba06f030160496e215744d6cdff0dc9f00487a86b0cce981ca675eb",
+  "matplotlib": "3.11.2",
+  "files": {
+    "large-block-complete-call.png": "f8922f258e33eb01ecd9768b3bfcd29366a86be73752e82b5fe2befa93058902",
+    "large-block-complete-call.svg": "ca750944d918e39530ec8810e30f3ac6a44fb3e0fd1d296508cf9c0603828443",
+    "large-block-complete-call.pdf": "b7e43af3e0e115b8b7843663db04c5ec27172191119f882b7ba350d19bcbb3f2"
+  }
+}

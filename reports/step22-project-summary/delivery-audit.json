@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "scope": "Local source/docs/data review package; user general board acceptance recorded; no newer GitHub publication",
+  "python_tests": 250,
+  "python_source_files_checked": 90,
+  "unchanged_compiled_inputs_checked": 24,
+  "preserved_sof_images": 6,
+  "source_code_changes_this_step": [
+    "tools/build_project_summary.py"
+  ],
+  "functional_hdl_changed": false,
+  "quartus_run_by_agent": false,
+  "programming_by_agent": false,
+  "local_document_links_checked": 436,
+  "plot_files_checked": 4,
+  "numeric_board_fields_left_blank": true,
+  "first_version_archive_sha256": "1354477e3744048d6aa161678c81bf01ad23f0ea94136e602dcfb5b3c9a32478",
+  "code_document_firmware_delta": {
+    "modified": 14,
+    "added": 135
+  },
+  "comparison_input_sha256": {
+    "reports/step21-board-benchmark/validation.json": "074c09727889b049e7db5087aa4a31391371d77737270493b21c16ea69e1680f",
+    "reports/step20-large-block/comparison.json": "d33eb16fee1cbc2f343edbc740854d3695c6f2375ebb143124d5e50246161e50",
+    "reports/step19-parallel-fir/validation.json": "60718319d3d08903a210015315d7b8bfb1c146ed47017fdc53a508e03ec9e962",
+    "reports/step19-parallel-fir/implementation-comparison.json": "ac07fb1216f9df91a1d8fb3d7c1400de59c398a6bd29b5f007a76c799819f9e9",
+    "reports/step21-board-benchmark/quartus-validation.json": "168dac282e999902c1500ab3a5f7f9e69067ce8703d69d12acb799500832905a",
+    "reports/step21-board-benchmark/board-observation.json": "f96da5e74187f2b6bcc755240c664e0774da887ead466773ea6f3cd569475184"
+  },
+  "python_report_sha256": "ec22b9b97d8b5592a7959a1a41b1b0e1287c9cf4544118e48beffa2728624f5d",
+  "plot_provenance_sha256": "b8f0e06faae2b25ccf3ab8e668c77fa9f35e59043a09bc0c3a2fb9ea38bce0bf",
+  "reviewed_sof_sha256": "fbff1eba713bb10db223ce81766b1e236fc4dcede977f0b84009c25a4ec6bbf3",
+  "github": "not_uploaded",
+  "license": "not_selected"
+}

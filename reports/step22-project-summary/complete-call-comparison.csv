@@ -1,0 +1,4 @@
+sample_count,software_cycles,cold_cycles,resident_cycles,cold_speedup,resident_speedup,cold_speedup_fraction,resident_speedup_fraction,software_time_us,cold_time_us,resident_time_us,coefficient_call_difference_cycles,observed_software_cycles,observed_cold_cycles,observed_resident_cycles
+64,24045,1126,867,21.354351687388988,27.73356401384083,24045/1126,8015/289,961.8,45.04,34.68,259,,,
+256,116856,3622,3363,32.26283821093319,34.74754683318466,58428/1811,38952/1121,4674.24,144.88,134.52,259,,,
+1024,489233,13608,13349,35.95186654908877,36.64941194096936,489233/13608,489233/13349,19569.32,544.32,533.96,259,,,

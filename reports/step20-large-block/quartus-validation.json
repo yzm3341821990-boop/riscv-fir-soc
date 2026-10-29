@@ -1,0 +1,456 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T10:09:27.403744+00:00",
+  "compilation_performed_by": "user",
+  "quartus_invoked_by_agent": false,
+  "project": "riscv_fir_de2_large",
+  "top": "de2_115_large_top",
+  "lanes": 4,
+  "device": "EP4CE115F29C7",
+  "quartus_version": "17.0.0 Build 595 SJ Lite Edition",
+  "compile_success": true,
+  "timing_pass": true,
+  "core_clock_mhz": 25,
+  "stages": {
+    "map": {
+      "Analysis & Synthesis Status": "Successful - Thu Oct 29 18:00:07 2026",
+      "Quartus Prime Version": "17.0.0 Build 595 04/25/2017 SJ Lite Edition",
+      "Revision Name": "riscv_fir_de2_large",
+      "Top-level Entity Name": "de2_115_large_top",
+      "Family": "Cyclone IV E",
+      "Total logic elements": "8,866",
+      "Total combinational functions": "6,574",
+      "Dedicated logic registers": "3,718",
+      "Total registers": "3718",
+      "Total pins": "66",
+      "Total virtual pins": "0",
+      "Total memory bits": "393,216",
+      "Embedded Multiplier 9-bit elements": "14",
+      "Total PLLs": "0"
+    },
+    "fit": {
+      "Fitter Status": "Successful - Thu Oct 29 18:00:39 2026",
+      "Quartus Prime Version": "17.0.0 Build 595 04/25/2017 SJ Lite Edition",
+      "Revision Name": "riscv_fir_de2_large",
+      "Top-level Entity Name": "de2_115_large_top",
+      "Family": "Cyclone IV E",
+      "Device": "EP4CE115F29C7",
+      "Timing Models": "Final",
+      "Total logic elements": "7,464 / 114,480 ( 7 % )",
+      "Total combinational functions": "6,575 / 114,480 ( 6 % )",
+      "Dedicated logic registers": "3,718 / 114,480 ( 3 % )",
+      "Total registers": "3718",
+      "Total pins": "66 / 529 ( 12 % )",
+      "Total virtual pins": "0",
+      "Total memory bits": "393,216 / 3,981,312 ( 10 % )",
+      "Embedded Multiplier 9-bit elements": "14 / 532 ( 3 % )",
+      "Total PLLs": "0 / 4 ( 0 % )"
+    },
+    "asm": {
+      "Assembler Status": "Successful - Thu Oct 29 18:00:44 2026",
+      "Revision Name": "riscv_fir_de2_large",
+      "Top-level Entity Name": "de2_115_large_top",
+      "Family": "Cyclone IV E",
+      "Device": "EP4CE115F29C7",
+      "Option": "Setting",
+      "JTAG usercode": "0x00A8BA2F",
+      "Checksum": "0x00A8BA2F"
+    }
+  },
+  "resources": {
+    "logic_elements": 7464,
+    "registers": 3718,
+    "pins": 66,
+    "memory_bits": 393216,
+    "multiplier_9bit_elements": 14,
+    "m9k_blocks": 48,
+    "data_ram_m9k_blocks": 32,
+    "seed_rom_m9k_blocks": 16
+  },
+  "fitted_fir_multiply_channels": 4,
+  "worst_setup_slack_ns": 9.726,
+  "worst_hold_slack_ns": 0.152,
+  "timing_entries": [
+    {
+      "type": "Slow 1200mV 85C Model Setup 'CORE_25'",
+      "slack_ns": 9.726
+    },
+    {
+      "type": "Slow 1200mV 85C Model Setup 'CLOCK_50'",
+      "slack_ns": 19.2
+    },
+    {
+      "type": "Slow 1200mV 85C Model Hold 'CORE_25'",
+      "slack_ns": 0.364
+    },
+    {
+      "type": "Slow 1200mV 85C Model Hold 'CLOCK_50'",
+      "slack_ns": 0.435
+    },
+    {
+      "type": "Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'",
+      "slack_ns": 9.645
+    },
+    {
+      "type": "Slow 1200mV 85C Model Minimum Pulse Width 'CORE_25'",
+      "slack_ns": 19.671
+    },
+    {
+      "type": "Slow 1200mV 0C Model Setup 'CORE_25'",
+      "slack_ns": 12.175
+    },
+    {
+      "type": "Slow 1200mV 0C Model Setup 'CLOCK_50'",
+      "slack_ns": 19.287
+    },
+    {
+      "type": "Slow 1200mV 0C Model Hold 'CORE_25'",
+      "slack_ns": 0.353
+    },
+    {
+      "type": "Slow 1200mV 0C Model Hold 'CLOCK_50'",
+      "slack_ns": 0.388
+    },
+    {
+      "type": "Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'",
+      "slack_ns": 9.636
+    },
+    {
+      "type": "Slow 1200mV 0C Model Minimum Pulse Width 'CORE_25'",
+      "slack_ns": 19.688
+    },
+    {
+      "type": "Fast 1200mV 0C Model Setup 'CLOCK_50'",
+      "slack_ns": 19.616
+    },
+    {
+      "type": "Fast 1200mV 0C Model Setup 'CORE_25'",
+      "slack_ns": 25.006
+    },
+    {
+      "type": "Fast 1200mV 0C Model Hold 'CORE_25'",
+      "slack_ns": 0.152
+    },
+    {
+      "type": "Fast 1200mV 0C Model Hold 'CLOCK_50'",
+      "slack_ns": 0.198
+    },
+    {
+      "type": "Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'",
+      "slack_ns": 9.285
+    },
+    {
+      "type": "Fast 1200mV 0C Model Minimum Pulse Width 'CORE_25'",
+      "slack_ns": 19.708
+    }
+  ],
+  "unconstrained_summary": {
+    "Illegal Clocks": [
+      0,
+      0
+    ],
+    "Unconstrained Clocks": [
+      0,
+      0
+    ],
+    "Unconstrained Input Ports": [
+      0,
+      0
+    ],
+    "Unconstrained Input Port Paths": [
+      0,
+      0
+    ],
+    "Unconstrained Output Ports": [
+      0,
+      0
+    ],
+    "Unconstrained Output Port Paths": [
+      0,
+      0
+    ]
+  },
+  "pins_checked": 66,
+  "warnings": [
+    {
+      "report": "riscv_fir_de2_large.fit.rpt",
+      "level": "Warning",
+      "code": 292013,
+      "message": "Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature."
+    },
+    {
+      "report": "riscv_fir_de2_large.fit.rpt",
+      "level": "Warning",
+      "code": 15714,
+      "message": "Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details"
+    },
+    {
+      "report": "riscv_fir_de2_large.fit.rpt",
+      "level": "Warning",
+      "code": 169177,
+      "message": "1 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing Cyclone IV E Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems."
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(46): object \"id_rd\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 46"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object \"id_legal\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 48"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object \"id_ui\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 48"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object \"id_load\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 48"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object \"id_store\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 48"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object \"id_branch\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 48"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object \"id_jump\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 48"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object \"id_jr\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 48"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(49): object \"id_upper\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 49"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(49): object \"id_upc\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 49"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(49): object \"id_mul\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 49"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(50): object \"id_op\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/pipeline_large_cpu.vhd Line: 50"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10325,
+      "message": "VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value \"'U'\" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10325,
+      "message": "VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value \"'X'\" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10325,
+      "message": "VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value \"'Z'\" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10325,
+      "message": "VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value \"'W'\" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10325,
+      "message": "VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value \"'-'\" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at fir_mmio_large.vhd(27): object \"core_acc\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/fir_mmio_large.vhd Line: 27"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at fir_mmio_large.vhd(28): object \"cfg_ready\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/fir_mmio_large.vhd Line: 28"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 10036,
+      "message": "Verilog HDL or VHDL warning at fir_mmio_large.vhd(28): object \"core_busy\" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/fir_mmio_large.vhd Line: 28"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 14284,
+      "message": "Synthesized away the following node(s):"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 14285,
+      "message": "Synthesized away the following DSP element node(s):"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 14320,
+      "message": "Synthesized away node \"pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0|mult_7dt:auto_generated|mac_mult7\" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/db/mult_7dt.tdf Line: 67"
+    },
+    {
+      "report": "riscv_fir_de2_large.map.rpt",
+      "level": "Warning",
+      "code": 14320,
+      "message": "Synthesized away node \"pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out8\" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_large/db/mult_7dt.tdf Line: 91"
+    }
+  ],
+  "warning_count": 27,
+  "critical_warning_count": 0,
+  "warning_review": "27 ordinary diagnostics retained: unused debug/decode signals; IEEE meta-value synthesis choices; unused high CPU DSP product pieces; LogicLock subscription advisory; human output default drive/slew; CLOCK_50 interface advisory. No STA diagnostics; all fitted pin locations/IO standards match reference.",
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/pipeline_large_cpu.vhd": "9ea35264d5f94b80f9184a860bcedbbb3cbb53152c2d6252c1bcd2bb57f6ac3c",
+    "rtl/fir/fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "rtl/fir/fir_mmio_large.vhd": "7759142b908eb41deeeabd6e7f8a95b70e8f1f9f0ab7a34657d84062503acd48",
+    "rtl/soc/shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "rtl/soc/pipeline_large_soc.vhd": "67a412c8d19e7cd4d54fef2c52a154d6b53eeddee3c1eceedc442344e1c83780",
+    "rtl/board/hex7seg.vhd": "d7840a36cff1fd17b7a24d42f11a043dd6f4ca71f6cbfc443dd7e1790611cc07",
+    "rtl/board/de2_115_large_top.vhd": "270e8157ceb61baad1a3fe5e4f148399b29763ee8fb201fddd752ed8d0b25ed0",
+    "sim/tb/tb_de2_large.vhd": "5b5859b458f2fee4aff9e21330e1cca9f309baeb31015c95f6f646f91f5952d5",
+    "tools/prepare_de2_large.py": "cdf22384653f2a58ea14c7939e13be333c0910e97850fc0d3e4fff88523331e3",
+    "docs/large-block-contract.md": "ab3aafa9122a9d7af78b1dc4277e7d411e2f95e5d5249d98b395d2b3305b43c4",
+    "fpga/de2_display/display.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "fpga/de2_display/pins.json": "403a7f7e82f826a583d90562a9ba3315eaca684b85a243ca0b05025cbebe5a3a"
+  },
+  "staged_files_checked": 27,
+  "canonical_qsf_matches": true,
+  "reports_sha256": {
+    "quartus/riscv_fir_de2_large.asm.rpt": "264e76c73838ab082bc6cb849b64babc71f04297a7738d17bd7894798e69e776",
+    "quartus/riscv_fir_de2_large.fit.rpt": "87463f5980cab5121d1e5321e1848fc058157c6d76759b1df9da16ab50f39926",
+    "quartus/riscv_fir_de2_large.fit.summary": "7d1aedcd32954999fdd8abce0b8e2d2ed7aa7777932c5561f5d0bdce02e811bb",
+    "quartus/riscv_fir_de2_large.flow.rpt": "d7154a17196b2fae3a4071d59e86ffaf38c11017ab04eecda115a42281cb4f38",
+    "quartus/riscv_fir_de2_large.map.rpt": "e18c3f6b41901654eeefc1605b221ed697aa391d3a090419955be9e2d373a972",
+    "quartus/riscv_fir_de2_large.map.summary": "e36d15f0be33d70a4fe570c1869d0a2a73a68af73a6b224a1da24adc9c9bf63a",
+    "quartus/riscv_fir_de2_large.pin": "9465225dc17a0c8989d9c1d274a40045158e8b8c323ec7021dbc65675a804cde",
+    "quartus/riscv_fir_de2_large.sta.rpt": "904df0fe4af487753d94908c4f98bf6985d6a5278e8c96de1e2c391a37a9dc4c",
+    "quartus/riscv_fir_de2_large.sta.summary": "89df1a06f42f1ab023c71f2c63a0c3ffa03cff57d71f56a4b8e9caba52b308f1",
+    "quartus/riscv_fir_de2_large.qsf": "576fe8bab43431f92197676e9effcae1245cbc8fe802afd42e20cfbb6201d69d",
+    "quartus/riscv_fir_de2_large.qpf": "046108f3f84523d8fefbc4598883f03d9e69c2df1332a85cf5a7d98b39c82e2f",
+    "quartus/large.sdc": "02e6afb744dfa9430dbd05bb495c3402ad3d91428d94823a98c90692ac29cae0",
+    "quartus/project-manifest.json": "104b48772535ba0e7f9a60a7b30e686deffe5707741a9a0b5a112e5318827849",
+    "quartus/large-qsf-before-build.txt": "b8d17486c948872c31e94442c9abf29c23197ccb5b3b90a4c96915489fe7508d"
+  },
+  "sof_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2_115_large\\output_files\\riscv_fir_de2_large.sof",
+  "sof_sha256": "1dcf5141800c418da3a6b9a4881fe586b0ef18d8c9483e9cdee6cdabe053d5b4",
+  "expected_selftest_cycles": 24917,
+  "hardware_programming": "not performed by agent",
+  "physical_observation": "not_received_for_step20",
+  "revision": "step20-r1-component-binding",
+  "sample_count": 1024,
+  "ram_summary": [
+    {
+      "Name": "altsyncram:Mux15_rtl_0|altsyncram_1m11:auto_generated|ALTSYNCRAM",
+      "Type": "AUTO",
+      "Mode": "ROM",
+      "Clock Mode": "Single Clock",
+      "Port A Depth": "8192",
+      "Port A Width": "16",
+      "Port B Depth": "--",
+      "Port B Width": "--",
+      "Port A Input Registers": "yes",
+      "Port A Output Registers": "no",
+      "Port B Input Registers": "--",
+      "Port B Output Registers": "--",
+      "Size": "131072",
+      "Implementation Port A Depth": "8192",
+      "Implementation Port A Width": "16",
+      "Implementation Port B Depth": "--",
+      "Implementation Port B Width": "--",
+      "Implementation Bits": "131072",
+      "M9Ks": "16",
+      "MIF": "riscv_fir_de2_large.de2_115_large_top0.rtl.mif",
+      "Location": "M9K_X37_Y36_N0, M9K_X64_Y39_N0, M9K_X64_Y36_N0, M9K_X51_Y39_N0, M9K_X51_Y42_N0, M9K_X37_Y38_N0, M9K_X37_Y40_N0, M9K_X37_Y41_N0, M9K_X37_Y37_N0, M9K_X51_Y37_N0, M9K_X64_Y37_N0, M9K_X51_Y38_N0, M9K_X51_Y36_N0, M9K_X37_Y39_N0, M9K_X51_Y41_N0, M9K_X51_Y40_N0",
+      "Mixed Width RDW Mode": "Don't care",
+      "Port A RDW Mode": "New data with NBE Read",
+      "Port B RDW Mode": "New data with NBE Read",
+      "ECC Mode": "Off",
+      "ECC Pipeline Registers": "No",
+      "Fits in MLABs": "No - Unknown"
+    },
+    {
+      "Name": "pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory|altsyncram_tvs3:auto_generated|ALTSYNCRAM",
+      "Type": "M9K",
+      "Mode": "True Dual Port",
+      "Clock Mode": "Single Clock",
+      "Port A Depth": "8192",
+      "Port A Width": "32",
+      "Port B Depth": "8192",
+      "Port B Width": "32",
+      "Port A Input Registers": "yes",
+      "Port A Output Registers": "no",
+      "Port B Input Registers": "yes",
+      "Port B Output Registers": "no",
+      "Size": "262144",
+      "Implementation Port A Depth": "8192",
+      "Implementation Port A Width": "32",
+      "Implementation Port B Depth": "8192",
+      "Implementation Port B Width": "32",
+      "Implementation Bits": "262144",
+      "M9Ks": "32",
+      "MIF": "None",
+      "Location": "M9K_X51_Y28_N0, M9K_X64_Y29_N0, M9K_X37_Y24_N0, M9K_X64_Y28_N0, M9K_X64_Y30_N0, M9K_X64_Y33_N0, M9K_X64_Y27_N0, M9K_X64_Y34_N0, M9K_X51_Y30_N0, M9K_X64_Y32_N0, M9K_X51_Y34_N0, M9K_X51_Y32_N0, M9K_X64_Y31_N0, M9K_X51_Y24_N0, M9K_X51_Y25_N0, M9K_X51_Y29_N0, M9K_X51_Y26_N0, M9K_X51_Y23_N0, M9K_X37_Y30_N0, M9K_X51_Y33_N0, M9K_X64_Y35_N0, M9K_X51_Y35_N0, M9K_X37_Y29_N0, M9K_X37_Y33_N0, M9K_X37_Y35_N0, M9K_X51_Y27_N0, M9K_X37_Y32_N0, M9K_X37_Y34_N0, M9K_X37_Y26_N0, M9K_X37_Y31_N0, M9K_X37_Y28_N0, M9K_X51_Y31_N0",
+      "Mixed Width RDW Mode": "Old data",
+      "Port A RDW Mode": "New data with NBE Read",
+      "Port B RDW Mode": "New data with NBE Read",
+      "ECC Mode": "Off",
+      "ECC Pipeline Registers": "No",
+      "Fits in MLABs": "No - Unknown"
+    }
+  ],
+  "constraints_scope": "CLOCK_50 base 50 MHz; core_clock divide-by-2 25 MHz. Only asynchronous KEY0/SW to first synchronizers and human LED/HEX outputs excluded.",
+  "prepared_manifest_sha256": "104b48772535ba0e7f9a60a7b30e686deffe5707741a9a0b5a112e5318827849",
+  "qsf_sha256": "576fe8bab43431f92197676e9effcae1245cbc8fe802afd42e20cfbb6201d69d",
+  "qsf_review": "Only the six known GUI defaults differ from the frozen canonical QSF; their ordering changed on save",
+  "verified_sof_path": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\step20-r1-verified\\riscv_fir_de2_large.sof"
+}

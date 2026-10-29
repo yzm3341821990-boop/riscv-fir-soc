@@ -1,0 +1,29 @@
+{
+  "status": "board_user_accepted",
+  "updated_at_utc": "2026-10-29T10:11:58.976222+00:00",
+  "step19": "matched p1/p2/p4 implementation sweep complete; old bitstreams retained",
+  "step20": {
+    "functional_simulation": "pass",
+    "python_tests": 242,
+    "c_runs": 45,
+    "isa_commits_checked": 2080791,
+    "ram_words_per_case": 8192,
+    "rtl_faults_killed": 13,
+    "tail_output_corruption_detected": true,
+    "project": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2_115_large\\riscv_fir_de2_large.qpf",
+    "expected_board_program_cycles": 24917,
+    "expected_hex": "00006155"
+  },
+  "next_action": "Prepare step21 one-image, nine-profile board benchmark with accepted-marker interval counters",
+  "boundaries": {
+    "quartus": "user_compiled; agent_read_only_review_pass",
+    "board": "user_reported_expected_behavior; independent video/log absent",
+    "github": "newer_versions_not_uploaded",
+    "video": "not_received"
+  },
+  "user_quartus_first_attempt": "failed_10481",
+  "failure_archive": "reports/step20-large-block/quartus-first-failure-10481",
+  "repair": "Source and original prepared project updated; component-only analysis and all affected functional regressions passed",
+  "revision": "step20-r1-component-binding",
+  "quartus_review": "pass; 7464 LE, 3718 registers, 48 M9K (32 data +16 seed ROM), 25 MHz setup/hold +9.726/+0.152 ns"
+}

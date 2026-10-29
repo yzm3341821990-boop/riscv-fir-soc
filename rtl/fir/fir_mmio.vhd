@@ -2,6 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 entity fir_mmio is
+    generic(MAC_LANES : positive := 1);
     port(clk,rst,bus_req,bus_we : in std_logic;
          bus_be : in std_logic_vector(3 downto 0);
          bus_addr,bus_wdata : in std_logic_vector(31 downto 0);
@@ -30,7 +31,8 @@ architecture rtl of fir_mmio is
     procedure record_error(variable current : inout unsigned(31 downto 0); code : natural) is
     begin if current=0 then current:=to_unsigned(code,32); end if; end;
 begin
-    core : entity work.fir_serial port map(clk,rst,clear_valid,clear_ready,cfg_valid,cfg_ready,
+    core : entity work.fir_serial generic map(MAC_LANES=>MAC_LANES)
+        port map(clk,rst,clear_valid,clear_ready,cfg_valid,cfg_ready,
         cfg_addr,cfg_data,s_valid,s_ready,input_sample,m_valid,m_ready,core_output,core_acc,core_busy);
     status_word(31 downto 3)<=(others=>'0');
     status_word(0)<='0' when state=IDLE else '1';

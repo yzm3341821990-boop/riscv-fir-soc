@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T08:11:40.540352+00:00",
+  "matched_rtl_source_hashes": 25,
+  "compiled_configurations": [
+    2,
+    4
+  ],
+  "pending_configuration": 1,
+  "p2_source_and_archived_reports_verified": true,
+  "p2_sof_sha256": "5e26f8982e620655ab9bfcd116a625dc5d32df90f21aa892b9cae6f2fcf3ece1",
+  "p2_board_feedback": "not independently supplied; latest user completion treated as compilation",
+  "quartus_run_by_agent": false,
+  "hardware_programming_by_agent": false
+}

@@ -1,0 +1,52 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T07:37:21.140232+00:00",
+  "current_reports": [
+    "validation.json",
+    "serial-regression/validation.json",
+    "python/validation.json"
+  ],
+  "current_source_hashes_checked": 130,
+  "local_markdown_links_checked": 326,
+  "staged_generated_hashes_checked": 87,
+  "project_pin_assignments_each": 66,
+  "core_cases": 72,
+  "checked_stream_samples": 5565,
+  "mmio_cases": 60,
+  "system_cases": 27,
+  "matched_benchmark_runs": 126,
+  "current_negative_controls": 18,
+  "serial_negative_controls": 12,
+  "python_unit_tests": 225,
+  "board_completed_runs": 12,
+  "board_result_selections": 96,
+  "projects": [
+    {
+      "lanes": 1,
+      "project": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2_115_parallel\\p1\\riscv_fir_de2_p1.qpf",
+      "expected_cycles": 694,
+      "expected_display": "000002B6"
+    },
+    {
+      "lanes": 2,
+      "project": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2_115_parallel\\p2\\riscv_fir_de2_p2.qpf",
+      "expected_cycles": 562,
+      "expected_display": "00000232"
+    },
+    {
+      "lanes": 4,
+      "project": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2_115_parallel\\p4\\riscv_fir_de2_p4.qpf",
+      "expected_cycles": 502,
+      "expected_display": "000001F6"
+    }
+  ],
+  "project_package": "F:\\CodexWorkspace\\outputs\\riscv-fir-soc\\de2-115-parallel-step19.zip",
+  "project_package_sha256": "beb7c130294c1cdfc058b1d92f7e7cf7492c4768630ce84d16c0bbe2a174beca",
+  "baseline_step18_sof_preserved": true,
+  "baseline_step18_sof_sha256": "26014351c56578bf3e36895764db8cf9860d0fd6034e67876f1f5c6318cb6496",
+  "new_quartus_compilation": false,
+  "new_hardware_programming": false,
+  "new_physical_observation": false,
+  "remote_upload": false,
+  "limitation": "Cycle comparisons are functional simulation. New 1/2/4-lane candidates require separate implementation and user hardware observation."
+}

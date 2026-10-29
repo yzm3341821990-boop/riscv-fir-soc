@@ -1,0 +1,10 @@
+{
+  "data_sha256": "feb3624d813596864d6dd4df9b6883bf63b3baaa3b1379d159c416c6866d5d35",
+  "matplotlib_version": "3.11.2",
+  "files": {
+    "complete-call-comparison.png": "4ef8786b818bc0ddedcc61e109a9df5441b0e0406f60a0c7c6bd534160ecdaee",
+    "complete-call-comparison.svg": "812b69bc51086e0dfdd9cabec3a2e9f38250fc55bcb498aece30fdc6062602a1",
+    "parallel-lanes-comparison.png": "b7cb3671d5cc9511e69e4c188b00c8cd84f0246c1e771914af310dcd508d150d",
+    "parallel-lanes-comparison.svg": "1159179b05d643c4ff90dcad351a7adb9d252527fe3ccaef7a4a927ddeed0738"
+  }
+}

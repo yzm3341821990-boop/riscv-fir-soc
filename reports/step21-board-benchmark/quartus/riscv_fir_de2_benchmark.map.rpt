@@ -1,0 +1,1475 @@
+Analysis & Synthesis report for riscv_fir_de2_benchmark
+Thu Oct 29 21:26:47 2026
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. State Machine - |de2_115_benchmark_top|boot_state
+ 11. State Machine - |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|state
+ 12. State Machine - |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|state
+ 13. State Machine - |de2_115_benchmark_top|call_cycle_timer:timer|state
+ 14. Registers Protected by Synthesis
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Source assignments for Top-level Entity: |de2_115_benchmark_top
+ 21. Source assignments for pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory|altsyncram_tvs3:auto_generated
+ 22. Parameter Settings for User Entity Instance: Top-level Entity: |de2_115_benchmark_top
+ 23. Parameter Settings for User Entity Instance: call_cycle_timer:timer
+ 24. Parameter Settings for User Entity Instance: pipeline_large_soc:soc
+ 25. Parameter Settings for User Entity Instance: pipeline_large_soc:soc|pipeline_large_cpu:processor
+ 26. Parameter Settings for User Entity Instance: pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory
+ 27. Parameter Settings for User Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator
+ 28. Parameter Settings for User Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core
+ 29. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 30. Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0
+ 31. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 32. Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult3
+ 33. Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult2
+ 34. Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult1
+ 35. Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult0
+ 36. altsyncram Parameter Settings by Entity Instance
+ 37. lpm_mult Parameter Settings by Entity Instance
+ 38. Port Connectivity Checks: "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core"
+ 39. Port Connectivity Checks: "pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:id_decode"
+ 40. Port Connectivity Checks: "pipeline_large_soc:soc"
+ 41. Post-Synthesis Netlist Statistics for Top Partition
+ 42. Elapsed Time Per Partition
+ 43. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 29 21:26:47 2026       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; riscv_fir_de2_benchmark                     ;
+; Top-level Entity Name              ; de2_115_benchmark_top                       ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 15,787                                      ;
+;     Total combinational functions  ; 13,479                                      ;
+;     Dedicated logic registers      ; 3,778                                       ;
+; Total registers                    ; 3778                                        ;
+; Total pins                         ; 66                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 262,144                                     ;
+; Embedded Multiplier 9-bit elements ; 14                                          ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                ;
++----------------------------------------------------------------------------+-----------------------+-------------------------+
+; Option                                                                     ; Setting               ; Default Value           ;
++----------------------------------------------------------------------------+-----------------------+-------------------------+
+; Device                                                                     ; EP4CE115F29C7         ;                         ;
+; Top-level entity name                                                      ; de2_115_benchmark_top ; riscv_fir_de2_benchmark ;
+; Family name                                                                ; Cyclone IV E          ; Cyclone V               ;
+; Maximum processors allowed for parallel compilation                        ; 2                     ;                         ;
+; Use smart compilation                                                      ; Off                   ; Off                     ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                    ; On                      ;
+; Enable compact report table                                                ; Off                   ; Off                     ;
+; Restructure Multiplexers                                                   ; Auto                  ; Auto                    ;
+; Create Debugging Nodes for IP Cores                                        ; Off                   ; Off                     ;
+; Preserve fewer node names                                                  ; On                    ; On                      ;
+; OpenCore Plus hardware evaluation                                          ; Enable                ; Enable                  ;
+; Verilog Version                                                            ; Verilog_2001          ; Verilog_2001            ;
+; VHDL Version                                                               ; VHDL_1993             ; VHDL_1993               ;
+; State Machine Processing                                                   ; Auto                  ; Auto                    ;
+; Safe State Machine                                                         ; Off                   ; Off                     ;
+; Extract Verilog State Machines                                             ; On                    ; On                      ;
+; Extract VHDL State Machines                                                ; On                    ; On                      ;
+; Ignore Verilog initial constructs                                          ; Off                   ; Off                     ;
+; Iteration limit for constant Verilog loops                                 ; 5000                  ; 5000                    ;
+; Iteration limit for non-constant Verilog loops                             ; 250                   ; 250                     ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                    ; On                      ;
+; Infer RAMs from Raw Logic                                                  ; On                    ; On                      ;
+; Parallel Synthesis                                                         ; On                    ; On                      ;
+; DSP Block Balancing                                                        ; Auto                  ; Auto                    ;
+; NOT Gate Push-Back                                                         ; On                    ; On                      ;
+; Power-Up Don't Care                                                        ; On                    ; On                      ;
+; Remove Redundant Logic Cells                                               ; Off                   ; Off                     ;
+; Remove Duplicate Registers                                                 ; On                    ; On                      ;
+; Ignore CARRY Buffers                                                       ; Off                   ; Off                     ;
+; Ignore CASCADE Buffers                                                     ; Off                   ; Off                     ;
+; Ignore GLOBAL Buffers                                                      ; Off                   ; Off                     ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                   ; Off                     ;
+; Ignore LCELL Buffers                                                       ; Off                   ; Off                     ;
+; Ignore SOFT Buffers                                                        ; On                    ; On                      ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                   ; Off                     ;
+; Optimization Technique                                                     ; Balanced              ; Balanced                ;
+; Carry Chain Length                                                         ; 70                    ; 70                      ;
+; Auto Carry Chains                                                          ; On                    ; On                      ;
+; Auto Open-Drain Pins                                                       ; On                    ; On                      ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                   ; Off                     ;
+; Auto ROM Replacement                                                       ; On                    ; On                      ;
+; Auto RAM Replacement                                                       ; On                    ; On                      ;
+; Auto DSP Block Replacement                                                 ; On                    ; On                      ;
+; Auto Shift Register Replacement                                            ; Auto                  ; Auto                    ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                  ; Auto                    ;
+; Auto Clock Enable Replacement                                              ; On                    ; On                      ;
+; Strict RAM Replacement                                                     ; Off                   ; Off                     ;
+; Allow Synchronous Control Signals                                          ; On                    ; On                      ;
+; Force Use of Synchronous Clear Signals                                     ; Off                   ; Off                     ;
+; Auto RAM Block Balancing                                                   ; On                    ; On                      ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                   ; Off                     ;
+; Auto Resource Sharing                                                      ; Off                   ; Off                     ;
+; Allow Any RAM Size For Recognition                                         ; Off                   ; Off                     ;
+; Allow Any ROM Size For Recognition                                         ; Off                   ; Off                     ;
+; Allow Any Shift Register Size For Recognition                              ; Off                   ; Off                     ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                    ; On                      ;
+; Ignore translate_off and synthesis_off directives                          ; Off                   ; Off                     ;
+; Timing-Driven Synthesis                                                    ; On                    ; On                      ;
+; Report Parameter Settings                                                  ; On                    ; On                      ;
+; Report Source Assignments                                                  ; On                    ; On                      ;
+; Report Connectivity Checks                                                 ; On                    ; On                      ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                   ; Off                     ;
+; Synchronization Register Chain Length                                      ; 2                     ; 2                       ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation    ; Normal compilation      ;
+; HDL message level                                                          ; Level2                ; Level2                  ;
+; Suppress Register Optimization Related Messages                            ; Off                   ; Off                     ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                  ; 5000                    ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                  ; 5000                    ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                   ; 100                     ;
+; Clock MUX Protection                                                       ; On                    ; On                      ;
+; Auto Gated Clock Conversion                                                ; Off                   ; Off                     ;
+; Block Design Naming                                                        ; Auto                  ; Auto                    ;
+; SDC constraint protection                                                  ; Off                   ; Off                     ;
+; Synthesis Effort                                                           ; Auto                  ; Auto                    ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                    ; On                      ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                   ; Off                     ;
+; Analysis & Synthesis Message Level                                         ; Medium                ; Medium                  ;
+; Disable Register Merging Across Hierarchies                                ; Auto                  ; Auto                    ;
+; Resource Aware Inference For Block RAM                                     ; On                    ; On                      ;
++----------------------------------------------------------------------------+-----------------------+-------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 32          ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; benchmark_images_pkg.vhd         ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/benchmark_images_pkg.vhd   ;         ;
+; alu_pkg.vhd                      ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/alu_pkg.vhd                ;         ;
+; alu32.vhd                        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/alu32.vhd                  ;         ;
+; regfile32.vhd                    ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/regfile32.vhd              ;         ;
+; mul32.vhd                        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/mul32.vhd                  ;         ;
+; imm_i.vhd                        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_i.vhd                  ;         ;
+; imm_s.vhd                        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_s.vhd                  ;         ;
+; imm_b.vhd                        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_b.vhd                  ;         ;
+; imm_j.vhd                        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_j.vhd                  ;         ;
+; imm_u.vhd                        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_u.vhd                  ;         ;
+; decode_tiny.vhd                  ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/decode_tiny.vhd            ;         ;
+; pipeline_large_cpu.vhd           ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd     ;         ;
+; fir_serial.vhd                   ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd             ;         ;
+; fir_mmio_large.vhd               ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_mmio_large.vhd         ;         ;
+; shared_ram_m9k.vhd               ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/shared_ram_m9k.vhd         ;         ;
+; pipeline_large_soc.vhd           ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_soc.vhd     ;         ;
+; hex7seg.vhd                      ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/hex7seg.vhd                ;         ;
+; call_cycle_timer.vhd             ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/call_cycle_timer.vhd       ;         ;
+; de2_115_benchmark_top.vhd        ; yes             ; User VHDL File               ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altsyncram.tdf                            ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc                     ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_mux.inc                               ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_decode.inc                            ;         ;
+; aglobal170.inc                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/aglobal170.inc                            ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                             ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altrom.inc                                ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altram.inc                                ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altdpram.inc                              ;         ;
+; db/altsyncram_tvs3.tdf           ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/altsyncram_tvs3.tdf     ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_divide.tdf                            ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/abs_divider.inc                           ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/sign_div_unsign.inc                       ;         ;
+; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/lpm_divide_i9m.tdf      ;         ;
+; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/sign_div_unsign_7kh.tdf ;         ;
+; db/alt_u_div_24f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/alt_u_div_24f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/add_sub_8pc.tdf         ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_mult.tdf                              ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_add_sub.inc                           ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/multcore.inc                              ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/bypassff.inc                              ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altshift.inc                              ;         ;
+; db/mult_7dt.tdf                  ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/mult_7dt.tdf            ;         ;
+; db/lpm_divide_dhm.tdf            ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/lpm_divide_dhm.tdf      ;         ;
+; db/sign_div_unsign_5kh.tdf       ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/sign_div_unsign_5kh.tdf ;         ;
+; db/alt_u_div_u3f.tdf             ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/alt_u_div_u3f.tdf       ;         ;
+; db/mult_36t.tdf                  ; yes             ; Auto-Generated Megafunction  ; F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/mult_36t.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 15,787     ;
+;                                             ;            ;
+; Total combinational functions               ; 13479      ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 10281      ;
+;     -- 3 input functions                    ; 2439       ;
+;     -- <=2 input functions                  ; 759        ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 12548      ;
+;     -- arithmetic mode                      ; 931        ;
+;                                             ;            ;
+; Total registers                             ; 3778       ;
+;     -- Dedicated logic registers            ; 3778       ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 66         ;
+; Total memory bits                           ; 262144     ;
+;                                             ;            ;
+; Embedded Multiplier 9-bit elements          ; 14         ;
+;                                             ;            ;
+; Maximum fan-out node                        ; core_clock ;
+; Maximum fan-out                             ; 3810       ;
+; Total fan-out                               ; 62848      ;
+; Average fan-out                             ; 3.60       ;
++---------------------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                 ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                ; Entity Name           ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+; |de2_115_benchmark_top                       ; 13479 (7115)        ; 3778 (428)                ; 262144      ; 14           ; 0       ; 7         ; 66   ; 0            ; |de2_115_benchmark_top                                                                                                             ; de2_115_benchmark_top ; work         ;
+;    |call_cycle_timer:timer|                  ; 57 (57)             ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|call_cycle_timer:timer                                                                                      ; call_cycle_timer      ; work         ;
+;    |hex7seg:\digit_decode:0:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:0:digit                                                                               ; hex7seg               ; work         ;
+;    |hex7seg:\digit_decode:1:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:1:digit                                                                               ; hex7seg               ; work         ;
+;    |hex7seg:\digit_decode:2:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:2:digit                                                                               ; hex7seg               ; work         ;
+;    |hex7seg:\digit_decode:3:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:3:digit                                                                               ; hex7seg               ; work         ;
+;    |hex7seg:\digit_decode:4:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:4:digit                                                                               ; hex7seg               ; work         ;
+;    |hex7seg:\digit_decode:5:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:5:digit                                                                               ; hex7seg               ; work         ;
+;    |hex7seg:\digit_decode:6:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:6:digit                                                                               ; hex7seg               ; work         ;
+;    |hex7seg:\digit_decode:7:digit|           ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|hex7seg:\digit_decode:7:digit                                                                               ; hex7seg               ; work         ;
+;    |lpm_divide:Div0|                         ; 10 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Div0                                                                                             ; lpm_divide            ; work         ;
+;       |lpm_divide_dhm:auto_generated|        ; 10 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Div0|lpm_divide_dhm:auto_generated                                                               ; lpm_divide_dhm        ; work         ;
+;          |sign_div_unsign_5kh:divider|       ; 10 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Div0|lpm_divide_dhm:auto_generated|sign_div_unsign_5kh:divider                                   ; sign_div_unsign_5kh   ; work         ;
+;             |alt_u_div_u3f:divider|          ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Div0|lpm_divide_dhm:auto_generated|sign_div_unsign_5kh:divider|alt_u_div_u3f:divider             ; alt_u_div_u3f         ; work         ;
+;    |lpm_divide:Mod0|                         ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Mod0                                                                                             ; lpm_divide            ; work         ;
+;       |lpm_divide_i9m:auto_generated|        ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Mod0|lpm_divide_i9m:auto_generated                                                               ; lpm_divide_i9m        ; work         ;
+;          |sign_div_unsign_7kh:divider|       ; 17 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                                   ; sign_div_unsign_7kh   ; work         ;
+;             |alt_u_div_24f:divider|          ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|lpm_divide:Mod0|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider             ; alt_u_div_24f         ; work         ;
+;    |pipeline_large_soc:soc|                  ; 6224 (85)           ; 3314 (1)                  ; 262144      ; 14           ; 0       ; 7         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc                                                                                      ; pipeline_large_soc    ; work         ;
+;       |fir_mmio_large:accelerator|           ; 2677 (1135)         ; 1882 (796)                ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator                                                           ; fir_mmio_large        ; work         ;
+;          |fir_serial:core|                   ; 1542 (1542)         ; 1086 (1086)               ; 0           ; 8            ; 0       ; 4         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core                                           ; fir_serial            ; work         ;
+;             |lpm_mult:Mult0|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult0                            ; lpm_mult              ; work         ;
+;                |mult_36t:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult0|mult_36t:auto_generated    ; mult_36t              ; work         ;
+;             |lpm_mult:Mult1|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult1                            ; lpm_mult              ; work         ;
+;                |mult_36t:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult1|mult_36t:auto_generated    ; mult_36t              ; work         ;
+;             |lpm_mult:Mult2|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult2                            ; lpm_mult              ; work         ;
+;                |mult_36t:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult2|mult_36t:auto_generated    ; mult_36t              ; work         ;
+;             |lpm_mult:Mult3|                 ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult3                            ; lpm_mult              ; work         ;
+;                |mult_36t:auto_generated|     ; 0 (0)               ; 0 (0)                     ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult3|mult_36t:auto_generated    ; mult_36t              ; work         ;
+;       |pipeline_large_cpu:processor|         ; 3412 (2530)         ; 1430 (438)                ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor                                                         ; pipeline_large_cpu    ; work         ;
+;          |alu32:arithmetic|                  ; 686 (686)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic                                        ; alu32                 ; work         ;
+;          |decode_tiny:ex_decode|             ; 62 (62)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:ex_decode                                   ; decode_tiny           ; work         ;
+;          |decode_tiny:id_decode|             ; 29 (29)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:id_decode                                   ; decode_tiny           ; work         ;
+;          |mul32:multiplier|                  ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier                                        ; mul32                 ; work         ;
+;             |lpm_mult:Mult0|                 ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0                         ; lpm_mult              ; work         ;
+;                |mult_7dt:auto_generated|     ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0|mult_7dt:auto_generated ; mult_7dt              ; work         ;
+;          |regfile32:registers|               ; 77 (77)             ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers                                     ; regfile32             ; work         ;
+;       |shared_ram_m9k:shared_memory|         ; 50 (50)             ; 1 (1)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|shared_ram_m9k:shared_memory                                                         ; shared_ram_m9k        ; work         ;
+;          |altsyncram:memory|                 ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory                                       ; altsyncram            ; work         ;
+;             |altsyncram_tvs3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 262144      ; 0            ; 0       ; 0         ; 0    ; 0            ; |de2_115_benchmark_top|pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory|altsyncram_tvs3:auto_generated        ; altsyncram_tvs3       ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                    ;
++-----------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                                            ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++-----------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+; pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory|altsyncram_tvs3:auto_generated|ALTSYNCRAM ; M9K  ; True Dual Port ; 8192         ; 32           ; 8192         ; 32           ; 262144 ; None ;
++-----------------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 7           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 14          ;
+; Signed Embedded Multipliers           ; 4           ;
+; Unsigned Embedded Multipliers         ; 3           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------+
+; State Machine - |de2_115_benchmark_top|boot_state                                         ;
++-----------------------+--------------------+-----------------------+----------------------+
+; Name                  ; boot_state.RUNNING ; boot_state.BOOT_WRITE ; boot_state.BOOT_WAIT ;
++-----------------------+--------------------+-----------------------+----------------------+
+; boot_state.BOOT_WAIT  ; 0                  ; 0                     ; 0                    ;
+; boot_state.BOOT_WRITE ; 0                  ; 1                     ; 1                    ;
+; boot_state.RUNNING    ; 1                  ; 0                     ; 1                    ;
++-----------------------+--------------------+-----------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|state                                                         ;
++---------------------+---------------------+-------------------+-----------------+-----------------+--------------------+------------------+------------+
+; Name                ; state.WRITE_REQUEST ; state.WAIT_RESULT ; state.FEED_CORE ; state.READ_WAIT ; state.READ_REQUEST ; state.CLEAR_CORE ; state.IDLE ;
++---------------------+---------------------+-------------------+-----------------+-----------------+--------------------+------------------+------------+
+; state.IDLE          ; 0                   ; 0                 ; 0               ; 0               ; 0                  ; 0                ; 0          ;
+; state.CLEAR_CORE    ; 0                   ; 0                 ; 0               ; 0               ; 0                  ; 1                ; 1          ;
+; state.READ_REQUEST  ; 0                   ; 0                 ; 0               ; 0               ; 1                  ; 0                ; 1          ;
+; state.READ_WAIT     ; 0                   ; 0                 ; 0               ; 1               ; 0                  ; 0                ; 1          ;
+; state.FEED_CORE     ; 0                   ; 0                 ; 1               ; 0               ; 0                  ; 0                ; 1          ;
+; state.WAIT_RESULT   ; 0                   ; 1                 ; 0               ; 0               ; 0                  ; 0                ; 1          ;
+; state.WRITE_REQUEST ; 1                   ; 0                 ; 0               ; 0               ; 0                  ; 0                ; 1          ;
++---------------------+---------------------+-------------------+-----------------+-----------------+--------------------+------------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------+
+; State Machine - |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|state ;
++-------------------+-------------------+-----------+------------------------------------------------------------+
+; Name              ; state.HOLD_OUTPUT ; state.MAC ; state.IDLE                                                 ;
++-------------------+-------------------+-----------+------------------------------------------------------------+
+; state.IDLE        ; 0                 ; 0         ; 0                                                          ;
+; state.MAC         ; 0                 ; 1         ; 1                                                          ;
+; state.HOLD_OUTPUT ; 1                 ; 0         ; 1                                                          ;
++-------------------+-------------------+-----------+------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------+
+; State Machine - |de2_115_benchmark_top|call_cycle_timer:timer|state           ;
++----------------+---------------+----------------+----------------+------------+
+; Name           ; state.INVALID ; state.COMPLETE ; state.COUNTING ; state.IDLE ;
++----------------+---------------+----------------+----------------+------------+
+; state.IDLE     ; 0             ; 0              ; 0              ; 0          ;
+; state.COUNTING ; 0             ; 0              ; 1              ; 1          ;
+; state.COMPLETE ; 0             ; 1              ; 0              ; 1          ;
+; state.INVALID  ; 1             ; 0              ; 0              ; 1          ;
++----------------+---------------+----------------+----------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Protected by Synthesis                                                                                                                          ;
++-------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; Register Name                             ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
++-------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+; sw_sync[1]                                ; yes                                                              ; yes                                        ;
+; sw_sync[0]                                ; yes                                                              ; yes                                        ;
+; sw_sync[2]                                ; yes                                                              ; yes                                        ;
+; sw_sync[3]                                ; yes                                                              ; yes                                        ;
+; reset_pipe[1]                             ; yes                                                              ; yes                                        ;
+; core_clock                                ; yes                                                              ; yes                                        ;
+; sw_meta[1]                                ; yes                                                              ; yes                                        ;
+; sw_meta[0]                                ; yes                                                              ; yes                                        ;
+; sw_meta[2]                                ; yes                                                              ; yes                                        ;
+; sw_meta[3]                                ; yes                                                              ; yes                                        ;
+; reset_pipe[0]                             ; yes                                                              ; yes                                        ;
+; Total number of protected registers is 11 ;                                                                  ;                                            ;
++-------------------------------------------+------------------------------------------------------------------+--------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                          ;
++--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+; Register name                                                                  ; Reason for Removal                                                                         ;
++--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+; seed_q[16..31]                                                                 ; Merged with seed_q[15]                                                                     ;
+; pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|tap_index[1] ; Merged with pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|tap_index[0] ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.instruction[1]          ; Merged with pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.instruction[0]          ;
+; imem_data[1]                                                                   ; Merged with imem_data[0]                                                                   ;
+; pipeline_large_soc:soc|fir_mmio_large:accelerator|error_code[4..9,11..31]      ; Merged with pipeline_large_soc:soc|fir_mmio_large:accelerator|error_code[10]               ;
+; pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|tap_index[0] ; Stuck at GND due to stuck port data_in                                                     ;
+; imem_data[0]                                                                   ; Stuck at VCC due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.instruction[0]          ; Stuck at VCC due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|fetch_pc[0]                ; Stuck at GND due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|id_pc[0]                   ; Stuck at GND due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.pc[0]                   ; Stuck at GND due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|mem.next_pc[0]             ; Stuck at GND due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|wb.next_pc[0]              ; Stuck at GND due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|commit_next_pc[0]          ; Stuck at GND due to stuck port data_in                                                     ;
+; pipeline_large_soc:soc|fir_mmio_large:accelerator|error_code[10]               ; Stuck at GND due to stuck port data_in                                                     ;
+; Total Number of Removed Registers = 56                                         ;                                                                                            ;
++--------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                        ;
++---------------+---------------------------+------------------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                                 ;
++---------------+---------------------------+------------------------------------------------------------------------+
+; imem_data[0]  ; Stuck at VCC              ; pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.instruction[0], ;
+;               ; due to stuck port data_in ; pipeline_large_soc:soc|pipeline_large_cpu:processor|fetch_pc[0],       ;
+;               ;                           ; pipeline_large_soc:soc|pipeline_large_cpu:processor|id_pc[0],          ;
+;               ;                           ; pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.pc[0],          ;
+;               ;                           ; pipeline_large_soc:soc|pipeline_large_cpu:processor|mem.next_pc[0],    ;
+;               ;                           ; pipeline_large_soc:soc|pipeline_large_cpu:processor|wb.next_pc[0],     ;
+;               ;                           ; pipeline_large_soc:soc|pipeline_large_cpu:processor|commit_next_pc[0]  ;
++---------------+---------------------------+------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 3778  ;
+; Number of registers using Synchronous Clear  ; 352   ;
+; Number of registers using Synchronous Load   ; 122   ;
+; Number of registers using Asynchronous Clear ; 2     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3315  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                    ;
++-----------------------------------------------------------------------+---------+
+; Inverted Register                                                     ; Fan out ;
++-----------------------------------------------------------------------+---------+
+; reset_pipe[1]                                                         ; 95      ;
+; reset_pipe[0]                                                         ; 1       ;
+; pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.instruction[4] ; 13      ;
+; Total number of inverted registers = 3                                ;         ;
++-----------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[0][5]                                                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[1][16]                                                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[2][22]                                                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[3][7]                                                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[4][24]                                                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[5][7]                                                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[6][7]                                                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[7][15]                                                                    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|measurements[8][8]                                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |de2_115_benchmark_top|profile_index[1]                                                                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|commit_next_pc[21]                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|source_addr[26]                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|dest_addr[23]                        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|count[22]                            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[0][6]                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[1][13]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[2][5]                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[3][12]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[4][6]                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[5][15]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[6][5]                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[7][13]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[8][7]                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[9][0]                   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[10][6]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[11][6]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[12][3]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[13][10]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[14][8]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[15][8]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[16][4]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[17][13]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[18][0]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[19][2]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[20][0]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[21][12]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[22][8]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[23][15]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[24][14]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[25][7]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[26][7]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[27][3]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[28][7]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[29][10]                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[30][8]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|coefficients[31][4]                  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[0][4]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[1][0]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[2][9]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[3][12]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[4][6]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[5][15]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[6][2]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[7][13]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[8][14]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[9][2]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[10][1]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[11][5]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[12][4]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[13][4]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[14][2]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[15][0]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[16][6]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[17][3]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[18][12] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[19][2]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[20][12] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[21][15] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[22][1]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[23][0]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[24][5]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[25][9]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[26][3]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[27][3]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[28][0]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[29][11] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[30][2]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|coefficients[31][15] ;
+; 3:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|id_pc[1]                           ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|input_sample[15]                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|fetch_pc[1]                        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[16][18]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[8][14]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[24][2]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[4][29]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[20][16]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[12][27]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[28][31]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[2][25]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[18][12]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[10][4]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[26][16]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[6][5]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[22][10]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[14][15]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[30][30]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[1][28]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[17][14]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[9][24]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[25][27]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[5][11]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[21][22]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[13][16]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[29][22]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[3][1]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[19][30]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[11][28]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[27][13]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[7][6]     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[23][21]   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[15][8]    ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers|bank[31][15]   ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |de2_115_benchmark_top|watchdog[6]                                                                            ;
+; 4:1                ; 107 bits  ; 214 LEs       ; 107 LEs              ; 107 LEs                ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|mem.instruction[14]                ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|sample_index[3]                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|written[1]                           ;
+; 5:1                ; 512 bits  ; 1536 LEs      ; 512 LEs              ; 1024 LEs               ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|history[3][9]        ;
+; 5:1                ; 30 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|fetch_pc[30]                       ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |de2_115_benchmark_top|result_count[0]                                                                        ;
+; 6:1                ; 63 bits   ; 252 LEs       ; 63 LEs               ; 189 LEs                ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.instruction[13]                 ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|mem.result[23]                     ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|cycles[25]                           ;
+; 6:1                ; 13 bits   ; 52 LEs        ; 13 LEs               ; 39 LEs                 ; Yes        ; |de2_115_benchmark_top|boot_index[5]                                                                          ;
+; 6:1                ; 40 bits   ; 160 LEs       ; 40 LEs               ; 120 LEs                ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|accumulator[35]      ;
+; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |de2_115_benchmark_top|call_cycle_timer:timer|counter[16]                                                     ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|tap_index[2]         ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 60 LEs               ; 30 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|output_data[1]       ;
+; 38:1               ; 32 bits   ; 800 LEs       ; 704 LEs              ; 96 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.first[13]                       ;
+; 38:1               ; 32 bits   ; 800 LEs       ; 704 LEs              ; 96 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.second[8]                       ;
+; 12:1               ; 17 bits   ; 136 LEs       ; 102 LEs              ; 34 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|bus_rdata[28]                        ;
+; 2306:1             ; 30 bits   ; 46110 LEs     ; 17730 LEs            ; 28380 LEs              ; Yes        ; |de2_115_benchmark_top|imem_data[27]                                                                          ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|error_code[1]                        ;
+; 43:1               ; 12 bits   ; 336 LEs       ; 324 LEs              ; 12 LEs                 ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|bus_rdata[3]                         ;
+; 43:1               ; 2 bits    ; 56 LEs        ; 54 LEs               ; 2 LEs                  ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|bus_rdata[1]                         ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 12 LEs               ; 18 LEs                 ; Yes        ; |de2_115_benchmark_top|pass_latch                                                                             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|ex.instruction[4]                  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|first[25]                          ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:ex_decode|rd[3]        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:ex_decode|rs2[0]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|second[29]                         ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu_b[12]                          ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:id_decode|rs2[3]       ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu_b[6]                           ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu_b[30]                          ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:ex_decode|rs1[4]       ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:id_decode|rs1[2]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|dmem_wdata[7]                      ;
+; 8:1                ; 128 bits  ; 640 LEs       ; 640 LEs              ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|Mux11                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu_b[1]                           ;
+; 4:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|\control_transfer:next_address[21] ;
+; 9:1                ; 16 bits   ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|wb_value[21]                       ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|dmem_wdata[24]                     ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|dmem_wdata[15]                     ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|invalid                              ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 224 LEs              ; 0 LEs                  ; No         ; |de2_115_benchmark_top|display_word[11]                                                                       ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|dmem_wdata[23]                     ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|wb_value[1]                        ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|state                ;
+; 11:1               ; 7 bits    ; 49 LEs        ; 28 LEs               ; 21 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|wb_value[11]                       ;
+; 20:1               ; 7 bits    ; 91 LEs        ; 49 LEs               ; 42 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic|Mux8              ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 48 LEs               ; 48 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic|Mux17             ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic|Mux4              ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 28 LEs               ; 24 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic|Mux27             ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |de2_115_benchmark_top|call_cycle_timer:timer|state                                                           ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic|Mux2              ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic|Mux28             ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |de2_115_benchmark_top|pipeline_large_soc:soc|fir_mmio_large:accelerator|state                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Source assignments for Top-level Entity: |de2_115_benchmark_top ;
++-------------------+-------+------+------------------------------+
+; Assignment        ; Value ; From ; To                           ;
++-------------------+-------+------+------------------------------+
+; PRESERVE_REGISTER ; on    ; -    ; core_clock                   ;
+; PRESERVE_REGISTER ; on    ; -    ; reset_pipe[1]                ;
+; PRESERVE_REGISTER ; on    ; -    ; reset_pipe[0]                ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_sync[0]                   ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_sync[1]                   ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_sync[2]                   ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_sync[3]                   ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_meta[0]                   ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_meta[1]                   ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_meta[2]                   ;
+; PRESERVE_REGISTER ; on    ; -    ; sw_meta[3]                   ;
++-------------------+-------+------+------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory|altsyncram_tvs3:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                            ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                             ;
++---------------------------------+--------------------+------+---------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |de2_115_benchmark_top ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; HEARTBEAT_BIT  ; 24    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: call_cycle_timer:timer ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; counter_width  ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipeline_large_soc:soc ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; fir_lanes      ; 4     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipeline_large_soc:soc|pipeline_large_cpu:processor ;
++-----------------+-------+------------------------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                                   ;
++-----------------+-------+------------------------------------------------------------------------+
+; enable_fir_mmio ; true  ; Enumerated                                                             ;
++-----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory ;
++------------------------------------+----------------------+--------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                   ;
++------------------------------------+----------------------+--------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                           ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                         ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                ;
+; OPERATION_MODE                     ; BIDIR_DUAL_PORT      ; Untyped                                                ;
+; WIDTH_A                            ; 32                   ; Signed Integer                                         ;
+; WIDTHAD_A                          ; 13                   ; Signed Integer                                         ;
+; NUMWORDS_A                         ; 8192                 ; Signed Integer                                         ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                ;
+; WIDTH_B                            ; 32                   ; Signed Integer                                         ;
+; WIDTHAD_B                          ; 13                   ; Signed Integer                                         ;
+; NUMWORDS_B                         ; 8192                 ; Signed Integer                                         ;
+; INDATA_REG_B                       ; CLOCK0               ; Untyped                                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK0               ; Untyped                                                ;
+; RDCONTROL_REG_B                    ; CLOCK0               ; Untyped                                                ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                ;
+; BYTEENA_REG_B                      ; CLOCK0               ; Untyped                                                ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                ;
+; WIDTH_BYTEENA_A                    ; 4                    ; Signed Integer                                         ;
+; WIDTH_BYTEENA_B                    ; 4                    ; Signed Integer                                         ;
+; RAM_BLOCK_TYPE                     ; M9K                  ; Untyped                                                ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                                ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                                         ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                                         ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                ;
+; CBXI_PARAMETER                     ; altsyncram_tvs3      ; Untyped                                                ;
++------------------------------------+----------------------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; mac_lanes      ; 4     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; mac_lanes      ; 4     ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+----------------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                                 ;
++------------------------------------------------+--------------+----------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                           ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                                         ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                                         ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                                       ;
+; LPM_WIDTHA                                     ; 32           ; Untyped                                                              ;
+; LPM_WIDTHB                                     ; 32           ; Untyped                                                              ;
+; LPM_WIDTHP                                     ; 64           ; Untyped                                                              ;
+; LPM_WIDTHR                                     ; 64           ; Untyped                                                              ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                              ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                                                              ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                              ;
+; LATENCY                                        ; 0            ; Untyped                                                              ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                              ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                              ;
+; USE_EAB                                        ; OFF          ; Untyped                                                              ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                              ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                              ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                              ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                                  ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                              ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                              ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                              ;
+; CBXI_PARAMETER                                 ; mult_7dt     ; Untyped                                                              ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                              ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                              ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                              ;
++------------------------------------------------+--------------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 4              ; Untyped                ;
+; LPM_WIDTHD             ; 2              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_dhm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult3 ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                              ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                                    ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHB                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHP                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHR                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                           ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                           ;
+; LATENCY                                        ; 0            ; Untyped                                                           ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; USE_EAB                                        ; OFF          ; Untyped                                                           ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                           ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                           ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                           ;
+; CBXI_PARAMETER                                 ; mult_36t     ; Untyped                                                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                           ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult2 ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                              ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                                    ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHB                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHP                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHR                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                           ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                           ;
+; LATENCY                                        ; 0            ; Untyped                                                           ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; USE_EAB                                        ; OFF          ; Untyped                                                           ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                           ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                           ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                           ;
+; CBXI_PARAMETER                                 ; mult_36t     ; Untyped                                                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                           ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                              ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                                    ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHB                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHP                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHR                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                           ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                           ;
+; LATENCY                                        ; 0            ; Untyped                                                           ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; USE_EAB                                        ; OFF          ; Untyped                                                           ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                           ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                           ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                           ;
+; CBXI_PARAMETER                                 ; mult_36t     ; Untyped                                                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                           ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; Parameter Name                                 ; Value        ; Type                                                              ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY                                                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY                                                      ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE                                                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE                                                    ;
+; LPM_WIDTHA                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHB                                     ; 16           ; Untyped                                                           ;
+; LPM_WIDTHP                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHR                                     ; 32           ; Untyped                                                           ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                                                           ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                                                           ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                                                           ;
+; LATENCY                                        ; 0            ; Untyped                                                           ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                                                           ;
+; USE_EAB                                        ; OFF          ; Untyped                                                           ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                                                           ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                                                           ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                                                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K                                               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                                                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                                                           ;
+; CBXI_PARAMETER                                 ; mult_36t     ; Untyped                                                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                                                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                                                           ;
++------------------------------------------------+--------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                  ;
++-------------------------------------------+-----------------------------------------------------------------------+
+; Name                                      ; Value                                                                 ;
++-------------------------------------------+-----------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                     ;
+; Entity Instance                           ; pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory ;
+;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                                       ;
+;     -- WIDTH_A                            ; 32                                                                    ;
+;     -- NUMWORDS_A                         ; 8192                                                                  ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                          ;
+;     -- WIDTH_B                            ; 32                                                                    ;
+;     -- NUMWORDS_B                         ; 8192                                                                  ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                          ;
+;     -- RAM_BLOCK_TYPE                     ; M9K                                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                              ;
++-------------------------------------------+-----------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                                              ;
++---------------------------------------+-------------------------------------------------------------------------------------+
+; Name                                  ; Value                                                                               ;
++---------------------------------------+-------------------------------------------------------------------------------------+
+; Number of entity instances            ; 5                                                                                   ;
+; Entity Instance                       ; pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 32                                                                                  ;
+;     -- LPM_WIDTHB                     ; 32                                                                                  ;
+;     -- LPM_WIDTHP                     ; 64                                                                                  ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                                                            ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                  ;
+;     -- USE_EAB                        ; OFF                                                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                  ;
+; Entity Instance                       ; pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult3    ;
+;     -- LPM_WIDTHA                     ; 16                                                                                  ;
+;     -- LPM_WIDTHB                     ; 16                                                                                  ;
+;     -- LPM_WIDTHP                     ; 32                                                                                  ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                              ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                  ;
+;     -- USE_EAB                        ; OFF                                                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                  ;
+; Entity Instance                       ; pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult2    ;
+;     -- LPM_WIDTHA                     ; 16                                                                                  ;
+;     -- LPM_WIDTHB                     ; 16                                                                                  ;
+;     -- LPM_WIDTHP                     ; 32                                                                                  ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                              ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                  ;
+;     -- USE_EAB                        ; OFF                                                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                  ;
+; Entity Instance                       ; pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult1    ;
+;     -- LPM_WIDTHA                     ; 16                                                                                  ;
+;     -- LPM_WIDTHB                     ; 16                                                                                  ;
+;     -- LPM_WIDTHP                     ; 32                                                                                  ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                              ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                  ;
+;     -- USE_EAB                        ; OFF                                                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                  ;
+; Entity Instance                       ; pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult0    ;
+;     -- LPM_WIDTHA                     ; 16                                                                                  ;
+;     -- LPM_WIDTHB                     ; 16                                                                                  ;
+;     -- LPM_WIDTHP                     ; 32                                                                                  ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                                              ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                                                  ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                                                  ;
+;     -- USE_EAB                        ; OFF                                                                                 ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                                                ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                                                  ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                                                  ;
++---------------------------------------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core"                       ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; cfg_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; m_acc     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; busy      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:id_decode"                          ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                 ; Type   ; Severity ; Details                                                                             ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; legal                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; use_immediate        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; memory_read          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; memory_write         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; branch_instruction   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; jump_instruction     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; jump_register        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; upper_instruction    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; upper_pc_relative    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; multiply_instruction ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd                   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; alu_op               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "pipeline_large_soc:soc"                                                                           ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; host_addr[31..15]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; host_addr[1..0]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; host_we            ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; host_rdata         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dma_allow          ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; imem_addr[31..10]  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; imem_addr[1..0]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; commit_pc          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; commit_instruction ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; commit_value       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; commit_rd          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; fault_pc           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; debug_stall        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; debug_flush        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; debug_valid        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; trace_cpu_rdata    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; trace_dma_rdata    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 66                          ;
+; cycloneiii_ff         ; 3778                        ;
+;     CLR               ; 2                           ;
+;     ENA               ; 3098                        ;
+;     ENA SCLR          ; 142                         ;
+;     ENA SCLR SLD      ; 74                          ;
+;     ENA SLD           ; 1                           ;
+;     SCLR              ; 89                          ;
+;     SCLR SLD          ; 47                          ;
+;     plain             ; 325                         ;
+; cycloneiii_lcell_comb ; 13479                       ;
+;     arith             ; 931                         ;
+;         2 data inputs ; 323                         ;
+;         3 data inputs ; 608                         ;
+;     normal            ; 12548                       ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 15                          ;
+;         2 data inputs ; 415                         ;
+;         3 data inputs ; 1831                        ;
+;         4 data inputs ; 10281                       ;
+; cycloneiii_mac_mult   ; 7                           ;
+; cycloneiii_mac_out    ; 7                           ;
+; cycloneiii_ram_block  ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 32.00                       ;
+; Average LUT depth     ; 9.22                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:27     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Thu Oct 29 21:25:06 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off riscv_fir_de2_benchmark -c riscv_fir_de2_benchmark
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 1 design units, including 0 entities, in source file benchmark_images_pkg.vhd
+    Info (12022): Found design unit 1: benchmark_images_pkg File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/benchmark_images_pkg.vhd Line: 3
+Info (12021): Found 1 design units, including 0 entities, in source file alu_pkg.vhd
+    Info (12022): Found design unit 1: alu_pkg File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/alu_pkg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file alu32.vhd
+    Info (12022): Found design unit 1: alu32-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/alu32.vhd Line: 14
+    Info (12023): Found entity 1: alu32 File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/alu32.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file regfile32.vhd
+    Info (12022): Found design unit 1: regfile32-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/regfile32.vhd Line: 14
+    Info (12023): Found entity 1: regfile32 File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/regfile32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mul32.vhd
+    Info (12022): Found design unit 1: mul32-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/mul32.vhd Line: 10
+    Info (12023): Found entity 1: mul32 File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/mul32.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file imm_i.vhd
+    Info (12022): Found design unit 1: imm_i-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_i.vhd Line: 10
+    Info (12023): Found entity 1: imm_i File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_i.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file imm_s.vhd
+    Info (12022): Found design unit 1: imm_s-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_s.vhd Line: 12
+    Info (12023): Found entity 1: imm_s File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_s.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file imm_b.vhd
+    Info (12022): Found design unit 1: imm_b-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_b.vhd Line: 12
+    Info (12023): Found entity 1: imm_b File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_b.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file imm_j.vhd
+    Info (12022): Found design unit 1: imm_j-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_j.vhd Line: 12
+    Info (12023): Found entity 1: imm_j File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_j.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file imm_u.vhd
+    Info (12022): Found design unit 1: imm_u-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_u.vhd Line: 11
+    Info (12023): Found entity 1: imm_u File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/imm_u.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file decode_tiny.vhd
+    Info (12022): Found design unit 1: decode_tiny-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/decode_tiny.vhd Line: 18
+    Info (12023): Found entity 1: decode_tiny File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/decode_tiny.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file data_ram.vhd
+    Info (12022): Found design unit 1: data_ram-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/data_ram.vhd Line: 14
+    Info (12023): Found entity 1: data_ram File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/data_ram.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_large_cpu.vhd
+    Info (12022): Found design unit 1: pipeline_large_cpu-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 26
+    Info (12023): Found entity 1: pipeline_large_cpu File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fir_serial.vhd
+    Info (12022): Found design unit 1: fir_serial-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 26
+    Info (12023): Found entity 1: fir_serial File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fir_mmio_large.vhd
+    Info (12022): Found design unit 1: fir_mmio_large-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_mmio_large.vhd Line: 15
+    Info (12023): Found entity 1: fir_mmio_large File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_mmio_large.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file shared_ram_m9k.vhd
+    Info (12022): Found design unit 1: shared_ram_m9k-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/shared_ram_m9k.vhd Line: 15
+    Info (12023): Found entity 1: shared_ram_m9k File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/shared_ram_m9k.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_large_soc.vhd
+    Info (12022): Found design unit 1: pipeline_large_soc-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_soc.vhd Line: 21
+    Info (12023): Found entity 1: pipeline_large_soc File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_soc.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file hex7seg.vhd
+    Info (12022): Found design unit 1: hex7seg-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/hex7seg.vhd Line: 6
+    Info (12023): Found entity 1: hex7seg File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/hex7seg.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file call_cycle_timer.vhd
+    Info (12022): Found design unit 1: call_cycle_timer-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/call_cycle_timer.vhd Line: 10
+    Info (12023): Found entity 1: call_cycle_timer File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/call_cycle_timer.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file de2_115_benchmark_top.vhd
+    Info (12022): Found design unit 1: de2_115_benchmark_top-rtl File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 11
+    Info (12023): Found entity 1: de2_115_benchmark_top File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 5
+Info (12127): Elaborating entity "de2_115_benchmark_top" for the top level hierarchy
+Info (12128): Elaborating entity "call_cycle_timer" for hierarchy "call_cycle_timer:timer" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 73
+Info (12128): Elaborating entity "pipeline_large_soc" for hierarchy "pipeline_large_soc:soc" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 101
+Info (12128): Elaborating entity "pipeline_large_cpu" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_soc.vhd Line: 33
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(46): object "id_rd" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 46
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object "id_legal" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object "id_ui" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object "id_load" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object "id_store" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object "id_branch" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object "id_jump" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(48): object "id_jr" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 48
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(49): object "id_upper" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 49
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(49): object "id_upc" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 49
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(49): object "id_mul" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 49
+Warning (10036): Verilog HDL or VHDL warning at pipeline_large_cpu.vhd(50): object "id_op" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 50
+Info (12129): Elaborating entity "decode_tiny" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|decode_tiny:id_decode" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 56
+Info (12129): Elaborating entity "regfile32" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|regfile32:registers" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 62
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'U'" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'X'" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'Z'" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'W'" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1103): ignored choice containing meta-value "'-'" File: e:/quartus/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1103
+Info (12129): Elaborating entity "imm_i" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|imm_i:i_offset" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 64
+Info (12129): Elaborating entity "imm_s" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|imm_s:s_offset" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 65
+Info (12129): Elaborating entity "imm_b" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|imm_b:b_offset" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 66
+Info (12129): Elaborating entity "imm_j" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|imm_j:j_offset" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 67
+Info (12129): Elaborating entity "imm_u" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|imm_u:u_offset" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 68
+Info (12129): Elaborating entity "alu32" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|alu32:arithmetic" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 69
+Info (12129): Elaborating entity "mul32" using architecture "A:rtl" for hierarchy "pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_cpu.vhd Line: 70
+Info (12128): Elaborating entity "shared_ram_m9k" for hierarchy "pipeline_large_soc:soc|shared_ram_m9k:shared_memory" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_soc.vhd Line: 55
+Info (12128): Elaborating entity "altsyncram" for hierarchy "pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/shared_ram_m9k.vhd Line: 29
+Info (12130): Elaborated megafunction instantiation "pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/shared_ram_m9k.vhd Line: 29
+Info (12133): Instantiated megafunction "pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory" with the following parameter: File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/shared_ram_m9k.vhd Line: 29
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK0"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK0"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK0"
+    Info (12134): Parameter "init_file" = "UNUSED"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "8192"
+    Info (12134): Parameter "numwords_b" = "8192"
+    Info (12134): Parameter "operation_mode" = "BIDIR_DUAL_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "M9K"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK0"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "OLD_DATA"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_b" = "32"
+    Info (12134): Parameter "width_byteena_a" = "4"
+    Info (12134): Parameter "width_byteena_b" = "4"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "13"
+    Info (12134): Parameter "widthad_b" = "13"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK0"
+    Info (12134): Parameter "lpm_hint" = "UNUSED"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_tvs3.tdf
+    Info (12023): Found entity 1: altsyncram_tvs3 File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/altsyncram_tvs3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_tvs3" for hierarchy "pipeline_large_soc:soc|shared_ram_m9k:shared_memory|altsyncram:memory|altsyncram_tvs3:auto_generated" File: e:/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "fir_mmio_large" for hierarchy "pipeline_large_soc:soc|fir_mmio_large:accelerator" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/pipeline_large_soc.vhd Line: 57
+Warning (10036): Verilog HDL or VHDL warning at fir_mmio_large.vhd(27): object "core_acc" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_mmio_large.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at fir_mmio_large.vhd(28): object "cfg_ready" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_mmio_large.vhd Line: 28
+Warning (10036): Verilog HDL or VHDL warning at fir_mmio_large.vhd(28): object "core_busy" assigned a value but never read File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_mmio_large.vhd Line: 28
+Info (12128): Elaborating entity "fir_serial" for hierarchy "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_mmio_large.vhd Line: 34
+Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:\digit_decode:0:digit" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 113
+Info (278001): Inferred 7 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 156
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|Mult0" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/mul32.vhd Line: 14
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 77
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|Mult3" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 92
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|Mult2" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 92
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|Mult1" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 92
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|Mult0" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 92
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 156
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 156
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
+    Info (12023): Found entity 1: lpm_divide_i9m File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/lpm_divide_i9m.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_7kh File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/sign_div_unsign_7kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_24f.tdf
+    Info (12023): Found entity 1: alt_u_div_24f File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/alt_u_div_24f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/mul32.vhd Line: 14
+Info (12133): Instantiated megafunction "pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0" with the following parameter: File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/mul32.vhd Line: 14
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_WIDTHR" = "64"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_7dt.tdf
+    Info (12023): Found entity 1: mult_7dt File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/mult_7dt.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 77
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 77
+    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_dhm.tdf
+    Info (12023): Found entity 1: lpm_divide_dhm File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/lpm_divide_dhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_5kh File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/sign_div_unsign_5kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_u3f.tdf
+    Info (12023): Found entity 1: alt_u_div_u3f File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/alt_u_div_u3f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult3" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 92
+Info (12133): Instantiated megafunction "pipeline_large_soc:soc|fir_mmio_large:accelerator|fir_serial:core|lpm_mult:Mult3" with the following parameter: File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/fir_serial.vhd Line: 92
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_36t.tdf
+    Info (12023): Found entity 1: mult_36t File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/mult_36t.tdf Line: 29
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following DSP element node(s):
+        Warning (14320): Synthesized away node "pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0|mult_7dt:auto_generated|mac_mult7" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/mult_7dt.tdf Line: 67
+        Warning (14320): Synthesized away node "pipeline_large_soc:soc|pipeline_large_cpu:processor|mul32:multiplier|lpm_mult:Mult0|mult_7dt:auto_generated|mac_out8" File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/db/mult_7dt.tdf Line: 91
+Info (13014): Ignored 84 buffer(s)
+    Info (13019): Ignored 84 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high File: F:/CodexWorkspace/outputs/riscv-fir-soc/de2_115_benchmark/de2_115_benchmark_top.vhd Line: 53
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 16016 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 60 output pins
+    Info (21061): Implemented 15904 logic cells
+    Info (21064): Implemented 32 RAM segments
+    Info (21062): Implemented 14 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 5127 megabytes
+    Info: Processing ended: Thu Oct 29 21:26:47 2026
+    Info: Elapsed time: 00:01:41
+    Info: Total CPU time (on all processors): 00:00:03
+
+

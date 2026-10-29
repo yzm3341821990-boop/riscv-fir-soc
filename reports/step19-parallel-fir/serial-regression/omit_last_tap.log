@@ -1,0 +1,39 @@
+# do run_fir_accel_batch.do
+# 0
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap -c 
+# Copying E:/quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:01:59 on Oct 29,2026
+# vcom -93 -work work fir_serial.vhd tb_fir_serial.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity fir_serial
+# -- Compiling architecture rtl of fir_serial
+# -- Loading package std_logic_textio
+# -- Compiling entity tb_fir_serial
+# -- Compiling architecture test of tb_fir_serial
+# -- Loading entity fir_serial
+# End time: 15:01:59 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# last_tap 64 false true
+# FIR_CASE_BEGIN name=last_tap
+# vsim -voptargs="+acc" -wlf fir-last_tap-17712.wlf work.tb_fir_serial -gOUTPUT_FILE=cases/last_tap/expected.hex -gSTRESS_BUSY=true -gSAMPLE_COUNT=64 -gACC_FILE=cases/last_tap/accumulators.hex -gCOEFF_FILE=cases/last_tap/coefficients.hex -gUSE_STALLS=true -gCHECK_PROTOCOL=false -gINPUT_FILE=cases/last_tap/input.hex 
+# Start time: 15:01:59 on Oct 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_fir_serial(test)
+# Loading work.fir_serial(rtl)
+# ** Failure: FIR_OUTPUT_MISMATCH index=31 expected=16384 actual=0
+#    Time: 11966 ns  Iteration: 0  Process: /tb_fir_serial/stimulus File: tb_fir_serial.vhd
+# Break in Subprogram check_sample at tb_fir_serial.vhd line 129
+# End time: 15:01:59 on Oct 29,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

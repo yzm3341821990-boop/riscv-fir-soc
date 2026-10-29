@@ -1,0 +1,19 @@
+{
+  "status": "failed",
+  "error_code": 10481,
+  "stage": "Analysis & Synthesis",
+  "source_file": "shared_ram_m9k.vhd",
+  "source_line": 27,
+  "message": "design library altera_mf does not contain primary unit altsyncram",
+  "observed_from": "User Quartus compilation and original local map.rpt",
+  "agent_ran_quartus": false,
+  "files_sha256": {
+    "project-manifest.json": "6a8bde4d17931a053ab81bb725b11514302eef7896135b30139aefe4b593662b",
+    "riscv_fir_de2_large.flow.rpt": "eb9359ad6fc5adfc3dc105526ef39801175606efb9698207869c7fd3b620b181",
+    "riscv_fir_de2_large.map.rpt": "6a27dfb86b4f6a77d759bf938a33667e184de7259c5de3bc4ca1e170d0e51376",
+    "riscv_fir_de2_large.map.summary": "b817ff7daafe8a152c554c487a655a2f1dffd71556c263a1e5d7cfe0857eba0d",
+    "riscv_fir_de2_large.qsf": "254cb54c23b1c4abc3f2e9a28ee4c6e05b9f32b4d6d86afb92b4b9c733a8d133",
+    "shared_ram_m9k.vhd": "14a17e5025d181293fb85f168e8bc101cff6e56ca381e916f575859a8acfd943"
+  },
+  "quartus_tool": "Quartus Prime Lite 17.0.0 Build 595"
+}

@@ -1,0 +1,4 @@
+configuration,lanes,logic_elements,registers,pins,memory_bits,multiplier_9bit_elements,clock_mhz,worst_setup_slack_ns,worst_hold_slack_ns,sof_sha256
+step19 p1,1,28122,11967,66,1792,8,25,11.572,0.145,d8bdd6964a7640739acda9cbaf225006d4068b23d98f3a4f9cee25cd14d8d65a
+step19 p2,2,28130,11966,66,1792,10,25,10.152,0.152,5e26f8982e620655ab9bfcd116a625dc5d32df90f21aa892b9cae6f2fcf3ece1
+step19 p4,4,28130,11965,66,1792,14,25,11.166,0.119,c0efccc055cbd7df08efb14a10806ee11ee663522825047e7b0e32dcffd309c8

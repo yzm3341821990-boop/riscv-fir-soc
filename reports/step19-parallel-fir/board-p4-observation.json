@@ -1,0 +1,17 @@
+{
+  "recorded_at_utc": "2026-10-29T07:57:54.596947+00:00",
+  "client_timezone": "Asia/Shanghai",
+  "feedback_date_local": "2026-10-29",
+  "evidence_type": "user_report_in_conversation",
+  "quote": "是和你预期的一样",
+  "configuration": "step19 p4 / four FIR MAC lanes / five-stage CPU",
+  "result": "user reported board behavior matches the preceding expectations",
+  "expected_display_from_prior_handoff": "000001F6",
+  "expected_selftest_cycles": 502,
+  "expected_image_sha256_from_build_review": "c0efccc055cbd7df08efb14a10806ee11ee663522825047e7b0e32dcffd309c8",
+  "image_identity_evidence": "preceding p4 handoff and verified local compiled image; no independent Programmer log provided",
+  "all_eight_values_individually_recorded": false,
+  "cycle_reading_individually_recorded": false,
+  "independently_reviewed_video": false,
+  "note": "General user acceptance recorded without inventing separately measured readings, a video, or measured benchmark speedup."
+}

@@ -1,0 +1,56 @@
+{
+  "status": "pass",
+  "generated_at_utc": "2026-10-29T08:32:24.857864+00:00",
+  "matched_source_sweep_complete": true,
+  "matched_source_configurations_available": [
+    1,
+    2,
+    4
+  ],
+  "pending_same_source_builds": [],
+  "source_hashes_equal": 25,
+  "four_lane_physical_feedback": "user reported matches expected",
+  "p1_p2_physical_feedback": "not separately received; compilation only",
+  "evidence_scope": "All three builds use identical source hashes and the same 25 MHz constraints, target and Quartus build. Complete-call benchmark cycles remain functional-simulation measurements.",
+  "available_implementations": [
+    {
+      "configuration": "step19 p1",
+      "lanes": 1,
+      "logic_elements": 28122,
+      "registers": 11967,
+      "pins": 66,
+      "memory_bits": 1792,
+      "multiplier_9bit_elements": 8,
+      "clock_mhz": 25,
+      "worst_setup_slack_ns": 11.572,
+      "worst_hold_slack_ns": 0.145,
+      "sof_sha256": "d8bdd6964a7640739acda9cbaf225006d4068b23d98f3a4f9cee25cd14d8d65a"
+    },
+    {
+      "configuration": "step19 p2",
+      "lanes": 2,
+      "logic_elements": 28130,
+      "registers": 11966,
+      "pins": 66,
+      "memory_bits": 1792,
+      "multiplier_9bit_elements": 10,
+      "clock_mhz": 25,
+      "worst_setup_slack_ns": 10.152,
+      "worst_hold_slack_ns": 0.152,
+      "sof_sha256": "5e26f8982e620655ab9bfcd116a625dc5d32df90f21aa892b9cae6f2fcf3ece1"
+    },
+    {
+      "configuration": "step19 p4",
+      "lanes": 4,
+      "logic_elements": 28130,
+      "registers": 11965,
+      "pins": 66,
+      "memory_bits": 1792,
+      "multiplier_9bit_elements": 14,
+      "clock_mhz": 25,
+      "worst_setup_slack_ns": 11.166,
+      "worst_hold_slack_ns": 0.119,
+      "sof_sha256": "c0efccc055cbd7df08efb14a10806ee11ee663522825047e7b0e32dcffd309c8"
+    }
+  ]
+}
