@@ -1,66 +1,43 @@
 # RISC-V CPU + Q15 FIR SoC on DE2-115
 
-自设计五级流水线 CPU 运行裸机 C，通过 MMIO 驱动 32 抽头 FIR 加速器。CPU 和加速器共享 32 KiB 真双口 M9K RAM；同一镜像自动运行三种长度、三种软硬件模式，并在数码管上显示由实际标记写入驱动的周期计数。
+自设计五级 RV32IM CPU 运行裸机 C。CPU5 工作台支持上传自写程序、读回整数数组与文本。DSP6 把 CPU、四路 Q15 FIR、DMA 和 32 KiB 共享 M9K RAM 集成在同一 FPGA 镜像中，允许一个 C 任务处理长信号。
 
-当前 CPU 支持 **37 种 RV32I 指令与 MUL**，包含旁路、load-use 暂停、控制转移清空和访存等待。精确范围见[CPU 契约](docs/pipeline-cpu-contract.md)。完整 M 扩展、标准异常/CSR、中断与实时音频属于后续扩展。
+## 65,536 点板上实测
 
-## 当前验证状态
+DE2-115 的核心时钟为 25 MHz。该任务处理 292 个块。板上 C 程序逐块比较三条路径的输出，错误数为 **0**。主机独立计算得到相同的校验和 `727738349` 与最后 96 个有效输出。
 
-| 项目 | 已有证据 |
+| 路径 | 实测周期 | 累计计算时间 | 相对 CPU 软件 |
+| --- | ---: | ---: | ---: |
+| CPU 执行 C 软件 FIR | 34,130,645 | 1,365.226 ms | 1× |
+| 四路 FIR 冷调用，含系数装载 | 1,096,460 | 43.858 ms | **31.13×** |
+| 四路 FIR 驻留调用，复用系数 | 981,412 | 39.256 ms | **34.78×** |
+
+整个板上任务耗时 **1.802 秒**，包括信号生成和检查。主机调用耗时 **4.695 秒**，包括上传、执行等待与读回。旧 LIV0 镜像的逐块传输实验保存了同样点数的 **320.608 秒**主机总耗时。两次记录使用各自的主机计时口径。[DSP6 原始记录](reports/step36-dsp-c/observed-65536.json) · [复核结果](reports/step36-dsp-c/board-observation.json) · [旧 LIV0 记录](reports/step35-large-signal/physical-65536/board-observation.json)
+
+## 实现与复现
+
+| 部分 | 入口 |
 | --- | --- |
-| 数值语义 | signed16 Q15 输入/系数、40 位累加、最近舍入（半格远离零）、signed16 饱和 |
-| CPU 与系统 | 独立 ISA 提交/访存/RF/RAM 检查，C 软件与 FIR 硬件逐样本比较 |
-| 板级功能仿真 | step21 四次完整扫描、36 项显示检查，独立外部时钟秒表和故障控制 |
-| 实际 Quartus 实现 | EP4CE115F29C7，25 MHz，14,171 LE、3,778 寄存器、32 M9K、14 个 9 位乘法器元素 |
-| 静态时序 | 最差 setup/hold +10.184/+0.181 ns，18 项检查通过，未约束摘要全零 |
-| 实物反馈 | 用户对 step21 下载后行为回复“ok，符合预期，继续吧”；[原话及范围](reports/step21-board-benchmark/board-observation.json) |
+| DSP6 板上运行和离线重放 | [运行说明](docs/step36-dsp-c-guide.md) |
+| CPU5 裸机 C 工作台和 Python SDK | [应用开发说明](docs/cpu5-c-workbench.md) |
+| 32 抽头、历史保留和计时寄存器 | [DSP6 接口契约](docs/step36-dsp-c-contract.md) |
+| RTL 联合仿真和逐提交检查 | [RTL 记录](reports/step36-dsp-c/rtl-bus-validation.json) · [控制台仿真预览](artifacts/step36/dsp6-rtl-preview.png) |
+| 实际 Quartus 实现和时序 | [实现摘要](reports/step36-dsp-c/implementation-summary.json) |
 
-逐项数字抄录、Programmer 日志与视频尚未提供。下面的精确周期和比值来自可回放的 RTL 仿真；上板反馈按用户概括确认记录。
+Quartus 实际实现占用 17,155 个逻辑单元、48 块 M9K 和 14 个 9 位乘法器元素。66 个引脚与板级配置一致。33 项时序检查通过，最差 setup/hold 余量为 +9.194 / +0.135 ns。[实现摘要](reports/step36-dsp-c/implementation-summary.json)
 
-## 软件与四路 FIR 的完整调用比较
-
-固定同一 CPU/MUL 能力、时钟、输入、初始 RAM 与定点规则。冷调用包含系数配置；驻留模式在计时前装好系数。启动与结果检查在该计时区间外。
-
-| 点数 | 软件周期 | 四路冷调用周期 | 四路驻留周期 | 软件/冷调用 | 软件/驻留 |
-| ---: | ---: | ---: | ---: | ---: | ---: |
-| 64 | 24,045 | 1,126 | 867 | 21.35× | 27.73× |
-| 256 | 116,856 | 3,622 | 3,363 | 32.26× | 34.75× |
-| 1024 | 489,233 | 13,608 | 13,349 | 35.95× | 36.65× |
-
-![Complete-call simulation comparison](artifacts/step22/complete-call-comparison.png)
-
-[完整分析与计时范围](docs/project-results.md) · [原始数据与输入哈希](reports/step22-project-summary/summary.json) · [CSV](reports/step22-project-summary/complete-call-comparison.csv)
-
-## 快速复现
-
-Python 3.10+；数值模型、工具和检查使用标准库。在仓库根目录执行：
-
-```sh
-python -m tools.run_step1 --report-dir build/check
-python -m tools.build_project_summary
-```
-
-生成独立 Quartus 工程，以 Windows 英文路径为例：
+已保存的实测可以直接离线复核。重放使用随仓库附带的 ELF 和 308 组 JTAG 请求与响应。
 
 ```powershell
-python -m tools.prepare_de2_benchmark --output C:/fpga/riscv_fir_benchmark
+python -m pip install -r requirements-dsp6.txt
+python -m tools.replay_dsp_capture
+python -m tools.prepare_de2_dsp --output build/dsp6 --firmware programs/dsp6
 ```
 
-在 Quartus Prime Lite 17.0 打开生成的 `riscv_fir_de2_benchmark.qpf`，用户执行编译、检查报告并下载。ModelSim 功能验证、详细环境和引脚条件见[运行指南](docs/quickstart.md)。
+生成工程后，使用 Quartus Prime Lite 17.0 打开 `build/dsp6/riscv_cpu_dsp.qpf`。完整编译、下载、控制台启动和固件重建步骤见[运行说明](docs/step36-dsp-c-guide.md)。
 
-## 文档与展示
+## 目录与早期版本
 
-| 内容 | 入口 |
-| --- | --- |
-| 当前系统结构与内存布局 | [Architecture](docs/architecture.md) |
-| 九组计时、SW3..SW0、KEY0 与 LED | [板上操作指南](docs/step21-board-benchmark-guide.md) |
-| 长块与 1/2/4 路实验 | [性能与资源分析](docs/project-results.md) |
-| 发布范围、证据与保留事项 | [审阅清单](docs/release-review.md) |
-| 最新视频拍摄顺序 | [Demo](docs/demo-recording-step21.md) |
-| 原始编译和时序报告 | [Quartus review](reports/step21-board-benchmark/quartus-validation.json) |
-| 历史多周期版本与逐步开发 | [历史入口](docs/quickstart-v0.1.md)、[开发顺序](docs/development-history.md) |
-| 发布状态与来源 | [GitHub 状态](docs/github-publishing.md)、[THIRD_PARTY](THIRD_PARTY.md) |
+`rtl/` 保存 CPU、SoC 和 FIR 的 VHDL 源码。`firmware/` 保存裸机 C 和运行时。`programs/dsp6/` 保存本次验证所用的 ELF 与构建输入。`model/`、`sim/`、`tests/` 和 `tools/` 提供检查与复现入口。
 
-`rtl/` 为可综合 VHDL-93；`firmware/` 和 `programs/` 保存 C、ELF、初始镜像及编译清单；`sim/`、`model/`、`tests/`、`tools/` 保存检查器；`reports/` 保存证据；`artifacts/` 保存由数据生成的图表。保留原多周期和旧五级版本。
-
-当前未指定代码许可证。公开源码与第三方依赖的来源边界见 THIRD_PARTY.md。
+多周期 v0.1 与早期五级 CPU、并行度实验可从[开发历史](docs/development-history.md)和[此前的公开版本](https://github.com/yzm3341821990-boop/riscv-fir-soc/tree/3fd94a42334c2239110536dbc8d8643ff460612c)查阅。代码与依赖来源见[第三方说明](THIRD_PARTY.md)。

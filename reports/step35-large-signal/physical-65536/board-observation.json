@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "source_kind": "fpga_jtag",
+  "run": "5ff2c6dab8f4445c9f0adc40a4745269",
+  "samples": 65536,
+  "blocks": 292,
+  "raw_output_values_checked": 149504,
+  "assembled_values_checked": 131072,
+  "cycles": {
+    "software": 34131521,
+    "hardware_cold": 1057624,
+    "hardware_resident": 981996
+  },
+  "software_ms": 1365.26084,
+  "cold_ms": 42.30496,
+  "resident_ms": 39.27984,
+  "speedup_cold": 32.27188584979161,
+  "host_wall_ms": 320607.8504000034,
+  "scope": "Aggregate core calls include 31 history samples per block and padded tail; host wall time is separate. Saved physical observation, not live remeasurement.",
+  "files": {
+    "result.json": "736a889ae44d7f873a6ee4007f7854f2f323d99cf7bb50d58599c713dadcec53",
+    "frames.jsonl": "e91dc2bcad55cf4208f8ec77ff803e9aeec4fa9cf203a372e851b43c4aaf5422"
+  }
+}

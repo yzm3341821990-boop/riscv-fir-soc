@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "source_kind": "rtl_simulation",
+  "checks": [
+    {
+      "status": "passed",
+      "checked_commits": 112233,
+      "cpu_requests": 18096,
+      "dma_reads": 512,
+      "dma_writes": 512,
+      "starts": 2,
+      "profile_cycles": [
+        115992,
+        3755,
+        3361
+      ],
+      "intervals": [
+        1,
+        1,
+        1
+      ],
+      "ram_words_checked": 8192,
+      "registers_checked": 32,
+      "sample_count": 1
+    },
+    {
+      "status": "passed",
+      "checked_commits": 347970,
+      "cpu_requests": 56272,
+      "dma_reads": 1536,
+      "dma_writes": 1536,
+      "starts": 6,
+      "profile_cycles": [
+        349782,
+        11265,
+        10083
+      ],
+      "intervals": [
+        3,
+        3,
+        3
+      ],
+      "ram_words_checked": 8192,
+      "registers_checked": 32,
+      "sample_count": 451
+    }
+  ],
+  "mutation_rejections": [
+    {
+      "mutation": "dma_word",
+      "rejected": "DMA FIR output/address/order"
+    },
+    {
+      "mutation": "cpu_store_address",
+      "rejected": "CPU load/store address/width"
+    },
+    {
+      "mutation": "reported_cycles",
+      "rejected": "accepted-marker timing differs"
+    }
+  ],
+  "profiler_rtl_mutation": "off-by-one rejected by DSP_PROFILE_BOUNDARY",
+  "source_sha256": {
+    "rtl/cpu/alu_pkg.vhd": "9966c1a971689c55151deddca7faa1027f0947c6d2f29c2fcbe4a5bab288e754",
+    "rtl/cpu/alu32.vhd": "a6eae4186bebb21f943a98f3806a1aba9b1ac07bf305895bd5e6534b6a11660b",
+    "rtl/cpu/regfile32.vhd": "b7eb097daf52e77dae6903bc1d4922f505f571466372c50ba33e9f41de675499",
+    "rtl/cpu/mul32.vhd": "9f9f7ab3acdcd9f9d8130e3ec63e90c1de4d33c323cf1571831dedb4e845c4a2",
+    "rtl/cpu/imm_i.vhd": "1aa788af348abc493a8ef16e56a5e876de346ea6a8fb99668ae665479dd9f9ae",
+    "rtl/cpu/imm_s.vhd": "3a116e1da2c33aec497610c8057778eb3b46d9567aad6184cac848dccade624f",
+    "rtl/cpu/imm_b.vhd": "6782799dcb525f5ec9924288c245fc6f5b505a7a0d2b3485065af15c4c2bc03a",
+    "rtl/cpu/imm_j.vhd": "b5b0655638915c16b083c6cd636a66f7d18291af0b59435e16edf4d8a7bc4ce0",
+    "rtl/cpu/imm_u.vhd": "d63d43fc5e998fec0e939ac2f2e6c46246f92a88b4f244e23de13a22276fea1e",
+    "rtl/cpu/decode_tiny.vhd": "2c3a05be05801856936abd4580e6f92a282bf184b9c79ba39f43c57c5473db31",
+    "rtl/cpu/data_ram.vhd": "388213e54d33b77c39ca28bc6314390aec2d0fada942171b025206f929c9a7a3",
+    "rtl/cpu/rv32m_unit.vhd": "56ca976a3e1392854235de37927ebc355adf36369d9dd59c295647c514ba2361",
+    "rtl/cpu/pipeline_dsp_cpu.vhd": "0844ee66e328f6d59baddc9ed370460ad67ec311914325b9d62b8496c26e6247",
+    "rtl/soc/shared_ram_m9k.vhd": "df3760fcfcaff3a91a6a7199849a39887b1b9b3da7606a1186ad45eb50f80fda",
+    "rtl/board/hex7seg.vhd": "d7840a36cff1fd17b7a24d42f11a043dd6f4ca71f6cbfc443dd7e1790611cc07",
+    "rtl/board/jtag_live_mailbox.vhd": "5d4a9944b0554aef45f5ed8a815a00b55e8d8e79b3aef82447845fb5ef0de020",
+    "rtl/soc/machine_timer.vhd": "209f5e518b25b31d99431e63bf1db5e6e9bb0ac6212b674d2c3e94f10c2b60a1",
+    "rtl/soc/instruction_ram16k_m9k.vhd": "a72005b81d6202b3bde1ddd7467c558b034bf913fbaa0d3b1e681c33c3dd4a0a",
+    "rtl/fir/fir_serial.vhd": "6d5195e2950481a15caf09f6de0cddb055a3a92d5d315b857329c1392eacd77f",
+    "rtl/fir/fir_mmio_large.vhd": "7759142b908eb41deeeabd6e7f8a95b70e8f1f9f0ab7a34657d84062503acd48",
+    "rtl/soc/dsp_profiler.vhd": "8ac7ca14ff3cd971a80660bb9afee0a3b68720e198be3a5d4de2fab016382f9e",
+    "rtl/board/de2_115_dsp_core.vhd": "02fd37fee8cbd948ddd07bdb29c38c906e69e0f287cb12beec04b2c2753bbb1c",
+    "rtl/board/de2_115_dsp_top.vhd": "771cbfd0ad9ade42662834ca580e96ae3687877a69889b9e80b6de5512199a0f",
+    "sim/tb/tb_dsp_link.vhd": "f9d33a360aab1f6e1885ba4e0fba3a089c9b3a2bfc7ece412fc96be1dc53fb57",
+    "tools/audit_dsp_trace.py": "92f42a4668636e2e084224304de9d45655a99ad101cb68974ea266e92c348425"
+  },
+  "hardware_access": false,
+  "quartus_run": false
+}

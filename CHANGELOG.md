@@ -1,5 +1,12 @@
 # Changelog
 
+## CPU5 and DSP6 — C workbench and streaming FIR
+
+- Add the RV32IM CPU5 C workbench, 16 KiB instruction RAM and Python SDK.
+- Add DSP6 with a four-lane Q15 FIR, shared RAM, DMA and profiling counters.
+- Record the 65,536-sample DE2-115 run and an offline replay of the saved JTAG exchanges.
+- Document the benchmark timing boundaries and the Quartus implementation.
+
 ## Step22 — pipeline CPU and parallel FIR
 
 - Added a five-stage CPU with forwarding, load-use stalls and control-flow flushes, preserving the implemented 37-RV32I-plus-MUL subset.

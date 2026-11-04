@@ -1,0 +1,46 @@
+{
+  "format": "dsp6-c-build-v1",
+  "source_sha256": "76f9a474074820b355fecab9e2f06c97b12f48816917828ef720ee773b0dab0b",
+  "elf_sha256": "a8b8abad59db576bf671ca53efacc6d965ecc949afb7af2de1fc8663ff4ecdb1",
+  "text_bytes": 2016,
+  "command": [
+    "zig",
+    "cc",
+    "-target",
+    "riscv32-freestanding",
+    "-mcpu=generic_rv32+m+zicsr",
+    "-mabi=ilp32",
+    "-ffreestanding",
+    "-fno-builtin",
+    "-fno-stack-protector",
+    "-fno-pic",
+    "-msmall-data-limit=0",
+    "-mno-relax",
+    "-fno-unwind-tables",
+    "-fno-asynchronous-unwind-tables",
+    "-O1",
+    "-g0",
+    "-fno-unroll-loops",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-nostdlib",
+    "-Wl,-T,link.ld",
+    "-Wl,--build-id=none",
+    "start.S",
+    "main.c",
+    "-o",
+    "program.elf"
+  ],
+  "compiler_sha256": "2e44af5bbf7a72ef8cbdae370284687c95d65a19affa469d2ad0364d905b8e84",
+  "runtime_sha256": {
+    "cpu5.h": "8532f3215bc347ca74bcf64436338e8c0a57a7c451ae677eea4437323acfa429",
+    "start.S": "b5430fa01b627755348ce30d972aae8bb767a937b7f8695e0f027c1024bdec2d",
+    "link.ld": "7b104eb083674bba12ecf839e4c1859a724d291040c2a76eebb5a946a79deb86"
+  },
+  "diagnostics": "",
+  "dsp_runtime_sha256": {
+    "dsp6.h": "31420bd246f718900b70563c91288a9cafe346a11e35e32291157796d5005d9c",
+    "dsp_signal.h": "e8d487e40e105bf6de6ce05fa02aa1c3c02d2b3176345ffbd93b406c8e544277"
+  }
+}

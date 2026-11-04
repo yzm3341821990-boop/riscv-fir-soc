@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "tests": 11,
+  "modules": [
+    "tests.test_dsp_console",
+    "tests.test_dsp_peripheral",
+    "tests.test_dsp_upgrade"
+  ],
+  "hardware_access": false
+}

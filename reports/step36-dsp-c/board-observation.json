@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "source_kind": "fpga_jtag",
+  "scope": "One saved physical DSP6 run. Offline replay checked all recorded JTAG request/reply pairs and independently recomputed integer convolution, checksum and final window.",
+  "identity": {
+    "image": "DSP6",
+    "abi": "00360001",
+    "instruction_bytes": 16384,
+    "data_bytes": 32768,
+    "clock_hz": 25000000
+  },
+  "run_id": "a21a1967c48942438e604a260ed0804c",
+  "captured_at_utc": "2026-11-03T15:53:32.778844+00:00",
+  "sample_count": 65536,
+  "blocks": 292,
+  "three_path_checksum": [
+    727738349,
+    727738349,
+    727738349
+  ],
+  "sample_mismatches": 0,
+  "final_window_samples": 96,
+  "profile_cycles": {
+    "cpu_software": 34130645,
+    "fir_cold": 1096460,
+    "fir_resident": 981412
+  },
+  "profile_ms": {
+    "cpu_software": 1365.2258,
+    "fir_cold": 43.8584,
+    "fir_resident": 39.25648
+  },
+  "cold_speedup": 31.128034766430147,
+  "resident_speedup": 34.777081388856054,
+  "total_board_cycles": 45052408,
+  "total_board_ms": 1802.09632,
+  "host_call_ms": 4695.43590000103,
+  "host_log_interval_ms": 4695.0,
+  "jtag_exchanges": 308,
+  "retired": 34269192,
+  "elf_sha256": "a8b8abad59db576bf671ca53efacc6d965ecc949afb7af2de1fc8663ff4ecdb1",
+  "verified_build_sof_sha256": "8a0efe056923db1f994dc1f5a298b3bfb5661e27f5bb22336d0231c8c8ad6746",
+  "run_record_sha256": "3f17b5c1b45fb1cba1e72401ee81805ea9efe543b6d09fc6961da571c2fb6318",
+  "raw_transport_log_sha256": "22451fa2f5e1b0f39fcb2701a05df118db62f89885e6e2b38bd09ebb1a5ea87e",
+  "agent_hardware_access": false
+}

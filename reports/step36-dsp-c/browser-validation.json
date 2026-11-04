@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "widths": [
+    1200,
+    700
+  ],
+  "provenance": "rtl_simulation",
+  "hardware_access": false,
+  "preview_samples": 451
+}
